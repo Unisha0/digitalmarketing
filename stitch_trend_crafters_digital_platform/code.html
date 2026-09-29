@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trend Crafters - Digital Marketing Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#603100",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#dae2fd",
+                        "tertiary-fixed": "#e1e0ff",
+                        "error": "#ba1a1a",
+                        "outline": "#906f72",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-surface": "#131b2e",
+                        "primary-fixed-dim": "#ffb2ba",
+                        "surface-dim": "#d2d9f4",
+                        "surface-bright": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "surface-tint": "#bd0042",
+                        "surface-container-low": "#f2f3ff",
+                        "background": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffb2ba",
+                        "surface-container": "#eaedff",
+                        "outline-variant": "#e5bdc0",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-primary-fixed": "#400011",
+                        "on-surface-variant": "#5c3f42",
+                        "on-tertiary-fixed": "#07006c",
+                        "primary-container": "#e31754",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#ffd9dc",
+                        "secondary-container": "#fd8b00",
+                        "inverse-surface": "#283044",
+                        "error-container": "#ffdad6",
+                        "primary": "#b90040",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "tertiary-container": "#6063ee",
+                        "on-secondary-fixed": "#2f1500",
+                        "secondary": "#904d00",
+                        "tertiary": "#4648d4",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-background": "#131b2e",
+                        "on-primary-fixed-variant": "#910030",
+                        "secondary-fixed-dim": "#ffb77d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "80px",
+                        "stack-sm": "24px",
+                        "stack-md": "48px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "subheadline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-base": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "subheadline-lg": ["20px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-base": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .gradient-text {
+            background: linear-gradient(90deg, #b90040 0%, #fd8b00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(90deg, #b90040 0%, #fd8b00 100%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 12px 32px rgba(15, 23, 42, 0.04);
+        }
+        .ambient-shadow:hover {
+            box-shadow: 0px 16px 40px rgba(15, 23, 42, 0.08);
+            transform: translateY(-4px);
+        }
+        body {
+            background-color: #faf8ff;
+            color: #131b2e;
+        }
+    </style>
+</head>
+<body class="font-body-base text-body-base bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-surface-container-highest/30 transition-all duration-300">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter py-6">
+<div class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                Trend Crafters
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<!-- Implicit Active State (Home/General Intent) -->
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="#">Digital Marketing</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#">Branding &amp; Campaigns</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#">Production</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#">IT Solutions</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#">About Us</a>
+</div>
+<button class="hidden md:flex btn-gradient text-on-primary font-label-bold text-label-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity">
+                Contact Us
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-[104px]">
+<!-- Hero Section -->
+<section class="min-h-[80vh] flex items-center justify-center relative overflow-hidden px-margin-mobile md:px-gutter py-stack-lg">
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-fixed rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary-fixed rounded-full blur-[140px] opacity-20 translate-y-1/4 -translate-x-1/4 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto text-center relative z-10 w-full">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high/50 border border-outline-variant/30 mb-8 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider text-xs">Award-Winning Creative Agency</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface max-w-4xl mx-auto mb-6">
+                    Crafting Stories,<br/>
+<span class="gradient-text">Creating Impact.</span>
+</h1>
+<p class="font-subheadline-lg text-subheadline-lg text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+                    We are a <strong class="text-on-surface">full-service agency</strong> specializing in <strong class="text-primary">digital marketing</strong>, high-end <strong class="text-secondary">production</strong>, and robust IT solutions. We transform brands into industry leaders.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="btn-gradient text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-full w-full sm:w-auto hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                        Start Your Project
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="text-on-surface border-2 border-outline/30 px-8 py-4 rounded-full w-full sm:w-auto hover:bg-surface-container hover:border-outline/50 transition-all font-label-bold text-label-bold flex items-center justify-center gap-2">
+                        View Our Work
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-stack-md px-margin-mobile md:px-gutter bg-surface-container-low border-y border-surface-container-highest/30">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold gradient-text mb-2">500+</span>
+<span class="font-label-bold text-on-surface-variant uppercase tracking-wider text-sm">Projects Delivered</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold gradient-text mb-2">150+</span>
+<span class="font-label-bold text-on-surface-variant uppercase tracking-wider text-sm">Happy Clients</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold gradient-text mb-2">10+</span>
+<span class="font-label-bold text-on-surface-variant uppercase tracking-wider text-sm">Industry Awards</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold gradient-text mb-2">$50M</span>
+<span class="font-label-bold text-on-surface-variant uppercase tracking-wider text-sm">Revenue Generated</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Arsenal Section (Services) -->
+<section class="bg-surface-container-lowest py-stack-lg px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Our Arsenal</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mx-auto">
+                        Precision-engineered solutions designed to elevate your brand presence across every digital touchpoint.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-stack-md">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 ambient-shadow transition-all duration-300 flex flex-col h-full border border-surface-container-highest hover:border-primary/30">
+<div class="w-14 h-14 rounded-xl bg-primary-container/10 flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">campaign</span>
+</div>
+<h3 class="font-label-bold text-label-bold text-on-surface text-xl mb-3">Content Strategy</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mb-6 flex-grow">
+<strong class="text-on-surface">Data-driven narratives</strong> that engage your audience and build lasting brand loyalty across all channels.
+                        </p>
+<a class="font-label-bold text-label-bold text-primary flex items-center gap-1 hover:gap-2 transition-all w-fit group" href="#">
+                            Learn More <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">east</span>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 ambient-shadow transition-all duration-300 flex flex-col h-full border border-surface-container-highest hover:border-secondary/30">
+<div class="w-14 h-14 rounded-xl bg-secondary-container/10 flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl">movie</span>
+</div>
+<h3 class="font-label-bold text-label-bold text-on-surface text-xl mb-3">Reels &amp; Video</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mb-6 flex-grow">
+<strong class="text-on-surface">High-impact short-form content</strong> optimized for social algorithms to maximize reach and engagement.
+                        </p>
+<a class="font-label-bold text-label-bold text-secondary flex items-center gap-1 hover:gap-2 transition-all w-fit group" href="#">
+                            Learn More <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">east</span>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 ambient-shadow transition-all duration-300 flex flex-col h-full border border-surface-container-highest hover:border-tertiary/30">
+<div class="w-14 h-14 rounded-xl bg-tertiary-container/10 flex items-center justify-center mb-6 text-tertiary">
+<span class="material-symbols-outlined text-3xl">tv</span>
+</div>
+<h3 class="font-label-bold text-label-bold text-on-surface text-xl mb-3">Commercial Ads</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mb-6 flex-grow">
+<strong class="text-on-surface">Broadcast-quality commercial production</strong> that stops thumbs and drives measurable conversions.
+                        </p>
+<a class="font-label-bold text-label-bold text-tertiary flex items-center gap-1 hover:gap-2 transition-all w-fit group" href="#">
+                            Learn More <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">east</span>
+</a>
+</div>
+</div>
+<!-- Featured Service Detail with Image -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-sm items-center bg-surface-container-low rounded-3xl overflow-hidden border border-surface-container-highest/50">
+<div class="p-8 lg:p-12 order-2 lg:order-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary mb-6">
+<span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+<span class="font-label-bold text-xs uppercase tracking-wider">Premium Production</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">High-End Post-Production</h3>
+<p class="font-body-base text-on-surface-variant mb-6">
+                            Our in-house editing suites are equipped with <strong class="text-secondary">industry-leading software and hardware</strong>. We meticulously craft every frame, ensuring color, sound, and visual effects align perfectly with your brand's vision.
+                        </p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-secondary">check</span> Advanced Color Grading</li>
+<li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-secondary">check</span> Custom Motion Graphics</li>
+<li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-secondary">check</span> Sound Design &amp; Mixing</li>
+</ul>
+<a class="font-label-bold text-label-bold text-on-surface border-2 border-outline/30 px-6 py-3 rounded-full hover:bg-surface-container hover:border-outline/50 transition-all inline-flex items-center gap-2" href="#">
+                            Explore Production Services
+                        </a>
+</div>
+<div class="h-full w-full order-1 lg:order-2">
+<img alt="High-end video editing workstation" class="w-full h-full object-cover min-h-[300px] lg:min-h-full" src="https://lh3.googleusercontent.com/aida/AP1WRLsMPBEQvDIFnhG-cvh06I5xpnshf-aJbpIBkrkF-rMytb5CqF8FaRtKWhYdp3DF5kiV5RypQBO0F5aAKFMKCIj5zJIvPmBC4RIq01Gn6jTVi8DOFY45Yi5Sp8RVmU8JZYDiszN8MdZthZoSIzKrmvvPKy6ap0QlkxHlxLDSvEq6jryoTRUjMFtdXnpBzjJmufAs1Z5sYMZJXS6N-xcJqLnW6mEyoJJXiilqHD9B69KreLSHECMDh0cTc9Hi"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Creative Process -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter bg-surface-container relative">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-stack-md">
+<div class="inline-block px-3 py-1 bg-surface-variant rounded-full text-on-surface-variant font-label-bold text-xs uppercase tracking-wider mb-4">
+                        How We Work
+                    </div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Our Creative Process</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mx-auto">
+                        A proven methodology that ensures predictable, high-quality results from initial concept to final launch.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+<!-- Connecting Line (Desktop only) -->
+<div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-primary via-secondary to-tertiary opacity-30 z-0"></div>
+<div class="relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-highest">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-primary/30">1</div>
+<h3 class="font-label-bold text-lg text-on-surface mb-2">Discovery</h3>
+<p class="text-sm text-on-surface-variant">We dive deep into your brand, audience, and objectives to establish a solid foundation.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-highest">
+<div class="w-16 h-16 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-secondary/30">2</div>
+<h3 class="font-label-bold text-lg text-on-surface mb-2">Strategy</h3>
+<p class="text-sm text-on-surface-variant">Crafting a bespoke roadmap and creative concepts tailored to maximize impact.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-highest">
+<div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-tertiary/30">3</div>
+<h3 class="font-label-bold text-lg text-on-surface mb-2">Production</h3>
+<p class="text-sm text-on-surface-variant">Executing the vision with precision using top-tier talent and state-of-the-art tech.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-highest">
+<div class="w-16 h-16 rounded-full bg-on-surface text-surface flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-on-surface/30">4</div>
+<h3 class="font-label-bold text-lg text-on-surface mb-2">Launch</h3>
+<p class="text-sm text-on-surface-variant">Deploying campaigns across channels and optimizing for maximum measurable return.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust / Environment Section -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter relative overflow-hidden bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="absolute inset-0 bg-primary-fixed/30 rounded-3xl transform -translate-x-4 translate-y-4 -z-10"></div>
+<img alt="Our creative workspace" class="w-full h-auto rounded-3xl shadow-2xl object-cover aspect-video lg:aspect-[4/3] border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida/AP1WRLsmVkQMH-BTsRkdrgIzvoRq6Z2NsUHRemTajd-cpU9VCGPCiA-eqSaFig-nz1bl7aVH5KO-p-jp3yyNlSiQhRFjgQPzuNoJyIaaU51kN0miiXyn8fBbc3DbBLX0s5Pjo1jte334jdHgTtOu2dEP6aK6ta7lpGI1yYAFbrr3Bp8y4hCFhUgnSIAuXkNuKnV1IlD7VkYGG7bCUstnxlb5E6VhZ5pf6cl2uZrVu9XaZg5lCKyIGcASJ87_RGI"/>
+</div>
+<div class="order-1 lg:order-2">
+<div class="inline-block px-3 py-1 bg-surface-variant rounded-full text-on-surface-variant font-label-bold text-xs uppercase tracking-wider mb-4">
+                            Behind the Scenes
+                        </div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">
+                            Where Creativity Meets <br class="hidden md:block"/> Infrastructure
+                        </h2>
+<p class="font-body-base text-body-base text-on-surface-variant mb-6 leading-relaxed">
+                            We believe that truly exceptional work requires a foundation of <strong class="text-on-surface">robust infrastructure</strong> and a culture that fosters <strong class="text-primary">unrestricted creativity</strong>. Our vibrant studio space is designed to encourage seamless collaboration between our strategic, creative, and technical teams.
+                        </p>
+<ul class="space-y-5 mb-8">
+<li class="flex items-start gap-4 p-4 bg-surface-container-low rounded-xl border border-surface-container">
+<span class="material-symbols-outlined text-primary mt-0.5 text-2xl" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-1">Collaborative Environment</h4>
+<p class="font-body-base text-sm text-on-surface-variant">Breaking down silos between marketing and production to ensure cohesive brand narratives.</p>
+</div>
+</li>
+<li class="flex items-start gap-4 p-4 bg-surface-container-low rounded-xl border border-surface-container">
+<span class="material-symbols-outlined text-secondary mt-0.5 text-2xl" style="font-variation-settings: 'FILL' 1;">memory</span>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-1">State-of-the-Art Tech</h4>
+<p class="font-body-base text-sm text-on-surface-variant">Equipped with the latest tools, rendering farms, and professional gear to bring your vision to life.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-inverse-surface dark:bg-inverse-surface w-full mt-auto border-t border-outline-variant/10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-stack-sm max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<!-- Brand Column -->
+<div class="col-span-2 lg:col-span-2 flex flex-col gap-6">
+<div class="font-headline-md text-headline-md font-bold text-surface-bright flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                    Trend Crafters
+                </div>
+<p class="text-surface-variant font-body-base text-sm opacity-80 leading-relaxed max-w-sm">
+                    We are a modern digital agency dedicated to elevating brands through strategic marketing, premium production, and innovative technology solutions. We don't just follow trends; we craft them.
+                </p>
+<div class="flex items-center gap-4 mt-2">
+<a class="w-10 h-10 rounded-full bg-surface-variant/10 flex items-center justify-center text-surface-bright hover:bg-primary-fixed-dim hover:text-inverse-surface transition-all" href="#" title="Facebook">
+<span class="material-symbols-outlined text-lg">facebook</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant/10 flex items-center justify-center text-surface-bright hover:bg-primary-fixed-dim hover:text-inverse-surface transition-all" href="#" title="Twitter">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant/10 flex items-center justify-center text-surface-bright hover:bg-primary-fixed-dim hover:text-inverse-surface transition-all" href="#" title="Instagram">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant/10 flex items-center justify-center text-surface-bright hover:bg-primary-fixed-dim hover:text-inverse-surface transition-all" href="#" title="LinkedIn">
+<span class="material-symbols-outlined text-lg">work</span>
+</a>
+</div>
+</div>
+<!-- Links Columns -->
+<div class="flex flex-col gap-4 mt-2">
+<h4 class="font-label-bold text-label-bold text-surface-bright">Services</h4>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Digital Marketing</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Content Creation</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Video Production</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Web Development</a>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<h4 class="font-label-bold text-label-bold text-surface-bright">Company</h4>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">About Us</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Our Process</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Case Studies</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<h4 class="font-label-bold text-label-bold text-surface-bright">Resources</h4>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Blog</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Webinars</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Guides</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<h4 class="font-label-bold text-label-bold text-surface-bright">Legal</h4>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="text-surface-variant font-body-base text-sm hover:text-primary-fixed-dim transition-colors" href="#">Cookie Policy</a>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-6 mt-12 pt-8 border-t border-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+<p class="text-surface-variant/60 font-body-base text-sm">
+                    © 2024 Trend Crafters Agency. All rights reserved.
+                </p>
+<div class="flex items-center gap-6">
+<p class="text-surface-variant/60 font-body-base text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> New York, NY
+                </p>
+<p class="text-surface-variant/60 font-body-base text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">mail</span> hello@trendcrafters.com
+                </p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

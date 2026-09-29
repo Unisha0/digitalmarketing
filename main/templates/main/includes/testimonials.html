@@ -1,0 +1,124 @@
+{% load static %}
+{# Reusable review carousel — included on the homepage and at the bottom of each service page. #}
+{# Pass with show_schema=True on exactly one page (the homepage) to avoid duplicate Review schema across the site. #}
+<section class="py-medium bg-surface-subtle" aria-label="Client testimonials">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Client Testimonials</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4 text-ink">
+                Don't Just Take <span class="gradient-text">Our Word For It</span>
+            </h2>
+            <p class="text-ink-muted">
+                Our success is measured by the success of our partners, here is what a few of them have to say.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="50">
+            <div class="flex items-center gap-4">
+                <button type="button" class="testimonial-nav-btn hidden sm:flex" data-testimonial-prev aria-label="Previous testimonials">
+                    <i class="fas fa-chevron-left text-sm"></i>
+                </button>
+
+                <div class="testimonial-track flex-1" data-testimonial-track>
+                    <article class="testimonial-card service-card">
+                        <div class="flex gap-1 text-brand-500 mb-4" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-ink-muted mb-6">"Their strategic approach helped us grow our engagement by over 60%. Truly a partner that understands brand storytelling."</p>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 font-display font-semibold flex items-center justify-center flex-shrink-0">T</span>
+                            <div>
+                                <p class="text-sm font-semibold text-ink">Threads & Trends</p>
+                                <p class="text-xs text-ink-faint">Fashion & Lifestyle</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card service-card">
+                        <div class="flex gap-1 text-brand-500 mb-4" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-ink-muted mb-6">"The team at Trend Crafters helped us craft content that reflects who we are as a brand. Highly recommend!"</p>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 font-display font-semibold flex items-center justify-center flex-shrink-0">D</span>
+                            <div>
+                                <p class="text-sm font-semibold text-ink">Deepal Nepal</p>
+                                <p class="text-xs text-ink-faint">Brand Partner</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card service-card">
+                        <div class="flex gap-1 text-brand-500 mb-4" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-ink-muted mb-6">"We were blown away by the creative direction and attention to detail. They delivered beyond expectations."</p>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 font-display font-semibold flex items-center justify-center flex-shrink-0">S</span>
+                            <div>
+                                <p class="text-sm font-semibold text-ink">Sasurali Nepal</p>
+                                <p class="text-xs text-ink-faint">Hospitality & Restaurant</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <button type="button" class="testimonial-nav-btn hidden sm:flex" data-testimonial-next aria-label="Next testimonials">
+                    <i class="fas fa-chevron-right text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if show_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trend Crafters Global",
+  "url": "https://trendcrafters.global/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "3"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Threads & Trends"
+      },
+      "reviewBody": "Their strategic approach helped us grow our engagement by over 60%. Truly a partner that understands brand storytelling."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Deepal Nepal"
+      },
+      "reviewBody": "The team at Trend Crafters helped us craft content that reflects who we are as a brand. Highly recommend!"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Sasurali Nepal"
+      },
+      "reviewBody": "We were blown away by the creative direction and attention to detail. They delivered beyond expectations."
+    }
+  ]
+}
+</script>
+{% endif %}

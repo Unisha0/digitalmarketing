@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Video Production & Commercial Ads in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}9:16 vertical video, Instagram Reels & TikTok production, and commercial ad production from Trend Crafters - a leading video production company in Nepal.{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-32 left-0 w-[28rem] h-[28rem] bg-gradient-to-br from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Production Services · Video & Commercial Ads</h1>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
+            Video Is the Undisputed <span class="gradient-text">King</span>
+        </h2>
+        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            As a leading video production company in Nepal, we engineer dynamic visual experiences tailored for both local engagement in Kathmandu and massive global virality. Succeeding requires much more than just hitting the record button.
+        </p>
+        <a href="{% url 'contact' %}" class="btn-primary px-7 py-3.5 rounded-full font-semibold inline-block">
+            Start Your Project
+        </a>
+    </div>
+</section>
+
+<!-- Video & Reels -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Video & Reels</h2>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-4">Absolute Experts in 9:16</h2>
+            <p class="text-ink-muted leading-relaxed mb-4">
+                We are absolute experts in the 9:16 vertical video format, designing scroll-stopping visual hooks specifically for TikTok and Instagram Reels. Our production team pushes the boundaries of short-form media - executing highly advanced post-production techniques while directing on-screen talent to deliver performances with perfect, controlled intensity.
+            </p>
+            <p class="text-ink-muted leading-relaxed">
+                Beyond the creative flair, our video production is deeply strategic. We don't just shoot random videos - we help you build a balanced, high-impact mix of reels and static posts, ensuring a consistent posting schedule that keeps your audience captivated and your conversion rates climbing.
+            </p>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-card border border-surface-border aspect-[9/12] max-w-xs mx-auto" data-aos="fade-left" data-aos-delay="100" style="background: linear-gradient(160deg, #141210 0%, #7C2F12 40%, #EA6A2E 75%, #E0266E 100%);"></div>
+    </div>
+</section>
+
+<!-- Commercial Ads -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Commercial Ads</h2>
+        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-5">Flagship Campaigns Require Flagship Visuals</h2>
+        <p class="text-ink-muted leading-relaxed">
+            We provide end-to-end commercial ad production, scaling effortlessly from localized digital campaigns in Nepal to large-scale, international broadcast advertisements. By blending cinematic storytelling with high-converting marketing psychology, we produce commercials that don't just look beautiful - they actively sell your product and build long-term brand equity.
+        </p>
+    </div>
+</section>
+
+<!-- Workflow -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto">
+        <h3 class="text-center font-display text-2xl sm:text-3xl font-semibold text-ink mb-12" data-aos="fade-up">Our Production Workflow</h3>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+            <div class="process-step" data-aos="fade-up" data-aos-delay="50">
+                <div class="step-number"><i class="fas fa-compass"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">1. Strategy</h3>
+                <p class="text-ink-muted text-sm">Audience, narrative hook, and KPI mapped before a single frame is shot.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-delay="150">
+                <div class="step-number"><i class="fas fa-video"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">2. Shoot</h3>
+                <p class="text-ink-muted text-sm">Cinematic lighting, efficient crew, and structured shot lists.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-delay="250">
+                <div class="step-number"><i class="fas fa-film"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">3. Edit</h3>
+                <p class="text-ink-muted text-sm">Trend-aware cuts, color grade, sound design, and captions.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-delay="350">
+                <div class="step-number"><i class="fas fa-arrow-trend-up"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">4. Amplify</h3>
+                <p class="text-ink-muted text-sm">Posting strategy, paid boost, and creative testing to scale winners.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio CTA -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-4">Seeing Is Believing</h2>
+        <p class="text-ink-muted leading-relaxed mb-6">
+            Explore our curated portfolio to see exactly how we've transformed businesses through elite production, from high-ROI Meta ad campaigns to breathtaking luxury brand photography and cinematic short-form content.
+        </p>
+        <a href="{% url 'work' %}" class="btn-primary px-8 py-3.5 font-semibold inline-block">
+            Explore Our Complete Portfolio & Creative Works
+        </a>
+    </div>
+</section>
+
+{% include 'main/includes/testimonials.html' %}
+
+<!-- CTA -->
+<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
+  <div class="content-container px-6">
+    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Ready to Scale With Short-Form Video?</h2>
+      <p class="text-white/90 mb-8">Send a brief about your product and we'll return a content plan built for your brand.</p>
+      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
+        Start Your Project
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

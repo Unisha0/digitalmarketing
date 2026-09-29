@@ -1,0 +1,138 @@
+{% extends 'main/base.html' %}
+{% block title %}Web App Development | Trend Crafters{% endblock %}
+{% block meta_description %}Custom web app development from Trend Crafters Global - dashboards, portals, SaaS products, and e-commerce platforms built to scale.{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">IT Solutions</h1>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
+            <span class="gradient-text">Web App</span> Development
+        </h2>
+        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            Sometimes, off-the-shelf software simply isn't powerful enough to meet your operational needs. We design and develop custom web applications that solve complex business challenges, streamline internal processes, and elevate the customer experience.
+        </p>
+        <a href="{% url 'contact' %}" class="btn-primary px-7 py-3.5 rounded-full font-semibold inline-block">
+            Start a Project
+        </a>
+    </div>
+</section>
+
+<!-- What we build -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What We Build</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4 text-ink">
+                Software That Works <span class="gradient-text">as Hard as You Do</span>
+            </h2>
+            <p class="text-ink-muted">
+                From internal tools to customer-facing platforms, we build web apps that solve real operational problems.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-gauge-high text-brand-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-ink">Admin Dashboards & Portals</h3>
+                <p class="text-ink-muted">Internal tools that give your team real-time visibility and control.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-cart-shopping text-brand-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-ink">E-Commerce Platforms</h3>
+                <p class="text-ink-muted">Custom storefronts with the checkout, inventory, and payment flow you actually need.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-layer-group text-brand-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-ink">SaaS Products</h3>
+                <p class="text-ink-muted">From MVP to scale - we build the product your users pay for.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-plug text-brand-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-ink">API & Third-Party Integrations</h3>
+                <p class="text-ink-muted">Payments, CRMs, booking systems - connected cleanly and reliably.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-mobile-screen-button text-brand-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-ink">Progressive Web Apps</h3>
+                <p class="text-ink-muted">App-like experiences that install, load fast, and work offline.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-arrows-rotate text-brand-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-ink">Legacy System Modernization</h3>
+                <p class="text-ink-muted">Rebuilding aging internal tools into something your team actually enjoys using.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="py-medium bg-surface">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our Process</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4 text-ink">
+                From Idea to <span class="gradient-text">Live Product</span>
+            </h2>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+            <div class="process-step" data-aos="fade-up" data-aos-delay="50">
+                <div class="step-number"><i class="fas fa-compass"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">1. Scope</h3>
+                <p class="text-ink-muted text-sm">We define what the app needs to do - and what it doesn't.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-delay="150">
+                <div class="step-number"><i class="fas fa-pen-ruler"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">2. Design</h3>
+                <p class="text-ink-muted text-sm">Wireframes and UI that put your users' workflow first.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-delay="250">
+                <div class="step-number"><i class="fas fa-code"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">3. Build</h3>
+                <p class="text-ink-muted text-sm">Clean, tested code shipped in reviewable milestones.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-delay="350">
+                <div class="step-number"><i class="fas fa-rocket"></i></div>
+                <h3 class="font-semibold text-ink mb-1.5">4. Launch & Support</h3>
+                <p class="text-ink-muted text-sm">We stay on for maintenance, fixes, and what comes next.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/includes/testimonials.html' %}
+
+<!-- CTA -->
+<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
+  <div class="content-container px-6">
+    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">
+        Have a Web App in Mind?
+      </h2>
+      <p class="text-white/90 mb-8">
+        Tell us what you're trying to build - we'll tell you what it takes.
+      </p>
+      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@source "../../../templates/**/*.html";
+@source "../js/**/*.js";
+
+@theme static {
+  /* Warm-neutral surfaces (replaces flat white/gray) */
+  --color-surface: #FAF8F5;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-subtle: #F2EEE8;
+  --color-surface-border: #E6E0D6;
+
+  /* Warm ink (replaces cool Tailwind gray) */
+  --color-ink: #1C1A17;
+  --color-ink-muted: #5C5750;
+  --color-ink-faint: #8B8478;
+  --color-ink-dark: #141210;
+
+  /* Brand accent — deepened, less "stock" orange */
+  --color-brand-50: #FFF4ED;
+  --color-brand-100: #FFE4D3;
+  --color-brand-200: #FDC79E;
+  --color-brand-300: #FDA96A;
+  --color-brand-400: #F2863F;
+  --color-brand-500: #EA6A2E;
+  --color-brand-600: #D2531E;
+  --color-brand-700: #A83F16;
+  --color-brand-800: #7C2F12;
+  --color-brand-900: #5C2410;
+
+  /* Pink accent - matches the magenta flame-tip of the logo. Used for section
+     tints, eyebrow labels, and as the middle stop of the orange->pink->charcoal
+     button gradient (the three colors that actually appear in the logo lockup). */
+  --color-pink-50: #FDF0F4;
+  --color-pink-100: #FADAE6;
+  --color-pink-500: #E0266E;
+  --color-pink-600: #C41F5D;
+  --color-pink-700: #9F1850;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Fraunces", serif;
+
+  --radius-xl2: 1.25rem;
+
+  --shadow-soft: 0 2px 8px -2px rgb(28 26 23 / 0.06), 0 8px 24px -8px rgb(28 26 23 / 0.10);
+  --shadow-card: 0 1px 2px rgb(28 26 23 / 0.04), 0 4px 16px -4px rgb(28 26 23 / 0.08);
+}

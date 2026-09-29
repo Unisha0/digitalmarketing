@@ -1,0 +1,641 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Digital Marketing Agency in Kathmandu, Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Trend Crafters is a Kathmandu Valley digital marketing agency: social media, Meta & TikTok ads, SEO, branding, photo & video production and web development, one team, measurable growth.{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white pt-28 sm:pt-32 pb-24" id="hero">
+    <div class="absolute -top-24 -right-24 w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-brand-200 via-pink-100 to-transparent blur-3xl opacity-70 pointer-events-none"></div>
+    <div class="relative content-container">
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-ink-muted mb-8">
+            <a href="tel:9863998413" class="inline-flex items-center gap-2 hover:text-pink-600"><i class="fas fa-phone text-brand-500"></i> 9863998413</a>
+            <a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="inline-flex items-center gap-2 hover:text-pink-600"><i class="fas fa-envelope text-brand-500"></i> trendcraftersglobal@gmail.com</a>
+            <span class="inline-flex items-center gap-2"><i class="fas fa-location-dot text-brand-500"></i> Tempo Park, Lalitpur</span>
+            <span class="inline-flex items-center gap-2"><i class="fas fa-language text-brand-500"></i> English · Nepali</span>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-700 mb-5"><span class="hidden lg:inline-block w-8 h-px bg-brand-500"></span> Kathmandu, Nepal. Local Soul, Global Standards</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[1.1] text-ink mb-6">
+                    We Don't Just Follow Trends. <span class="gradient-text">We Engineer Them</span>
+                </h1>
+                <p class="text-ink-muted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8">
+                    Turn attention into global revenue. Digital marketing, branding & campaigns, high-end photo and video production, and IT solutions, <strong class="text-ink font-semibold">engineered as one growth ecosystem</strong>, not five different vendors. We're the connection between where your brand is and where you want it to be, with a real person by your side the whole way.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Tell Us About Your Project <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-btn"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2 justify-center lg:justify-start">
+                    <span class="px-3 py-1 rounded-full bg-white border border-ink/10 text-xs font-medium text-ink-muted">Social Media</span>
+                    <span class="px-3 py-1 rounded-full bg-white border border-ink/10 text-xs font-medium text-ink-muted">Meta & TikTok Ads</span>
+                    <span class="px-3 py-1 rounded-full bg-white border border-ink/10 text-xs font-medium text-ink-muted">Branding</span>
+                    <span class="px-3 py-1 rounded-full bg-white border border-ink/10 text-xs font-medium text-ink-muted">Photo & Video</span>
+                    <span class="px-3 py-1 rounded-full bg-white border border-ink/10 text-xs font-medium text-ink-muted">Websites & Apps</span>
+                    <span class="px-3 py-1 rounded-full bg-white border border-ink/10 text-xs font-medium text-ink-muted">SEO</span>
+                </div>
+            </div>
+
+            <!-- Photo collage -->
+            <div class="lg:col-span-6 grid grid-cols-5 gap-4 h-[26rem] sm:h-[32rem]" data-aos="fade-left">
+                <div class="col-span-3 relative rounded-3xl overflow-hidden shadow-xl">
+                    <img src="{% static 'main/images/home/hero-landing.jpg' %}" alt="Trend Crafters, digital marketing, branding, production and web development from Kathmandu" width="1536" height="1024" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-[40%_50%]">
+                    <div class="absolute left-4 bottom-4 right-4 bg-white/95 backdrop-blur rounded-2xl px-4 py-3 flex items-center gap-3">
+                        <span class="w-9 h-9 rounded-xl bg-brand-50 flex items-center justify-center"><i class="fas fa-chart-line text-brand-600"></i></span>
+                        <div><p class="text-sm font-semibold text-ink leading-tight">Growth, engineered</p><p class="text-xs text-ink-muted">Strategy · Creative · Tech</p></div>
+                    </div>
+                </div>
+                <div class="col-span-2 grid grid-rows-2 gap-4">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt="Video production studio" loading="eager" class="absolute inset-0 w-full h-full object-cover"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/home/retail.jpg' %}" alt="Brand photography for retail" loading="eager" class="absolute inset-0 w-full h-full object-cover"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust bar overlapping hero -->
+<section class="relative -mt-14 z-10 pb-6">
+    <div class="content-container">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-card border border-ink/5 grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-ink/5" data-aos="fade-up">
+            <div class="p-5 sm:p-6 text-center"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-xs sm:text-sm text-ink-muted">Clients served</p></div>
+            <div class="p-5 sm:p-6 text-center"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-xs sm:text-sm text-ink-muted">Projects delivered</p></div>
+            <div class="p-5 sm:p-6 text-center"><p class="font-display text-3xl font-semibold gradient-text">5<span class="text-2xl">★</span></p><p class="text-xs sm:text-sm text-ink-muted">Client rating</p></div>
+            <div class="p-5 sm:p-6 text-center"><p class="font-display text-3xl font-semibold gradient-text">3</p><p class="text-xs sm:text-sm text-ink-muted">Continents served</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Ticker: what we do + contact, then clients -->
+<section class="bg-white pb-8 sm:pb-10" aria-label="What we do and clients we've worked with">
+    <div class="bg-gradient-to-r from-brand-500 via-pink-500 to-pink-700 py-3 overflow-hidden">
+        <div class="marquee-track" style="animation-duration:40s">
+            {% for i in "12" %}<div class="flex items-center gap-x-14 pr-14"><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">Social Media Management <i class="fas fa-star text-[8px] text-white/60"></i></span><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">Meta & TikTok Ads <i class="fas fa-star text-[8px] text-white/60"></i></span><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">Brand Identity <i class="fas fa-star text-[8px] text-white/60"></i></span><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">Photo & Video Production <i class="fas fa-star text-[8px] text-white/60"></i></span><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">Web Development <i class="fas fa-star text-[8px] text-white/60"></i></span><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">Web Apps <i class="fas fa-star text-[8px] text-white/60"></i></span><span class="flex items-center gap-14 text-sm font-semibold uppercase tracking-wider text-white whitespace-nowrap">SEO & Maintenance <i class="fas fa-star text-[8px] text-white/60"></i></span><a href="tel:9863998413" class="flex items-center gap-3 text-sm font-bold text-white whitespace-nowrap bg-white/15 rounded-full px-4 py-1.5"><i class="fas fa-phone"></i> Call 9863998413</a><a href="https://wa.me/9779827877621" target="_blank" rel="noopener" class="flex items-center gap-3 text-sm font-bold text-white whitespace-nowrap bg-white/15 rounded-full px-4 py-1.5"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="flex items-center gap-3 text-sm font-bold text-white whitespace-nowrap bg-white/15 rounded-full px-4 py-1.5"><i class="fas fa-envelope"></i> Email Enquiry</a><span class="text-sm font-semibold text-white whitespace-nowrap"><i class="fas fa-location-dot mr-1"></i> Tempo Park, Lalitpur</span></div>{% endfor %}
+        </div>
+    </div>
+    <div class="marquee-fade overflow-hidden mt-5">
+        <div class="marquee-track" style="animation-direction:reverse">
+            {% for i in "12" %}<div class="flex items-center gap-x-14 pr-14"><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Success Education & Visa Services</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Nexo Migration</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Self EDU</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Success Home Loans</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">The Burleigh Cafe</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Hotel Black Diamond</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Mount Everest Distillery</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Threads N Trends</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Keyansh Fabrication</span><span class="text-lg font-bold tracking-tight text-ink-faint whitespace-nowrap">Cross Border</span></div>{% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What We Do</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Four Disciplines. <span class="gradient-text">One Growth Engine.</span></p>
+            <p class="text-ink-muted">Most agencies make you choose between beautiful creative and aggressive media buying. We give you both, plus the IT foundation to convert it, under one roof.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <a href="{% url 'digital_marketing' %}" class="group relative rounded-3xl overflow-hidden min-h-[16rem] sm:min-h-[22rem] flex items-end p-5 sm:p-6" data-aos="fade-up" data-aos-delay="0">
+                <img src="{% static 'main/images/home/digital-marketing.jpg' %}" alt="Digital Marketing" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/55 to-ink-dark/10"></div>
+                <div class="relative text-white">
+                    <h3 class="font-display text-xl font-semibold mb-2">Digital Marketing</h3>
+                    <p class="text-sm text-white/80 mb-3">Social media, Meta & TikTok ads, content strategy, SEO and community management.</p>
+                    <span class="inline-flex items-center gap-2 text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </div>
+            </a>
+            <a href="{% url 'brand_campaign' %}" class="group relative rounded-3xl overflow-hidden min-h-[16rem] sm:min-h-[22rem] flex items-end p-5 sm:p-6" data-aos="fade-up" data-aos-delay="80">
+                <img src="{% static 'main/images/home/branding.jpg' %}" alt="Branding & Campaigns" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/55 to-ink-dark/10"></div>
+                <div class="relative text-white">
+                    <h3 class="font-display text-xl font-semibold mb-2">Branding & Campaigns</h3>
+                    <p class="text-sm text-white/80 mb-3">Brand identity, end-to-end campaigns, graphic design and brand storytelling.</p>
+                    <span class="inline-flex items-center gap-2 text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </div>
+            </a>
+            <a href="{% url 'production' %}" class="group relative rounded-3xl overflow-hidden min-h-[16rem] sm:min-h-[22rem] flex items-end p-5 sm:p-6" data-aos="fade-up" data-aos-delay="160">
+                <img src="{% static 'main/images/home/production.jpg' %}" alt="Photo & Video Production" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/55 to-ink-dark/10"></div>
+                <div class="relative text-white">
+                    <h3 class="font-display text-xl font-semibold mb-2">Photo & Video Production</h3>
+                    <p class="text-sm text-white/80 mb-3">Hyper-realistic photography, 9:16 reels and commercial ad production.</p>
+                    <span class="inline-flex items-center gap-2 text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </div>
+            </a>
+            <a href="{% url 'web_development' %}" class="group relative rounded-3xl overflow-hidden min-h-[16rem] sm:min-h-[22rem] flex items-end p-5 sm:p-6" data-aos="fade-up" data-aos-delay="240">
+                <img src="{% static 'main/images/home/it-solutions.jpg' %}" alt="Web & IT Solutions" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/55 to-ink-dark/10"></div>
+                <div class="relative text-white">
+                    <h3 class="font-display text-xl font-semibold mb-2">Web & IT Solutions</h3>
+                    <p class="text-sm text-white/80 mb-3">Websites, web apps and ongoing maintenance & SEO.</p>
+                    <span class="inline-flex items-center gap-2 text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Who we are -->
+<section class="py-medium bg-surface-subtle" id="about-us">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div data-aos="fade-right">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Who We Are</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Transforming brands through <span class="gradient-text">creative excellence</span></p>
+                <p class="text-ink-muted mb-4">We are more than a marketing team. We are your creative partners, crafting compelling narratives that resonate with your audience and drive results, from concept to final delivery.</p>
+                <p class="text-ink-muted mb-6">Every brand has a story worth telling. Our mission is to craft that story into a lasting experience that inspires, informs and connects. Whether you are launching a product, redefining your identity or scaling your digital presence, we make every frame count.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl bg-white p-4 shadow-card"><p class="font-semibold text-ink text-sm">Content Strategy</p><p class="text-xs text-ink-muted mt-1">Data driven content that engages and converts</p></div>
+                    <div class="rounded-2xl bg-white p-4 shadow-card"><p class="font-semibold text-ink text-sm">Social Media</p><p class="text-xs text-ink-muted mt-1">Trending reels and viral content</p></div>
+                    <div class="rounded-2xl bg-white p-4 shadow-card"><p class="font-semibold text-ink text-sm">Commercial Ads</p><p class="text-xs text-ink-muted mt-1">Professional video production</p></div>
+                    <div class="rounded-2xl bg-white p-4 shadow-card"><p class="font-semibold text-ink text-sm">Brand Growth</p><p class="text-xs text-ink-muted mt-1">Strategic campaigns that scale</p></div>
+                </div>
+            </div>
+            <div class="rounded-3xl bg-white p-6 sm:p-8 shadow-card" data-aos="fade-left">
+                <h3 class="font-display text-xl font-semibold text-ink mb-5">What we offer</h3>
+                <ul class="space-y-4 text-sm"><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">Content Strategy.</strong> <span class="text-ink-muted">Tailored content plans aligned with your goals to boost engagement and performance.</span></span></li><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">Video & Reels Production.</strong> <span class="text-ink-muted">Story driven videos, reels and commercials designed to captivate and convert.</span></span></li><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">Photo Shoots.</strong> <span class="text-ink-muted">Professional photography that shows off your products, team and brand story.</span></span></li><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">Brand Campaigns.</strong> <span class="text-ink-muted">Creative campaigns that amplify your brand and leave a lasting impact.</span></span></li><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">SEO Optimization.</strong> <span class="text-ink-muted">Better search rankings and steady organic traffic to your website.</span></span></li><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">Social Media Marketing.</strong> <span class="text-ink-muted">Build awareness and community across every major platform.</span></span></li><li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px]"></i></span><span><strong class="text-ink font-semibold">Content Marketing.</strong> <span class="text-ink-muted">Compelling content that resonates with your target audience.</span></span></li></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How It Works</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every milestone visible, <span class="gradient-text">no guessing what's next</span></p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            <div class="hidden lg:block absolute top-8 left-[12%] right-[12%] h-px border-t-2 border-dashed border-brand-200"></div>
+            <div class="relative text-center" data-aos="fade-up" data-aos-delay="0">
+                <div class="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 via-pink-500 to-pink-700 text-white flex items-center justify-center shadow-lg"><i class="fas fa-comments text-xl"></i><span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-ink text-xs font-bold flex items-center justify-center shadow">1</span></div>
+                <h3 class="font-display text-lg font-semibold text-ink mt-5 mb-2">Let's Talk</h3>
+                <p class="text-ink-muted text-sm">A free discovery call to understand your goals, audience and budget.</p>
+            </div>
+            <div class="relative text-center" data-aos="fade-up" data-aos-delay="80">
+                <div class="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 via-pink-500 to-pink-700 text-white flex items-center justify-center shadow-lg"><i class="fas fa-map text-xl"></i><span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-ink text-xs font-bold flex items-center justify-center shadow">2</span></div>
+                <h3 class="font-display text-lg font-semibold text-ink mt-5 mb-2">Strategy & Roadmap</h3>
+                <p class="text-ink-muted text-sm">A clear channel-by-channel plan with deliverables and timelines.</p>
+            </div>
+            <div class="relative text-center" data-aos="fade-up" data-aos-delay="160">
+                <div class="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 via-pink-500 to-pink-700 text-white flex items-center justify-center shadow-lg"><i class="fas fa-clapperboard text-xl"></i><span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-ink text-xs font-bold flex items-center justify-center shadow">3</span></div>
+                <h3 class="font-display text-lg font-semibold text-ink mt-5 mb-2">Create & Launch</h3>
+                <p class="text-ink-muted text-sm">Shoots, designs, sites and ad campaigns produced and shipped by one team.</p>
+            </div>
+            <div class="relative text-center" data-aos="fade-up" data-aos-delay="240">
+                <div class="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 via-pink-500 to-pink-700 text-white flex items-center justify-center shadow-lg"><i class="fas fa-chart-line text-xl"></i><span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-ink text-xs font-bold flex items-center justify-center shadow">4</span></div>
+                <h3 class="font-display text-lg font-semibold text-ink mt-5 mb-2">Measure & Scale</h3>
+                <p class="text-ink-muted text-sm">Monthly reporting, retargeting and optimisation on real numbers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Industries -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6" data-aos="fade-up">
+            <div>
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Industries We Grow</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Real brands, <span class="gradient-text">real results</span></p>
+            </div>
+            <a href="{% url 'work' %}" class="btn-logo self-start md:self-auto">See our work <i class="fas fa-arrow-right text-sm"></i></a>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-6 gap-4">
+            <figure class="relative rounded-2xl overflow-hidden aspect-[4/5] group" data-aos="fade-up" data-aos-delay="0">
+                <img src="{% static 'main/images/home/education.jpg' %}" alt="Education & Migration brands we work with" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/80 to-transparent"></div>
+                <figcaption class="absolute left-4 bottom-4 text-white font-semibold text-sm sm:text-base">Education & Migration</figcaption>
+            </figure>
+            <figure class="relative rounded-2xl overflow-hidden aspect-[4/5] group" data-aos="fade-up" data-aos-delay="80">
+                <img src="{% static 'main/images/home/hospitality.jpg' %}" alt="Hospitality & Cafes brands we work with" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/80 to-transparent"></div>
+                <figcaption class="absolute left-4 bottom-4 text-white font-semibold text-sm sm:text-base">Hospitality & Cafes</figcaption>
+            </figure>
+            <figure class="relative rounded-2xl overflow-hidden aspect-[4/5] group" data-aos="fade-up" data-aos-delay="160">
+                <img src="{% static 'main/images/home/retail.jpg' %}" alt="Retail & Lifestyle brands we work with" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/80 to-transparent"></div>
+                <figcaption class="absolute left-4 bottom-4 text-white font-semibold text-sm sm:text-base">Retail & Lifestyle</figcaption>
+            </figure>
+            <figure class="relative rounded-2xl overflow-hidden aspect-[4/5] group" data-aos="fade-up" data-aos-delay="0">
+                <img src="{% static 'main/images/home/manufacturing.jpg' %}" alt="Manufacturing brands we work with" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/80 to-transparent"></div>
+                <figcaption class="absolute left-4 bottom-4 text-white font-semibold text-sm sm:text-base">Manufacturing</figcaption>
+            </figure>
+            <figure class="relative rounded-2xl overflow-hidden aspect-[4/5] group" data-aos="fade-up" data-aos-delay="80">
+                <img src="{% static 'main/images/home/content-creator.jpg' %}" alt="Creators & Media brands we work with" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/80 to-transparent"></div>
+                <figcaption class="absolute left-4 bottom-4 text-white font-semibold text-sm sm:text-base">Creators & Media</figcaption>
+            </figure>
+            <figure class="relative rounded-2xl overflow-hidden aspect-[4/5] group" data-aos="fade-up" data-aos-delay="160">
+                <img src="{% static 'main/images/home/webdev.jpg' %}" alt="Tech & Web brands we work with" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark/80 to-transparent"></div>
+                <figcaption class="absolute left-4 bottom-4 text-white font-semibold text-sm sm:text-base">Tech & Web</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- Featured work -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our Work</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Stories we've crafted, <span class="gradient-text">where creativity meets results</span></p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="0">
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan Nepal logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">Changan Nepal</h3><p class="text-xs font-semibold text-pink-600 mb-2">Brand Film · Luxury & Innovation</p><p class="text-sm text-ink-muted">Sleek storytelling capturing premium cars and refined design.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="80">
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">PIEC</h3><p class="text-xs font-semibold text-pink-600 mb-2">Brand Campaign · Study Abroad</p><p class="text-sm text-ink-muted">Empowering learners' international dreams with cinematic storytelling.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="160">
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">International Study Partners</h3><p class="text-xs font-semibold text-pink-600 mb-2">Educational Branding · Global Vision</p><p class="text-sm text-ink-muted">Inspiring students through compelling visuals and global education stories.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="240">
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Nepal logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">Sasurali Nepal</h3><p class="text-xs font-semibold text-pink-600 mb-2">Cinematic Branding · Culture & Lifestyle</p><p class="text-sm text-ink-muted">Showcasing Nepali hospitality through warm, authentic storytelling.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="0">
+                <div class="h-32 bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 flex items-center justify-center p-4"><span class="font-display text-xl font-semibold text-white text-center">Himalayan Java</span></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">Himalayan Java</h3><p class="text-xs font-semibold text-pink-600 mb-2">Brand Storytelling · Café Culture</p><p class="text-sm text-ink-muted">Warm visuals reflecting the aroma, ambience and creative spirit of Java.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="80">
+                <div class="h-32 bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 flex items-center justify-center p-4"><span class="font-display text-xl font-semibold text-white text-center">Hotel Black Diamond</span></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">Hotel Black Diamond</h3><p class="text-xs font-semibold text-pink-600 mb-2">Hospitality Redefined · Stylish Comfort</p><p class="text-sm text-ink-muted">Bold visuals capturing unforgettable experiences in luxury and design.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="160">
+                <div class="h-32 bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 flex items-center justify-center p-4"><span class="font-display text-xl font-semibold text-white text-center">Threads & Trends</span></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">Threads & Trends</h3><p class="text-xs font-semibold text-pink-600 mb-2">Lifestyle Visuals · Modern Fashion</p><p class="text-sm text-ink-muted">Bold visuals redefining trendy footwear with motion and contemporary aesthetics.</p></div>
+            </article>
+            <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="240">
+                <div class="h-32 bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 flex items-center justify-center p-4"><span class="font-display text-xl font-semibold text-white text-center">Newmew</span></div>
+                <div class="p-5"><h3 class="font-semibold text-ink mb-1">Newmew</h3><p class="text-xs font-semibold text-pink-600 mb-2">Brand Campaign · Youth & Streetwear</p><p class="text-sm text-ink-muted">Vibrant visuals celebrating youth, confidence and street style.</p></div>
+            </article>
+        </div>
+        <div class="text-center mt-8"><a href="{% url 'work' %}" class="btn-logo">View all work <i class="fas fa-arrow-right text-sm"></i></a></div>
+
+        <div class="mt-12 rounded-3xl bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 p-6 sm:p-10 grid md:grid-cols-3 gap-8 items-center" data-aos="fade-up">
+            <div class="md:col-span-2">
+                <p class="text-pink-600 font-semibold text-xs tracking-wide uppercase mb-2">Case Study Spotlight</p>
+                <h3 class="font-display text-2xl font-semibold text-ink mb-3">Himalayan Java: a seasonal menu launch that got people talking</h3>
+                <p class="text-ink-muted text-sm mb-2"><strong class="text-ink">The brief:</strong> a growing café chain wanted to boost engagement for its new seasonal menu.</p>
+                <p class="text-ink-muted text-sm"><strong class="text-ink">Our solution:</strong> a content calendar mixing short form videos, influencer collaborations and interactive posts.</p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="font-display text-6xl font-semibold gradient-text">45%</p>
+                <p class="text-sm text-ink-muted">increase in social engagement within 3 weeks</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Design & development projects -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Design & Development</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-white">From Figma to <span class="gradient-text">fast, live websites</span></p>
+            <p class="text-white/60 mt-4">We design in Figma, build responsive frontends, and ship sites and web apps that turn ad traffic into enquiries.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-6">
+            <a href="https://nexomigration.com" target="_blank" rel="noopener noreferrer" class="lg:col-span-3 group relative rounded-3xl overflow-hidden min-h-[20rem] flex items-end p-8" data-aos="fade-up">
+                <img src="{% static 'main/images/home/webdev.jpg' %}" alt="Nexo Migration website project" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-dark via-ink-dark/60 to-transparent"></div>
+                <div class="relative">
+                    <span class="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur text-xs font-semibold text-white mb-3">Website, Migration & Education</span>
+                    <h3 class="font-display text-2xl font-semibold text-white mb-1">Nexo Migration</h3>
+                    <p class="text-white/70 text-sm mb-3">A multi-page, multilingual site with consultation booking, built and launched by our team.</p>
+                    <span class="inline-flex items-center gap-2 text-sm font-semibold text-white">nexomigration.com <i class="fas fa-arrow-up-right-from-square text-xs"></i></span>
+                </div>
+            </a>
+
+            <div class="lg:col-span-2 grid gap-6">
+                <div class="rounded-3xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="80">
+                    <i class="fab fa-figma text-pink-400 text-2xl mb-3"></i>
+                    <h3 class="font-display text-lg font-semibold text-white mb-1">UI/UX in Figma</h3>
+                    <p class="text-white/60 text-sm">Wireframes, brand-led design systems and clickable prototypes approved before a single line of code.</p>
+                </div>
+                <div class="rounded-3xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="160">
+                    <i class="fas fa-code text-brand-400 text-2xl mb-3"></i>
+                    <h3 class="font-display text-lg font-semibold text-white mb-1">Frontend development</h3>
+                    <p class="text-white/60 text-sm">Pixel-accurate, mobile-first, fast-loading pages with SEO and analytics built in.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3" data-aos="fade-up">
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">Figma</span>
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">HTML / CSS / JavaScript</span>
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">Tailwind CSS</span>
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">Django</span>
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">SEO & Analytics</span>
+        </div>
+        <div class="mt-8 text-center">
+            <a href="{% url 'web_development' %}" class="btn-logo">Explore web development <i class="fas fa-arrow-right text-sm"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-4xl mx-auto">
+        <div class="text-center mb-6" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Why Trend Crafters</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Five vendors vs. <span class="gradient-text">one growth team</span></p>
+        </div>
+        <div class="rounded-2xl border border-ink/10 overflow-hidden shadow-card" data-aos="fade-up">
+            <div class="grid grid-cols-3 bg-ink-dark text-white text-sm font-semibold">
+                <div class="p-4"></div><div class="p-4 text-center text-white/70">Separate vendors</div><div class="p-4 text-center bg-gradient-to-r from-brand-500 to-pink-600">Trend Crafters</div>
+            </div>
+<div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Creative + media buying under one roof</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Photo & video production in-house</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Website built to convert your ad traffic</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">One team accountable for results</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Local Nepal insight, global standards</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-minus"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- How We Stand Out -->
+<section id="about" class="relative py-medium bg-ink-dark overflow-hidden">
+  <div class="content-container">
+    <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+      <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">How We Stand Out</h2>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">
+        Your Growth <span class="gradient-text">Partner</span>
+      </h2>
+      <p class="text-white/60 mt-4 max-w-xl mx-auto">
+        Most agencies ask you to choose between beautiful creative design or aggressive media buying. We give you both under one roof.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-brand-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="50">
+        <svg class="w-11 h-11 text-brand-700 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="7" y="3" width="10" height="18" rx="2"/>
+          <path stroke-linecap="round" d="M11 18h2"/>
+        </svg>
+        <h3 class="font-display text-xl font-semibold text-ink mb-2">The 9:16 Advantage</h3>
+        <p class="text-ink-muted">We've mastered vertical short-form content, a balanced mix of highly engaging reels and statics that <strong class="text-ink font-semibold">train social algorithms</strong> to favor your brand.</p>
+      </div>
+
+      <div class="bg-pink-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="150">
+        <svg class="w-11 h-11 text-pink-700 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 17l5-6 4 3 7-9"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 5h5v5"/>
+        </svg>
+        <h3 class="font-display text-xl font-semibold text-ink mb-2">Tactile Visuals</h3>
+        <p class="text-ink-muted">We specialize in "material realism", visual identities that highlight the physical weight of <strong class="text-ink font-semibold">premium textures</strong> like rich wood or polished metal.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8" data-aos="fade-up" data-aos-delay="250">
+        <svg class="w-11 h-11 text-brand-600 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="9"/>
+          <circle cx="12" cy="12" r="5"/>
+          <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        <h3 class="font-display text-xl font-semibold text-ink mb-2">Strategic Retargeting Funnels</h3>
+        <p class="text-ink-muted">We build sophisticated funnels to capture maximum conversions from your engaged audiences, exactly when it <strong class="text-ink font-semibold">matters most</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why choose us -->
+<section class="py-medium bg-brand-50">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Why Choose Trend Crafters</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Not just another agency, <span class="gradient-text">your partners in growth</span></p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"><div class="bg-white rounded-2xl p-6 shadow-card" data-aos="fade-up" data-aos-delay="0"><i class="fas fa-chart-column text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Data Driven Approach</h3><p class="text-sm text-ink-muted">Decisions based on real data, analytics and measurable insights.</p></div><div class="bg-white rounded-2xl p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-sliders text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Customized Strategies</h3><p class="text-sm text-ink-muted">Tailored solutions matched to your unique business needs and goals.</p></div><div class="bg-white rounded-2xl p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-users text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Expert Team</h3><p class="text-sm text-ink-muted">Skilled professionals delivering top notch results.</p></div><div class="bg-white rounded-2xl p-6 shadow-card" data-aos="fade-up" data-aos-delay="0"><i class="fas fa-palette text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Creative Precision</h3><p class="text-sm text-ink-muted">Every detail matters, from visuals to voice, aligned to your brand identity.</p></div><div class="bg-white rounded-2xl p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-handshake text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Collaborative Process</h3><p class="text-sm text-ink-muted">We partner closely with you, turning your vision into powerful stories.</p></div><div class="bg-white rounded-2xl p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-rocket text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Proven Impact</h3><p class="text-sm text-ink-muted">Content that not only looks good but performs across platforms.</p></div></div>
+    </div>
+</section>
+
+<!-- Partners & clients (real logos) -->
+<section class="py-8 bg-white border-y border-ink/5">
+    <div class="content-container">
+        <p class="text-center text-xs font-semibold uppercase tracking-widest text-ink-faint mb-8">Brands & partners who trust us</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 items-center">
+            <div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC Metal & Wood Craft logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Restaurant logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Google reviews -->
+<section class="py-medium bg-white" id="google-reviews">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-6" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Google Reviews</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">What clients say <span class="gradient-text">on Google</span></p>
+        </div>
+
+        {% if google_reviews %}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {% for r in google_reviews %}
+            <article class="service-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+                <div class="flex items-center gap-3 mb-4">
+                    {% if r.photo %}<img src="{% static 'main/images/'|add:r.photo %}" alt="" loading="lazy" class="w-11 h-11 rounded-full object-cover">
+                    {% else %}<span class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-semibold flex items-center justify-center" aria-hidden="true">{{ r.name|slice:":1" }}</span>{% endif %}
+                    <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-ink truncate">{{ r.name }}</p><p class="text-xs text-ink-faint">{{ r.date }}</p></div>
+                    <i class="fab fa-google text-ink-faint"></i>
+                </div>
+                <div class="flex gap-0.5 text-amber-400 mb-3 text-sm" aria-label="{{ r.rating }} out of 5 stars">{% for _ in "12345"|slice:":5" %}{% if forloop.counter <= r.rating %}<i class="fas fa-star"></i>{% else %}<i class="far fa-star"></i>{% endif %}{% endfor %}</div>
+                <p class="text-ink-muted text-sm">"{{ r.text }}"</p>
+            </article>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="rounded-3xl bg-surface-subtle border border-ink/5 p-8 flex flex-col md:flex-row items-center gap-6 text-center md:text-left" data-aos="fade-up">
+            <span class="w-14 h-14 rounded-2xl bg-white shadow-card flex items-center justify-center flex-shrink-0"><i class="fab fa-google text-2xl text-pink-600"></i></span>
+            <div class="flex-1">
+                <p class="font-display text-xl font-semibold text-ink">Worked with Trend Crafters?</p>
+                <p class="text-ink-muted text-sm">Read our reviews on Google, or share your own experience, it helps other Nepali businesses find us.</p>
+            </div>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <a href="{{ google_review_url }}" target="_blank" rel="noopener noreferrer" class="btn-logo">Review us on Google <i class="fas fa-arrow-up-right-from-square text-xs"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/includes/testimonials.html' with show_schema=True %}
+
+<!-- Message from the CEO -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
+        <i class="fas fa-quote-left text-pink-400 text-3xl mb-5"></i>
+        <p class="font-display text-2xl sm:text-3xl font-medium text-white leading-snug mb-6">At Trend Crafters, we don't just follow trends, we create them.</p>
+        <p class="text-white/70 mb-4 max-w-2xl mx-auto">Our journey began with a single vision: to redefine how brands connect, grow and inspire in the digital era. Innovation thrives where creativity meets courage, and every project we take on is more than marketing. It's storytelling, strategy and soul combined.</p>
+        <p class="text-white/70 mb-6 max-w-2xl mx-auto">We empower businesses to not only be seen, but to be remembered.</p>
+        <p class="font-semibold text-white">Saksham Karki</p>
+        <p class="text-sm text-white/50 mb-6">Founder & CEO, Trend Crafters</p>
+        <a href="{% url 'team' %}" class="btn-logo">Meet the team <i class="fas fa-arrow-right text-sm"></i></a>
+    </div>
+</section>
+
+<!-- Local SEO / internal links -->
+<section class="py-medium bg-surface-subtle" aria-labelledby="serving-heading">
+    <div class="content-container max-w-5xl mx-auto">
+        <h2 id="serving-heading" class="font-display text-2xl md:text-3xl font-semibold text-ink mb-3" data-aos="fade-up">Digital marketing, branding & web agency <span class="gradient-text">serving Nepal and beyond</span></h2>
+        <p class="text-ink-muted mb-6 max-w-3xl" data-aos="fade-up">From our studio at Tempo Park, Lalitpur, Trend Crafters helps businesses across Kathmandu, Lalitpur, Bhaktapur and Nepal, and international brands including clients on the Gold Coast, Australia, grow with one connected team for strategy, creative, production and technology.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-aos="fade-up">
+            <a href="{% url 'digital_marketing' %}" class="rounded-xl bg-white border border-ink/5 px-4 py-3 text-sm font-medium text-ink hover:text-pink-600 hover:shadow-card transition">Social media, Meta & TikTok ads, SEO <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="{% url 'brand_campaign' %}" class="rounded-xl bg-white border border-ink/5 px-4 py-3 text-sm font-medium text-ink hover:text-pink-600 hover:shadow-card transition">Branding & brand campaigns <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="{% url 'production' %}" class="rounded-xl bg-white border border-ink/5 px-4 py-3 text-sm font-medium text-ink hover:text-pink-600 hover:shadow-card transition">Photo & video production <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="{% url 'web_development' %}" class="rounded-xl bg-white border border-ink/5 px-4 py-3 text-sm font-medium text-ink hover:text-pink-600 hover:shadow-card transition">Website & web app development <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-medium bg-white">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-2 lg:sticky lg:top-28" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4 text-ink">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            <p class="text-ink-muted mb-6">Everything you need to know before getting started.</p>
+            <div class="rounded-2xl bg-ink-dark p-6 text-white">
+                <p class="font-display text-lg font-semibold mb-1">Still have questions?</p>
+                <p class="text-white/60 text-sm mb-5">Talk to a real person, we reply fast.</p>
+                <a href="tel:9863998413" class="flex items-center gap-3 mb-3 text-white hover:text-brand-300"><i class="fas fa-phone text-brand-400"></i> 9863998413</a>
+                <a href="https://wa.me/9779827877621" target="_blank" rel="noopener" class="flex items-center gap-3 mb-5 text-white hover:text-brand-300"><i class="fab fa-whatsapp text-brand-400"></i> WhatsApp chat</a>
+                <a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="flex items-center gap-3 mb-5 text-white hover:text-brand-300 break-all"><i class="fas fa-envelope text-brand-400"></i> trendcraftersglobal@gmail.com</a>
+                <a href="{% url 'contact' %}" class="btn-logo w-full justify-center">Send a message</a>
+            </div>
+        </div>
+        <div class="lg:col-span-3 space-y-4">
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                <summary>
+                    <span>What services does Trend Crafters offer?</span>
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </summary>
+                <p class="faq-answer">Digital marketing (social media, Meta ads, TikTok, SEO), branding & campaigns, photo and video production, and IT solutions (web development, web apps, and maintenance), all under one roof.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <summary>
+                    <span>Do you only work with businesses in Nepal?</span>
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </summary>
+                <p class="faq-answer">No. While we're based in Kathmandu and dominate the local market, we execute campaigns and production for international clients as well, including brands on the Gold Coast.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                <summary>
+                    <span>What makes your visual work different?</span>
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </summary>
+                <p class="faq-answer">We build everything around "material realism", tactile, cinematic visuals that reject flat, cartoonish, or overly CGI-reliant aesthetics in favor of a premium, authoritative look.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <summary>
+                    <span>Can you manage our social media from strategy to posting?</span>
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </summary>
+                <p class="faq-answer">Yes, strategy, content production, posting, community management, and reporting, fully managed by our team.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                <summary>
+                    <span>Do you build the website too, or just market it?</span>
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </summary>
+                <p class="faq-answer">Both. Our IT Solutions team builds custom, mobile-first websites and web apps, then our marketing team drives qualified traffic to them, so your funnel actually converts.</p>
+            </details>
+
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <summary>
+                    <span>How do I get started?</span>
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </summary>
+                <p class="faq-answer">Reach out through our contact form and tell us your business goal, we'll map out a plan tailored to your brand.</p>
+            </details>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="relative py-12 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
+  <div class="content-container px-6">
+    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-4">
+        Ready to Turn Attention Into Global Revenue?
+      </h2>
+      <p class="text-white/90 mb-8">
+        Let's craft your success. Crafting Digital Authority. Engineering Global Growth.
+      </p>
+      <a
+        href="{% url 'contact' %}"
+        class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-full hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all"
+      >
+        Discuss Your Marketing Strategy
+      </a>
+      <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-btn ml-0 sm:ml-3 mt-3 sm:mt-0">
+        <i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Trend Crafters offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digital marketing (social media, Meta ads, TikTok, SEO), branding & campaigns, photo and video production, and IT solutions (web development, web apps, and maintenance), all under one roof."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you only work with businesses in Nepal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. While we're based in Kathmandu and dominate the local market, we execute campaigns and production for international clients as well, including brands on the Gold Coast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes your visual work different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We build everything around \"material realism\", tactile, cinematic visuals that reject flat, cartoonish, or overly CGI-reliant aesthetics in favor of a premium, authoritative look."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you manage our social media from strategy to posting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, strategy, content production, posting, community management, and reporting, fully managed by our team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build the website too, or just market it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Our IT Solutions team builds custom, mobile-first websites and web apps, then our marketing team drives qualified traffic to them, so your funnel actually converts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reach out through our contact form and tell us your business goal, we'll map out a plan tailored to your brand."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}

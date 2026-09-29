@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Our Team | Trend Crafters{% endblock %}
+{% block meta_description %}Meet the Trend Crafters team - the strategists, creators and developers behind our digital marketing, branding, production and web work in Kathmandu, Nepal.{% endblock %}
+{% block content %}
+
+<section class="relative overflow-hidden bg-surface pt-28 pb-10 sm:pt-32 sm:pb-12">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Our Team</h1>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">The People <span class="gradient-text">Behind The Work</span></h2>
+        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto">A Kathmandu-based team of strategists, creators and developers working as one growth ecosystem.</p>
+    </div>
+</section>
+
+<section class="py-medium bg-white">
+    <div class="content-container">
+        {% for m in members %}{% if m.featured %}
+        <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-5xl mx-auto mb-10" data-aos="fade-up">
+            <div class="relative">
+                <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-400 to-pink-600 opacity-20"></div>
+                <img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }} of Trend Crafters" width="1400" height="1292" loading="lazy" class="relative w-full h-auto rounded-3xl shadow-xl">
+            </div>
+            <div>
+                <p class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">{{ m.role }}</p>
+                <h3 class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">{{ m.name }}</h3>
+                <p class="text-ink-muted mb-6">{{ m.bio }}</p>
+                <a href="tel:9863998413" class="btn-logo"><i class="fas fa-phone text-sm"></i> Call 9863998413</a>
+            </div>
+        </div>
+        {% endif %}{% endfor %}
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {% for m in members %}{% if not m.featured %}
+            <div class="service-card text-center" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+                {% if m.photo %}
+                <img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}" loading="lazy" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-100">
+                {% else %}
+                <div class="w-28 h-28 rounded-full mx-auto mb-4 bg-gradient-to-br from-brand-400 via-pink-500 to-pink-700 text-white flex items-center justify-center font-display text-3xl font-semibold" aria-hidden="true">{{ m.name|slice:":1" }}</div>
+                {% endif %}
+                <h3 class="font-display text-lg font-semibold text-ink">{{ m.name }}</h3>
+                <p class="text-sm text-brand-600 font-medium mb-2">{{ m.role }}</p>
+                {% if m.bio %}<p class="text-sm text-ink-muted mb-3">{{ m.bio }}</p>{% endif %}
+                {% if m.linkedin %}
+                <a href="{{ m.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ m.name }} on LinkedIn" class="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-brand-600 transition-colors"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                {% endif %}
+            </div>
+            {% endif %}{% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-brand-50">
+    <div class="content-container text-center max-w-2xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold text-ink mb-3">Want to work with us?</h2>
+        <p class="text-ink-muted mb-6">Tell us about your project and we'll match you with the right people.</p>
+        <a href="{% url 'contact' %}" class="btn-logo">Start Your Project <i class="fas fa-arrow-right text-sm"></i></a>
+    </div>
+</section>
+{% endblock %}

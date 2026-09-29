@@ -1,0 +1,115 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Digital Marketing Agency in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Social media marketing, Meta ads, TikTok marketing, content & reels strategy, SEO, and community management from Trend Crafters - a premier digital marketing agency in Nepal.{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 left-0 w-[24rem] h-[24rem] bg-gradient-to-tr from-pink-100 via-pink-50 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Digital Marketing Services</h1>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
+            Turn Attention Into <span class="gradient-text">Global Revenue</span>
+        </h2>
+        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            As a premier digital marketing agency based in Nepal, we don't just manage platforms - we engineer structured growth channels for brands locally and worldwide. Whether you're dominating the market in Kathmandu or scaling internationally, here's how we connect your brand to the audiences that matter most.
+        </p>
+        <a href="{% url 'contact' %}" class="btn-primary px-7 py-3.5 rounded-full font-semibold inline-block">
+            Discuss Your Marketing Strategy
+        </a>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto space-y-6">
+
+        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="50">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="3"/><path stroke-linecap="round" d="M8 17l-2 3v-3.5"/></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-ink mb-2">Social Media Marketing</h3>
+                <p class="text-ink-muted">Building a brand presence requires more than just posting - it requires strategic positioning that transcends borders. From capturing local market share in Nepal to engaging international audiences, we transform your social profiles into engines for growth. We combine data-driven strategy with compelling brand storytelling to cultivate loyal communities that turn passive scrollers into high-value customers.</p>
+            </div>
+        </div>
+
+        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10v4h4l6 4V6l-6 4H3z"/><path stroke-linecap="round" d="M18 9a4 4 0 010 6"/></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-ink mb-2">Meta Ads (Facebook & Instagram)</h3>
+                <p class="text-ink-muted">Stop guessing and start scaling. Our Meta advertising strategies are built strictly for measurable ROI across both domestic and global markets. Whether you need a top Facebook ads agency in Nepal or international campaign execution, we implement precise audience segmentation, boost high-performing reels, and execute sophisticated retargeting of engaged audiences - ensuring you capture maximum conversions during critical enrollment windows and promotional periods.</p>
+            </div>
+        </div>
+
+        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="150">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 8.5l6 3.5-6 3.5v-7z"/></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-ink mb-2">TikTok Marketing</h3>
+                <p class="text-ink-muted">Succeeding on TikTok requires speaking the platform's native, fast-moving language. We create trend-driven, culturally relevant campaigns that capture attention in the first three seconds. From creator-led content targeting local demographics to performance-based ads built for international virality, we build velocity that drives brand discovery and real-world sales.</p>
+            </div>
+        </div>
+
+        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path stroke-linecap="round" d="M8 6v12M16 6v12"/></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-ink mb-2">Content & Reels Strategy</h3>
+                <p class="text-ink-muted">Attention is modern currency. We develop a balanced, high-impact mix of 9:16 vertical reels and static visuals designed to stop the scroll anywhere in the world. By maintaining a consistent posting schedule and integrating authentic student, instructor, and client insights into short-form content, we create narratives that educate, entertain, and convert.</p>
+            </div>
+        </div>
+
+        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="250">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path stroke-linecap="round" d="M20 20l-5.5-5.5"/></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-ink mb-2">SEO & Search (Google Ranking)</h3>
+                <p class="text-ink-muted">Visibility is your most valuable digital asset. Whether you're searching for the best SEO services in Kathmandu to outrank local competitors or expanding your footprint to capture international search traffic, we optimize your digital architecture. Through technical site optimization and strategic keyword targeting, we ensure your business appears exactly when customers have high purchase intent.</p>
+            </div>
+        </div>
+
+        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="10" r="4"/><circle cx="16" cy="12" r="3"/></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-ink mb-2">Community Management</h3>
+                <p class="text-ink-muted">A brand without a community is just a commodity. We actively nurture your online audience across time zones, driving meaningful engagement and building fierce brand advocacy. From proactive moderation to strategic outreach, we foster the two-way conversations that turn first-time buyers into lifelong global champions.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-10" data-aos="fade-up">
+        <a href="{% url 'contact' %}" class="btn-primary px-8 py-3.5 font-semibold inline-block">
+            Discuss Your Marketing Strategy
+        </a>
+    </div>
+</section>
+
+{% include 'main/includes/testimonials.html' %}
+
+<!-- CTA -->
+<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
+  <div class="content-container px-6">
+    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Ready to Scale Your Growth Channels?</h2>
+      <p class="text-white/90 mb-8">Let's build a digital strategy engineered for measurable ROI, locally and worldwide.</p>
+      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
+        Discuss Your Marketing Strategy
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'main/base.html' %}
+{% block title %}Our Partners & Collaborators | Trend Crafters{% endblock %}
+{% block meta_description %}Trend Crafters collaborates with industry-leading platforms, organizations, and creative partners who share our commitment to uncompromising quality.{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Our Partners & Collaborators</h1>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
+            Built on <span class="gradient-text">Strong Alliances</span>
+        </h2>
+        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto">
+            Great work is rarely done in isolation. We're proud to collaborate with industry-leading platforms, organizations, and creative partners who share our commitment to uncompromising quality - together, we build digital ecosystems that push boundaries and drive real-world growth.
+        </p>
+    </div>
+</section>
+
+<!-- Partner grid: grayscale by default, full color on hover -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <p class="text-center text-ink-faint text-sm mb-10 max-w-lg mx-auto" data-aos="fade-up">Hover to reveal each alliance in full color.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="50" tabindex="0">
+                <i class="fas fa-hashtag text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Media & Ad Platforms</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="100" tabindex="0">
+                <i class="fas fa-users text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Creator Networks</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="150" tabindex="0">
+                <i class="fas fa-landmark text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Industry Associations</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="200" tabindex="0">
+                <i class="fas fa-server text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Technology Partners</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="250" tabindex="0">
+                <i class="fas fa-print text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Print & Production Studios</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="300" tabindex="0">
+                <i class="fas fa-graduation-cap text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Education & Migration Networks</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="350" tabindex="0">
+                <i class="fas fa-people-group text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Community Organizations</h3>
+            </div>
+            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="400" tabindex="0">
+                <i class="fas fa-handshake text-brand-500 text-2xl"></i>
+                <h3 class="text-sm font-semibold text-ink">Your Organization, Next</h3>
+            </div>
+        </div>
+        <!-- Swap the icon tiles above for real partner/collaborator logos as alliances are confirmed - grayscale/color hover behavior is already wired via .partner-tile. -->
+    </div>
+</section>
+
+<!-- Why it matters -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold text-ink mb-4">
+            Why Alliances Matter
+        </h2>
+        <p class="text-ink-muted">
+            Every partnership starts the same way - understanding the business, not just the brief. From there we bring social media, branding, creative production, and IT solutions together under one team, backed by the platforms and networks that push our work further, so you're never stitching together five different vendors.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
+  <div class="content-container px-6">
+    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">
+        Interested in Partnering With Us?
+      </h2>
+      <p class="text-white/90 mb-8">
+        Let's talk about what we can build together.
+      </p>
+      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
