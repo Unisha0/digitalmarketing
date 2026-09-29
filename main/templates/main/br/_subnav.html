@@ -1,0 +1,12 @@
+{# Sticky pill navigation shared by the branding pages. Pass active="hub|identity|campaigns|graphic|story" #}
+<nav class="sticky top-20 z-30 bg-white/90 backdrop-blur border-b border-ink/5" aria-label="Branding and campaigns services">
+    <div class="content-container">
+        <ul class="flex gap-2 overflow-x-auto py-3 text-sm font-medium whitespace-nowrap [scrollbar-width:none]">
+            <li><a href="{% url 'brand_campaign' %}" class="dm-pill {% if active == 'hub' %}dm-pill-active{% endif %}">Overview</a></li>
+            <li><a href="{% url 'br_identity' %}" class="dm-pill {% if active == 'identity' %}dm-pill-active{% endif %}">Brand Identity</a></li>
+            <li><a href="{% url 'br_campaigns' %}" class="dm-pill {% if active == 'campaigns' %}dm-pill-active{% endif %}">Brand Campaigns</a></li>
+            <li><a href="{% url 'br_graphic' %}" class="dm-pill {% if active == 'graphic' %}dm-pill-active{% endif %}">Graphic Design</a></li>
+            <li><a href="{% url 'br_story' %}" class="dm-pill {% if active == 'story' %}dm-pill-active{% endif %}">Brand Storytelling</a></li>
+        </ul>
+    </div>
+</nav>

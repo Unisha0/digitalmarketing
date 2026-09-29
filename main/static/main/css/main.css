@@ -520,3 +520,33 @@ html .py-medium { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 
 /* Cover images inside positioned cards must fill the card (global img{height:auto} otherwise wins) */
 img.absolute.inset-0 { height: 100% !important; object-fit: cover; }
+
+/* Digital marketing pages */
+.dm-pill { display: inline-block; padding: .45rem 1rem; border-radius: 9999px; color: var(--color-ink-muted); background: var(--color-surface-subtle, #f5f2ec); transition: all .2s ease; }
+.dm-pill:hover { color: var(--color-pink-600); }
+.dm-pill-active { color: #fff !important; background: linear-gradient(100deg, #FF9F1C, #F2463C 40%, #E0266E); }
+
+.tt-frame { position: absolute; width: 8.5rem; height: 15rem; border-radius: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; background-image: linear-gradient(160deg, var(--tw-gradient-from), var(--tw-gradient-to)); box-shadow: 0 20px 40px rgba(0,0,0,.5); border: 3px solid rgba(255,255,255,.15); }
+@media (min-width: 640px) { .tt-frame { width: 10rem; height: 18rem; } }
+.tt-tag { position: absolute; top: .8rem; left: .8rem; font-size: .65rem; font-weight: 700; letter-spacing: .1em; color: #fff; background: rgba(0,0,0,.4); border-radius: 9999px; padding: .15rem .6rem; }
+.tt-cap { position: absolute; bottom: 1rem; left: 1rem; right: 1rem; color: #fff; font-size: .8rem; font-weight: 600; text-align: center; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+.tt-idea { min-height: 9rem; border-radius: 1.25rem; padding: 1.1rem; color: #fff; display: flex; flex-direction: column; justify-content: space-between; background-image: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to)); transition: transform .3s ease; }
+.tt-idea:hover { transform: translateY(-4px); }
+.tt-idea i { font-size: 1.4rem; opacity: .9; }
+.tt-idea p { font-weight: 600; font-size: .95rem; line-height: 1.25; }
+
+.bubble { max-width: 80%; padding: .7rem 1rem; border-radius: 1.25rem; font-size: .85rem; line-height: 1.4; box-shadow: 0 4px 12px rgba(0,0,0,.05); }
+
+/* Reel carousel (9:16 client work videos) */
+.reel-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .25rem .25rem 1rem; scrollbar-width: thin; }
+.reel-card { position: relative; flex: 0 0 15.5rem; aspect-ratio: 9 / 16; border-radius: 1.5rem; overflow: hidden; scroll-snap-align: start; background: #111; cursor: pointer; box-shadow: 0 14px 30px rgba(0,0,0,.25); }
+@media (min-width: 1024px) { .reel-card { flex-basis: 17rem; } }
+.reel-video { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; }
+.reel-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0) 55%); pointer-events: none; }
+.reel-info { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; z-index: 2; }
+.reel-play { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 3.25rem; height: 3.25rem; border-radius: 9999px; background: rgba(255,255,255,.9); color: var(--color-pink-600); display: flex; align-items: center; justify-content: center; transition: opacity .2s; }
+.reel-card.is-playing .reel-play { opacity: 0; }
+.reel-sound { position: absolute; z-index: 3; top: .75rem; right: .75rem; width: 2rem; height: 2rem; border-radius: 9999px; background: rgba(0,0,0,.55); color: #fff; font-size: .75rem; }
+
+/* Videos placed as covers inside positioned frames (phones, cards) must also fill their box */
+video.absolute.inset-0 { height: 100% !important; width: 100% !important; object-fit: cover; }

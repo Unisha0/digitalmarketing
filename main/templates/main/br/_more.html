@@ -1,0 +1,14 @@
+{# More branding services strip. Pass exclude="identity|campaigns|graphic|story" #}
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold text-ink text-center mb-8" data-aos="fade-up">More branding <span class="gradient-text">services</span></h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {% if exclude != 'identity' %}<a href="{% url 'br_identity' %}" class="service-card flex items-center gap-3"><i class="fas fa-fingerprint text-brand-500 text-xl"></i><span class="font-semibold text-ink">Brand Identity</span><i class="fas fa-arrow-right ml-auto text-xs text-ink-faint"></i></a>{% endif %}
+            {% if exclude != 'campaigns' %}<a href="{% url 'br_campaigns' %}" class="service-card flex items-center gap-3"><i class="fas fa-rocket text-brand-500 text-xl"></i><span class="font-semibold text-ink">Brand Campaigns</span><i class="fas fa-arrow-right ml-auto text-xs text-ink-faint"></i></a>{% endif %}
+            {% if exclude != 'graphic' %}<a href="{% url 'br_graphic' %}" class="service-card flex items-center gap-3"><i class="fas fa-pen-ruler text-brand-500 text-xl"></i><span class="font-semibold text-ink">Graphic Design</span><i class="fas fa-arrow-right ml-auto text-xs text-ink-faint"></i></a>{% endif %}
+            {% if exclude != 'story' %}<a href="{% url 'br_story' %}" class="service-card flex items-center gap-3"><i class="fas fa-book-open text-brand-500 text-xl"></i><span class="font-semibold text-ink">Brand Storytelling</span><i class="fas fa-arrow-right ml-auto text-xs text-ink-faint"></i></a>{% endif %}
+            <a href="{% url 'dm_social_media' %}" class="service-card flex items-center gap-3"><i class="fas fa-share-nodes text-brand-500 text-xl"></i><span class="font-semibold text-ink">Social Media Marketing</span><i class="fas fa-arrow-right ml-auto text-xs text-ink-faint"></i></a>
+            <a href="{% url 'production' %}" class="service-card flex items-center gap-3"><i class="fas fa-camera-retro text-brand-500 text-xl"></i><span class="font-semibold text-ink">Photo &amp; Video Production</span><i class="fas fa-arrow-right ml-auto text-xs text-ink-faint"></i></a>
+        </div>
+    </div>
+</section>

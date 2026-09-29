@@ -1,0 +1,103 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Brand Identity Design in Kathmandu, Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Logo, colour, typography, tone of voice and brand guidelines: premium brand identity design for Nepali businesses preparing to grow locally and globally, from Trend Crafters.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Dark hero with an identity-kit board -->
+<section class="relative overflow-hidden bg-ink-dark mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-32 -right-20 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 opacity-30 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-fingerprint"></i> Brand identity</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">A logo is a signature. <span class="gradient-text">An identity is everything.</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Whether you're a Kathmandu based enterprise preparing to expand or a global startup entering a new market, we craft premium brand identities built for longevity, authority and unwavering trust.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Build My Identity <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20a%20brand%20identity." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a>
+                </div>
+            </div>
+
+            <!-- Identity board (our own brand kit as the example) -->
+            <div class="flex items-center justify-center" data-aos="fade-left" aria-hidden="true">
+                <div class="w-full max-w-md rounded-3xl bg-white p-5 shadow-2xl rotate-1">
+                    <div class="flex items-center justify-between mb-4"><p class="text-xs font-semibold tracking-wide uppercase text-ink-faint">Brand identity board</p><span class="text-[10px] text-ink-faint">Example: Trend Crafters</span></div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="col-span-2 rounded-2xl bg-white border border-ink/10 flex items-center justify-center p-4 h-32"><img src="{% static 'main/images/logo_transparent_black.png' %}" alt="" class="h-full w-auto object-contain"></div>
+                        <div class="rounded-2xl bg-ink-dark flex items-center justify-center p-3 h-32"><img src="{% static 'main/images/favicon.png' %}" alt="" class="h-16 w-16 object-contain"></div>
+                    </div>
+                    <div class="grid grid-cols-6 gap-2 mt-3">
+                        <span class="h-12 rounded-xl" style="background:#FFA11A"></span><span class="h-12 rounded-xl" style="background:#FF5A3D"></span><span class="h-12 rounded-xl" style="background:#F32168"></span><span class="h-12 rounded-xl" style="background:#C51472"></span><span class="h-12 rounded-xl" style="background:#232323"></span><span class="h-12 rounded-xl border border-ink/10" style="background:#fff"></span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mt-3 text-center">
+                        <div class="rounded-2xl bg-surface-subtle py-3"><p class="font-display text-3xl font-semibold text-ink">Aa</p><p class="text-[10px] text-ink-muted">Poppins</p></div>
+                        <div class="rounded-2xl bg-surface-subtle py-3"><p class="text-3xl font-semibold text-ink">Aa</p><p class="text-[10px] text-ink-muted">Inter</p></div>
+                        <div class="rounded-2xl bg-surface-subtle py-3"><p class="text-3xl font-semibold text-ink" style="letter-spacing:-.04em">Aa</p><p class="text-[10px] text-ink-muted">Space Grotesk</p></div>
+                    </div>
+                    <p class="text-[11px] text-ink-faint mt-3">Personality: Innovative, Bold, Modern, Creative, Professional</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/br/_subnav.html' with active='identity' %}
+
+<!-- Logo vs identity -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Why identity, not just a logo</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Be remembered, <span class="gradient-text">not just seen</span></p></div>
+        <div class="grid md:grid-cols-2 gap-5">
+            <div class="rounded-3xl bg-surface-subtle border border-ink/5 p-8" data-aos="fade-up"><p class="text-ink-faint text-sm font-semibold mb-4">A logo alone</p><ul class="space-y-3 text-sm text-ink-muted"><li><i class="fas fa-minus text-ink-faint mr-2"></i> One mark, used inconsistently</li><li><i class="fas fa-minus text-ink-faint mr-2"></i> Looks different on every platform</li><li><i class="fas fa-minus text-ink-faint mr-2"></i> No voice, no guidelines</li><li><i class="fas fa-minus text-ink-faint mr-2"></i> Easy to copy, easy to forget</li></ul></div>
+            <div class="rounded-3xl bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 p-8" data-aos="fade-up" data-aos-delay="100"><p class="text-pink-600 text-sm font-semibold mb-4">A Trend Crafters identity</p><ul class="space-y-3 text-sm text-ink"><li><i class="fas fa-check text-brand-500 mr-2"></i> A complete system of logo, colour and type</li><li><i class="fas fa-check text-brand-500 mr-2"></i> Consistent across web, social and print</li><li><i class="fas fa-check text-brand-500 mr-2"></i> A tone of voice and clear guidelines</li><li><i class="fas fa-check text-brand-500 mr-2"></i> Premium, distinctive and built to last</li></ul></div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo strip -->
+<section class="bg-white py-6 sm:py-8">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="grid grid-cols-3 gap-3 sm:gap-5 h-40 sm:h-64" data-aos="fade-up">
+            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/br/swatches.jpg' %}" alt="Colour swatches" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/br/typography-hands.jpg' %}" alt="Typography and design work on a tablet" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/br/wireframes-watercolor.jpg' %}" alt="Sketched layouts" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Deliverables -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container">
+        <div class="max-w-2xl mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What you get</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">The full <span class="gradient-text">identity system</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="service-card" data-aos="fade-up"><i class="fas fa-signature text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Logo suite</h3><p class="text-sm text-ink-muted">Primary, secondary and icon marks in full colour, mono and reversed versions.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-palette text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Colour and type</h3><p class="text-sm text-ink-muted">A palette and typography stack chosen for recognition and readability.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-image text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Imagery direction</h3><p class="text-sm text-ink-muted">Photography and texture rules rooted in material realism.</p></div>
+            <div class="service-card" data-aos="fade-up"><i class="fas fa-microphone-lines text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Tone of voice</h3><p class="text-sm text-ink-muted">How your brand speaks, in English and Nepali.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-address-card text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Stationery and templates</h3><p class="text-sm text-ink-muted">Business cards, letterheads, decks and social templates ready to use.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-book text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Brand guidelines</h3><p class="text-sm text-ink-muted">A clear rulebook so your team and partners apply the brand consistently.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">The process</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">Four to eight weeks, <span class="gradient-text">start to finish</span></p></div>
+        <ol class="grid md:grid-cols-4 gap-4">
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up"><span class="text-xs font-bold text-pink-300">WEEK 1</span><h3 class="font-semibold mt-1 mb-1">Discovery</h3><p class="text-sm text-white/65">Workshops, research and competitor review.</p></li>
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="80"><span class="text-xs font-bold text-pink-300">WEEKS 2 TO 3</span><h3 class="font-semibold mt-1 mb-1">Concepts</h3><p class="text-sm text-white/65">Routes for positioning, logo and look and feel.</p></li>
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="160"><span class="text-xs font-bold text-pink-300">WEEKS 4 TO 6</span><h3 class="font-semibold mt-1 mb-1">Refine</h3><p class="text-sm text-white/65">Chosen route developed into a full system.</p></li>
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="240"><span class="text-xs font-bold text-pink-300">FINAL WEEKS</span><h3 class="font-semibold mt-1 mb-1">Handover</h3><p class="text-sm text-white/65">Files, templates and guidelines delivered.</p></li>
+        </ol>
+        <p class="text-center text-xs text-white/40 mt-8">Timelines vary with scope.</p>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/br/_more.html' with exclude='identity' %}
+{% include 'main/dm/_cta.html' with heading='Ready for an identity that lasts?' text='Tell us where your brand is today and where you want it to go.' %}
+
+{% endblock %}

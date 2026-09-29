@@ -1,0 +1,142 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}SEO Services in Kathmandu, Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Technical SEO, keyword strategy, local SEO and content for businesses in Kathmandu and beyond. Trend Crafters helps you show up when customers are ready to buy.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Dark split hero with a centred search-results mockup -->
+<section class="dm-hero relative overflow-hidden bg-ink-dark mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-32 -right-20 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 opacity-30 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-magnifying-glass"></i> SEO &amp; search</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">Be the answer when <span class="gradient-text">customers search</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Visibility is your most valuable digital asset. Whether you want the best SEO in Kathmandu to outrank local competitors or need international search traffic, we optimize your digital architecture so you appear exactly when purchase intent is high.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Get a Free SEO Check <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20an%20SEO%20check." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start text-xs text-white/70">
+                    <span class="px-3 py-1 rounded-full border border-white/15">Technical SEO</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15">Local SEO</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15">Keyword research</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15">Content</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15">Link building</span>
+                </div>
+            </div>
+
+            <!-- Search results card, centred in its column -->
+            <div class="flex items-center justify-center" data-aos="fade-left" aria-hidden="true">
+                <div class="relative w-full max-w-lg">
+                    <div class="rounded-3xl bg-white shadow-2xl p-5 sm:p-6 -rotate-1">
+                        <div class="flex items-center gap-2 rounded-full border border-ink/10 px-4 py-2.5 mb-5 text-sm text-ink"><i class="fas fa-magnifying-glass text-ink-faint"></i> digital marketing agency kathmandu <i class="fas fa-microphone ml-auto text-brand-500"></i></div>
+                        <div class="space-y-4">
+                            <div class="rounded-2xl bg-brand-50/70 border border-brand-100 p-4">
+                                <div class="flex items-center gap-2 mb-1"><img src="{% static 'main/images/favicon.png' %}" alt="" class="h-5 w-5 object-contain"><p class="text-xs text-ink-muted">trendcrafters.global</p></div>
+                                <p class="text-blue-700 font-medium leading-snug">Digital Marketing Agency in Kathmandu, Nepal | Trend Crafters</p>
+                                <p class="text-xs text-ink-muted mt-1">Social media, Meta and TikTok ads, SEO, branding, photo and video production and web development. One team, measurable growth.</p>
+                            </div>
+                            <div class="px-4 opacity-60"><p class="text-xs text-ink-muted">competitor-one.com</p><p class="text-blue-700 font-medium">Generic marketing services</p><div class="h-2 w-3/4 rounded bg-ink/10 mt-1"></div></div>
+                            <div class="px-4 opacity-40"><p class="text-xs text-ink-muted">competitor-two.com</p><p class="text-blue-700 font-medium">Another agency listing</p><div class="h-2 w-2/3 rounded bg-ink/10 mt-1"></div></div>
+                        </div>
+                        <p class="text-[11px] text-ink-faint mt-4">Illustration. Actual rankings vary by competition and time.</p>
+                    </div>
+                    <div class="hidden sm:flex absolute -left-8 top-[52%] items-center gap-2 bg-white rounded-2xl shadow-card px-3 py-2 float-card"><span class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center"><i class="fas fa-arrow-trend-up"></i></span><div><p class="text-xs font-semibold text-ink leading-tight">Organic traffic</p><p class="text-[10px] text-ink-muted">Tracked monthly</p></div></div>
+                    <div class="hidden sm:flex absolute -right-6 bottom-10 items-center gap-2 bg-white rounded-2xl shadow-card px-3 py-2 float-card" style="animation-delay:-3s"><span class="w-8 h-8 rounded-lg bg-pink-50 text-pink-600 flex items-center justify-center"><i class="fas fa-location-dot"></i></span><div><p class="text-xs font-semibold text-ink leading-tight">Map results</p><p class="text-[10px] text-ink-muted">Local visibility</p></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_subnav.html' with active='seo' %}
+
+<!-- Where we get you found: 4-up cards -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Where we get you found</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every place customers <span class="gradient-text">look for you</span></p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-blue-50 to-white border border-ink/5" data-aos="fade-up"><i class="fab fa-google text-2xl text-blue-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Google Search</h3><p class="text-sm text-ink-muted">Service and location pages that rank for the phrases your customers actually type.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-green-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-location-dot text-2xl text-green-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Google Maps</h3><p class="text-sm text-ink-muted">A verified, complete Business Profile so you appear in "near me" and map searches.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-pink-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-images text-2xl text-pink-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Images and video</h3><p class="text-sm text-ink-muted">Optimised photos, reels and YouTube content that earn clicks from search results.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-brand-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-microphone-lines text-2xl text-brand-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Voice and AI answers</h3><p class="text-sm text-ink-muted">Clear, structured content and schema so assistants and AI summaries can quote your brand.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo strip -->
+<section class="bg-white py-6 sm:py-8">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="grid grid-cols-3 gap-3 sm:gap-5 h-40 sm:h-64" data-aos="fade-up">
+            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/dm/team-laptop.jpg' %}" alt="Team reviewing a website on a laptop" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/dm/analytics-dark.jpg' %}" alt="Search traffic analytics" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/dm/man-laptop.jpg' %}" alt="SEO specialist at work" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+        </div>
+    </div>
+</section>
+
+<!-- What's inside: bento -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container">
+        <div class="max-w-2xl mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What's inside</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">One plan, <span class="gradient-text">the whole search engine</span></p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-4 md:auto-rows-[10rem]">
+            <div class="md:col-span-2 md:row-span-2 rounded-3xl bg-ink-dark p-8 text-white flex flex-col justify-end relative overflow-hidden" data-aos="fade-up">
+                <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-pink-500/30 blur-2xl"></div>
+                <i class="fas fa-stethoscope text-brand-400 text-3xl mb-4 relative"></i>
+                <h3 class="font-display text-2xl font-semibold mb-2 relative">Audit and strategy</h3>
+                <p class="text-white/70 text-sm relative">We start by finding what is holding your site back: speed, mobile experience, indexing, content gaps and competitor strengths. Then we rank the fixes by impact.</p>
+            </div>
+            <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-gauge-high text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink">Technical SEO</h3><p class="text-xs text-ink-muted mt-1">Speed, Core Web Vitals, schema, indexing.</p></div>
+            <div class="rounded-3xl bg-gradient-to-br from-brand-500 to-pink-600 p-6 text-white" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-key text-xl mb-2"></i><h3 class="font-semibold">Keyword research</h3><p class="text-xs text-white/80 mt-1">English, Nepali and mixed queries.</p></div>
+            <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-pen-nib text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink">Content and pages</h3><p class="text-xs text-ink-muted mt-1">Service, location and blog pages.</p></div>
+            <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-link text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink">Links and citations</h3><p class="text-xs text-ink-muted mt-1">Quality mentions that build trust.</p></div>
+            <div class="md:col-span-4 rounded-3xl bg-pink-50 border border-pink-100 p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-chart-line text-pink-600 text-3xl"></i><div><h3 class="font-semibold text-ink">Monthly reporting</h3><p class="text-sm text-ink-muted">Rankings, organic traffic, impressions and enquiries in plain language, with next steps.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Local SEO -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Local SEO in Nepal</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Rank in Kathmandu, Lalitpur, Bhaktapur <span class="gradient-text">and beyond</span></p>
+            <p class="text-ink-muted">Most Nepali customers start with a map search or a "near me" query. We make sure your business appears there, with the right details, photos and reviews.</p>
+        </div>
+        <ul class="space-y-3" data-aos="fade-left">
+            <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-location-dot text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Google Business Profile</strong> set up, verified and optimised</span></li>
+            <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-map text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Consistent name, address and phone</strong> across directories</span></li>
+            <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-star text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Review strategy</strong> to collect and answer customer reviews</span></li>
+            <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-language text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>English and Nepali</strong> keyword research</span></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Ranking journey</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">What happens <span class="gradient-text">and when</span></p></div>
+        <ol class="grid md:grid-cols-4 gap-4">
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up"><span class="text-xs font-bold text-pink-300">MONTH 1</span><h3 class="font-semibold mt-1 mb-1">Audit</h3><p class="text-sm text-white/65">Site audit, keyword map, tracking and quick technical fixes.</p></li>
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="80"><span class="text-xs font-bold text-pink-300">MONTHS 2 TO 3</span><h3 class="font-semibold mt-1 mb-1">Build</h3><p class="text-sm text-white/65">Optimised service pages, new content and Business Profile work.</p></li>
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="160"><span class="text-xs font-bold text-pink-300">MONTHS 4 TO 6</span><h3 class="font-semibold mt-1 mb-1">Grow</h3><p class="text-sm text-white/65">Links, citations and reviews, with rankings tracked monthly.</p></li>
+            <li class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="240"><span class="text-xs font-bold text-pink-300">ONGOING</span><h3 class="font-semibold mt-1 mb-1">Compound</h3><p class="text-sm text-white/65">Fresh content and refinements that keep gains growing.</p></li>
+        </ol>
+        <p class="text-center text-xs text-white/40 mt-8">SEO is a long game. Timelines depend on your competition and starting point.</p>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_more.html' with exclude='seo' %}
+{% include 'main/dm/_cta.html' with heading='Want to outrank your competitors?' text='Send us your website and we will share what is holding it back and what to fix first.' %}
+
+{% endblock %}

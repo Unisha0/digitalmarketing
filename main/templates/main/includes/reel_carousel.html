@@ -1,0 +1,62 @@
+{# Horizontal scroll-snap carousel of 9:16 client reels. Optional: heading, sub, kind (brand|social|ads), dark (any value), limit (number). #}
+<section class="py-medium {% if dark %}bg-ink-dark{% else %}bg-white{% endif %}" aria-label="Client work reels">
+    <div class="content-container">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6" data-aos="fade-up">
+            <div class="max-w-2xl">
+                <h2 class="text-pink-{% if dark %}400{% else %}600{% endif %} font-semibold text-sm tracking-wide uppercase mb-3">Reels we've made</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold {% if dark %}text-white{% else %}text-ink{% endif %}">{{ heading|default:"Real work, real reels" }}</p>
+                {% if sub %}<p class="{% if dark %}text-white/60{% else %}text-ink-muted{% endif %} mt-3">{{ sub }}</p>{% endif %}
+            </div>
+            <a href="{% url 'work' %}" class="btn-logo self-start md:self-auto">All work <i class="fas fa-arrow-right text-sm"></i></a>
+        </div>
+
+        <div class="reel-track" data-reel-track>
+            {% for r in reels %}{% if not kind or r.kind == kind %}
+            <article class="reel-card" data-aos="fade-up">
+                <video class="reel-video" src="{{ r.src }}#t=0.1" muted loop playsinline preload="none" data-reel aria-label="{{ r.client }}: {{ r.category }}"></video>
+                <span class="reel-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                <button type="button" class="reel-sound" data-reel-sound aria-label="Toggle sound"><i class="fas fa-volume-xmark"></i></button>
+                <div class="reel-info">
+                    <p class="text-[11px] font-semibold uppercase tracking-wide text-brand-300">{{ r.category }} · {{ r.tag }}</p>
+                    <h3 class="font-semibold text-white">{{ r.client }}</h3>
+                    <p class="text-xs text-white/75 mt-1">{{ r.blurb }}</p>
+                </div>
+            </article>
+            {% endif %}{% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+(function () {
+    if (window.__reelsInit) return; window.__reelsInit = true;
+    function init() {
+        var vids = document.querySelectorAll('video[data-reel]');
+        if (!vids.length) return;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+            es.forEach(function (e) {
+                var v = e.target;
+                if (e.isIntersecting && e.intersectionRatio > 0.6 && !reduce) {
+                    v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {});
+                    v.parentNode.classList.add('is-playing');
+                } else { v.pause(); v.parentNode.classList.remove('is-playing'); }
+            });
+        }, { threshold: [0, 0.6] }) : null;
+        vids.forEach(function (v) {
+            if (io) io.observe(v);
+            var card = v.parentNode;
+            card.addEventListener('click', function (ev) {
+                if (ev.target.closest('[data-reel-sound]')) return;
+                if (v.paused) { v.play(); card.classList.add('is-playing'); } else { v.pause(); card.classList.remove('is-playing'); }
+            });
+            var btn = card.querySelector('[data-reel-sound]');
+            if (btn) btn.addEventListener('click', function () {
+                v.muted = !v.muted;
+                btn.innerHTML = '<i class="fas ' + (v.muted ? 'fa-volume-xmark' : 'fa-volume-high') + '"></i>';
+            });
+        });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>

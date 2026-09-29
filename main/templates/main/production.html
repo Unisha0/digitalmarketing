@@ -1,111 +1,97 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% block title %}Video Production & Commercial Ads in Nepal | Trend Crafters{% endblock %}
-{% block meta_description %}9:16 vertical video, Instagram Reels & TikTok production, and commercial ad production from Trend Crafters - a leading video production company in Nepal.{% endblock %}
+{% block title %}Production House in Kathmandu: Photo, Video & Ads | Trend Crafters{% endblock %}
+{% block meta_description %}Photography, 9:16 video and reels, and commercial ad production from Trend Crafters, a Kathmandu production house with pro cameras, studio lighting and an in house team.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
-<!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 left-0 w-[28rem] h-[28rem] bg-gradient-to-br from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Production Services · Video & Commercial Ads</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            Video Is the Undisputed <span class="gradient-text">King</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-8">
-            As a leading video production company in Nepal, we engineer dynamic visual experiences tailored for both local engagement in Kathmandu and massive global virality. Succeeding requires much more than just hitting the record button.
-        </p>
-        <a href="{% url 'contact' %}" class="btn-primary px-7 py-3.5 rounded-full font-semibold inline-block">
-            Start Your Project
-        </a>
+<!-- Dark hero with a camera collage -->
+<section class="relative overflow-hidden bg-ink-dark mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-32 -right-20 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 opacity-30 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-camera-retro"></i> Production services</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">Flawless execution, <span class="gradient-text">frame by frame</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Great marketing needs great visuals. As a premier production house in Kathmandu, we bring international cinematic standards to every frame: hyper realistic product shoots, high converting vertical video and flagship commercial ads.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Book a Shoot <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20book%20a%20shoot." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-5 grid-rows-2 gap-3 h-[24rem] sm:h-[28rem]" data-aos="fade-left">
+                <div class="col-span-3 row-span-2 relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/pr/camera-flare.jpg' %}" alt="Photographer holding a DSLR camera against the sun" class="absolute inset-0 w-full h-full object-cover"></div>
+                <div class="col-span-2 relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/pr/sony-lenses.jpg' %}" alt="Professional camera with prime lenses" class="absolute inset-0 w-full h-full object-cover"></div>
+                <div class="col-span-2 relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/pr/studio-lights.jpg' %}" alt="Studio with softbox lighting on a white backdrop" class="absolute inset-0 w-full h-full object-cover"></div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Video & Reels -->
+{% include 'main/pr/_subnav.html' with active='hub' %}
+
+<!-- Three services -->
 <section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we produce</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Three ways to <span class="gradient-text">capture attention</span></p></div>
+        <div class="grid md:grid-cols-3 gap-5">
+            <a href="{% url 'photo_shoot' %}" class="group relative rounded-3xl overflow-hidden min-h-[22rem] flex items-end p-7" data-aos="fade-up"><img src="{% static 'main/images/pr/canon.jpg' %}" alt="Camera on a white studio background" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-2xl font-semibold mb-1">Photography</h3><p class="text-sm text-white/80 mb-3">Studio grade product and brand photography with true material realism.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'pr_video' %}" class="group relative rounded-3xl overflow-hidden min-h-[22rem] flex items-end p-7" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/pr/camera-setup.jpg' %}" alt="Camera on a tripod in a video production desk setup" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-2xl font-semibold mb-1">Video &amp; Reels</h3><p class="text-sm text-white/80 mb-3">Absolute experts in 9:16, built for TikTok and Instagram Reels.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'pr_ads' %}" class="group relative rounded-3xl overflow-hidden min-h-[22rem] flex items-end p-7" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/pr/lens.jpg' %}" alt="Cinema lens close up" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-2xl font-semibold mb-1">Commercial Ads</h3><p class="text-sm text-white/80 mb-3">Flagship campaigns that look beautiful and actively sell.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+        </div>
+    </div>
+</section>
+
+<!-- Our kit -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our kit</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">The gear behind <span class="gradient-text">the look</span></p></div>
+        <div class="grid md:grid-cols-4 gap-4 md:auto-rows-[11rem]">
+            <div class="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden flex items-end p-7" data-aos="fade-up"><img src="{% static 'main/images/pr/sony-lenses.jpg' %}" alt="Professional camera body with prime lenses" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Cinema and mirrorless cameras</h3><p class="text-sm text-white/80">Full frame sensors and a set of prime lenses for shallow depth of field and rich detail.</p></div></div>
+            <div class="relative rounded-3xl overflow-hidden flex items-end p-5" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/pr/studio-lights.jpg' %}" alt="Studio lights" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent"></div><div class="relative text-white"><h3 class="font-semibold">Studio lighting</h3><p class="text-xs text-white/75">Softboxes and continuous light.</p></div></div>
+            <div class="rounded-3xl bg-ink-dark p-5 text-white flex flex-col justify-between" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-microphone text-brand-400 text-xl"></i><div><h3 class="font-semibold">Clean audio</h3><p class="text-xs text-white/65">Wireless and shotgun mics.</p></div></div>
+            <div class="rounded-3xl bg-white p-5 shadow-card flex flex-col justify-between" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-video text-brand-500 text-xl"></i><div><h3 class="font-semibold text-ink">Tripods and gimbals</h3><p class="text-xs text-ink-muted">Stable, cinematic movement.</p></div></div>
+            <div class="rounded-3xl bg-gradient-to-br from-brand-500 to-pink-600 p-5 text-white flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-palette text-xl"></i><div><h3 class="font-semibold">Colour and edit suite</h3><p class="text-xs text-white/85">Grading, sound and motion graphics.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Branding photography -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
         <div data-aos="fade-right">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Video & Reels</h2>
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-4">Absolute Experts in 9:16</h2>
-            <p class="text-ink-muted leading-relaxed mb-4">
-                We are absolute experts in the 9:16 vertical video format, designing scroll-stopping visual hooks specifically for TikTok and Instagram Reels. Our production team pushes the boundaries of short-form media - executing highly advanced post-production techniques while directing on-screen talent to deliver performances with perfect, controlled intensity.
-            </p>
-            <p class="text-ink-muted leading-relaxed">
-                Beyond the creative flair, our video production is deeply strategic. We don't just shoot random videos - we help you build a balanced, high-impact mix of reels and static posts, ensuring a consistent posting schedule that keeps your audience captivated and your conversion rates climbing.
-            </p>
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Branding photography</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Images that <span class="gradient-text">carry your brand</span></p>
+            <p class="text-ink-muted mb-4">Every shoot starts from your identity: colours, textures and mood. The result is a library of photos and video that looks unmistakably like you across your website, social and print.</p>
+            <ul class="space-y-2 text-sm text-ink"><li><i class="fas fa-check text-brand-500 mr-2"></i>Moodboards and shot lists built from your brand kit</li><li><i class="fas fa-check text-brand-500 mr-2"></i>Consistent colour grade across every asset</li><li><i class="fas fa-check text-brand-500 mr-2"></i>Formats ready for web, social and print</li></ul>
         </div>
-        <div class="rounded-2xl overflow-hidden shadow-card border border-surface-border aspect-[9/12] max-w-xs mx-auto" data-aos="fade-left" data-aos-delay="100" style="background: linear-gradient(160deg, #141210 0%, #7C2F12 40%, #EA6A2E 75%, #E0266E 100%);"></div>
-    </div>
-</section>
-
-<!-- Commercial Ads -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Commercial Ads</h2>
-        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-5">Flagship Campaigns Require Flagship Visuals</h2>
-        <p class="text-ink-muted leading-relaxed">
-            We provide end-to-end commercial ad production, scaling effortlessly from localized digital campaigns in Nepal to large-scale, international broadcast advertisements. By blending cinematic storytelling with high-converting marketing psychology, we produce commercials that don't just look beautiful - they actively sell your product and build long-term brand equity.
-        </p>
-    </div>
-</section>
-
-<!-- Workflow -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto">
-        <h3 class="text-center font-display text-2xl sm:text-3xl font-semibold text-ink mb-12" data-aos="fade-up">Our Production Workflow</h3>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
-            <div class="process-step" data-aos="fade-up" data-aos-delay="50">
-                <div class="step-number"><i class="fas fa-compass"></i></div>
-                <h3 class="font-semibold text-ink mb-1.5">1. Strategy</h3>
-                <p class="text-ink-muted text-sm">Audience, narrative hook, and KPI mapped before a single frame is shot.</p>
-            </div>
-            <div class="process-step" data-aos="fade-up" data-aos-delay="150">
-                <div class="step-number"><i class="fas fa-video"></i></div>
-                <h3 class="font-semibold text-ink mb-1.5">2. Shoot</h3>
-                <p class="text-ink-muted text-sm">Cinematic lighting, efficient crew, and structured shot lists.</p>
-            </div>
-            <div class="process-step" data-aos="fade-up" data-aos-delay="250">
-                <div class="step-number"><i class="fas fa-film"></i></div>
-                <h3 class="font-semibold text-ink mb-1.5">3. Edit</h3>
-                <p class="text-ink-muted text-sm">Trend-aware cuts, color grade, sound design, and captions.</p>
-            </div>
-            <div class="process-step" data-aos="fade-up" data-aos-delay="350">
-                <div class="step-number"><i class="fas fa-arrow-trend-up"></i></div>
-                <h3 class="font-semibold text-ink mb-1.5">4. Amplify</h3>
-                <p class="text-ink-muted text-sm">Posting strategy, paid boost, and creative testing to scale winners.</p>
-            </div>
+        <div class="grid grid-cols-3 gap-3 h-64 sm:h-80" data-aos="fade-left">
+            <div class="relative rounded-2xl overflow-hidden"><img src="{% static 'main/images/home/branding.jpg' %}" alt="Brand moodboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-2xl overflow-hidden mt-6"><img src="{% static 'main/images/br/swatches.jpg' %}" alt="Colour swatches" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-2xl overflow-hidden"><img src="{% static 'main/images/br/typography-a.jpg' %}" alt="Typography and print" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
         </div>
     </div>
 </section>
 
-<!-- Portfolio CTA -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-4">Seeing Is Believing</h2>
-        <p class="text-ink-muted leading-relaxed mb-6">
-            Explore our curated portfolio to see exactly how we've transformed businesses through elite production, from high-ROI Meta ad campaigns to breathtaking luxury brand photography and cinematic short-form content.
-        </p>
-        <a href="{% url 'work' %}" class="btn-primary px-8 py-3.5 font-semibold inline-block">
-            Explore Our Complete Portfolio & Creative Works
-        </a>
+<!-- How our team works -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">How our team works</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">One crew, <span class="gradient-text">from brief to publish</span></p></div>
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="relative rounded-3xl overflow-hidden h-64 sm:h-96" data-aos="fade-right"><img src="{% static 'main/images/pr/team-planning.jpg' %}" alt="Team planning a shoot with sticky notes" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <ol class="space-y-3" data-aos="fade-left">
+                <li class="flex gap-4 rounded-2xl bg-white/5 border border-white/10 p-4"><span class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center flex-shrink-0">1</span><div><p class="font-semibold text-white">Brief and strategy</p><p class="text-sm text-white/65">Our project manager and marketing head map the audience, hook and goals before any shoot is booked.</p></div></li>
+                <li class="flex gap-4 rounded-2xl bg-white/5 border border-white/10 p-4"><span class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center flex-shrink-0">2</span><div><p class="font-semibold text-white">Concept and design</p><p class="text-sm text-white/65">Our graphic designer builds the moodboard, sets and brand touches for the shoot.</p></div></li>
+                <li class="flex gap-4 rounded-2xl bg-white/5 border border-white/10 p-4"><span class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center flex-shrink-0">3</span><div><p class="font-semibold text-white">Shoot day</p><p class="text-sm text-white/65">An efficient crew with structured shot lists, cinematic lighting and calm direction.</p></div></li>
+                <li class="flex gap-4 rounded-2xl bg-white/5 border border-white/10 p-4"><span class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center flex-shrink-0">4</span><div><p class="font-semibold text-white">Edit and finish</p><p class="text-sm text-white/65">Our editor cuts, grades and adds sound, captions and motion for every platform.</p></div></li>
+                <li class="flex gap-4 rounded-2xl bg-white/5 border border-white/10 p-4"><span class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center flex-shrink-0">5</span><div><p class="font-semibold text-white">Publish and amplify</p><p class="text-sm text-white/65">Our social media manager schedules, posts and boosts the winners.</p></div></li>
+            </ol>
+        </div>
+        <p class="text-center mt-8"><a href="{% url 'team' %}" class="text-brand-300 font-semibold hover:text-white">Meet the team <i class="fas fa-arrow-right text-xs ml-1"></i></a></p>
     </div>
 </section>
 
-{% include 'main/includes/testimonials.html' %}
-
-<!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Ready to Scale With Short-Form Video?</h2>
-      <p class="text-white/90 mb-8">Send a brief about your product and we'll return a content plan built for your brand.</p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Start Your Project
-      </a>
-    </div>
-  </div>
-</section>
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/dm/_cta.html' with heading='Ready to scale with production that performs?' text='Send a brief about your product or campaign and we will reply with a concept and quote.' %}
 
 {% endblock %}

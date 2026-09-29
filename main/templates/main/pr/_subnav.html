@@ -1,0 +1,12 @@
+{# Sticky pill navigation for Production services pages. Pass active="..." #}
+<nav class="sticky top-20 z-30 bg-white/90 backdrop-blur border-b border-ink/5" aria-label="Production services">
+    <div class="content-container">
+        <ul class="flex gap-2 overflow-x-auto py-3 text-sm font-medium whitespace-nowrap [scrollbar-width:none]">
+            <li><a href="{% url 'production' %}" class="dm-pill {% if active == 'hub' %}dm-pill-active{% endif %}">Overview</a></li>
+            <li><a href="{% url 'photo_shoot' %}" class="dm-pill {% if active == 'photo' %}dm-pill-active{% endif %}">Photography</a></li>
+            <li><a href="{% url 'pr_video' %}" class="dm-pill {% if active == 'video' %}dm-pill-active{% endif %}">Video &amp; Reels</a></li>
+            <li><a href="{% url 'pr_ads' %}" class="dm-pill {% if active == 'ads' %}dm-pill-active{% endif %}">Commercial Ads</a></li>
+            <li><a href="{% url 'work' %}" class="dm-pill {% if active == 'work' %}dm-pill-active{% endif %}">Our Work</a></li>
+        </ul>
+    </div>
+</nav>

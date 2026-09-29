@@ -1,0 +1,11 @@
+{# Sticky pill navigation for IT solutions pages. Pass active="..." #}
+<nav class="sticky top-20 z-30 bg-white/90 backdrop-blur border-b border-ink/5" aria-label="IT solutions">
+    <div class="content-container">
+        <ul class="flex gap-2 overflow-x-auto py-3 text-sm font-medium whitespace-nowrap [scrollbar-width:none]">
+            <li><a href="{% url 'it_solutions' %}" class="dm-pill {% if active == 'hub' %}dm-pill-active{% endif %}">Overview</a></li>
+            <li><a href="{% url 'web_development' %}" class="dm-pill {% if active == 'web' %}dm-pill-active{% endif %}">Web Development</a></li>
+            <li><a href="{% url 'web_app_development' %}" class="dm-pill {% if active == 'app' %}dm-pill-active{% endif %}">Web Apps</a></li>
+            <li><a href="{% url 'maintenance' %}" class="dm-pill {% if active == 'maint' %}dm-pill-active{% endif %}">Maintenance &amp; SEO</a></li>
+        </ul>
+    </div>
+</nav>

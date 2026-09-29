@@ -1,93 +1,45 @@
 {% extends 'main/base.html' %}
+{% load static %}
 {% block title %}Our Partners & Collaborators | Trend Crafters{% endblock %}
-{% block meta_description %}Trend Crafters collaborates with industry-leading platforms, organizations, and creative partners who share our commitment to uncompromising quality.{% endblock %}
+{% block meta_description %}Trend Crafters collaborates with industry leading platforms, organisations and creative partners who share our commitment to uncompromising quality.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
-<!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Our Partners & Collaborators</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            Built on <span class="gradient-text">Strong Alliances</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto">
-            Great work is rarely done in isolation. We're proud to collaborate with industry-leading platforms, organizations, and creative partners who share our commitment to uncompromising quality - together, we build digital ecosystems that push boundaries and drive real-world growth.
-        </p>
-    </div>
-</section>
-
-<!-- Partner grid: grayscale by default, full color on hover -->
-<section class="py-medium bg-white">
-    <div class="content-container">
-        <p class="text-center text-ink-faint text-sm mb-10 max-w-lg mx-auto" data-aos="fade-up">Hover to reveal each alliance in full color.</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="50" tabindex="0">
-                <i class="fas fa-hashtag text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Media & Ad Platforms</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="100" tabindex="0">
-                <i class="fas fa-users text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Creator Networks</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="150" tabindex="0">
-                <i class="fas fa-landmark text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Industry Associations</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="200" tabindex="0">
-                <i class="fas fa-server text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Technology Partners</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="250" tabindex="0">
-                <i class="fas fa-print text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Print & Production Studios</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="300" tabindex="0">
-                <i class="fas fa-graduation-cap text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Education & Migration Networks</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="350" tabindex="0">
-                <i class="fas fa-people-group text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Community Organizations</h3>
-            </div>
-            <div class="partner-tile service-card flex flex-col items-center justify-center text-center gap-3 py-10" data-aos="fade-up" data-aos-delay="400" tabindex="0">
-                <i class="fas fa-handshake text-brand-500 text-2xl"></i>
-                <h3 class="text-sm font-semibold text-ink">Your Organization, Next</h3>
-            </div>
+<section class="relative overflow-hidden pt-28 sm:pt-32 pb-8">
+    <div class="absolute -top-16 right-0 w-[28rem] h-[28rem] rounded-full bg-gradient-to-bl from-pink-200/60 to-brand-100/50 blur-3xl pointer-events-none"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+            <div class="lg:col-span-7" data-aos="fade-up"><p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-handshake"></i> Partners &amp; collaborators</p><h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl">Built on <span class="gradient-text">strong alliances.</span></h1></div>
+            <div class="lg:col-span-5" data-aos="fade-up"><p class="text-ink-muted text-lg mb-5">Great work is rarely done in isolation. We collaborate with platforms, organisations and creative partners who share our commitment to uncompromising quality.</p><div class="flex flex-col sm:flex-row gap-3"><a href="{% url 'contact' %}" class="btn-logo">Partner With Us <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20explore%20a%20partnership." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp</a></div></div>
         </div>
-        <!-- Swap the icon tiles above for real partner/collaborator logos as alliances are confirmed - grayscale/color hover behavior is already wired via .partner-tile. -->
+    </div>
+    <div class="mt-10 space-y-4" aria-hidden="true">
+        <div class="marquee-fade overflow-hidden"><div class="marquee-track" style="animation-duration:38s">{% for i in "123" %}<div class="flex items-center gap-4 pr-4"><span class="logo-chip"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC logo" loading="lazy"></span></div>{% endfor %}</div></div>
+        <div class="marquee-fade overflow-hidden"><div class="marquee-track" style="animation-duration:46s;animation-direction:reverse">{% for i in "123" %}<div class="flex items-center gap-4 pr-4"><span class="logo-chip"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" loading="lazy"></span></div>{% endfor %}</div></div>
     </div>
 </section>
 
-<!-- Why it matters -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="font-display text-2xl md:text-3xl font-semibold text-ink mb-4">
-            Why Alliances Matter
-        </h2>
-        <p class="text-ink-muted">
-            Every partnership starts the same way - understanding the business, not just the brief. From there we bring social media, branding, creative production, and IT solutions together under one team, backed by the platforms and networks that push our work further, so you're never stitching together five different vendors.
-        </p>
+
+
+{% include 'main/ab/_subnav.html' with active='partners' %}
+
+<!-- Categories: left heading, list on the right -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-28" data-aos="fade-right"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Who we collaborate with</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Seven kinds of <span class="gradient-text">alliance</span></p><p class="text-ink-muted mb-5">Every partnership starts with understanding the business, not just the brief.</p><a href="{% url 'contact' %}" class="btn-logo">Become a partner <i class="fas fa-arrow-right text-sm"></i></a></div>
+        <ul class="lg:col-span-7 list-none"><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-hashtag"></i></span><div><p class="font-semibold text-ink">Media and ad platforms</p><p class="text-sm text-ink-muted">Reach and targeting at scale</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-users"></i></span><div><p class="font-semibold text-ink">Creator networks</p><p class="text-sm text-ink-muted">Authentic voices for social and TikTok</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-landmark"></i></span><div><p class="font-semibold text-ink">Industry associations</p><p class="text-sm text-ink-muted">Credibility and community</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-server"></i></span><div><p class="font-semibold text-ink">Technology partners</p><p class="text-sm text-ink-muted">Hosting, tools and platforms</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-print"></i></span><div><p class="font-semibold text-ink">Print and production studios</p><p class="text-sm text-ink-muted">Finished work in the real world</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-graduation-cap"></i></span><div><p class="font-semibold text-ink">Education and migration networks</p><p class="text-sm text-ink-muted">Study abroad and migration partners</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-users"></i></span><div><p class="font-semibold text-ink">Community organisations</p><p class="text-sm text-ink-muted">Local causes and events</p></div></li></ul>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">
-        Interested in Partnering With Us?
-      </h2>
-      <p class="text-white/90 mb-8">
-        Let's talk about what we can build together.
-      </p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Get in Touch
-      </a>
+<!-- Why alliances matter -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-6xl mx-auto grid md:grid-cols-5 gap-8 items-center">
+        <div class="md:col-span-3" data-aos="fade-right"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Why alliances matter</h2><p class="font-display text-2xl sm:text-3xl font-medium text-white leading-snug">Every partnership starts with understanding the business, not just the brief.</p></div>
+        <p class="md:col-span-2 text-white/70 text-sm" data-aos="fade-left">From there we bring social media, branding, creative production and IT solutions together under one team, backed by the platforms and networks that push our work further, so you're never stitching together five different vendors.</p>
     </div>
-  </div>
 </section>
+
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/dm/_cta.html' with heading='Interested in partnering with us?' text="Let's talk about what we can build together." %}
 
 {% endblock %}

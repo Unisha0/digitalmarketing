@@ -1,0 +1,139 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Meta Ads Agency in Nepal: Facebook & Instagram Ads | Trend Crafters{% endblock %}
+{% block meta_description %}Facebook and Instagram advertising in Nepal built for measurable ROI: audience segmentation, boosted reels, click to WhatsApp ads and retargeting funnels from Trend Crafters.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Split hero: copy + a sponsored ad phone playing a real reel -->
+<section class="dm-hero relative overflow-hidden bg-[#0b1220] mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-24 -left-24 w-[32rem] h-[32rem] rounded-full bg-blue-600/25 blur-3xl"></div>
+    <div class="absolute -bottom-32 right-0 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-pink-500/30 to-brand-500/20 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-blue-300 mb-4"><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> Meta ads agency in Nepal</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5">Stop guessing. <span class="gradient-text">Start scaling.</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Our Facebook and Instagram advertising is built strictly for measurable ROI, whether you need a top Facebook ads agency in Nepal or international campaign execution. Precise audiences, boosted reels and retargeting that captures conversions when they matter most.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Get an Ad Plan <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20with%20Meta%20ads." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Talk on WhatsApp</a>
+                </div>
+                <ul class="mt-8 grid grid-cols-2 gap-3 max-w-md mx-auto lg:mx-0 text-left text-sm text-white/80">
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Audience segmentation</li>
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Creative testing</li>
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Retargeting funnels</li>
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Monthly ROI reports</li>
+                </ul>
+            </div>
+
+            <!-- Sponsored ad phone -->
+            <div class="relative mx-auto w-full max-w-sm" data-aos="fade-left">
+                <div class="relative mx-auto w-[19rem] sm:w-[22rem] lg:w-[24rem] rounded-[3rem] bg-black p-3 ring-1 ring-white/10 shadow-2xl -rotate-2">
+                    <div class="rounded-[2rem] overflow-hidden bg-white">
+                        <div class="flex items-center gap-2 px-3 py-2"><img src="{% static 'main/images/favicon.png' %}" alt="" class="h-7 w-7 rounded-full object-contain bg-white"><div class="leading-tight"><p class="text-[11px] font-semibold text-ink">Trend Crafters</p><p class="text-[9px] text-ink-faint">Sponsored · <i class="fas fa-earth-asia"></i></p></div><i class="fas fa-ellipsis ml-auto text-ink-faint text-xs"></i></div>
+                        <p class="px-3 pb-2 text-[10px] text-ink">Your next customer is scrolling right now. Meet them with the right ad.</p>
+                        <div class="relative aspect-[4/5] bg-black">
+                            {% for r in reels %}{% if forloop.first %}<video class="absolute inset-0 w-full h-full object-cover" src="{{ r.src }}#t=0.1" muted loop playsinline preload="auto" autoplay data-reel aria-label="{{ r.client }} ad"></video>{% endif %}{% endfor %}
+                        </div>
+                        <div class="flex items-center justify-between bg-surface-subtle px-3 py-2"><div><p class="text-[9px] text-ink-faint">trendcrafters.global</p><p class="text-[11px] font-semibold text-ink">Book a free ad plan</p></div><span class="text-[10px] font-semibold bg-blue-600 text-white rounded-md px-3 py-1.5">Learn more</span></div>
+                        <div class="flex gap-4 px-3 py-2 text-ink-muted text-xs border-t border-ink/5"><span><i class="far fa-thumbs-up"></i> Like</span><span><i class="far fa-comment"></i> Comment</span><span><i class="far fa-share-from-square"></i> Share</span></div>
+                    </div>
+                </div>
+                <div class="hidden sm:block absolute -left-10 top-[58%] bg-white rounded-2xl shadow-card px-3 py-2 float-card"><p class="text-[10px] text-ink-muted">Cost per lead</p><p class="text-sm font-semibold text-ink"><i class="fas fa-arrow-trend-down text-green-600"></i> Tracked weekly</p></div>
+                <div class="hidden sm:block absolute -right-4 bottom-20 bg-white rounded-2xl shadow-card px-3 py-2 float-card" style="animation-delay:-3s"><p class="text-[10px] text-ink-muted">Retargeting</p><p class="text-sm font-semibold text-ink"><i class="fas fa-rotate text-pink-600"></i> Always on</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_subnav.html' with active='meta' %}
+
+<!-- Real ad reels -->
+{% include 'main/includes/reel_carousel.html' with heading="Ad creatives we've produced" sub="Scroll-stopping vertical video made for Reels, Stories and the Facebook feed." kind="ads" %}
+
+<!-- Full funnel: alternating vertical timeline -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The full funnel</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every rupee has <span class="gradient-text">a job to do</span></p>
+            <p class="text-ink-muted mt-3">We build campaigns as a system, not a single boosted post. Each stage has its own audience, creative and goal.</p>
+        </div>
+        <ol class="relative space-y-8 md:space-y-0">
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-300 via-pink-300 to-pink-500"></div>
+            <li class="md:grid md:grid-cols-2 md:gap-16 md:py-6 items-center relative" data-aos="fade-up">
+                <div class="md:text-right"><span class="text-xs font-bold text-brand-600">STAGE 1</span><h3 class="font-display text-2xl font-semibold text-ink">Awareness</h3><p class="text-ink-muted text-sm mt-1">Reels and video views to cold audiences built from your best customers, so the right people meet your brand first.</p></div>
+                <span class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 text-white items-center justify-center shadow"><i class="fas fa-eye"></i></span><div></div>
+            </li>
+            <li class="md:grid md:grid-cols-2 md:gap-16 md:py-6 items-center relative" data-aos="fade-up">
+                <div></div><span class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-pink-500 text-white items-center justify-center shadow"><i class="fas fa-lightbulb"></i></span>
+                <div><span class="text-xs font-bold text-pink-600">STAGE 2</span><h3 class="font-display text-2xl font-semibold text-ink">Consideration</h3><p class="text-ink-muted text-sm mt-1">Proof, offers and comparisons for people who watched, visited or engaged, answering objections before they ask.</p></div>
+            </li>
+            <li class="md:grid md:grid-cols-2 md:gap-16 md:py-6 items-center relative" data-aos="fade-up">
+                <div class="md:text-right"><span class="text-xs font-bold text-pink-600">STAGE 3</span><h3 class="font-display text-2xl font-semibold text-ink">Conversion</h3><p class="text-ink-muted text-sm mt-1">Lead forms, click to WhatsApp and website enquiries with one clear call to action and tracking on every click.</p></div>
+                <span class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 text-white items-center justify-center shadow"><i class="fas fa-bullseye"></i></span><div></div>
+            </li>
+            <li class="md:grid md:grid-cols-2 md:gap-16 md:py-6 items-center relative" data-aos="fade-up">
+                <div></div><span class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-pink-600 to-pink-800 text-white items-center justify-center shadow"><i class="fas fa-rotate"></i></span>
+                <div><span class="text-xs font-bold text-pink-700">STAGE 4</span><h3 class="font-display text-2xl font-semibold text-ink">Retargeting</h3><p class="text-ink-muted text-sm mt-1">Sophisticated follow up to engaged audiences during critical enrollment and promotional windows, when intent is highest.</p></div>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- Boosting vs campaigns -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Precision targeting</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">Boosting posts vs. <span class="gradient-text">building campaigns</span></p></div>
+        <div class="grid md:grid-cols-2 gap-5">
+            <div class="rounded-3xl bg-white/5 border border-white/10 p-8" data-aos="fade-up"><p class="text-white/50 text-sm font-semibold mb-4">The usual way</p><ul class="space-y-3 text-white/70 text-sm"><li><i class="fas fa-xmark text-white/40 mr-2"></i> Boost a post to "Nepal, 18 to 65"</li><li><i class="fas fa-xmark text-white/40 mr-2"></i> One creative, no testing</li><li><i class="fas fa-xmark text-white/40 mr-2"></i> Judge success by likes</li><li><i class="fas fa-xmark text-white/40 mr-2"></i> No follow up after the click</li></ul></div>
+            <div class="rounded-3xl bg-gradient-to-br from-brand-500/20 to-pink-600/20 border border-pink-400/30 p-8" data-aos="fade-up" data-aos-delay="100"><p class="text-pink-300 text-sm font-semibold mb-4">The Trend Crafters way</p><ul class="space-y-3 text-white text-sm"><li><i class="fas fa-check text-brand-400 mr-2"></i> Segmented by interest, behaviour, location and lookalikes</li><li><i class="fas fa-check text-brand-400 mr-2"></i> Multiple creatives tested against each other</li><li><i class="fas fa-check text-brand-400 mr-2"></i> Judged by leads, sales and cost per result</li><li><i class="fas fa-check text-brand-400 mr-2"></i> Retargeting picks up everyone who engaged</li></ul></div>
+        </div>
+    </div>
+</section>
+
+<!-- Campaign types: image-led cards -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Campaign types</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Built around <span class="gradient-text">your goal</span></p></div>
+        <div class="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            <div class="rounded-3xl overflow-hidden border border-ink/10 bg-white shadow-card" data-aos="fade-up"><div class="relative h-40"><img src="{% static 'main/images/dm/analytics-laptop.jpg' %}" alt="Lead generation dashboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-semibold text-ink mb-1"><i class="fas fa-user-plus text-brand-500 mr-2"></i>Lead generation</h3><p class="text-sm text-ink-muted">Instant forms and landing pages that fill your pipeline for education, migration, real estate and services.</p></div></div>
+            <div class="rounded-3xl overflow-hidden border border-ink/10 bg-white shadow-card" data-aos="fade-up" data-aos-delay="80"><div class="relative h-40"><img src="{% static 'main/images/dm/facebook-phone.jpg' %}" alt="Facebook on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-semibold text-ink mb-1"><i class="fab fa-whatsapp text-brand-500 mr-2"></i>Click to WhatsApp</h3><p class="text-sm text-ink-muted">Ads that open a chat, ideal for Nepal where customers prefer to message before they buy.</p></div></div>
+            <div class="rounded-3xl overflow-hidden border border-ink/10 bg-white shadow-card" data-aos="fade-up" data-aos-delay="160"><div class="relative h-40"><img src="{% static 'main/images/home/retail.jpg' %}" alt="Retail store" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-semibold text-ink mb-1"><i class="fas fa-bag-shopping text-brand-500 mr-2"></i>Sales and catalog</h3><p class="text-sm text-ink-muted">Product ads for retail and fashion brands, tied to your shop or website.</p></div></div>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4 max-w-6xl mx-auto mt-5">
+            <div class="rounded-2xl bg-brand-50 p-5" data-aos="fade-up"><p class="font-semibold text-ink"><i class="fas fa-play text-brand-500 mr-2"></i>Boosted reels</p><p class="text-sm text-ink-muted mt-1">We amplify your best performing reels to look-alike audiences.</p></div>
+            <div class="rounded-2xl bg-pink-50 p-5" data-aos="fade-up" data-aos-delay="80"><p class="font-semibold text-ink"><i class="fas fa-calendar-check text-pink-600 mr-2"></i>Seasonal windows</p><p class="text-sm text-ink-muted mt-1">Intake periods, festivals and launches planned weeks ahead.</p></div>
+            <div class="rounded-2xl bg-brand-50 p-5" data-aos="fade-up" data-aos-delay="160"><p class="font-semibold text-ink"><i class="fas fa-globe text-brand-500 mr-2"></i>International campaigns</p><p class="text-sm text-ink-muted mt-1">Cross border campaigns, including clients on Australia's Gold Coast.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Reporting mock -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Reporting</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Numbers you can <span class="gradient-text">actually read</span></p>
+            <p class="text-ink-muted mb-4">Every month you get a plain language report: what we spent, what it produced, what we learned and what we will test next. No jargon, no vanity metrics.</p>
+            <p class="text-sm text-ink-muted"><strong class="text-ink">The enrollment window strategy:</strong> record breaking lead generation for major education and migration partners through precise, high velocity Meta retargeting funnels.</p>
+        </div>
+        <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-left" aria-hidden="true">
+            <p class="text-xs text-ink-faint mb-4">Sample report layout</p>
+            <div class="space-y-4">
+                <div><div class="flex justify-between text-xs font-semibold text-ink mb-1"><span>Reach</span><span>Awareness</span></div><div class="h-3 rounded-full bg-brand-50"><div class="h-full w-[85%] rounded-full bg-gradient-to-r from-brand-400 to-brand-600"></div></div></div>
+                <div><div class="flex justify-between text-xs font-semibold text-ink mb-1"><span>Clicks</span><span>Consideration</span></div><div class="h-3 rounded-full bg-brand-50"><div class="h-full w-[60%] rounded-full bg-gradient-to-r from-brand-500 to-pink-500"></div></div></div>
+                <div><div class="flex justify-between text-xs font-semibold text-ink mb-1"><span>Leads</span><span>Conversion</span></div><div class="h-3 rounded-full bg-brand-50"><div class="h-full w-[38%] rounded-full bg-gradient-to-r from-pink-500 to-pink-700"></div></div></div>
+                <div><div class="flex justify-between text-xs font-semibold text-ink mb-1"><span>Return visits</span><span>Retargeting</span></div><div class="h-3 rounded-full bg-brand-50"><div class="h-full w-[25%] rounded-full bg-gradient-to-r from-pink-600 to-pink-800"></div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_more.html' with exclude='meta' %}
+{% include 'main/dm/_cta.html' with heading='Let us put your ad budget to work' text='Share your goal and monthly budget. We will come back with an audience, creative and reporting plan.' %}
+
+{% endblock %}

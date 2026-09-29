@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}TikTok Marketing Agency in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Trend driven, culturally relevant TikTok campaigns for Nepali and international brands: creator led content, performance ads and videos that win attention in the first three seconds.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Neon dark hero with three tilted 9:16 frames -->
+<section class="dm-hero relative overflow-hidden bg-black mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-20 left-0 w-96 h-96 rounded-full bg-cyan-400/20 blur-3xl"></div>
+        <div class="absolute -bottom-20 right-0 w-96 h-96 rounded-full bg-pink-500/30 blur-3xl"></div>
+    </div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-5 gap-10 items-center">
+            <div class="lg:col-span-3 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-cyan-300 mb-4"><i class="fab fa-tiktok"></i> TikTok marketing</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5">Win the <span class="text-pink-400">first three seconds.</span> Own the scroll.</h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Succeeding on TikTok means speaking the platform's fast, native language. We create trend driven, culturally relevant campaigns that build velocity, drive brand discovery and lead to real sales.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Launch on TikTok <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://www.tiktok.com/@trendcraftersglobal" target="_blank" rel="noopener noreferrer" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fab fa-tiktok text-sm"></i></span> Watch our TikTok</a>
+                </div>
+            </div>
+            <!-- 9:16 frames -->
+            <div class="lg:col-span-2 relative h-[24rem] sm:h-[28rem]" data-aos="fade-left" aria-hidden="true">
+                <div class="tt-frame left-0 top-10 -rotate-6 from-brand-500 to-pink-600"><span class="tt-tag">HOOK</span><i class="fas fa-play text-white text-3xl"></i><p class="tt-cap">Wait for it...</p></div>
+                <div class="tt-frame left-1/2 -translate-x-1/2 top-0 z-10 from-pink-500 to-pink-800 !w-40 !h-72 sm:!w-48 sm:!h-80"><span class="tt-tag">TREND</span><i class="fas fa-music text-white text-3xl"></i><p class="tt-cap">Nepal's trending sound</p></div>
+                <div class="tt-frame right-0 top-12 rotate-6 from-cyan-500 to-blue-700"><span class="tt-tag">CTA</span><i class="fas fa-bag-shopping text-white text-3xl"></i><p class="tt-cap">Link in bio</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_subnav.html' with active='tiktok' %}
+
+<!-- Hook framework: numbered horizontal rail -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our 15 second framework</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every video is built to <span class="gradient-text">hook, hold and convert</span></p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="rounded-2xl bg-ink-dark text-white p-6" data-aos="fade-up"><p class="text-3xl font-display font-semibold text-pink-400 mb-1">0-3s</p><h3 class="font-semibold mb-1">Hook</h3><p class="text-sm text-white/70">A bold visual, question or surprise that stops the thumb.</p></div>
+            <div class="rounded-2xl bg-ink-dark text-white p-6" data-aos="fade-up" data-aos-delay="80"><p class="text-3xl font-display font-semibold text-pink-400 mb-1">3-8s</p><h3 class="font-semibold mb-1">Value</h3><p class="text-sm text-white/70">The tip, transformation or story that earns the watch.</p></div>
+            <div class="rounded-2xl bg-ink-dark text-white p-6" data-aos="fade-up" data-aos-delay="160"><p class="text-3xl font-display font-semibold text-pink-400 mb-1">8-13s</p><h3 class="font-semibold mb-1">Proof</h3><p class="text-sm text-white/70">Results, reactions or a product moment that builds trust.</p></div>
+            <div class="rounded-2xl bg-ink-dark text-white p-6" data-aos="fade-up" data-aos-delay="240"><p class="text-3xl font-display font-semibold text-pink-400 mb-1">13-15s</p><h3 class="font-semibold mb-1">Action</h3><p class="text-sm text-white/70">A clear next step: follow, visit, message or buy.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Two column: creators + performance ads -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
+        <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up">
+            <span class="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center mb-4"><i class="fas fa-users text-xl"></i></span>
+            <h3 class="font-display text-2xl font-semibold text-ink mb-3">Creator led content</h3>
+            <p class="text-ink-muted mb-4 text-sm">Authentic voices convert better than polished ads. We match your brand with Nepali creators and produce content that feels native to the feed.</p>
+            <ul class="space-y-2 text-sm text-ink"><li><i class="fas fa-check text-brand-500 mr-2"></i> Creator sourcing and briefing</li><li><i class="fas fa-check text-brand-500 mr-2"></i> Scripts that keep your brand voice</li><li><i class="fas fa-check text-brand-500 mr-2"></i> Usage rights and reporting handled</li></ul>
+        </div>
+        <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i class="fas fa-bullseye text-xl"></i></span>
+            <h3 class="font-display text-2xl font-semibold text-ink mb-3">Performance ads</h3>
+            <p class="text-ink-muted mb-4 text-sm">Performance based ads built for international virality and local sales, from in-feed video to Spark Ads that boost organic winners.</p>
+            <ul class="space-y-2 text-sm text-ink"><li><i class="fas fa-check text-brand-500 mr-2"></i> In-feed and Spark Ads</li><li><i class="fas fa-check text-brand-500 mr-2"></i> Pixel setup and conversion tracking</li><li><i class="fas fa-check text-brand-500 mr-2"></i> Creative testing every week</li></ul>
+        </div>
+    </div>
+</section>
+
+{% include 'main/includes/reel_carousel.html' with heading="Vertical video that moves" sub="The 9:16 style behind every TikTok we plan. Watch how the hook lands in the first seconds." dark=True %}
+
+<!-- Photo band -->
+<section class="bg-white py-6 sm:py-8">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="relative rounded-3xl overflow-hidden h-48 sm:h-64" data-aos="fade-up">
+            <img src="{% static 'main/images/dm/social-icons.jpg' %}" alt="TikTok and social platform icons" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <p class="absolute bottom-5 left-6 right-6 font-display text-xl sm:text-2xl font-semibold text-white">Where the next generation of customers is already watching.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-6 sm:py-8"><div class="content-container max-w-6xl mx-auto"><div class="grid md:grid-cols-2 gap-4"><div class="relative rounded-3xl overflow-hidden h-48 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/phone-city.jpg' %}" alt="Watching short video on a phone in the city" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div></div><div class="relative rounded-3xl overflow-hidden h-48 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/iphone-apps.jpg' %}" alt="Social apps on an iPhone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div></div></div></div></section>
+
+<!-- Ideas gallery -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="max-w-2xl mb-8" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Content formats</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Ideas that <span class="gradient-text">travel</span></p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="tt-idea from-brand-500 to-pink-600" data-aos="fade-up"><i class="fas fa-wand-magic-sparkles"></i><p>Before &amp; after transformations</p></div>
+            <div class="tt-idea from-pink-500 to-pink-800" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-camera-retro"></i><p>Behind the scenes</p></div>
+            <div class="tt-idea from-cyan-500 to-blue-700" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-lightbulb"></i><p>Quick tips and myth busters</p></div>
+            <div class="tt-idea from-ink-dark to-pink-700" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-music"></i><p>Trend and sound remixes</p></div>
+            <div class="tt-idea from-pink-600 to-brand-500" data-aos="fade-up"><i class="fas fa-comment-dots"></i><p>Customer stories</p></div>
+            <div class="tt-idea from-brand-400 to-brand-700" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-box-open"></i><p>Product reveals</p></div>
+            <div class="tt-idea from-blue-600 to-pink-600" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-graduation-cap"></i><p>Student and client voices</p></div>
+            <div class="tt-idea from-pink-700 to-ink-dark" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-mountain"></i><p>Local culture and Nepal moments</p></div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_more.html' with exclude='tiktok' %}
+{% include 'main/dm/_cta.html' with heading='Ready to go viral for the right reasons?' text='We will bring the trends, the creators and the tracking. You bring the brand.' %}
+
+{% endblock %}

@@ -128,7 +128,7 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'main/about.html')
+    return _ab_page(request, 'main/about.html', 'about')
 
 def services(request):
     return render(request, 'main/services.html')
@@ -137,28 +137,114 @@ def work(request):
     return render(request, 'main/work.html')
 
 def brand_campaign(request):
-    return render(request, 'main/brand_campaign.html')
+    return _br_page(request, 'main/brand_campaign.html', 'hub')
+
+# Branding sub-pages: each has its own template and layout under main/br/
+def br_identity(request):
+    return _br_page(request, 'main/br/identity.html', 'identity')
+
+def br_campaigns(request):
+    return _br_page(request, 'main/br/campaigns.html', 'campaigns')
+
+def br_graphic(request):
+    return _br_page(request, 'main/br/graphic_design.html', 'graphic')
+
+def br_story(request):
+    return _br_page(request, 'main/br/storytelling.html', 'story')
+
+import json
+from django.urls import reverse
+from .seo_data import DM_PAGES, BR_PAGES, PR_PAGES, IT_PAGES, AB_PAGES
+
+
+def _section_page(request, template, page, is_hub, parent_name, parent_url_name):
+    """Render a service page with its keywords, FAQs and JSON-LD schema (FAQPage, Service, BreadcrumbList)."""
+    base = f"{request.scheme}://{request.get_host()}"
+    schema = [
+        {"@context": "https://schema.org", "@type": "FAQPage",
+         "mainEntity": [{"@type": "Question", "name": q,
+                         "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in page["faqs"]]},
+        {"@context": "https://schema.org", "@type": "Service", "name": page["name"],
+         "serviceType": page["name"], "provider": {"@id": "https://trendcrafters.global/#organization"},
+         "areaServed": ["Nepal", "Kathmandu", "Lalitpur", "Bhaktapur"],
+         "url": base + reverse(page["url_name"])},
+        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": base + "/"},
+            {"@type": "ListItem", "position": 2, "name": parent_name, "item": base + reverse(parent_url_name)},
+        ] + ([] if is_hub else [
+            {"@type": "ListItem", "position": 3, "name": page["name"], "item": base + reverse(page["url_name"])}])},
+    ]
+    return render(request, template, {"dm": page, "dm_schema": json.dumps(schema, ensure_ascii=False)})
+
+
+def _dm_page(request, template, key):
+    return _section_page(request, template, DM_PAGES[key], key == "hub", "Digital Marketing", "digital_marketing")
+
+
+def _pr_page(request, template, key):
+    return _section_page(request, template, PR_PAGES[key], key == "hub", "Production Services", "production")
+
+
+def _it_page(request, template, key):
+    return _section_page(request, template, IT_PAGES[key], key == "hub", "IT Solutions", "it_solutions")
+
+
+def _ab_page(request, template, key):
+    return _section_page(request, template, AB_PAGES[key], True, "About Us", "about")
+
+
+def _br_page(request, template, key):
+    return _section_page(request, template, BR_PAGES[key], key == "hub", "Branding & Campaigns", "brand_campaign")
+
 
 def digital_marketing(request):
-    return render(request, 'main/digital_marketing.html')
+    return _dm_page(request, 'main/digital_marketing.html', 'hub')
+
+# Digital marketing sub-pages: each has its own template and layout under main/dm/
+def dm_social_media(request):
+    return _dm_page(request, 'main/dm/social_media.html', 'social')
+
+def dm_meta_ads(request):
+    return _dm_page(request, 'main/dm/meta_ads.html', 'meta')
+
+def dm_tiktok(request):
+    return _dm_page(request, 'main/dm/tiktok.html', 'tiktok')
+
+def dm_content_reels(request):
+    return _dm_page(request, 'main/dm/content_reels.html', 'content')
+
+def dm_seo(request):
+    return _dm_page(request, 'main/dm/seo.html', 'seo')
+
+def dm_community(request):
+    return _dm_page(request, 'main/dm/community.html', 'community')
+
+def pr_video(request):
+    return _pr_page(request, 'main/pr/video.html', 'video')
+
+def pr_ads(request):
+    return _pr_page(request, 'main/pr/ads.html', 'ads')
+
+def it_solutions(request):
+    return _it_page(request, 'main/it/hub.html', 'hub')
 
 def photo_shoot(request):
-    return render(request, 'main/photo_shoot.html')
+    return _pr_page(request, 'main/photo_shoot.html', 'photo')
 
 def production(request):
-    return render(request, 'main/production.html')
+    return _pr_page(request, 'main/production.html', 'hub')
 
 def web_development(request):
-    return render(request, 'main/web_development.html')
+    return _it_page(request, 'main/web_development.html', 'web')
 
 def web_app_development(request):
-    return render(request, 'main/web_app_development.html')
+    return _it_page(request, 'main/web_app_development.html', 'app')
 
 def maintenance(request):
-    return render(request, 'main/maintenance.html')
+    return _it_page(request, 'main/maintenance.html', 'maint')
 
 def partners(request):
-    return render(request, 'main/partners.html')
+    return _ab_page(request, 'main/partners.html', 'partners')
 
 
 # Team members shown on /team/. Edit roles/bios here; add a photo by setting
@@ -167,13 +253,14 @@ TEAM_MEMBERS = [
     {"name": "Saksham Karki", "role": "Founder & CEO", "photo": "home/team-founder.jpg",
      "bio": "Leads Trend Crafters from our Tempo Park, Lalitpur studio, pairing local market insight with international creative standards.",
      "linkedin": "", "featured": True},
-    {"name": "Jenisha Chaulagain", "role": "Team Member", "photo": "", "bio": "",
+    {"name": "Jenisha Chaulagain", "role": "Project Manager", "photo": "", "bio": "",
      "linkedin": "https://www.linkedin.com/in/jenisha-chaulagain-7423232ba/"},
-    {"name": "Devashish Shrestha", "role": "Team Member", "photo": "", "bio": "",
+    {"name": "Devashish Shrestha", "role": "Marketing Head", "photo": "", "bio": "",
      "linkedin": "https://www.linkedin.com/in/devashishshresthaofficial/"},
-    {"name": "Divyam Koirala", "role": "Team Member", "photo": "", "bio": "",
+    {"name": "Divyam Koirala", "role": "Social Media Manager", "photo": "", "bio": "",
      "linkedin": "https://www.linkedin.com/in/divyam-koirala-853922378/"},
-    {"name": "Sumit", "role": "Team Member", "photo": "", "bio": "", "linkedin": ""},
+    {"name": "Dipankar Tamrakar", "role": "Editor", "photo": "", "bio": "", "linkedin": ""},
+    {"name": "Sumit Mishra", "role": "Graphic Designer", "photo": "", "bio": "", "linkedin": ""},
 ]
 
 

@@ -1,115 +1,118 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block title %}Digital Marketing Agency in Nepal | Trend Crafters{% endblock %}
-{% block meta_description %}Social media marketing, Meta ads, TikTok marketing, content & reels strategy, SEO, and community management from Trend Crafters - a premier digital marketing agency in Nepal.{% endblock %}
+{% block meta_description %}Social media marketing, Meta ads, TikTok, content and reels, SEO and community management from Trend Crafters, a Kathmandu digital marketing agency engineering structured growth for brands.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
 <!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-32 left-0 w-[24rem] h-[24rem] bg-gradient-to-tr from-pink-100 via-pink-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Digital Marketing Services</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            Turn Attention Into <span class="gradient-text">Global Revenue</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-8">
-            As a premier digital marketing agency based in Nepal, we don't just manage platforms - we engineer structured growth channels for brands locally and worldwide. Whether you're dominating the market in Kathmandu or scaling internationally, here's how we connect your brand to the audiences that matter most.
-        </p>
-        <a href="{% url 'contact' %}" class="btn-primary px-7 py-3.5 rounded-full font-semibold inline-block">
-            Discuss Your Marketing Strategy
-        </a>
+<section class="dm-hero relative overflow-hidden bg-ink-dark mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-24 -right-24 w-[30rem] h-[30rem] rounded-full bg-gradient-to-br from-brand-500 via-pink-500 to-pink-700 opacity-30 blur-3xl pointer-events-none"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><span class="hidden lg:inline-block w-8 h-px bg-brand-500"></span> Digital marketing services</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5">Turn attention into <span class="gradient-text">global revenue</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">As a premier digital marketing agency based in Nepal, we don't just manage platforms. We engineer structured growth channels for brands locally and worldwide. Whether you're dominating Kathmandu or scaling internationally, here is how we connect your brand to the audiences that matter most.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Discuss Your Marketing Strategy <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20discuss%20digital%20marketing." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 grid grid-cols-2 gap-3" data-aos="fade-left">
+                <div class="rounded-2xl bg-white/10 border border-white/10 p-6"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-sm text-white/65">Clients served</p></div>
+                <div class="rounded-2xl bg-white/10 border border-white/10 p-6"><p class="font-display text-3xl font-semibold gradient-text">6</p><p class="text-sm text-white/65">Growth channels</p></div>
+                <div class="rounded-2xl bg-white/10 border border-white/10 p-6"><p class="font-display text-3xl font-semibold gradient-text">60%+</p><p class="text-sm text-white/65">Engagement lift for Threads &amp; Trends</p></div>
+                <div class="rounded-2xl bg-white/10 border border-white/10 p-6"><p class="font-display text-3xl font-semibold gradient-text">45%</p><p class="text-sm text-white/65">Himalayan Java, in 3 weeks</p></div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Services -->
+{% include 'main/dm/_subnav.html' with active='hub' %}
+
+<!-- Featured: social media is number one -->
 <section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto space-y-6">
-
-        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="50">
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="3"/><path stroke-linecap="round" d="M8 17l-2 3v-3.5"/></svg>
+    <div class="content-container">
+        <a href="{% url 'dm_social_media' %}" class="group grid lg:grid-cols-2 rounded-3xl overflow-hidden bg-ink-dark text-white" data-aos="fade-up">
+            <div class="p-8 sm:p-12 flex flex-col justify-center">
+                <span class="inline-flex w-fit items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-brand-500 to-pink-600 text-xs font-semibold mb-4"><i class="fas fa-crown"></i> Our number one service</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-4">Social Media Marketing</h2>
+                <p class="text-white/70 mb-6">Building a brand presence requires more than posting. It requires strategic positioning that transcends borders. From capturing local market share in Nepal to engaging international audiences, we turn your profiles into engines for growth and passive scrollers into high value customers.</p>
+                <ul class="grid sm:grid-cols-2 gap-2 text-sm text-white/80 mb-6"><li><i class="fas fa-check text-brand-400 mr-2"></i>Strategy and positioning</li><li><i class="fas fa-check text-brand-400 mr-2"></i>Content calendar</li><li><i class="fas fa-check text-brand-400 mr-2"></i>Design, photo and video</li><li><i class="fas fa-check text-brand-400 mr-2"></i>Posting and community</li></ul>
+                <span class="inline-flex items-center gap-2 font-semibold text-brand-300">Explore social media marketing <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i></span>
             </div>
-            <div>
-                <h3 class="text-xl font-semibold text-ink mb-2">Social Media Marketing</h3>
-                <p class="text-ink-muted">Building a brand presence requires more than just posting - it requires strategic positioning that transcends borders. From capturing local market share in Nepal to engaging international audiences, we transform your social profiles into engines for growth. We combine data-driven strategy with compelling brand storytelling to cultivate loyal communities that turn passive scrollers into high-value customers.</p>
+            <div class="relative min-h-[16rem] lg:min-h-full bg-gradient-to-br from-brand-500 via-pink-500 to-pink-800">
+                <img src="{% static 'main/images/home/digital-marketing.jpg' %}" alt="Social media apps on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
             </div>
-        </div>
-
-        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10v4h4l6 4V6l-6 4H3z"/><path stroke-linecap="round" d="M18 9a4 4 0 010 6"/></svg>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-ink mb-2">Meta Ads (Facebook & Instagram)</h3>
-                <p class="text-ink-muted">Stop guessing and start scaling. Our Meta advertising strategies are built strictly for measurable ROI across both domestic and global markets. Whether you need a top Facebook ads agency in Nepal or international campaign execution, we implement precise audience segmentation, boost high-performing reels, and execute sophisticated retargeting of engaged audiences - ensuring you capture maximum conversions during critical enrollment windows and promotional periods.</p>
-            </div>
-        </div>
-
-        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="150">
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 8.5l6 3.5-6 3.5v-7z"/></svg>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-ink mb-2">TikTok Marketing</h3>
-                <p class="text-ink-muted">Succeeding on TikTok requires speaking the platform's native, fast-moving language. We create trend-driven, culturally relevant campaigns that capture attention in the first three seconds. From creator-led content targeting local demographics to performance-based ads built for international virality, we build velocity that drives brand discovery and real-world sales.</p>
-            </div>
-        </div>
-
-        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path stroke-linecap="round" d="M8 6v12M16 6v12"/></svg>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-ink mb-2">Content & Reels Strategy</h3>
-                <p class="text-ink-muted">Attention is modern currency. We develop a balanced, high-impact mix of 9:16 vertical reels and static visuals designed to stop the scroll anywhere in the world. By maintaining a consistent posting schedule and integrating authentic student, instructor, and client insights into short-form content, we create narratives that educate, entertain, and convert.</p>
-            </div>
-        </div>
-
-        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="250">
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path stroke-linecap="round" d="M20 20l-5.5-5.5"/></svg>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-ink mb-2">SEO & Search (Google Ranking)</h3>
-                <p class="text-ink-muted">Visibility is your most valuable digital asset. Whether you're searching for the best SEO services in Kathmandu to outrank local competitors or expanding your footprint to capture international search traffic, we optimize your digital architecture. Through technical site optimization and strategic keyword targeting, we ensure your business appears exactly when customers have high purchase intent.</p>
-            </div>
-        </div>
-
-        <div class="service-card grid md:grid-cols-[auto_1fr] gap-6 items-start" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="10" r="4"/><circle cx="16" cy="12" r="3"/></svg>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-ink mb-2">Community Management</h3>
-                <p class="text-ink-muted">A brand without a community is just a commodity. We actively nurture your online audience across time zones, driving meaningful engagement and building fierce brand advocacy. From proactive moderation to strategic outreach, we foster the two-way conversations that turn first-time buyers into lifelong global champions.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="text-center mt-10" data-aos="fade-up">
-        <a href="{% url 'contact' %}" class="btn-primary px-8 py-3.5 font-semibold inline-block">
-            Discuss Your Marketing Strategy
         </a>
     </div>
 </section>
 
-{% include 'main/includes/testimonials.html' %}
-
-<!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Ready to Scale Your Growth Channels?</h2>
-      <p class="text-white/90 mb-8">Let's build a digital strategy engineered for measurable ROI, locally and worldwide.</p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Discuss Your Marketing Strategy
-      </a>
+<!-- Five more services, each card a different accent -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Everything else we run</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Five more channels, <span class="gradient-text">one connected plan</span></p></div>
+        <div class="grid md:grid-cols-6 gap-5">
+            <a href="{% url 'dm_meta_ads' %}" class="md:col-span-3 group rounded-3xl bg-white p-8 shadow-card border border-ink/5 hover:-translate-y-1 transition" data-aos="fade-up"><div class="flex items-center gap-3 mb-4"><span class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fas fa-bullhorn text-xl"></i></span><h3 class="font-display text-xl font-semibold text-ink">Meta Ads</h3></div><p class="text-sm text-ink-muted mb-4">Stop guessing and start scaling. Precise audience segmentation, boosted reels and sophisticated retargeting built for measurable ROI, at home and abroad.</p><span class="text-sm font-semibold text-pink-600">Full funnel ads <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></a>
+            <a href="{% url 'dm_tiktok' %}" class="md:col-span-3 group rounded-3xl bg-black p-8 text-white hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="80"><div class="flex items-center gap-3 mb-4"><span class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center"><i class="fab fa-tiktok text-xl"></i></span><h3 class="font-display text-xl font-semibold">TikTok Marketing</h3></div><p class="text-sm text-white/70 mb-4">Trend driven, culturally relevant campaigns that capture attention in the first three seconds, from creator led content to performance ads.</p><span class="text-sm font-semibold text-pink-300">Go viral, on purpose <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></a>
+            <a href="{% url 'dm_content_reels' %}" class="md:col-span-2 group rounded-3xl bg-gradient-to-br from-brand-500 to-pink-600 p-8 text-white hover:-translate-y-1 transition" data-aos="fade-up"><i class="fas fa-clapperboard text-2xl mb-4"></i><h3 class="font-display text-xl font-semibold mb-2">Content &amp; Reels</h3><p class="text-sm text-white/85 mb-4">9:16 reels and statics designed to stop the scroll anywhere in the world.</p><span class="text-sm font-semibold">See the pipeline <i class="fas fa-arrow-right text-xs ml-1"></i></span></a>
+            <a href="{% url 'dm_seo' %}" class="md:col-span-2 group rounded-3xl bg-white p-8 shadow-card border border-ink/5 hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-magnifying-glass text-2xl text-green-600 mb-4"></i><h3 class="font-display text-xl font-semibold text-ink mb-2">SEO &amp; Search</h3><p class="text-sm text-ink-muted mb-4">Appear exactly when customers have high purchase intent.</p><span class="text-sm font-semibold text-pink-600">Rank higher <i class="fas fa-arrow-right text-xs ml-1"></i></span></a>
+            <a href="{% url 'dm_community' %}" class="md:col-span-2 group rounded-3xl bg-pink-50 border border-pink-100 p-8 hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-comments text-2xl text-pink-600 mb-4"></i><h3 class="font-display text-xl font-semibold text-ink mb-2">Community Management</h3><p class="text-sm text-ink-muted mb-4">Turn first time buyers into lifelong global champions.</p><span class="text-sm font-semibold text-pink-600">Build loyalty <i class="fas fa-arrow-right text-xs ml-1"></i></span></a>
+        </div>
     </div>
-  </div>
 </section>
+
+<!-- How we manage -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we manage your growth</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">A real team, <span class="gradient-text">a clear process</span></p></div>
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">1</span><h3 class="font-semibold text-ink mb-1">Discover</h3><p class="text-sm text-ink-muted">Goals, audience, competitors and your current numbers.</p></div>
+            <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="80"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">2</span><h3 class="font-semibold text-ink mb-1">Plan</h3><p class="text-sm text-ink-muted">A channel by channel roadmap with deliverables and budget.</p></div>
+            <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="160"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">3</span><h3 class="font-semibold text-ink mb-1">Execute</h3><p class="text-sm text-ink-muted">Creative, posting, ads and community, run by one team.</p></div>
+            <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="240"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">4</span><h3 class="font-semibold text-ink mb-1">Report</h3><p class="text-sm text-ink-muted">Monthly reviews with plain language results and next steps.</p></div>
+        </div>
+    </div>
+</section>
+
+{% comment %}team photos{% endcomment %}<section class="bg-white py-6 sm:py-8"><div class="content-container max-w-6xl mx-auto"><div class="grid md:grid-cols-3 gap-4"><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/cafe-team.jpg' %}" alt="Team working together on laptops" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/highfive.jpg' %}" alt="Team celebrating a win" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/open-office.jpg' %}" alt="Busy open plan office" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div></div></div></section>
+
+<!-- Brand personality and palette from the brand kit -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">The Trend Crafters personality</h2>
+            <p class="font-display text-3xl font-semibold text-white mb-4">Innovative. Bold. Modern. <span class="gradient-text">Creative. Professional.</span></p>
+            <p class="text-white/70">These five words guide every post, ad and campaign we build, for our own brand and for yours. Local soul, global standards.</p>
+        </div>
+        <div class="grid grid-cols-3 gap-3" data-aos="fade-left" aria-label="Brand colour palette">
+            <div class="rounded-2xl p-4 h-24 flex items-end text-xs font-semibold text-ink" style="background:#FFA11A">Orange</div>
+            <div class="rounded-2xl p-4 h-24 flex items-end text-xs font-semibold text-white" style="background:#FF5A3D">Coral</div>
+            <div class="rounded-2xl p-4 h-24 flex items-end text-xs font-semibold text-white" style="background:#F32168">Pink</div>
+            <div class="rounded-2xl p-4 h-24 flex items-end text-xs font-semibold text-white" style="background:#C51472">Magenta</div>
+            <div class="rounded-2xl p-4 h-24 flex items-end text-xs font-semibold text-white border border-white/20" style="background:#232323">Charcoal</div>
+            <div class="rounded-2xl p-4 h-24 flex items-end text-xs font-semibold text-ink" style="background:#FFFFFF">White</div>
+        </div>
+    </div>
+</section>
+
+<!-- Follow us -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto text-center">
+        <h2 class="font-display text-3xl font-semibold text-ink mb-3" data-aos="fade-up">See our own channels <span class="gradient-text">in action</span></h2>
+        <p class="text-ink-muted mb-6" data-aos="fade-up">Follow Trend Crafters to see the style, pace and storytelling we bring to client accounts.</p>
+        <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up">
+            <a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-ink/10 hover:shadow-card font-semibold text-ink"><i class="fab fa-instagram text-pink-600"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@trendcraftersglobal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-ink/10 hover:shadow-card font-semibold text-ink"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-ink/10 hover:shadow-card font-semibold text-ink"><i class="fab fa-facebook-f text-blue-600"></i> Facebook</a>
+            <a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-ink/10 hover:shadow-card font-semibold text-ink"><i class="fab fa-linkedin-in text-sky-700"></i> LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_cta.html' with heading='Ready to scale your growth channels?' text='Tell us your goals and we will recommend the mix of channels that fits your brand and budget.' %}
 
 {% endblock %}

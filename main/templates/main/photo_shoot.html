@@ -1,100 +1,81 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block title %}Commercial Photography Agency in Nepal | Trend Crafters{% endblock %}
-{% block meta_description %}Hyper-realistic studio photography and material realism from Trend Crafters - a premier commercial photography agency based in Kathmandu, Nepal.{% endblock %}
+{% block meta_description %}Hyper realistic studio photography and material realism from Trend Crafters, a premier commercial photography agency in Kathmandu, Nepal.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
-<!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Production Services · Photography</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            Flawless Execution, <span class="gradient-text">Frame by Frame</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-8">
-            As a premier production house based in Kathmandu, Trend Crafters brings international cinematic standards to every single frame. In today's highly visual digital landscape, standard photography is no longer enough to make a brand stand out.
-        </p>
-        <a href="{% url 'contact' %}" class="btn-primary px-7 py-3.5 rounded-full font-semibold inline-block">
-            Book a Shoot
-        </a>
+<!-- Light hero with a large lens image -->
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-pink-50 pt-28 sm:pt-32 pb-14">
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-700 mb-4"><i class="fas fa-camera"></i> Production services · Photography</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight mb-5">Flawless execution, <span class="gradient-text">frame by frame</span></h1>
+                <p class="text-ink-muted text-lg mb-8 max-w-xl mx-auto lg:mx-0">In today's visual landscape, standard photography is no longer enough. Our studio photography brings international cinematic standards to every image, so your brand communicates absolute premium quality.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Book a Shoot <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20a%20photo%20shoot." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a></div>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-6 gap-3 h-[24rem] sm:h-[28rem]" data-aos="fade-left">
+                <div class="col-span-4 relative rounded-3xl overflow-hidden shadow-xl"><img src="{% static 'main/images/pr/lens.jpg' %}" alt="Cinema lens close up" class="absolute inset-0 w-full h-full object-cover"></div>
+                <div class="col-span-2 grid grid-rows-2 gap-3">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/pr/canon.jpg' %}" alt="Camera on a white background" class="absolute inset-0 w-full h-full object-cover"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/pr/polaroid.jpg' %}" alt="Instant camera on a white surface" class="absolute inset-0 w-full h-full object-cover"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Our approach -->
+{% include 'main/pr/_subnav.html' with active='photo' %}
+
+<!-- Material realism split -->
 <section class="py-medium bg-white">
-    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-5">Material Realism, Not CGI</h2>
-        <p class="text-ink-muted leading-relaxed mb-4">
-            Whether you're a local enterprise seeking a top commercial photography agency in Nepal or a global brand requiring high-end visual assets for a product launch, we deliver imagery that communicates absolute premium quality.
-        </p>
-        <p class="text-ink-muted leading-relaxed">
-            Our approach relies heavily on advanced studio photography techniques and precision cinematic lighting. We specialize in capturing true material realism - highlighting the authentic, tactile weight of rich wood grains, polished metal surfaces, and intricate physical textures. We strictly avoid cheap, cartoonish, or overly CGI-reliant aesthetics that make products look artificial.
-        </p>
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+        <div class="relative rounded-3xl overflow-hidden h-64 sm:h-96" data-aos="fade-right"><img src="{% static 'main/images/pr/studio-lights.jpg' %}" alt="Studio with softbox lighting" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+        <div data-aos="fade-left">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Material realism, not CGI</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Tactile, authentic, <span class="gradient-text">premium</span></p>
+            <p class="text-ink-muted mb-4">Our approach relies on advanced studio techniques and precision cinematic lighting. We capture the authentic weight of rich wood grains, polished metal surfaces and intricate textures.</p>
+            <p class="text-ink-muted">We strictly avoid cheap, cartoonish or overly CGI reliant aesthetics that make products look artificial.</p>
+        </div>
     </div>
 </section>
 
 <!-- Concept example -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div class="rounded-2xl overflow-hidden shadow-card border border-surface-border aspect-[4/3]" data-aos="fade-right" style="background: linear-gradient(135deg, #141210 0%, #5C2410 45%, #EA6A2E 80%, #E0266E 100%);"></div>
-        <div data-aos="fade-left" data-aos-delay="100">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Tailored Visual Concepts</h2>
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-4">Engineering the Exact Mood Required</h2>
-            <p class="text-ink-muted leading-relaxed">
-                We focus on sophisticated, highly tailored visual concepts. For instance, when shooting a luxury fragrance campaign, we engineer the exact mood required - whether that means capturing the smoky evening elegance of the brand or styling the hero product on a sleek glass pedestal to highlight its citrus top notes. Every photograph is meticulously crafted to elevate your brand's perceived market value.
-            </p>
-        </div>
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Tailored visual concepts</h2>
+        <p class="font-display text-2xl sm:text-4xl font-medium text-white leading-snug mb-5">Engineering the exact mood required.</p>
+        <p class="text-white/70 max-w-2xl mx-auto">When shooting a luxury fragrance campaign, we can capture the smoky evening elegance of the brand, or style the hero product on a sleek glass pedestal to highlight its citrus top notes. Every photograph is crafted to elevate your brand's perceived market value.</p>
     </div>
 </section>
 
-<!-- What we shoot -->
+<!-- What we photograph -->
 <section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we photograph</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Built for <span class="gradient-text">your industry</span></p></div>
+        <div class="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            <div class="rounded-3xl overflow-hidden border border-ink/10 shadow-card bg-white" data-aos="fade-up"><div class="relative h-48"><img src="{% static 'main/images/pr/vintage-camera.jpg' %}" alt="Product styled on a map with a camera" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-semibold text-ink mb-1">Luxury product and fragrance</h3><p class="text-sm text-ink-muted">Hero product shots on glass, metal and material sets, built for launch campaigns.</p></div></div>
+            <div class="rounded-3xl overflow-hidden border border-ink/10 shadow-card bg-white" data-aos="fade-up" data-aos-delay="80"><div class="relative h-48"><img src="{% static 'main/images/home/hospitality.jpg' %}" alt="Cafe interior" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-semibold text-ink mb-1">Hospitality and lifestyle</h3><p class="text-sm text-ink-muted">Cinematic lighting that captures ambience, texture and mood for cafes, hotels and retail brands.</p></div></div>
+            <div class="rounded-3xl overflow-hidden border border-ink/10 shadow-card bg-white" data-aos="fade-up" data-aos-delay="160"><div class="relative h-48"><img src="{% static 'main/images/home/manufacturing.jpg' %}" alt="Factory production line" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-semibold text-ink mb-1">Manufacturing and enterprise</h3><p class="text-sm text-ink-muted">Studio grade imagery that gives raw materials, fabrication and craft the premium presence they deserve.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Shoot process -->
+<section class="py-medium bg-surface-subtle">
     <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-up">
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink">What We <span class="gradient-text">Photograph</span></h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="50">
-                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-flask text-brand-500 text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-ink mb-2">Luxury Product & Fragrance</h3>
-                <p class="text-ink-muted text-sm">Hero product shots on glass, metal, and material sets - built for launch campaigns.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-mug-hot text-brand-500 text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-ink mb-2">Hospitality & Lifestyle</h3>
-                <p class="text-ink-muted text-sm">Cinematic lighting that captures ambience, texture, and mood for cafes, hotels, and retail brands.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-industry text-brand-500 text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-ink mb-2">Manufacturing & Enterprise</h3>
-                <p class="text-ink-muted text-sm">Studio-grade imagery that gives raw materials, fabrication, and craft the premium presence they deserve.</p>
-            </div>
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How a shoot works</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From brief to <span class="gradient-text">final files</span></p></div>
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up"><span class="text-xs font-bold text-pink-600">01</span><h3 class="font-semibold text-ink mt-1 mb-1">Brief</h3><p class="text-sm text-ink-muted">Products, mood, usage and deadlines.</p></div>
+            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><span class="text-xs font-bold text-pink-600">02</span><h3 class="font-semibold text-ink mt-1 mb-1">Concept</h3><p class="text-sm text-ink-muted">Moodboard, shot list and set design.</p></div>
+            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><span class="text-xs font-bold text-pink-600">03</span><h3 class="font-semibold text-ink mt-1 mb-1">Shoot</h3><p class="text-sm text-ink-muted">Precision lighting in studio or on location.</p></div>
+            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="240"><span class="text-xs font-bold text-pink-600">04</span><h3 class="font-semibold text-ink mt-1 mb-1">Retouch and deliver</h3><p class="text-sm text-ink-muted">Colour, retouching and files for web and print.</p></div>
         </div>
     </div>
 </section>
 
-{% include 'main/includes/testimonials.html' %}
-
-<!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Let's Create Something Stunning</h2>
-      <p class="text-white/90 mb-8">Ready to make your brand shine through professional, premium photography?</p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Book a Shoot
-      </a>
-    </div>
-  </div>
-</section>
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/dm/_cta.html' with heading="Let's create something stunning" text='Ready to make your brand shine through professional, premium photography?' %}
 
 {% endblock %}

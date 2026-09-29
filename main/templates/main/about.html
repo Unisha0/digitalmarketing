@@ -1,197 +1,123 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% block title %}About Us - Trend Crafters Global{% endblock %}
-{% block meta_description %}Trend Crafters is a digital marketing, branding, and production agency based in Kathmandu, Nepal, bringing international-standard creative execution to brands locally and worldwide.{% endblock %}
-{% block og_image %}{% static 'main/images/about-og.jpg' %}{% endblock %}
-{% block canonical %}https://trendcrafters.global/about/{% endblock %}
+{% block title %}About Trend Crafters | Digital Marketing & Creative Agency in Kathmandu{% endblock %}
+{% block meta_description %}Trend Crafters is a digital marketing, branding, production and IT agency based in Kathmandu, Nepal, bringing international standard creative execution to brands locally and worldwide.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
-<!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-32 left-0 w-[24rem] h-[24rem] bg-gradient-to-tr from-pink-100 via-pink-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">About Us</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            We Don't Just Follow Trends - <span class="gradient-text">We Engineer Them</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto">
-            We know how frustrating it is to invest in marketing and receive nothing but vanity metrics and empty promises in return. That's exactly why we built Trend Crafters.
-        </p>
+<section class="relative overflow-hidden pt-28 sm:pt-32 pb-10">
+    <div class="absolute top-10 -left-24 w-[26rem] h-[26rem] rounded-full bg-gradient-to-br from-pink-200/50 to-brand-100/60 blur-3xl pointer-events-none"></div>
+    <div class="relative content-container">
+        <p class="text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-5" data-aos="fade-up">About Trend Crafters</p>
+        <h1 class="font-display font-semibold text-ink leading-[1.08] text-4xl sm:text-6xl xl:text-7xl" data-aos="fade-up">
+            We don't <span class="pill-img"><img src="{% static 'main/images/ab/team-laptops.jpg' %}" alt=""></span> just follow trends.
+            We <span class="pill-img"><img src="{% static 'main/images/home/bts-camera.jpg' %}" alt=""></span> <span class="gradient-text">engineer</span> <span class="pill-img"><img src="{% static 'main/images/ab/team-planning.jpg' %}" alt=""></span> them.
+        </h1>
+        <div class="grid lg:grid-cols-12 gap-8 mt-10 items-start">
+            <p class="lg:col-span-6 text-ink-muted text-lg" data-aos="fade-up">We know how frustrating it is to invest in marketing and get nothing but vanity metrics and empty promises. That's exactly why we built Trend Crafters: one team for strategy, creative, production and technology.</p>
+            <div class="lg:col-span-6 grid grid-cols-4 gap-0 border-t border-ink/15" data-aos="fade-up">
+                <div class="pt-4 pr-3"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-xs text-ink-muted">Clients</p></div>
+                <div class="pt-4 pr-3 border-l border-ink/10 pl-4"><p class="font-display text-3xl font-semibold gradient-text">4</p><p class="text-xs text-ink-muted">Disciplines</p></div>
+                <div class="pt-4 pr-3 border-l border-ink/10 pl-4"><p class="font-display text-3xl font-semibold gradient-text">3</p><p class="text-xs text-ink-muted">Continents</p></div>
+                <div class="pt-4 border-l border-ink/10 pl-4"><p class="font-display text-3xl font-semibold gradient-text">5★</p><p class="text-xs text-ink-muted">Rating</p></div>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 mt-8"><a href="{% url 'contact' %}" class="btn-logo">Work With Us <i class="fas fa-arrow-right text-sm"></i></a><a href="{% url 'team' %}" class="btn-ghost-link justify-center">Meet the team <i class="fas fa-arrow-right text-xs"></i></a></div>
     </div>
 </section>
 
-<!-- Hello, We Are Trend Crafters -->
+{% include 'main/ab/_subnav.html' with active='about' %}
+
+<!-- Hello -->
 <section class="py-medium bg-white">
-    <div class="content-container max-w-4xl mx-auto" data-aos="fade-up">
-        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-5">Hello, We Are Trend Crafters</h2>
-        <p class="text-ink-muted leading-relaxed mb-4">
-            Based in Kathmandu, Nepal, we are a digital marketing, branding, and production agency designed to bring international-standard creative execution right to your doorstep. We are here to act as your dedicated growth partner.
-        </p>
-        <p class="text-ink-muted leading-relaxed">
-            We bridge the gap between high-end visual craftsmanship and aggressive, data-driven marketing, ensuring your business doesn't just compete in the market - it leads it. From hyper-realistic studio production to highly targeted Meta ads, we build digital ecosystems that turn your audience's attention into actual revenue.
-        </p>
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Hello, we are Trend Crafters</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Your dedicated <span class="gradient-text">growth partner</span></p>
+            <p class="text-ink-muted mb-4">Based in Kathmandu, Nepal, we are a digital marketing, branding and production agency designed to bring international standard creative execution right to your doorstep.</p>
+            <p class="text-ink-muted">We bridge high end visual craftsmanship and data driven marketing, so your business doesn't just compete. It leads. From hyper realistic studio production to precise Meta ads and fast, secure websites, we build ecosystems that turn attention into revenue.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+            <div class="rounded-2xl bg-brand-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-sm text-ink-muted">Clients served</p></div>
+            <div class="rounded-2xl bg-pink-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">4</p><p class="text-sm text-ink-muted">Disciplines, one team</p></div>
+            <div class="rounded-2xl bg-pink-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">3</p><p class="text-sm text-ink-muted">Continents served</p></div>
+            <div class="rounded-2xl bg-brand-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">5<span class="text-2xl">★</span></p><p class="text-sm text-ink-muted">Client rating</p></div>
+        </div>
     </div>
 </section>
 
-<!-- Vision & Mission -->
+<!-- Vision & mission -->
+<!-- Vision & mission -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-5">
+        <div class="rounded-3xl bg-white/5 border border-white/10 p-8" data-aos="fade-up"><i class="fas fa-eye text-brand-400 text-2xl mb-3"></i><h2 class="font-display text-2xl font-semibold text-white mb-2">Our vision</h2><p class="text-white/70 text-sm">To be your most trusted digital partner, setting the benchmark for creative excellence in Nepal and executing your vision on a global scale.</p></div>
+        <div class="rounded-3xl bg-gradient-to-br from-brand-500/20 to-pink-600/20 border border-pink-400/30 p-8" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-bullseye text-brand-400 text-2xl mb-3"></i><h2 class="font-display text-2xl font-semibold text-white mb-2">Our mission</h2><p class="text-white/80 text-sm">To empower your brand with high performance marketing ecosystems and a premium visual identity. We strip away the guesswork, combining world class production values with sharp digital strategy to deliver measurable ROI.</p></div>
+    </div>
+</section>
+
+<!-- What we believe -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
+        <p class="lg:col-span-7 font-display text-2xl sm:text-4xl font-medium text-ink leading-snug border-l-4 pl-5" style="border-image:linear-gradient(to bottom,#FF9F1C,#E0266E) 1" data-aos="fade-right">"Aesthetic without strategy is just art. Strategy without aesthetic is invisible."</p>
+        <p class="lg:col-span-5 text-ink-muted" data-aos="fade-left">We believe in the perfect balance of logic and magic. Breathtaking visuals must be backed by data driven distribution. You won't find cheap CGI, cartoonish branding or spray and pray marketing here, only tactile, material realism that makes your business look expensive and authoritative.</p>
+    </div>
+</section>
+
+<!-- Values -->
 <section class="py-medium bg-surface-subtle">
-  <div class="content-container">
-    <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-        <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our Promise to You</h2>
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Vision & <span class="gradient-text">Mission</span></h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div class="service-card" data-aos="fade-right">
-        <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-eye text-brand-500 text-xl"></i>
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our commitment to you</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Core <span class="gradient-text">values</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="service-card" data-aos="fade-up"><i class="fas fa-gem text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Uncompromising craftsmanship</h3><p class="text-sm text-ink-muted">We reject "good enough", from cinematic lighting to seamless code.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-chart-line text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Data driven execution</h3><p class="text-sm text-ink-muted">Every ad spend, content schedule and SEO plan is backed by analytics.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-earth-asia text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Local soul, global standards</h3><p class="text-sm text-ink-muted">We understand Nepal and deliver to international expectations.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-scale-balanced text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Absolute transparency</h3><p class="text-sm text-ink-muted">Clear metrics, honest communication and proof of ROI.</p></div>
         </div>
-        <h3 class="text-xl font-semibold text-ink mb-3">Our Vision</h3>
-        <p class="text-ink-muted leading-relaxed">
-          To be your most trusted digital partner, setting the benchmark for creative excellence in Nepal and executing your vision on a global scale.
-        </p>
-      </div>
-
-      <div class="service-card" data-aos="fade-left">
-        <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-bullseye text-brand-500 text-xl"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-ink mb-3">Our Mission</h3>
-        <p class="text-ink-muted leading-relaxed">
-          To empower your brand with high-performance marketing ecosystems and a premium visual identity. We strip away the guesswork - combining world-class production values with razor-sharp digital strategy to deliver the one thing that truly matters: measurable ROI.
-        </p>
-      </div>
     </div>
-  </div>
 </section>
 
-<!-- Philosophy -->
+<!-- How our team works -->
 <section class="py-medium bg-white">
-  <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What We Believe In</h2>
-    <i class="fas fa-quote-left text-brand-300 text-3xl mb-6 block"></i>
-    <p class="font-display text-2xl sm:text-3xl text-ink font-medium leading-snug mb-6">
-      "Aesthetic without strategy is just art. Strategy without aesthetic is invisible."
-    </p>
-    <p class="text-ink-muted leading-relaxed">
-      At Trend Crafters, we believe in the perfect balance of logic and magic. We believe that breathtaking visuals must be backed by aggressive, data-driven distribution. You won't find cheap CGI, cartoonish branding, or "spray-and-pray" marketing here. We believe your brand deserves tactile, material realism - sophisticated execution that makes your business look expensive and authoritative.
-    </p>
-  </div>
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
+            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72"><img src="{% static 'main/images/ab/meeting.jpg' %}" alt="Two colleagues in a client meeting" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72 mt-8"><img src="{% static 'main/images/ab/team-table.jpg' %}" alt="Team working together at a table" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+        </div>
+        <div data-aos="fade-left">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How our team works</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Strategists, creators and <span class="gradient-text">developers, together</span></p>
+            <ul class="space-y-3 text-sm">
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-clipboard-list text-brand-500 mt-1"></i><span class="text-ink"><strong>Project management</strong> keeps every brief, deadline and handover on track.</span></li>
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-bullhorn text-brand-500 mt-1"></i><span class="text-ink"><strong>Marketing and social</strong> plan, publish and grow your channels.</span></li>
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-photo-film text-brand-500 mt-1"></i><span class="text-ink"><strong>Editing and design</strong> turn footage and ideas into polished assets.</span></li>
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-code text-brand-500 mt-1"></i><span class="text-ink"><strong>Developers and SEO</strong> build and optimise the websites that convert.</span></li>
+            </ul>
+        </div>
+    </div>
 </section>
 
-<!-- Core Values -->
+<!-- How we stand out -->
+<!-- How we stand out -->
 <section class="py-medium bg-surface-subtle">
-  <div class="content-container">
-    <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-        <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our Commitment to You</h2>
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Core <span class="gradient-text">Values</span></h2>
-        <p class="text-ink-muted mt-3">When you work with us, this is what you can expect every single day.</p>
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we stand out</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Beautiful creative <span class="gradient-text">and</span> aggressive media</p></div>
+        <div class="grid md:grid-cols-3 gap-5">
+            <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up"><i class="fas fa-mobile-alt text-brand-500 text-2xl mb-3"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">The 9:16 advantage</h3><p class="text-sm text-ink-muted">A balanced mix of engaging reels and statics that train social algorithms to favour your brand.</p></div>
+            <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-cubes text-brand-500 text-2xl mb-3"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Tactile visuals</h3><p class="text-sm text-ink-muted">Material realism that highlights the physical weight of rich wood and polished metal.</p></div>
+            <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-bullseye text-brand-500 text-2xl mb-3"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Retargeting funnels</h3><p class="text-sm text-ink-muted">Sophisticated funnels that capture conversions when it matters most.</p></div>
+        </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="50">
-        <h3 class="font-semibold text-ink mb-2 flex items-center gap-2"><i class="fas fa-gem text-brand-500"></i> Uncompromising Craftsmanship</h3>
-        <p class="text-ink-muted text-sm">We reject "good enough." From the cinematic lighting in our photography to the seamless code in your website, we demand excellence for your brand.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="font-semibold text-ink mb-2 flex items-center gap-2"><i class="fas fa-chart-line text-brand-500"></i> Data-Driven Execution</h3>
-        <p class="text-ink-muted text-sm">We do not guess with your budget. Every ad spend, content schedule, and SEO strategy we launch is backed by hard data and analytics.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-        <h3 class="font-semibold text-ink mb-2 flex items-center gap-2"><i class="fas fa-earth-asia text-brand-500"></i> Local Soul, Global Standards</h3>
-        <p class="text-ink-muted text-sm">We intimately understand the nuances of the Nepalese market, but we execute your projects to meet the highest international expectations.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="font-semibold text-ink mb-2 flex items-center gap-2"><i class="fas fa-scale-balanced text-brand-500"></i> Absolute Transparency</h3>
-        <p class="text-ink-muted text-sm">We are your partners. We provide you with clear metrics, honest communication, and tangible proof of ROI.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- How We Stand Out -->
+<!-- Founder -->
 <section class="py-medium bg-white">
-  <div class="content-container">
-    <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">How We <span class="gradient-text">Stand Out</span></h2>
-        <p class="text-ink-muted mt-3 max-w-xl mx-auto">Most agencies will ask you to choose between beautiful creative design or aggressive media buying. We give you both under one roof.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="50">
-        <h3 class="font-display text-lg font-semibold text-ink mb-2">The 9:16 Advantage</h3>
-        <p class="text-ink-muted text-sm">We have mastered vertical short-form content. We build you a balanced mix of highly engaging reels and statics that train social media algorithms to favor your brand.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-        <h3 class="font-display text-lg font-semibold text-ink mb-2">Tactile Visuals</h3>
-        <p class="text-ink-muted text-sm">We specialize in "material realism." We build visual identities that highlight the physical weight of premium textures - like rich wood or polished metal - giving your brand an undeniable, premium feel.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-        <h3 class="font-display text-lg font-semibold text-ink mb-2">Strategic Retargeting Funnels</h3>
-        <p class="text-ink-muted text-sm">We don't just run ads and hope for the best. We build sophisticated retargeting funnels designed to capture maximum conversions exactly when it matters - like during critical enrollment windows or sales periods.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Founder Section -->
-<section class="py-medium bg-surface-subtle">
-  <div class="content-container">
-    <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-5xl mx-auto">
-
-      <div data-aos="fade-right">
-        <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">From Our Founder</h2>
-        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-5">A Message From Our CEO</h2>
-        <div class="text-ink-muted leading-relaxed space-y-4">
-          <p>At Trend Crafters, we don't just follow trends, we create them. Our journey began with a single vision: to redefine how brands connect, grow, and inspire in the digital era.</p>
-          <p>Every project we take on is more than just marketing - it's strategy and craft combined. We empower businesses not only to be seen, but to be remembered and to lead their market.</p>
-        </div>
-        <div class="mt-6">
-          <p class="text-brand-600 font-semibold text-lg">- Saksham Karki</p>
-          <p class="text-ink-faint text-sm">Founder & CEO, Trend Crafters</p>
-        </div>
-      </div>
-
-      <div class="relative" data-aos="fade-left" data-aos-delay="100">
-        <div class="relative rounded-2xl shadow-card border border-surface-border overflow-hidden">
-          <img
-            src="https://qqazonq8eu.ufs.sh/f/y5kFsPOhkGJ6pNaF1T8sT2fJSUNuCrFDORIybgi6t7Q3q1xB"
-            alt="Saksham Karki - Founder & CEO of Trend Crafters"
-            class="w-full h-[380px] sm:h-[440px] object-cover"
-            loading="lazy">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why Partner With Us -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="font-display text-2xl md:text-3xl font-semibold text-ink mb-5">Why You Should Partner With Us</h2>
-        <p class="text-ink-muted leading-relaxed mb-4">
-            Partner with us if you are tired of generic marketing and cookie-cutter templates. Our clients choose Trend Crafters because they want an agency that treats their budget like an investment, not an expense.
-        </p>
-        <p class="text-ink-muted leading-relaxed">
-            We are for the ambitious business that wants to look like a global industry leader while aggressively capturing local market share right here in Nepal. When you choose us, you are getting a dedicated team of elite strategists, developers, and cinematic producers working cohesively to grow your business.
-        </p>
-        <p class="font-display text-xl sm:text-2xl font-semibold gradient-text mt-8">
-            "Crafting Digital Authority. Engineering Global Growth."
-        </p>
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-4" data-aos="fade-right"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">From our founder</h2><div class="flex items-center gap-3"><span class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-display font-semibold flex items-center justify-center">S</span><div class="leading-tight"><p class="font-semibold text-ink">Saksham Karki</p><p class="text-xs text-ink-muted">Founder &amp; CEO, Trend Crafters</p></div></div></div>
+        <div class="lg:col-span-8" data-aos="fade-left"><p class="font-display text-2xl sm:text-3xl font-medium text-ink leading-snug mb-4">At Trend Crafters, we don't just follow trends. We create them.</p><p class="text-ink-muted">Our journey began with a single vision: to redefine how brands connect, grow and inspire in the digital era. Every project is more than marketing. It's strategy and craft combined, empowering businesses not only to be seen, but to be remembered and to lead their market.</p></div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Let's Build Something Exceptional Together</h2>
-      <p class="text-white/90 mb-8">Whether you're dominating the local market in Kathmandu or scaling your brand globally, our team is ready to engineer your growth.</p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Get in Touch
-      </a>
-    </div>
-  </div>
-</section>
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/dm/_cta.html' with heading="Let's build something exceptional together" text="Whether you're dominating Kathmandu or scaling globally, our team is ready to engineer your growth." %}
 
 {% endblock %}

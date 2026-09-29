@@ -1,0 +1,97 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}IT Solutions in Nepal: Web, Apps, Brand Kits & SEO | Trend Crafters{% endblock %}
+{% block meta_description %}Frontend and backend developers, UI design, brand kits, web apps and SEO optimisation from Trend Crafters, a Kathmandu IT team building fast, secure, high performing digital products.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Dark hero with a code editor mock -->
+<section class="relative overflow-hidden bg-[#0b1020] mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-24 -left-24 w-[32rem] h-[32rem] rounded-full bg-blue-600/25 blur-3xl"></div>
+    <div class="absolute -bottom-32 right-0 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-pink-500/30 to-brand-500/20 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-blue-300 mb-4"><i class="fas fa-code"></i> IT solutions</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">High tech professionals, <span class="gradient-text">one connected team</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Frontend and backend developers, UI designers and SEO specialists working as one. We build your brand kit, design in Figma, code fast and secure products, then optimise them to be found.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Start a Project <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20discuss%20a%20website%20or%20app." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a></div>
+                <div class="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start text-xs text-white/70"><span class="px-3 py-1 rounded-full border border-white/15">Frontend</span><span class="px-3 py-1 rounded-full border border-white/15">Backend</span><span class="px-3 py-1 rounded-full border border-white/15">UI/UX</span><span class="px-3 py-1 rounded-full border border-white/15">SEO</span><span class="px-3 py-1 rounded-full border border-white/15">Brand kits</span></div>
+            </div>
+            <div class="flex items-center justify-center" data-aos="fade-left" aria-hidden="true">
+                <div class="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-[#111827]">
+                    <div class="flex items-center gap-2 px-4 py-3 bg-[#0b1220]"><span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span><span class="ml-3 text-xs text-white/50">views.py</span></div>
+                    <pre class="p-5 text-[12px] sm:text-[13px] leading-6 font-mono text-white/80 overflow-x-auto"><code><span class="text-pink-400">def</span> <span class="text-blue-300">launch_site</span>(brand):
+    kit = <span class="text-blue-300">build_brand_kit</span>(brand)
+    ui  = <span class="text-blue-300">design_in_figma</span>(kit)
+    site = <span class="text-blue-300">code</span>(ui, frontend=<span class="text-green-300">"fast"</span>,
+                backend=<span class="text-green-300">"secure"</span>)
+    <span class="text-blue-300">optimise_seo</span>(site)
+    <span class="text-pink-400">return</span> site.<span class="text-blue-300">go_live</span>()</code></pre>
+                    <div class="grid grid-cols-3 gap-px bg-white/10 text-center text-[11px] text-white/60"><div class="bg-[#111827] py-3"><span class="block text-white font-semibold text-sm">Fast</span>Core Web Vitals</div><div class="bg-[#111827] py-3"><span class="block text-white font-semibold text-sm">Secure</span>Built in</div><div class="bg-[#111827] py-3"><span class="block text-white font-semibold text-sm">Found</span>SEO ready</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/it/_subnav.html' with active='hub' %}
+
+<!-- The team's skills -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The skills behind it</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">A full stack team <span class="gradient-text">under one roof</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-blue-50 to-white border border-ink/5" data-aos="fade-up"><i class="fas fa-laptop-code text-2xl text-blue-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Frontend developers</h3><p class="text-sm text-ink-muted">Pixel accurate, responsive interfaces in HTML, CSS, JavaScript and Tailwind, turned from Figma designs.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-green-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-server text-2xl text-green-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Backend developers</h3><p class="text-sm text-ink-muted">Node.js, MERN, Python and PHP systems with secure APIs, databases and integrations that scale.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-pink-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="160"><i class="fab fa-figma text-2xl text-pink-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">UI/UX and brand kits</h3><p class="text-sm text-ink-muted">Logo, colour, typography and interface design in Figma, approved before we code.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-brand-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-magnifying-glass text-2xl text-brand-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">SEO optimisation</h3><p class="text-sm text-ink-muted">Technical SEO, schema and speed tuning built in, plus ongoing search growth.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Nexo case study -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Proof of skills</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">Built by us: <span class="gradient-text">nexomigration.com</span></p></div>
+        <div class="grid lg:grid-cols-5 gap-6 items-stretch">
+            <a href="https://nexomigration.com" target="_blank" rel="noopener noreferrer" class="lg:col-span-3 group relative rounded-3xl overflow-hidden min-h-[20rem] flex items-end p-8" data-aos="fade-right"><img src="{% static 'main/images/it/code-laptop.jpg' %}" alt="Code on a laptop" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark via-ink-dark/60 to-transparent"></div><div class="relative"><span class="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur text-xs font-semibold text-white mb-3">Migration &amp; education</span><h3 class="font-display text-2xl font-semibold text-white mb-1">Nexo Migration</h3><p class="text-white/70 text-sm mb-3">A multi-page, multilingual site with clear service paths, a step by step process, comparison content, FAQs and consultation booking.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-white">nexomigration.com <i class="fas fa-arrow-up-right-from-square text-xs"></i></span></div></a>
+            <div class="lg:col-span-2 grid gap-4" data-aos="fade-left">
+                <div class="rounded-3xl bg-white/5 border border-white/10 p-6"><h3 class="font-semibold text-white mb-1"><i class="fas fa-palette text-brand-400 mr-2"></i>Brand kit</h3><p class="text-sm text-white/65">Visual identity and design system that kept every page consistent.</p></div>
+                <div class="rounded-3xl bg-white/5 border border-white/10 p-6"><h3 class="font-semibold text-white mb-1"><i class="fas fa-language text-brand-400 mr-2"></i>Multilingual build</h3><p class="text-sm text-white/65">English and Spanish switching with clean, maintainable code.</p></div>
+                <div class="rounded-3xl bg-white/5 border border-white/10 p-6"><h3 class="font-semibold text-white mb-1"><i class="fas fa-calendar-check text-brand-400 mr-2"></i>Booking and lead capture</h3><p class="text-sm text-white/65">Consultation requests and WhatsApp chat connected to the team.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- From brand kit to live site -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Connect with us</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">We build the brand kit, <span class="gradient-text">then the product</span></p></div>
+        <div class="grid md:grid-cols-5 gap-3">
+            <div class="rounded-2xl border border-ink/10 p-5 text-center" data-aos="fade-up"><i class="fas fa-palette text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink text-sm">Brand kit</h3><p class="text-xs text-ink-muted mt-1">Logo, colour, type</p></div>
+            <div class="rounded-2xl border border-ink/10 p-5 text-center" data-aos="fade-up" data-aos-delay="60"><i class="fab fa-figma text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink text-sm">Design</h3><p class="text-xs text-ink-muted mt-1">Figma prototype</p></div>
+            <div class="rounded-2xl border border-ink/10 p-5 text-center" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-code text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink text-sm">Build</h3><p class="text-xs text-ink-muted mt-1">Frontend and backend</p></div>
+            <div class="rounded-2xl border border-ink/10 p-5 text-center" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-magnifying-glass text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink text-sm">Optimise</h3><p class="text-xs text-ink-muted mt-1">SEO and speed</p></div>
+            <div class="rounded-2xl border border-ink/10 p-5 text-center" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-user-shield text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink text-sm">Maintain</h3><p class="text-xs text-ink-muted mt-1">Secure and updated</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Three services -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-5">
+            <a href="{% url 'web_development' %}" class="group rounded-3xl overflow-hidden bg-white border border-ink/5 shadow-card hover:-translate-y-1 transition" data-aos="fade-up"><div class="relative h-44"><img src="{% static 'main/images/it/laptop-code.jpg' %}" alt="Laptop showing code" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-display text-xl font-semibold text-ink mb-1">Web Development</h3><p class="text-sm text-ink-muted mb-3">Custom, mobile first websites engineered for speed, security and sales.</p><span class="text-sm font-semibold text-pink-600">Explore <i class="fas fa-arrow-right text-xs ml-1"></i></span></div></a>
+            <a href="{% url 'web_app_development' %}" class="group rounded-3xl overflow-hidden bg-white border border-ink/5 shadow-card hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="80"><div class="relative h-44"><img src="{% static 'main/images/it/servers.jpg' %}" alt="Server racks" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-display text-xl font-semibold text-ink mb-1">Web App Development</h3><p class="text-sm text-ink-muted mb-3">Dashboards, portals and SaaS products that solve real operational problems.</p><span class="text-sm font-semibold text-pink-600">Explore <i class="fas fa-arrow-right text-xs ml-1"></i></span></div></a>
+            <a href="{% url 'maintenance' %}" class="group rounded-3xl overflow-hidden bg-white border border-ink/5 shadow-card hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="160"><div class="relative h-44"><img src="{% static 'main/images/it/network.jpg' %}" alt="Network cabling" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-6"><h3 class="font-display text-xl font-semibold text-ink mb-1">Maintenance &amp; SEO</h3><p class="text-sm text-ink-muted mb-3">Monitoring, backups, updates and search optimisation, so you never think about it.</p><span class="text-sm font-semibold text-pink-600">Explore <i class="fas fa-arrow-right text-xs ml-1"></i></span></div></a>
+        </div>
+    </div>
+</section>
+
+{% include 'main/it/_stack.html' %}
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/dm/_cta.html' with heading='Have a website or app in mind?' text="Tell us what you're trying to build. We'll tell you what it takes." %}
+
+{% endblock %}

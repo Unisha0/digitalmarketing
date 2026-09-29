@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Brand Campaign Agency in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}End to end brand campaigns for Nepal and beyond: concept, storyboard, cinematic production, multi platform distribution and measurement from Trend Crafters.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Cinematic hero: full-bleed reel behind the copy -->
+<section class="relative overflow-hidden bg-black mt-20 min-h-[34rem] flex items-center">
+    {% for r in reels %}{% if r.client == 'Changan Nepal' %}
+    <video class="absolute inset-0 w-full h-full object-cover opacity-50" src="{{ r.src }}#t=0.1" muted loop playsinline preload="none" data-reel aria-hidden="true"></video>
+    {% endif %}{% endfor %}
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20"></div>
+    <div class="relative content-container py-16">
+        <div class="max-w-2xl text-center lg:text-left" data-aos="fade-up">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-rocket"></i> Brand campaigns</p>
+            <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5">Create an <span class="gradient-text">inescapable desire</span></h1>
+            <p class="text-white/75 text-lg mb-8">A successful campaign doesn't just capture attention. It makes people want what you offer. As a top creative agency in Nepal, we design end to end campaigns engineered for local cultural resonance and global scale.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <a href="{% url 'contact' %}" class="btn-logo">Plan My Campaign <i class="fas fa-arrow-right text-sm"></i></a>
+                <a href="#campaign-reels" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-play text-xs"></i></span> Watch our films</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/br/_subnav.html' with active='campaigns' %}
+
+<!-- Film strip: campaign stages -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Anatomy of a campaign</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From storyboard to <span class="gradient-text">multi platform launch</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div class="rounded-2xl border-2 border-ink/10 p-5 relative" data-aos="fade-up"><span class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-pink-600">SCENE 01</span><i class="fas fa-lightbulb text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink mb-1">Concept</h3><p class="text-sm text-ink-muted">A complete, immersive visual idea, not just images.</p></div>
+            <div class="rounded-2xl border-2 border-ink/10 p-5 relative" data-aos="fade-up" data-aos-delay="60"><span class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-pink-600">SCENE 02</span><i class="fas fa-pen-ruler text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink mb-1">Storyboard</h3><p class="text-sm text-ink-muted">Shots, mood, lighting and script planned before we roll.</p></div>
+            <div class="rounded-2xl border-2 border-ink/10 p-5 relative" data-aos="fade-up" data-aos-delay="120"><span class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-pink-600">SCENE 03</span><i class="fas fa-video text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink mb-1">Production</h3><p class="text-sm text-ink-muted">Cinematic lighting and precision studio techniques.</p></div>
+            <div class="rounded-2xl border-2 border-ink/10 p-5 relative" data-aos="fade-up" data-aos-delay="180"><span class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-pink-600">SCENE 04</span><i class="fas fa-share-nodes text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink mb-1">Distribution</h3><p class="text-sm text-ink-muted">Social, ads, web and print, rolled out together.</p></div>
+            <div class="rounded-2xl border-2 border-ink/10 p-5 relative" data-aos="fade-up" data-aos-delay="240"><span class="absolute -top-3 left-4 bg-white px-2 text-xs font-bold text-pink-600">SCENE 05</span><i class="fas fa-chart-line text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink mb-1">Measure</h3><p class="text-sm text-ink-muted">Real world action tracked against your goals.</p></div>
+        </div>
+    </div>
+</section>
+
+<span id="campaign-reels"></span>
+{% include 'main/includes/reel_carousel.html' with heading="Campaign films" sub="Automotive, hospitality and fashion stories shot and edited by our team." kind="brand" dark=True %}
+
+<!-- Visual concepts -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Signature concepts</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Moods that <span class="gradient-text">sell prestige</span></p></div>
+        <div class="grid md:grid-cols-2 gap-5">
+            <div class="relative rounded-3xl overflow-hidden min-h-[18rem] flex items-end p-8" data-aos="fade-up"><img src="{% static 'main/images/br/adobe-dark.jpg' %}" alt="Dark studio desk with glowing screens" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-black/10"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Smoky evening elegance</h3><p class="text-sm text-white/80">For luxury lifestyle brands: low light, rich texture, quiet confidence.</p></div></div>
+            <div class="relative rounded-3xl overflow-hidden min-h-[18rem] flex items-end p-8" data-aos="fade-up" data-aos-delay="100"><img src="{% static 'main/images/br/desk-overhead.jpg' %}" alt="Clean studio setup with laptop and notebook" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/85 to-black/10"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">The hero on a glass pedestal</h3><p class="text-sm text-white/80">For premium products: precise lighting that communicates absolute prestige.</p></div></div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/br/_more.html' with exclude='campaigns' %}
+{% include 'main/dm/_cta.html' with heading='Have a launch coming up?' text='Share your date, audience and goal. We will come back with a concept and plan.' %}
+
+{% endblock %}

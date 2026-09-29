@@ -74,6 +74,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.reels',
             ],
         },
     },

@@ -1,0 +1,92 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Content & Reels Strategy Agency in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}A balanced mix of 9:16 reels and static visuals designed to stop the scroll: content calendars, scripting, shooting and editing for Nepali brands from Trend Crafters.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Warm hero with 9:16 reel strip on the right -->
+<section class="dm-hero relative overflow-hidden bg-ink-dark mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-clapperboard"></i> Content &amp; Reels strategy</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">Attention is modern currency. <span class="gradient-text">We help you earn it.</span></h1>
+                <p class="text-white/70 text-lg mb-6 max-w-xl mx-auto lg:mx-0">We develop a balanced, high impact mix of 9:16 vertical reels and static visuals designed to stop the scroll anywhere in the world, then keep people watching with narratives that educate, entertain and convert.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Plan My Content <i class="fas fa-arrow-right text-sm"></i></a><a href="{% url 'production' %}" class="btn-ghost-link !text-white justify-center">See our production work <i class="fas fa-arrow-right text-xs"></i></a></div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center gap-3" data-aos="fade-left">
+                <div class="w-32 sm:w-40 h-64 sm:h-80 rounded-2xl overflow-hidden shadow-xl mt-8 relative bg-gradient-to-br from-brand-500 to-pink-600"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt="Reel shoot in studio" class="absolute inset-0 w-full h-full object-cover"><i class="fas fa-play absolute bottom-2 right-2 text-white text-xs"></i></div>
+                <div class="w-32 sm:w-40 h-64 sm:h-80 rounded-2xl overflow-hidden shadow-xl relative bg-gradient-to-br from-pink-500 to-pink-800"><img src="{% static 'main/images/home/production.jpg' %}" alt="Photographer at work" class="absolute inset-0 w-full h-full object-cover"><i class="fas fa-play absolute bottom-2 right-2 text-white text-xs"></i></div>
+                <div class="w-32 sm:w-40 h-64 sm:h-80 rounded-2xl overflow-hidden shadow-xl mt-14 relative bg-gradient-to-br from-brand-400 to-brand-700"><img src="{% static 'main/images/home/branding.jpg' %}" alt="Brand moodboard" class="absolute inset-0 w-full h-full object-cover"><i class="fas fa-play absolute bottom-2 right-2 text-white text-xs"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_subnav.html' with active='content' %}
+
+{% include 'main/includes/reel_carousel.html' with heading="Reels from our studio" sub="Story led short video shot with cinematic lighting and edited for mobile." %}
+
+<!-- Content mix donut-style split -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The content mix</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Reels for reach. <span class="gradient-text">Statics for trust.</span></p>
+            <p class="text-ink-muted mb-6">Reels train social algorithms to favour your brand, while carousels and statics give followers something to save and share. We balance both and adjust the ratio as data comes in.</p>
+            <p class="text-ink-muted">By keeping a consistent posting schedule and weaving in authentic student, instructor and client insights, we create narratives that educate, entertain and convert.</p>
+        </div>
+        <div class="space-y-4" data-aos="fade-left">
+            <div><div class="flex justify-between text-sm font-semibold text-ink mb-1"><span>9:16 Reels</span><span>Reach</span></div><div class="h-4 rounded-full bg-brand-50 overflow-hidden"><div class="h-full w-[55%] rounded-full bg-gradient-to-r from-brand-500 to-pink-600"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold text-ink mb-1"><span>Carousels &amp; education</span><span>Saves and shares</span></div><div class="h-4 rounded-full bg-brand-50 overflow-hidden"><div class="h-full w-[25%] rounded-full bg-gradient-to-r from-brand-500 to-pink-600"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold text-ink mb-1"><span>Statics &amp; offers</span><span>Conversion</span></div><div class="h-4 rounded-full bg-brand-50 overflow-hidden"><div class="h-full w-[20%] rounded-full bg-gradient-to-r from-brand-500 to-pink-600"></div></div></div>
+            <p class="text-xs text-ink-faint">A typical starting split. We tune it to your goals and results.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-6 sm:py-8">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="relative rounded-3xl overflow-hidden h-44 sm:h-60" data-aos="fade-up"><img src="{% static 'main/images/dm/social-media-letters.jpg' %}" alt="Social media lettering" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+    </div>
+</section>
+
+<!-- Pipeline horizontal -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
+            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">From idea to feed</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-white">Our content <span class="gradient-text">pipeline</span></p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up"><i class="fas fa-lightbulb text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">Ideate</h3><p class="text-xs text-white/60">Research, trends and hooks tied to your goals.</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-file-lines text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">Script</h3><p class="text-xs text-white/60">Storyboards and copy in your brand voice.</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-video text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">Shoot</h3><p class="text-xs text-white/60">Cinematic lighting and studio grade capture.</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-scissors text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">Edit</h3><p class="text-xs text-white/60">Cuts, captions, sound and colour for mobile.</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5 text-white" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-rocket text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">Publish</h3><p class="text-xs text-white/60">Scheduled, tracked and improved every month.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-6 sm:py-8"><div class="content-container max-w-6xl mx-auto"><div class="grid md:grid-cols-3 gap-4"><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/topdown-team.jpg' %}" alt="Team planning content around a table" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/desk-laptop.jpg' %}" alt="Editing desk with laptop and notes" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/laptop-phone.jpg' %}" alt="Checking content on laptop and phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div></div></div></section>
+
+<!-- Format cards -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Formats we <span class="gradient-text">produce</span></h2></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="service-card" data-aos="fade-up"><i class="fas fa-film text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Short form reels</h3><p class="text-sm text-ink-muted">Vertical stories for Instagram, Facebook and TikTok.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-images text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Carousels</h3><p class="text-sm text-ink-muted">Educational swipe posts that earn saves.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-user-group text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Testimonial clips</h3><p class="text-sm text-ink-muted">Authentic student, instructor and client insights.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-image text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Static visuals</h3><p class="text-sm text-ink-muted">Offers, announcements and brand moments with premium design.</p></div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_more.html' with exclude='content' %}
+{% include 'main/dm/_cta.html' with heading='Let us fill your feed with content that works' text='Tell us about your brand and we will send a sample content plan.' %}
+
+{% endblock %}

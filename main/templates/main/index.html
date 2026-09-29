@@ -188,6 +188,8 @@
     </div>
 </section>
 
+{% include 'main/includes/reel_carousel.html' with heading="Work in motion" sub="Real campaigns for real Nepali brands. Scroll, tap and watch." %}
+
 <!-- Industries -->
 <section class="py-medium bg-surface-subtle">
     <div class="content-container">
@@ -242,19 +244,19 @@
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="0">
-                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan Nepal logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan Nepal logo" loading="lazy" class="partner-logo"></div>
                 <div class="p-5"><h3 class="font-semibold text-ink mb-1">Changan Nepal</h3><p class="text-xs font-semibold text-pink-600 mb-2">Brand Film · Luxury & Innovation</p><p class="text-sm text-ink-muted">Sleek storytelling capturing premium cars and refined design.</p></div>
             </article>
             <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="80">
-                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy" class="partner-logo"></div>
                 <div class="p-5"><h3 class="font-semibold text-ink mb-1">PIEC</h3><p class="text-xs font-semibold text-pink-600 mb-2">Brand Campaign · Study Abroad</p><p class="text-sm text-ink-muted">Empowering learners' international dreams with cinematic storytelling.</p></div>
             </article>
             <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="160">
-                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy" class="partner-logo"></div>
                 <div class="p-5"><h3 class="font-semibold text-ink mb-1">International Study Partners</h3><p class="text-xs font-semibold text-pink-600 mb-2">Educational Branding · Global Vision</p><p class="text-sm text-ink-muted">Inspiring students through compelling visuals and global education stories.</p></div>
             </article>
             <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="240">
-                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Nepal logo" loading="lazy" class="h-24 w-auto max-w-full object-contain"></div>
+                <div class="h-32 bg-white flex items-center justify-center p-3 border-b border-ink/5"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Nepal logo" loading="lazy" class="partner-logo"></div>
                 <div class="p-5"><h3 class="font-semibold text-ink mb-1">Sasurali Nepal</h3><p class="text-xs font-semibold text-pink-600 mb-2">Cinematic Branding · Culture & Lifestyle</p><p class="text-sm text-ink-muted">Showcasing Nepali hospitality through warm, authentic storytelling.</p></div>
             </article>
             <article class="rounded-2xl bg-white border border-ink/5 overflow-hidden shadow-card hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="0">
@@ -328,9 +330,9 @@
 
         <div class="mt-10 flex flex-wrap items-center justify-center gap-3" data-aos="fade-up">
             <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">Figma</span>
-            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">HTML / CSS / JavaScript</span>
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">React / Next.js</span>
             <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">Tailwind CSS</span>
-            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">Django</span>
+            <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">MERN &amp; Node</span>
             <span class="px-4 py-1.5 rounded-full border border-white/15 text-xs font-medium text-white/70">SEO & Analytics</span>
         </div>
         <div class="mt-8 text-center">
@@ -347,10 +349,10 @@
             <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Five vendors vs. <span class="gradient-text">one growth team</span></p>
         </div>
         <div class="rounded-2xl border border-ink/10 overflow-hidden shadow-card" data-aos="fade-up">
-            <div class="grid grid-cols-3 bg-ink-dark text-white text-sm font-semibold">
+            <div class="grid grid-cols-[2fr_1fr_1fr] bg-ink-dark text-white text-sm font-semibold">
                 <div class="p-4"></div><div class="p-4 text-center text-white/70">Separate vendors</div><div class="p-4 text-center bg-gradient-to-r from-brand-500 to-pink-600">Trend Crafters</div>
             </div>
-<div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Creative + media buying under one roof</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Photo & video production in-house</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Website built to convert your ad traffic</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">One team accountable for results</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-3 items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Local Nepal insight, global standards</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-minus"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div>
+<div class="grid grid-cols-[2fr_1fr_1fr] items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Creative + media buying under one roof</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-[2fr_1fr_1fr] items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Photo & video production in-house</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-[2fr_1fr_1fr] items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Website built to convert your ad traffic</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-[2fr_1fr_1fr] items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">One team accountable for results</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-xmark"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div><div class="grid grid-cols-[2fr_1fr_1fr] items-center border-t border-ink/10 text-sm"><div class="p-4 text-ink font-medium">Local Nepal insight, global standards</div><div class="p-4 text-center text-ink-faint"><i class="fas fa-minus"></i></div><div class="p-4 text-center text-brand-600 bg-brand-50/60"><i class="fas fa-check"></i></div></div>
         </div>
     </div>
 </section>
@@ -416,11 +418,12 @@
     <div class="content-container">
         <p class="text-center text-xs font-semibold uppercase tracking-widest text-ink-faint mb-8">Brands & partners who trust us</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 items-center">
-            <div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC Metal & Wood Craft logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Restaurant logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" width="200" height="200" loading="lazy" class="w-full h-24 sm:h-28 object-contain rounded-lg"></div>
+            <div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC Metal & Wood Craft logo" width="200" height="200" loading="lazy" class="partner-logo partner-logo-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Restaurant logo" width="200" height="200" loading="lazy" class="partner-logo partner-logo-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" width="200" height="200" loading="lazy" class="partner-logo partner-logo-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" width="200" height="200" loading="lazy" class="partner-logo partner-logo-lg"></div><div class="rounded-2xl border border-ink/10 bg-white p-3 hover:shadow-card transition-shadow"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" width="200" height="200" loading="lazy" class="partner-logo partner-logo-lg"></div>
         </div>
     </div>
 </section>
 
+<!-- Google reviews -->
 <!-- Google reviews -->
 <section class="py-medium bg-white" id="google-reviews">
     <div class="content-container max-w-5xl mx-auto">
@@ -450,7 +453,7 @@
             <span class="w-14 h-14 rounded-2xl bg-white shadow-card flex items-center justify-center flex-shrink-0"><i class="fab fa-google text-2xl text-pink-600"></i></span>
             <div class="flex-1">
                 <p class="font-display text-xl font-semibold text-ink">Worked with Trend Crafters?</p>
-                <p class="text-ink-muted text-sm">Read our reviews on Google, or share your own experience, it helps other Nepali businesses find us.</p>
+                <p class="text-ink-muted text-sm">Read our reviews on Google, or share your own experience. It helps other Nepali businesses find us.</p>
             </div>
             <div class="flex flex-wrap gap-3 justify-center">
                 <a href="{{ google_review_url }}" target="_blank" rel="noopener noreferrer" class="btn-logo">Review us on Google <i class="fas fa-arrow-up-right-from-square text-xs"></i></a>
@@ -459,20 +462,26 @@
     </div>
 </section>
 
-{% include 'main/includes/testimonials.html' with show_schema=True %}
-
-<!-- Message from the CEO -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-3xl mx-auto text-center" data-aos="fade-up">
-        <i class="fas fa-quote-left text-pink-400 text-3xl mb-5"></i>
-        <p class="font-display text-2xl sm:text-3xl font-medium text-white leading-snug mb-6">At Trend Crafters, we don't just follow trends, we create them.</p>
-        <p class="text-white/70 mb-4 max-w-2xl mx-auto">Our journey began with a single vision: to redefine how brands connect, grow and inspire in the digital era. Innovation thrives where creativity meets courage, and every project we take on is more than marketing. It's storytelling, strategy and soul combined.</p>
-        <p class="text-white/70 mb-6 max-w-2xl mx-auto">We empower businesses to not only be seen, but to be remembered.</p>
-        <p class="font-semibold text-white">Saksham Karki</p>
-        <p class="text-sm text-white/50 mb-6">Founder & CEO, Trend Crafters</p>
-        <a href="{% url 'team' %}" class="btn-logo">Meet the team <i class="fas fa-arrow-right text-sm"></i></a>
+<!-- Message from the founder: editorial split, left aligned -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-4 lg:sticky lg:top-28" data-aos="fade-right">
+            <span class="font-display text-8xl leading-none gradient-text select-none" aria-hidden="true">&ldquo;</span>
+            <p class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3 -mt-4">Message from our founder</p>
+            <div class="flex items-center gap-3 mt-4"><span class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-display font-semibold flex items-center justify-center">S</span><div class="leading-tight"><p class="font-semibold text-ink">Saksham Karki</p><p class="text-xs text-ink-muted">Founder &amp; CEO, Trend Crafters</p></div></div>
+        </div>
+        <div class="lg:col-span-8" data-aos="fade-left">
+            <p class="font-display text-2xl sm:text-4xl font-medium text-ink leading-snug border-l-4 pl-5 mb-6" style="border-image:linear-gradient(to bottom,#FF9F1C,#E0266E) 1">At Trend Crafters, we don't just follow trends. We create them.</p>
+            <div class="grid sm:grid-cols-2 gap-6 text-ink-muted">
+                <p>Our journey began with a single vision: to redefine how brands connect, grow and inspire in the digital era. Innovation thrives where creativity meets courage, and every project we take on is more than marketing. It's storytelling, strategy and soul combined.</p>
+                <p>We empower businesses to not only be seen, but to be remembered.</p>
+            </div>
+            <a href="{% url 'team' %}" class="inline-flex items-center gap-2 text-brand-600 font-semibold mt-6 hover:text-brand-700">Meet the team <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
     </div>
 </section>
+
+{% include 'main/includes/testimonials.html' with show_schema=True %}
 
 <!-- Local SEO / internal links -->
 <section class="py-medium bg-surface-subtle" aria-labelledby="serving-heading">

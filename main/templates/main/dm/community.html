@@ -1,0 +1,142 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Community Management Services in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Proactive moderation, fast replies and strategic outreach that turn first time buyers into loyal advocates. Community management for Nepali brands from Trend Crafters.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Dark split hero with a chat window with Trend Crafters -->
+<section class="dm-hero relative overflow-hidden bg-ink-dark mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-32 -left-20 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-pink-500 to-brand-500 opacity-25 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-comments"></i> Community management</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">A brand without a community is <span class="gradient-text">just a commodity</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">We nurture your audience across time zones, driving meaningful engagement and fierce brand advocacy. From proactive moderation to strategic outreach, we foster the two way conversations that turn first time buyers into lifelong champions.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Build My Community <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20managing%20my%20community." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Chat with us</a>
+                </div>
+            </div>
+            <div class="flex items-center justify-center" data-aos="fade-left" aria-hidden="true">
+                <div class="w-full max-w-lg rounded-3xl bg-surface shadow-2xl overflow-hidden">
+                    <div class="flex items-center gap-3 px-5 py-4 bg-white border-b border-ink/5">
+                        <img src="{% static 'main/images/favicon.png' %}" alt="" class="w-10 h-10 rounded-full object-contain bg-white ring-1 ring-ink/10">
+                        <div class="leading-tight"><p class="text-sm font-semibold text-ink">Trend Crafters</p><p class="text-xs text-green-600 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span> Typically replies in minutes</p></div>
+                        <i class="fas fa-ellipsis ml-auto text-ink-faint"></i>
+                    </div>
+                    <div class="p-5 space-y-3 bg-surface-subtle"><div class="flex gap-2"><span class="w-8 h-8 rounded-full bg-ink/10 flex-shrink-0 flex items-center justify-center text-ink-faint text-xs"><i class="fas fa-user"></i></span><div class="bubble bg-white border border-ink/10 text-ink">Hi Trend Crafters! We run a small business in Kathmandu. Can you look after our Facebook and Instagram?</div></div><div class="flex gap-2 justify-end"><div class="bubble bg-gradient-to-r from-brand-500 to-pink-600 text-white">Namaste! Yes, we handle strategy, content, posting, ads and community replies, in English and Nepali. 😊</div><img src="{% static 'main/images/favicon.png' %}" alt="" class="w-8 h-8 rounded-full flex-shrink-0 bg-white object-contain"></div><div class="flex gap-2"><span class="w-8 h-8 rounded-full bg-ink/10 flex-shrink-0 flex items-center justify-center text-ink-faint text-xs"><i class="fas fa-user"></i></span><div class="bubble bg-white border border-ink/10 text-ink">Do you also shoot the photos and reels?</div></div><div class="flex gap-2 justify-end"><div class="bubble bg-gradient-to-r from-brand-500 to-pink-600 text-white">We do. Our Lalitpur studio produces photos and 9:16 reels, so everything comes from one team.</div><img src="{% static 'main/images/favicon.png' %}" alt="" class="w-8 h-8 rounded-full flex-shrink-0 bg-white object-contain"></div><div class="flex gap-2"><span class="w-8 h-8 rounded-full bg-ink/10 flex-shrink-0 flex items-center justify-center text-ink-faint text-xs"><i class="fas fa-user"></i></span><div class="bubble bg-white border border-ink/10 text-ink">And how will we know it is working?</div></div><div class="flex gap-2 justify-end"><div class="bubble bg-gradient-to-r from-brand-500 to-pink-600 text-white">You get a plain language report every month: reach, engagement, enquiries and next steps. Want a free discovery call?</div><img src="{% static 'main/images/favicon.png' %}" alt="" class="w-8 h-8 rounded-full flex-shrink-0 bg-white object-contain"></div>
+                    <div class="flex items-center gap-2 px-4 py-3 bg-white border-t border-ink/5 text-xs text-ink-faint"><span class="flex-1 rounded-full bg-surface-subtle px-4 py-2">Type a message...</span><span class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-500 to-pink-600 text-white flex items-center justify-center"><i class="fas fa-paper-plane text-xs"></i></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_subnav.html' with active='community' %}
+
+<!-- Community roadmap: horizontal curvy road on desktop, compact vertical road on phones/tablets -->
+<section class="py-medium bg-white" aria-labelledby="road-heading">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The road to a loyal community</h2><p id="road-heading" class="font-display text-3xl md:text-4xl font-semibold text-ink">Four stops on <span class="gradient-text">every journey</span></p></div>
+
+        <!-- Horizontal (lg+) -->
+        <div class="rh hidden lg:grid" data-rh>
+            <article class="rh-card rh-up" data-rh-card style="grid-column:1;grid-row:1"><span class="road-label">Stop 1</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Fast, on-brand replies</h3><p class="text-[13px] leading-relaxed text-ink-muted">Comments, DMs and messages answered in your voice, in English or Nepali, with escalation rules so sales enquiries reach you straight away.</p></article><article class="rh-card rh-down" data-rh-card style="grid-column:2;grid-row:3"><span class="road-label">Stop 2</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Proactive moderation</h3><p class="text-[13px] leading-relaxed text-ink-muted">Spam, abuse and misinformation handled quickly, with a clear community policy so your pages stay welcoming.</p></article><article class="rh-card rh-up" data-rh-card style="grid-column:3;grid-row:1"><span class="road-label">Stop 3</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Strategic outreach</h3><p class="text-[13px] leading-relaxed text-ink-muted">We start conversations, engage with relevant accounts and collaborate with creators to widen your circle.</p></article><article class="rh-card rh-down" data-rh-card style="grid-column:4;grid-row:3"><span class="road-label">Destination</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Reputation care</h3><p class="text-[13px] leading-relaxed text-ink-muted">Complaints and negative reviews answered calmly and publicly, then resolved privately, protecting your brand and winning trust.</p></article>
+            <div class="rh-track" style="grid-column:1/-1;grid-row:2">
+                <svg viewBox="0 0 1200 130" class="rh-svg" aria-hidden="true">
+                    <path class="rh-base" d="M0,65 C100,-5 200,-5 300,65 S500,135 600,65 S800,-5 900,65 S1100,135 1200,65" pathLength="1000"/>
+                    <path class="rh-fill" data-rh-fill d="M0,65 C100,-5 200,-5 300,65 S500,135 600,65 S800,-5 900,65 S1100,135 1200,65" pathLength="1000"/>
+                </svg>
+                <span class="rh-node" data-rh-node data-x="150" data-dir="up"><i class="fas fa-reply"></i></span><span class="rh-node" data-rh-node data-x="450" data-dir="down"><i class="fas fa-user-shield"></i></span><span class="rh-node" data-rh-node data-x="750" data-dir="up"><i class="fas fa-handshake-angle"></i></span><span class="rh-node" data-rh-node data-x="1050" data-dir="down"><i class="fas fa-triangle-exclamation"></i></span>
+                <span class="rh-car" data-rh-car aria-hidden="true"><i class="fas fa-location-dot"></i></span>
+                <span class="rh-flag rh-flag-start"><i class="fas fa-flag"></i> Start</span>
+                <span class="rh-flag rh-flag-end"><i class="fas fa-flag-checkered"></i> Loyal</span>
+            </div>
+        </div>
+
+        <!-- Vertical (below lg) -->
+        <div class="road lg:hidden" data-road>
+            <div class="road-line" aria-hidden="true"><span class="road-fill"></span></div>
+            <span class="road-car" aria-hidden="true"><i class="fas fa-location-dot"></i></span>
+            <span class="road-start" aria-hidden="true"><i class="fas fa-flag"></i> Start</span>
+            <ol class="road-list">
+<li class="road-stop road-left" data-road-stop><span class="road-node"><i class="fas fa-reply"></i></span><div class="road-card"><span class="road-label">Stop 1</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Fast, on-brand replies</h3><p class="text-sm text-ink-muted">Comments, DMs and messages answered in your voice, in English or Nepali, with escalation rules so sales enquiries reach you straight away.</p></div></li>
+<li class="road-stop road-right" data-road-stop><span class="road-node"><i class="fas fa-user-shield"></i></span><div class="road-card"><span class="road-label">Stop 2</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Proactive moderation</h3><p class="text-sm text-ink-muted">Spam, abuse and misinformation handled quickly, with a clear community policy so your pages stay welcoming.</p></div></li>
+<li class="road-stop road-left" data-road-stop><span class="road-node"><i class="fas fa-handshake-angle"></i></span><div class="road-card"><span class="road-label">Stop 3</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Strategic outreach</h3><p class="text-sm text-ink-muted">We start conversations, engage with relevant accounts and collaborate with creators to widen your circle.</p></div></li>
+<li class="road-stop road-right" data-road-stop><span class="road-node"><i class="fas fa-triangle-exclamation"></i></span><div class="road-card"><span class="road-label">Destination</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Reputation care</h3><p class="text-sm text-ink-muted">Complaints and negative reviews answered calmly and publicly, then resolved privately, protecting your brand and winning trust.</p></div></li>
+            </ol>
+            <span class="road-end" aria-hidden="true"><i class="fas fa-flag-checkered"></i> Loyal community</span>
+        </div>
+    </div>
+</section>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // vertical
+  var road=document.querySelector('[data-road]');
+  if(road){
+    var stopsV=[].slice.call(road.querySelectorAll('[data-road-stop]'));
+    if(reduce) stopsV.forEach(function(s){s.classList.add('is-in')});
+    var updV=function(){
+      var r=road.getBoundingClientRect(), vh=innerHeight, p=Math.min(1,Math.max(0,(vh*0.62-r.top)/r.height)); if(reduce)p=1;
+      road.style.setProperty('--p',p.toFixed(4)); var y=r.height*p;
+      stopsV.forEach(function(s){ if(s.offsetTop+s.offsetHeight*0.3<=y+40) s.classList.add('is-in'); });
+    };
+    addEventListener('scroll',function(){requestAnimationFrame(updV)},{passive:true}); addEventListener('resize',updV); updV();
+  }
+  // horizontal
+  var rh=document.querySelector('[data-rh]'); if(!rh) return;
+  var svg=rh.querySelector('.rh-svg'), fill=rh.querySelector('[data-rh-fill]'), car=rh.querySelector('[data-rh-car]');
+  var path=rh.querySelector('.rh-base'), len=path.getTotalLength();
+  function pt(l){ return path.getPointAtLength(l); }
+  function xToLen(x){ var lo=0,hi=len; for(var i=0;i<28;i++){var m=(lo+hi)/2; if(pt(m).x<x)lo=m; else hi=m;} return (lo+hi)/2; }
+  var nodes=[].slice.call(rh.querySelectorAll('[data-rh-node]')), cards=[].slice.call(rh.querySelectorAll('[data-rh-card]'));
+  var marks=nodes.map(function(n){ var l=xToLen(+n.dataset.x), p=pt(l); n.style.left=(p.x/1200*100)+'%'; n.style.top=(p.y/130*100)+'%'; return l/len; });
+  function updH(){
+    var r=rh.getBoundingClientRect(), vh=innerHeight, p=Math.min(1,Math.max(0,(vh*0.75-r.top)/(r.height*0.9))); if(reduce)p=1;
+    fill.style.strokeDashoffset=(1000-p*1000).toFixed(1);
+    var q=pt(len*p); car.style.left=(q.x/1200*100)+'%'; car.style.top=(q.y/130*100)+'%';
+    marks.forEach(function(m,i){ var on=p>=m-0.02; nodes[i].classList.toggle('is-in',on); cards[i].classList.toggle('is-in',on); });
+  }
+  addEventListener('scroll',function(){requestAnimationFrame(updH)},{passive:true}); addEventListener('resize',updH); updH();
+})();
+</script>
+
+<!-- Loop diagram -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">The loyalty loop</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">From first comment to <span class="gradient-text">lifelong champion</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center text-white">
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up"><i class="fas fa-eye text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Notice</h3><p class="text-xs text-white/60 mt-1">A new follower or first comment</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-message text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Engage</h3><p class="text-xs text-white/60 mt-1">A fast, human reply</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-bag-shopping text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Convert</h3><p class="text-xs text-white/60 mt-1">Guide them to buy or book</p></div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-heart text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Advocate</h3><p class="text-xs text-white/60 mt-1">They share, tag and return</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-6 sm:py-8">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="relative rounded-3xl overflow-hidden h-44 sm:h-60" data-aos="fade-up"><img src="{% static 'main/images/dm/facebook-phone.jpg' %}" alt="Community conversations on a social app" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-r from-ink-dark/80 to-transparent"></div><p class="relative h-full flex items-center px-8 max-w-md font-display text-xl sm:text-2xl font-semibold text-white">Every comment is a conversation worth having.</p></div>
+    </div>
+</section>
+
+<section class="bg-white py-6 sm:py-8"><div class="content-container max-w-6xl mx-auto"><div class="grid md:grid-cols-2 gap-4"><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/pair-laptop.jpg' %}" alt="Two colleagues answering customers at a laptop" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/highfive.jpg' %}" alt="Team celebrating happy customers" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div></div></div></section>
+
+<!-- Promises -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto grid sm:grid-cols-3 gap-5 text-center">
+        <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up"><i class="fas fa-clock text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Across time zones</h3><p class="text-sm text-ink-muted">Coverage that suits both Nepal and international audiences.</p></div>
+        <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-microphone-lines text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Your voice</h3><p class="text-sm text-ink-muted">A tone guide so every reply sounds like you.</p></div>
+        <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-file-lines text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Monthly insights</h3><p class="text-sm text-ink-muted">Themes, questions and feedback from your audience, reported back.</p></div>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_more.html' with exclude='community' %}
+{% include 'main/dm/_cta.html' with heading='Turn your followers into a community' text='Tell us where your audience lives and we will handle the conversations.' %}
+
+{% endblock %}

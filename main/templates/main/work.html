@@ -2,151 +2,55 @@
 {% load static %}
 {% block title %}Our Work & Clients | Trend Crafters Portfolio{% endblock %}
 {% block meta_description %}Explore Trend Crafters' portfolio and the brands that trust us to lead - from education and hospitality to lifestyle, retail, and manufacturing, in Nepal and worldwide.{% endblock %}
+{% block meta_keywords %}digital marketing portfolio Nepal, brand campaign case studies Nepal, video production portfolio Nepal, reels examples Nepal, marketing agency clients Nepal, Changan Nepal campaign, Himalayan Java social media, PIEC campaign, Sasurali branding, Trend Crafters work{% endblock %}
 {% block content %}
-
-<!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4">Portfolio / Our Work</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            The Proof Is In <span class="gradient-text">the Performance</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto">
-            We believe that exceptional execution speaks louder than any sales pitch. From ambitious local startups here in Kathmandu to established international enterprises on the Gold Coast, we partner with brands that refuse to settle for average.
-        </p>
+<section class="relative overflow-hidden pt-28 sm:pt-32 pb-14">
+    <div class="absolute -top-10 right-[-6rem] w-[30rem] h-[30rem] rounded-full bg-gradient-to-br from-brand-200/60 to-pink-200/50 blur-3xl pointer-events-none"></div>
+    <div class="relative content-container">
+        <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4" data-aos="fade-up"><span class="w-8 h-px bg-pink-500"></span> Portfolio / Our work</p>
+        <h1 class="font-display font-semibold text-ink leading-[1.02] text-5xl sm:text-6xl xl:text-7xl max-w-5xl" data-aos="fade-up">The proof is in <span class="gradient-text">the performance.</span></h1>
+        <div class="grid lg:grid-cols-12 gap-6 mt-6 items-end">
+            <p class="lg:col-span-6 text-ink-muted text-lg" data-aos="fade-up">Exceptional execution speaks louder than any sales pitch. From ambitious local startups in Kathmandu to established international enterprises on the Gold Coast, we partner with brands that refuse to settle for average.</p>
+            <dl class="lg:col-span-6 grid grid-cols-3 gap-6 lg:justify-items-end" data-aos="fade-up">
+                <div><dt class="text-xs text-ink-faint uppercase tracking-wider">Clients</dt><dd class="font-display text-4xl font-semibold gradient-text">50+</dd></div>
+                <div><dt class="text-xs text-ink-faint uppercase tracking-wider">Engagement lift</dt><dd class="font-display text-4xl font-semibold gradient-text">60%+</dd></div>
+                <div><dt class="text-xs text-ink-faint uppercase tracking-wider">Continents</dt><dd class="font-display text-4xl font-semibold gradient-text">3</dd></div>
+            </dl>
+        </div>
+        <div class="fan mt-10" aria-hidden="true">
+            <figure class="fan-card" style="--r:-6deg;--y:1rem"><img src="{% static 'main/images/home/hero-landing.jpg' %}" alt=""></figure>
+            <figure class="fan-card" style="--r:3deg;--y:-.5rem"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt=""></figure>
+            <figure class="fan-card" style="--r:-3deg;--y:1.25rem"><img src="{% static 'main/images/home/retail.jpg' %}" alt=""></figure>
+            <figure class="fan-card hidden sm:block" style="--r:5deg;--y:0rem"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt=""></figure>
+            <figure class="fan-card hidden lg:block" style="--r:-4deg;--y:1rem"><img src="{% static 'main/images/home/hospitality.jpg' %}" alt=""></figure>
+        </div>
     </div>
 </section>
 
-<!-- Portfolio grid: hover reveals the service mix behind each engagement -->
-<!-- Each tile can graduate to its own dedicated case-study page (Client, Core Services, Challenge/Solution, Key Results, Media, Live Link) as real project write-ups become available; for now tiles link through to the relevant service. -->
+
+
+{% include 'main/includes/reel_carousel.html' with heading="Ten reels, ten brands, one standard" sub="Real campaigns we shot, edited and shipped for clients in Nepal." %}
+
+<!-- Brands: a logo cloud, no boxes and no headings per industry -->
 <section class="py-medium bg-white">
-    <div class="content-container">
-        <p class="text-center text-ink-faint text-sm mb-10 max-w-lg mx-auto" data-aos="fade-up">Hover any project to see the services behind it.</p>
-
-        <!-- Education, Migration & Finance -->
-        <div class="mb-14">
-            <h3 class="font-display text-xl font-semibold text-ink mb-5 flex items-center gap-2" data-aos="fade-up"><i class="fas fa-graduation-cap text-brand-500"></i> Education, Migration & Finance</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                <a href="{% url 'digital_marketing' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="50" style="background: linear-gradient(150deg, #5C2410 0%, #D2531E 60%, #F2863F 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Success Education & Visa Services <span class="opacity-70 font-normal">(Kumaripati)</span></h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Meta Ads · Retargeting Funnels</p><h4 class="text-white font-semibold text-sm">Success Education & Visa Services</h4></div>
-                </a>
-                <a href="{% url 'digital_marketing' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(150deg, #7C2F12 0%, #EA6A2E 60%, #FDA96A 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Success Education & Visa Services <span class="opacity-70 font-normal">(Gold Coast)</span></h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Cross-Border Campaigns</p><h4 class="text-white font-semibold text-sm">Success Education & Visa Services</h4></div>
-                </a>
-                <a href="{% url 'digital_marketing' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="150" style="background: linear-gradient(150deg, #A83F16 0%, #F2863F 60%, #FFE4D3 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Nexo Migration</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Content & Community Mgmt.</p><h4 class="text-white font-semibold text-sm">Nexo Migration</h4></div>
-                </a>
-                <a href="{% url 'digital_marketing' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(150deg, #9F1850 0%, #E0266E 60%, #FADAE6 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Self EDU</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">SEO & Search</p><h4 class="text-white font-semibold text-sm">Self EDU</h4></div>
-                </a>
-                <a href="{% url 'digital_marketing' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="250" style="background: linear-gradient(150deg, #5C2410 0%, #D2531E 60%, #F2863F 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Success Home Loans</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Brand Identity · SEO</p><h4 class="text-white font-semibold text-sm">Success Home Loans</h4></div>
-                </a>
-                <a href="{% url 'brand_campaign' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="300" style="background: linear-gradient(150deg, #7C2F12 0%, #EA6A2E 60%, #FDA96A 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Premium Books and Taxes</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Brand Identity · Graphic Design</p><h4 class="text-white font-semibold text-sm">Premium Books and Taxes</h4></div>
-                </a>
-                <a href="{% url 'digital_marketing' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="350" style="background: linear-gradient(150deg, #A83F16 0%, #F2863F 60%, #FFE4D3 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">SSW</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Social Media Marketing</p><h4 class="text-white font-semibold text-sm">SSW</h4></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Hospitality, Food & Beverage -->
-        <div class="mb-14">
-            <h3 class="font-display text-xl font-semibold text-ink mb-5 flex items-center gap-2" data-aos="fade-up"><i class="fas fa-mug-hot text-brand-500"></i> Hospitality, Food & Beverage</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                <a href="{% url 'photo_shoot' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="50" style="background: linear-gradient(150deg, #141210 0%, #5C2410 55%, #EA6A2E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">The Burleigh Cafe</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Studio Photography</p><h4 class="text-white font-semibold text-sm">The Burleigh Cafe</h4></div>
-                </a>
-                <a href="{% url 'photo_shoot' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(150deg, #1C1A17 0%, #5C5750 55%, #8B8478 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Hotel Black Diamond</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Brand Storytelling</p><h4 class="text-white font-semibold text-sm">Hotel Black Diamond</h4></div>
-                </a>
-                <a href="{% url 'production' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="150" style="background: linear-gradient(150deg, #5C2410 0%, #A83F16 55%, #FDC79E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Mount Everest Distillery</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Video & Reels</p><h4 class="text-white font-semibold text-sm">Mount Everest Distillery</h4></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Lifestyle, Events & Retail -->
-        <div class="mb-14">
-            <h3 class="font-display text-xl font-semibold text-ink mb-5 flex items-center gap-2" data-aos="fade-up"><i class="fas fa-shirt text-brand-500"></i> Lifestyle, Events & Retail</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                <a href="{% url 'production' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="50" style="background: linear-gradient(150deg, #9F1850 0%, #C41F5D 55%, #E0266E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Kathmandu Youth Conclave</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Commercial Ads</p><h4 class="text-white font-semibold text-sm">Kathmandu Youth Conclave</h4></div>
-                </a>
-                <a href="{% url 'brand_campaign' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(150deg, #7C2F12 0%, #E0266E 55%, #FADAE6 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Bloom</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Brand Campaign</p><h4 class="text-white font-semibold text-sm">Bloom</h4></div>
-                </a>
-                <a href="{% url 'production' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="150" style="background: linear-gradient(150deg, #141210 0%, #9F1850 55%, #EA6A2E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Threads N Trends</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">9:16 Reels · Social Media</p><h4 class="text-white font-semibold text-sm">Threads N Trends</h4></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Manufacturing & Enterprise -->
-        <div>
-            <h3 class="font-display text-xl font-semibold text-ink mb-5 flex items-center gap-2" data-aos="fade-up"><i class="fas fa-industry text-brand-500"></i> Manufacturing & Enterprise</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                <a href="{% url 'web_development' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="50" style="background: linear-gradient(150deg, #1C1A17 0%, #5C5750 55%, #8B8478 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Keyansh Fabrication</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Web Development</p><h4 class="text-white font-semibold text-sm">Keyansh Fabrication</h4></div>
-                </a>
-                <a href="{% url 'brand_campaign' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(150deg, #141210 0%, #7C2F12 55%, #D2531E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Vermi</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Brand Identity</p><h4 class="text-white font-semibold text-sm">Vermi</h4></div>
-                </a>
-                <a href="{% url 'photo_shoot' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="150" style="background: linear-gradient(150deg, #1C1A17 0%, #8B8478 55%, #FDC79E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">CNC</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Studio Photography</p><h4 class="text-white font-semibold text-sm">CNC</h4></div>
-                </a>
-                <a href="{% url 'web_app_development' %}" class="portfolio-tile" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(150deg, #141210 0%, #5C5750 55%, #D2531E 100%);">
-                    <div class="portfolio-base"><h4 class="text-white font-semibold text-sm leading-snug">Cross Border</h4></div>
-                    <div class="portfolio-overlay"><p class="text-white/70 text-xs uppercase tracking-wide mb-1">Web App Development</p><h4 class="text-white font-semibold text-sm">Cross Border</h4></div>
-                </a>
-            </div>
-        </div>
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Brands we've grown</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Trusted across <span class="gradient-text">every industry</span></p></div>
+        <ul class="cloud" data-aos="fade-up"><li class="cloud-item cloud-word" title="Success Education & Visa Services"><span>Success Education & Visa Services</span></li><li class="cloud-item cloud-word" title="Nexo Migration"><span>Nexo Migration</span></li><li class="cloud-item" title="PIEC"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy"></li><li class="cloud-item cloud-word" title="Self EDU"><span>Self EDU</span></li><li class="cloud-item cloud-word" title="Success Home Loans"><span>Success Home Loans</span></li><li class="cloud-item cloud-word" title="Premium Books and Taxes"><span>Premium Books and Taxes</span></li><li class="cloud-item" title="International Study Partners"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy"></li><li class="cloud-item cloud-word" title="SSW"><span>SSW</span></li><li class="cloud-item cloud-word" title="The Burleigh Cafe"><span>The Burleigh Cafe</span></li><li class="cloud-item cloud-word" title="Hotel Black Diamond"><span>Hotel Black Diamond</span></li><li class="cloud-item" title="Sasurali Nepal"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali Nepal logo" loading="lazy"></li><li class="cloud-item cloud-word" title="Mount Everest Distillery"><span>Mount Everest Distillery</span></li><li class="cloud-item cloud-word" title="Himalayan Java"><span>Himalayan Java</span></li><li class="cloud-item cloud-word" title="Kathmandu Youth Conclave"><span>Kathmandu Youth Conclave</span></li><li class="cloud-item" title="Changan Nepal"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan Nepal logo" loading="lazy"></li><li class="cloud-item cloud-word" title="Bloom"><span>Bloom</span></li><li class="cloud-item cloud-word" title="Threads N Trends"><span>Threads N Trends</span></li><li class="cloud-item cloud-word" title="Newmew"><span>Newmew</span></li><li class="cloud-item" title="CNC"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC logo" loading="lazy"></li><li class="cloud-item cloud-word" title="Ford Nepal"><span>Ford Nepal</span></li><li class="cloud-item cloud-word" title="Keyansh Fabrication"><span>Keyansh Fabrication</span></li><li class="cloud-item cloud-word" title="Vermi"><span>Vermi</span></li><li class="cloud-item cloud-word" title="Cross Border"><span>Cross Border</span></li></ul>
     </div>
 </section>
 
-<!-- Milestone highlight -->
+
+
+<!-- Global reach, split not centred -->
 <section class="py-medium bg-brand-50">
-    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-4">Global Reach, Local Impact</h2>
-        <p class="text-ink-muted leading-relaxed">
-            We've successfully executed high-converting, cross-border digital campaigns for international clients on the Gold Coast, while simultaneously building dominant market share for premier brands right here in Nepal - proof that "local soul, global standards" isn't just a tagline.
-        </p>
+    <div class="content-container max-w-6xl mx-auto grid md:grid-cols-5 gap-8 items-center">
+        <div class="md:col-span-3" data-aos="fade-right"><h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-3">Global reach, <span class="gradient-text">local impact</span></h2><p class="text-ink-muted leading-relaxed">We've executed high converting, cross border digital campaigns for international clients on the Gold Coast, while building dominant market share for premier brands here in Nepal.</p></div>
+        <div class="md:col-span-2 grid grid-cols-2 gap-3" data-aos="fade-left"><div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-semibold gradient-text">45%</p><p class="text-xs text-ink-muted">Himalayan Java, 3 weeks</p></div><div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-semibold gradient-text">60%+</p><p class="text-xs text-ink-muted">Threads &amp; Trends</p></div></div>
     </div>
 </section>
 
 {% include 'main/includes/testimonials.html' %}
 
-<!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Want to Be Our Next Case Study?</h2>
-      <p class="text-white/90 mb-8">Let's craft your success story next.</p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Get in Touch
-      </a>
-    </div>
-  </div>
-</section>
+{% include 'main/dm/_cta.html' with heading="Want results like these?" text="Tell us about your business and we'll show you what a campaign could do." %}
 
 {% endblock %}

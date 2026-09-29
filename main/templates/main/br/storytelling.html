@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Brand Storytelling Agency in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Give your business a distinct voice and a reason to care: brand narrative, messaging and persuasive copywriting paired with high end visual concepts, from Trend Crafters.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Light split hero with photo collage (same family as Graphic Design) -->
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-pink-50 pt-28 sm:pt-32 pb-14">
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-700 mb-4"><i class="fas fa-book-open"></i> Brand storytelling</p>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight mb-5">People don't just buy products. <span class="gradient-text">They buy the story.</span></h1>
+                <p class="text-ink-muted text-lg mb-8 max-w-xl mx-auto lg:mx-0">We engineer brand stories that give your business a distinct voice, a clear soul and a compelling reason for consumers to care, then tell them consistently in words and visuals.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Find Our Story <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20with%20my%20brand%20story." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a></div>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-6 grid-rows-2 gap-3 h-[26rem] sm:h-[30rem]" data-aos="fade-left">
+                <div class="col-span-4 row-span-2 relative rounded-3xl overflow-hidden shadow-xl"><img src="{% static 'main/images/br/idea-bulb.jpg' %}" alt="A hand holding up a light bulb against a pink sky" class="absolute inset-0 w-full h-full object-cover"></div>
+                <div class="col-span-2 relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/br/team-table.jpg' %}" alt="Team writing notes around a table" class="absolute inset-0 w-full h-full object-cover"></div>
+                <div class="col-span-2 relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/br/sketch-meeting.jpg' %}" alt="Sketching ideas on paper beside a laptop" class="absolute inset-0 w-full h-full object-cover"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/br/_subnav.html' with active='story' %}
+
+<!-- Story arc: three connected steps -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The story arc</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every brand has one <span class="gradient-text">worth telling</span></p></div>
+        <div class="grid md:grid-cols-3 gap-0 md:gap-0 relative">
+            <div class="p-8 md:border-r border-dashed border-ink/15" data-aos="fade-up"><span class="font-display text-6xl font-bold text-brand-100">01</span><h3 class="font-display text-xl font-semibold text-ink -mt-3 mb-2">Where you come from</h3><p class="text-sm text-ink-muted">Your origin, values and the problem you exist to solve. The soul behind the business.</p></div>
+            <div class="p-8 md:border-r border-dashed border-ink/15" data-aos="fade-up" data-aos-delay="80"><span class="font-display text-6xl font-bold text-pink-100">02</span><h3 class="font-display text-xl font-semibold text-ink -mt-3 mb-2">What you change</h3><p class="text-sm text-ink-muted">The transformation customers experience, told through real people, proof and detail.</p></div>
+            <div class="p-8" data-aos="fade-up" data-aos-delay="160"><span class="font-display text-6xl font-bold text-brand-100">03</span><h3 class="font-display text-xl font-semibold text-ink -mt-3 mb-2">Where you are going</h3><p class="text-sm text-ink-muted">A clear vision that invites customers, partners and talent to come along.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Big quote -->
+<section class="py-medium bg-ink-dark">
+    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <i class="fas fa-quote-left text-pink-400 text-3xl mb-5"></i>
+        <p class="font-display text-2xl sm:text-4xl font-medium text-white leading-snug mb-6">We shape exactly how the world perceives your value.</p>
+        <p class="text-white/65 max-w-2xl mx-auto">By combining high end visual concepts with conversion focused, persuasive copywriting, we weave narratives that build fierce local loyalty while keeping the universal appeal needed for international expansion.</p>
+    </div>
+</section>
+
+<!-- What we write and shape -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
+            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72"><img src="{% static 'main/images/br/team-table.jpg' %}" alt="Team writing notes around a table" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72 mt-8"><img src="{% static 'main/images/br/sketch-meeting.jpg' %}" alt="Sketching ideas on paper beside a laptop" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+        </div>
+        <div data-aos="fade-left">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we shape</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-5">Words and visuals, <span class="gradient-text">one voice</span></p>
+            <ul class="space-y-3">
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-microphone-lines text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Brand voice and messaging</strong> that sounds like you, in English and Nepali</span></li>
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-pen-nib text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Persuasive copy</strong> for websites, ads, decks and social</span></li>
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-film text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Story led video</strong> and photography that shows it</span></li>
+                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-briefcase text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>B2B narratives</strong> that make innovative services easy to grasp</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% include 'main/includes/reel_carousel.html' with heading="Stories on screen" sub="Culture, hospitality, education and fashion, told the Trend Crafters way." kind="social" %}
+
+{% include 'main/dm/_seo_block.html' %}
+{% include 'main/br/_more.html' with exclude='story' %}
+{% include 'main/dm/_cta.html' with heading='Ready to tell your story?' text='Tell us about your brand and we will find the narrative that makes people care.' %}
+
+{% endblock %}

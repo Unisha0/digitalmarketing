@@ -1,0 +1,24 @@
+{# SEO section for digital marketing pages: keyword chips + FAQ accordion + JSON-LD. Needs `dm` and `dm_schema` from the view. #}
+<section class="py-medium bg-white" aria-labelledby="dm-faq-heading">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+            <div class="lg:col-span-2" data-aos="fade-up">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Popular searches</h2>
+                <p id="dm-faq-heading" class="font-display text-3xl font-semibold text-ink mb-4">{{ dm.name }} <span class="gradient-text">in Nepal</span></p>
+                <p class="text-ink-muted text-sm mb-5">Businesses in Kathmandu, Lalitpur, Bhaktapur and across Nepal look for us with searches like these:</p>
+                <ul class="flex flex-wrap gap-2">
+                    {% for k in dm.keywords %}<li class="px-3 py-1 rounded-full bg-surface-subtle border border-ink/5 text-xs text-ink-muted">{{ k }}</li>{% endfor %}
+                </ul>
+            </div>
+            <div class="lg:col-span-3 space-y-3">
+                {% for q, a in dm.faqs %}
+                <details class="faq-item" data-aos="fade-up"{% if forloop.first %} open{% endif %}>
+                    <summary><span>{{ q }}</span><span class="faq-icon"><i class="fas fa-plus"></i></span></summary>
+                    <p class="faq-answer">{{ a }}</p>
+                </details>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
