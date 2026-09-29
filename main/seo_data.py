@@ -12,11 +12,11 @@ DM_PAGES = {
             "digital marketing agency in Nepal", "digital marketing company Kathmandu",
             "best digital marketing agency Nepal", "social media marketing Nepal", "Meta ads Nepal",
             "TikTok marketing Nepal", "SEO services Kathmandu", "content marketing Nepal",
-            "online marketing Nepal", "digital marketing services Lalitpur",
+            "online marketing Nepal", "digital marketing services Tinkune",
         ],
         "faqs": [
             ("What does a digital marketing agency in Nepal do?", "We plan and run the channels that bring customers online: social media marketing, Meta (Facebook and Instagram) ads, TikTok, content and reels, SEO and community management, so your marketing produces measurable enquiries and sales."),
-            ("Which digital marketing services does Trend Crafters offer?", "Social media marketing (our most requested service), Meta ads, TikTok marketing, content and reels strategy, SEO and search, and community management, all delivered by one team from our Lalitpur studio."),
+            ("Which digital marketing services does Trend Crafters offer?", "Social media marketing (our most requested service), Meta ads, TikTok marketing, content and reels strategy, SEO and search, and community management, all delivered by one team from our Kathmandu studio."),
             ("How much does digital marketing cost in Nepal?", "It depends on your goals, channels and ad budget. We share a written scope and fee before we start, and ad spend is always separate and transparent."),
             ("Do you work with businesses outside Kathmandu?", "Yes. We serve brands across Nepal and internationally, including clients on Australia's Gold Coast, and work in both English and Nepali."),
             ("How soon will I see results?", "Paid campaigns can produce leads within days. Social media growth and SEO compound over months. We agree on milestones and report monthly so you always know where you stand."),
@@ -28,7 +28,7 @@ DM_PAGES = {
         "keywords": [
             "social media marketing agency Nepal", "social media management Kathmandu",
             "Facebook marketing Nepal", "Instagram marketing Nepal", "LinkedIn marketing Nepal",
-            "social media content creation Nepal", "social media agency Lalitpur",
+            "social media content creation Nepal", "social media agency Tinkune",
             "social media strategy for business", "social media advertising Nepal",
             "brand growth on social media",
         ],
@@ -98,7 +98,7 @@ DM_PAGES = {
             "SEO services Kathmandu", "SEO company Nepal", "local SEO Nepal",
             "Google Business Profile optimization Nepal", "website ranking Nepal",
             "keyword research Nepal", "technical SEO audit", "on page SEO Nepal",
-            "SEO agency Lalitpur", "rank on Google Nepal",
+            "SEO agency Tinkune", "rank on Google Nepal",
         ],
         "faqs": [
             ("How long does SEO take to work in Nepal?", "Technical fixes can help within weeks, but meaningful ranking growth usually takes three to six months depending on competition and your starting point."),
@@ -137,7 +137,7 @@ BR_PAGES = {
             "branding agency in Nepal", "brand identity design Kathmandu", "creative agency Nepal",
             "brand campaign agency Nepal", "graphic design Nepal", "brand storytelling Nepal",
             "logo design Kathmandu", "rebranding agency Nepal", "brand strategy Nepal",
-            "advertising agency Lalitpur",
+            "advertising agency Tinkune",
         ],
         "faqs": [
             ("What does a branding agency in Nepal do?", "We build the identity, campaigns, design and story that make a business recognisable and trusted: logo and visual identity, brand guidelines, campaign concepts, graphic design and brand storytelling."),
@@ -187,7 +187,7 @@ BR_PAGES = {
         "keywords": [
             "graphic design Nepal", "graphic design agency Kathmandu", "social media design Nepal",
             "packaging design Nepal", "brochure and print design Nepal", "poster and banner design Nepal",
-            "website UI design Nepal", "creative design services Lalitpur", "marketing collateral design",
+            "website UI design Nepal", "creative design services Tinkune", "marketing collateral design",
             "typography and layout design",
         ],
         "faqs": [
@@ -220,7 +220,7 @@ BR_PAGES = {
 
 PR_PAGES = {
     "hub": {"name": "Production Services", "url_name": "production",
-        "keywords": ["production house Nepal", "video production Kathmandu", "photography agency Nepal", "commercial ad production Nepal", "reels production Nepal", "brand photography Nepal", "studio in Lalitpur", "cinematic video Nepal", "photo and video production Nepal", "content production agency Nepal"],
+        "keywords": ["production house Nepal", "video production Kathmandu", "photography agency Nepal", "commercial ad production Nepal", "reels production Nepal", "brand photography Nepal", "studio in Kathmandu", "cinematic video Nepal", "photo and video production Nepal", "content production agency Nepal"],
         "faqs": [
             ("What production services does Trend Crafters offer?", "Commercial photography, 9:16 video and reels, and full commercial ad production, all shot by our in house team in Lalitpur and on location."),
             ("Do you have your own studio and equipment?", "Yes. We shoot with professional cinema and mirrorless cameras, prime lenses and studio lighting, in our studio or at your location."),
@@ -229,7 +229,7 @@ PR_PAGES = {
             ("Can you produce for both social media and TV?", "Yes. We produce vertical reels for social as well as larger commercials for broadcast and online."),
         ]},
     "photo": {"name": "Photography", "url_name": "photo_shoot",
-        "keywords": ["commercial photography Nepal", "product photography Kathmandu", "photo shoot Lalitpur", "brand photography Nepal", "food photography Kathmandu", "fashion photoshoot Nepal", "studio photography Nepal", "corporate photography Nepal", "ecommerce product photos Nepal", "hospitality photography Nepal"],
+        "keywords": ["commercial photography Nepal", "product photography Kathmandu", "photo shoot Tinkune", "brand photography Nepal", "food photography Kathmandu", "fashion photoshoot Nepal", "studio photography Nepal", "corporate photography Nepal", "ecommerce product photos Nepal", "hospitality photography Nepal"],
         "faqs": [
             ("What is material realism in photography?", "Capturing the authentic, tactile weight of materials such as rich wood, polished metal and textures, using precision cinematic lighting instead of artificial or overly CGI looks."),
             ("Can you shoot products in a studio?", "Yes. We shoot hero product images on glass, metal and material sets, built for launches, catalogues and ecommerce."),
@@ -238,7 +238,7 @@ PR_PAGES = {
             ("Do you provide styling and props?", "We plan the concept and styling with you, including sets and props that fit the mood of the brand."),
         ]},
     "video": {"name": "Video & Reels", "url_name": "pr_video",
-        "keywords": ["video production Nepal", "reels production Kathmandu", "9:16 vertical video Nepal", "short form video agency Nepal", "TikTok video production Nepal", "video editing Kathmandu", "social media video Nepal", "brand video Nepal", "product video Nepal", "cinematic video Lalitpur"],
+        "keywords": ["video production Nepal", "reels production Kathmandu", "9:16 vertical video Nepal", "short form video agency Nepal", "TikTok video production Nepal", "video editing Kathmandu", "social media video Nepal", "brand video Nepal", "product video Nepal", "cinematic video Tinkune"],
         "faqs": [
             ("What is 9:16 vertical video?", "The full screen portrait format used by Instagram Reels, TikTok and YouTube Shorts. We design hooks specifically for it."),
             ("Do you direct on screen talent?", "Yes. We direct talent for controlled, confident performances on camera."),
@@ -259,7 +259,7 @@ PR_PAGES = {
 
 IT_PAGES = {
     "hub": {"name": "IT Solutions", "url_name": "it_solutions",
-        "keywords": ["IT solutions Nepal", "web development company Nepal", "software company Kathmandu", "website and app development Nepal", "SEO and website maintenance Nepal", "frontend and backend developers Nepal", "MERN stack development Nepal", "digital solutions Lalitpur", "UI UX design Nepal", "IT company Lalitpur"],
+        "keywords": ["IT solutions Nepal", "web development company Nepal", "software company Kathmandu", "website and app development Nepal", "SEO and website maintenance Nepal", "frontend and backend developers Nepal", "MERN stack development Nepal", "digital solutions Tinkune", "UI UX design Nepal", "IT company Tinkune"],
         "faqs": [
             ("What IT solutions does Trend Crafters provide?", "Website design and development, custom web apps and dashboards, brand kits and UI design, plus ongoing maintenance, security and SEO optimisation."),
             ("Do you have frontend and backend developers?", "Yes. Our frontend developers build fast, responsive interfaces from Figma designs, and our backend developers build secure Node.js, MERN, Python and PHP systems and APIs behind them."),
@@ -298,21 +298,21 @@ IT_PAGES = {
 
 AB_PAGES = {
     "about": {"name": "About Us", "url_name": "about",
-        "keywords": ["about Trend Crafters", "digital marketing agency Kathmandu", "creative agency Lalitpur", "marketing team Nepal", "branding and production agency Nepal", "Saksham Karki", "local soul global standards", "growth partner Nepal", "agency in Tempo Park", "Trend Crafters Global"],
+        "keywords": ["about Trend Crafters", "digital marketing agency Kathmandu", "creative agency Tinkune", "marketing team Nepal", "branding and production agency Nepal", "Saksham Karki", "local soul global standards", "growth partner Nepal", "agency in Tinkune Sahyoginagar", "Trend Crafters Global"],
         "faqs": [
             ("Who is Trend Crafters?", "A Kathmandu Valley agency that combines digital marketing, branding, photo and video production and IT solutions into one growth ecosystem."),
-            ("Where are you based?", "Our studio is at Tempo Park, Lalitpur, serving clients across Nepal and internationally."),
+            ("Where are you based?", "Our studio is at Tinkune Sahyoginagar, Kathmandu, serving clients across Nepal and internationally."),
             ("Who leads the company?", "Saksham Karki is the founder and CEO, supported by a team of project, marketing, social media, editing and design specialists."),
             ("What makes you different?", "One team for strategy, creative, production and technology, with material realism in our visuals and data behind every decision."),
             ("How can I work with you?", "Contact us through the form, WhatsApp or email. We start with a free discovery call."),
         ]},
-    "partners": {"name": "Our Partners", "url_name": "partners",
-        "keywords": ["Trend Crafters partners", "agency partners Nepal", "brand partners Kathmandu", "marketing collaborators Nepal", "creative partners Nepal", "technology partners Nepal", "media partners Nepal", "creator network Nepal", "industry associations Nepal", "platform partners"],
+    "partners": {"name": "Our Clients", "url_name": "partners",
+        "keywords": ["Trend Crafters clients", "digital marketing agency clients Nepal", "brands we work with Nepal", "education consultancy marketing Nepal", "hospitality marketing Nepal", "automotive marketing Nepal", "client portfolio Kathmandu", "brands grown by Trend Crafters", "trusted marketing agency Nepal", "client logos"],
         "faqs": [
-            ("Who do you partner with?", "Media and ad platforms, creator networks, industry associations, technology providers and the brands we grow with."),
-            ("Can we partner with Trend Crafters?", "Yes. Reach out with your idea and we will explore how we can collaborate."),
-            ("Do you work with creators and influencers?", "Yes. We source and brief Nepali creators for social and TikTok campaigns."),
-            ("Do you work with agencies?", "Yes. We collaborate with other creative and technology teams when it serves the client."),
-            ("Which clients have you worked with?", "See our Work page for campaigns across education, hospitality, automotive, fashion and manufacturing."),
+            ("Which clients has Trend Crafters worked with?", "Education and migration consultancies, cafes and hotels, automotive brands, fashion and retail labels, schools, events and manufacturers across Nepal and internationally."),
+            ("Do you work with businesses in Nepal only?", "No. We serve brands across Nepal and international clients, including clients on Australia's Gold Coast."),
+            ("What industries do you specialise in?", "Education and migration, hospitality and food, automotive, retail and lifestyle, events and enterprise."),
+            ("Can I see results for these clients?", "Yes. Our Work page shows reels and campaign results such as a 45% engagement lift for Himalayan Java in three weeks."),
+            ("How do I become a client?", "Contact us by form, WhatsApp or email. We start with a free discovery call and a written scope."),
         ]},
 }

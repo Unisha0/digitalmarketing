@@ -257,10 +257,30 @@ img.partner-logo-lg { height: 6.5rem !important; width: 100% !important; }
 .bento-k { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--color-ink-muted); }
 .bento-n { font-family: var(--font-display, 'Fraunces', serif); font-weight: 600; font-size: 1.75rem; line-height: 1.1; }
 
-/* Logo cloud (Work page) */
-.cloud { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem 2.4rem; }
-.cloud-item { display: flex; align-items: center; justify-content: center; height: 3.5rem; opacity: .7; filter: grayscale(1); transition: opacity .3s, filter .3s, transform .3s; }
-.cloud-item:hover { opacity: 1; filter: none; transform: translateY(-3px); }
-.cloud-item img { height: 100% !important; width: auto !important; max-width: 9rem; object-fit: contain; mix-blend-mode: multiply; }
-.cloud-word span { font-family: var(--font-display, 'Fraunces', serif); font-weight: 700; font-size: 1.3rem; color: var(--color-ink); letter-spacing: -.01em; white-space: nowrap; }
-@media (min-width: 900px) { .cloud-word span { font-size: 1.6rem; } .cloud-item { height: 4rem; } }
+/* Client tiles (Work page): 6 per row, logos big and in full colour */
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .85rem; }
+@media (min-width: 640px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .tiles { grid-template-columns: repeat(6, 1fr); gap: 1rem; } }
+.tile { position: relative; aspect-ratio: 1 / 1; border-radius: 1.4rem; background: #fff; border: 1px solid rgba(20,20,20,.07); box-shadow: 0 8px 22px rgba(20,20,20,.06); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .55rem; padding: 1rem; overflow: hidden; transition: transform .3s, box-shadow .3s; }
+.tile:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(20,20,20,.12); }
+.tile-logo { flex: 1 1 auto; width: 100%; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.tile-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto !important; object-fit: contain; border-radius: .5rem; }
+.tile-name { font-size: .72rem; font-weight: 600; color: var(--color-ink-muted); text-align: center; line-height: 1.2; }
+.tile-word { border: 0; color: #fff; text-align: center; background: linear-gradient(135deg, var(--a), var(--b)); box-shadow: 0 10px 24px rgba(20,20,20,.12); }
+.tile-wm { font-family: var(--font-display, 'Fraunces', serif); font-weight: 700; font-size: 1.15rem; line-height: 1.15; letter-spacing: -.01em; padding: 0 .3rem; }
+.tile-word:nth-of-type(6n+1) { --a: #F2463C; --b: #E0266E; }
+.tile-word:nth-of-type(6n+2) { --a: #2563eb; --b: #7c3aed; }
+.tile-word:nth-of-type(6n+3) { --a: #059669; --b: #0d9488; }
+.tile-word:nth-of-type(6n+4) { --a: #f59e0b; --b: #ea580c; }
+.tile-word:nth-of-type(6n+5) { --a: #9f1850; --b: #db2777; }
+.tile-word:nth-of-type(6n) { --a: #0891b2; --b: #2563eb; }
+
+/* Contact page */
+.contact-tile { display: flex; flex-direction: column; gap: .15rem; padding: 1.1rem; border-radius: 1.4rem; background: #fff; border: 1px solid rgba(20,20,20,.07); box-shadow: 0 8px 22px rgba(20,20,20,.06); transition: transform .3s, box-shadow .3s; }
+.contact-tile:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(224,38,110,.16); }
+.ct-ic { width: 2.6rem; height: 2.6rem; border-radius: .9rem; display: flex; align-items: center; justify-content: center; margin-bottom: .5rem; }
+.ct-t { font-weight: 600; color: var(--color-ink); }
+.ct-s { font-size: .8rem; color: var(--color-ink-muted); }
+.cf-label { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-muted); margin-bottom: .35rem; }
+.cf-input { width: 100%; background: #fff; border: 1px solid rgba(20,20,20,.15); border-radius: .8rem; padding: .7rem .9rem; font-size: .95rem; color: var(--color-ink); outline: none; transition: border-color .2s, box-shadow .2s; }
+.cf-input:focus { border-color: var(--color-brand-500); box-shadow: 0 0 0 4px rgba(234,106,46,.15); }

@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% block title %}Our Partners & Collaborators | Trend Crafters{% endblock %}
-{% block meta_description %}Trend Crafters collaborates with industry leading platforms, organisations and creative partners who share our commitment to uncompromising quality.{% endblock %}
+{% block title %}Our Clients: Brands Trusted by Trend Crafters | Nepal{% endblock %}
+{% block meta_description %}The brands that trust Trend Crafters, across education, hospitality, automotive, retail, schools and events in Nepal and worldwide.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
@@ -9,37 +9,43 @@
     <div class="absolute -top-16 right-0 w-[28rem] h-[28rem] rounded-full bg-gradient-to-bl from-pink-200/60 to-brand-100/50 blur-3xl pointer-events-none"></div>
     <div class="relative content-container">
         <div class="grid lg:grid-cols-12 gap-8 items-end">
-            <div class="lg:col-span-7" data-aos="fade-up"><p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-handshake"></i> Partners &amp; collaborators</p><h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl">Built on <span class="gradient-text">strong alliances.</span></h1></div>
-            <div class="lg:col-span-5" data-aos="fade-up"><p class="text-ink-muted text-lg mb-5">Great work is rarely done in isolation. We collaborate with platforms, organisations and creative partners who share our commitment to uncompromising quality.</p><div class="flex flex-col sm:flex-row gap-3"><a href="{% url 'contact' %}" class="btn-logo">Partner With Us <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20explore%20a%20partnership." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp</a></div></div>
+            <div class="lg:col-span-7" data-aos="fade-up"><p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-handshake"></i> Our clients</p><h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl">Brands that <span class="gradient-text">trust us.</span></h1></div>
+            <div class="lg:col-span-5" data-aos="fade-up"><p class="text-ink-muted text-lg mb-5">From schools and consultancies to cafes, hotels and car brands, these are the businesses we grow with, in Nepal and abroad.</p><div class="flex flex-col sm:flex-row gap-3"><a href="{% url 'contact' %}" class="btn-logo">Become a Client <i class="fas fa-arrow-right text-sm"></i></a><a href="{% url 'work' %}" class="btn-ghost-link justify-center">See our work <i class="fas fa-arrow-right text-xs"></i></a></div></div>
         </div>
     </div>
     <div class="mt-10 space-y-4" aria-hidden="true">
-        <div class="marquee-fade overflow-hidden"><div class="marquee-track" style="animation-duration:38s">{% for i in "123" %}<div class="flex items-center gap-4 pr-4"><span class="logo-chip"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC logo" loading="lazy"></span></div>{% endfor %}</div></div>
-        <div class="marquee-fade overflow-hidden"><div class="marquee-track" style="animation-duration:46s;animation-direction:reverse">{% for i in "123" %}<div class="flex items-center gap-4 pr-4"><span class="logo-chip"><img src="{% static 'main/images/home/client-cnc.jpg' %}" alt="CNC logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/client-sasurali.png' %}" alt="Sasurali logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-isp.jpg' %}" alt="International Study Partners logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-piec.jpg' %}" alt="PIEC logo" loading="lazy"></span><span class="logo-chip"><img src="{% static 'main/images/home/partner-changan.jpg' %}" alt="Changan logo" loading="lazy"></span></div>{% endfor %}</div></div>
+        <div class="marquee-fade overflow-hidden"><div class="marquee-track" style="animation-duration:50s">{% for i in "12" %}<div class="flex items-center gap-4 pr-4">{% for c in clients %}{% if c.logo %}<span class="logo-chip"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span>{% endif %}{% endfor %}</div>{% endfor %}</div></div>
     </div>
 </section>
-
-
 
 {% include 'main/ab/_subnav.html' with active='partners' %}
 
-<!-- Categories: left heading, list on the right -->
+<!-- All clients -->
 <section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-5 lg:sticky lg:top-28" data-aos="fade-right"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Who we collaborate with</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Seven kinds of <span class="gradient-text">alliance</span></p><p class="text-ink-muted mb-5">Every partnership starts with understanding the business, not just the brief.</p><a href="{% url 'contact' %}" class="btn-logo">Become a partner <i class="fas fa-arrow-right text-sm"></i></a></div>
-        <ul class="lg:col-span-7 list-none"><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-hashtag"></i></span><div><p class="font-semibold text-ink">Media and ad platforms</p><p class="text-sm text-ink-muted">Reach and targeting at scale</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-users"></i></span><div><p class="font-semibold text-ink">Creator networks</p><p class="text-sm text-ink-muted">Authentic voices for social and TikTok</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-landmark"></i></span><div><p class="font-semibold text-ink">Industry associations</p><p class="text-sm text-ink-muted">Credibility and community</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-server"></i></span><div><p class="font-semibold text-ink">Technology partners</p><p class="text-sm text-ink-muted">Hosting, tools and platforms</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-print"></i></span><div><p class="font-semibold text-ink">Print and production studios</p><p class="text-sm text-ink-muted">Finished work in the real world</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-graduation-cap"></i></span><div><p class="font-semibold text-ink">Education and migration networks</p><p class="text-sm text-ink-muted">Study abroad and migration partners</p></div></li><li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-users"></i></span><div><p class="font-semibold text-ink">Community organisations</p><p class="text-sm text-ink-muted">Local causes and events</p></div></li></ul>
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Every client, one standard</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Trusted across <span class="gradient-text">every industry</span></p></div>
+        <ul class="tiles" data-aos="fade-up">
+            {% for c in clients %}<li class="tile{% if not c.logo %} tile-word{% endif %}" title="{{ c.name }}">{% if c.logo %}<span class="tile-logo"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span><span class="tile-name">{{ c.name }}</span>{% else %}<span class="tile-wm">{{ c.name }}</span>{% endif %}</li>{% endfor %}
+        </ul>
     </div>
 </section>
 
-<!-- Why alliances matter -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-6xl mx-auto grid md:grid-cols-5 gap-8 items-center">
-        <div class="md:col-span-3" data-aos="fade-right"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Why alliances matter</h2><p class="font-display text-2xl sm:text-3xl font-medium text-white leading-snug">Every partnership starts with understanding the business, not just the brief.</p></div>
-        <p class="md:col-span-2 text-white/70 text-sm" data-aos="fade-left">From there we bring social media, branding, creative production and IT solutions together under one team, backed by the platforms and networks that push our work further, so you're never stitching together five different vendors.</p>
+<!-- Industries -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-28" data-aos="fade-right"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Who we work with</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Six industries, <span class="gradient-text">one growth team</span></p><p class="text-ink-muted mb-5">Every engagement starts with understanding the business, not just the brief.</p><a href="{% url 'contact' %}" class="btn-logo">Start a project <i class="fas fa-arrow-right text-sm"></i></a></div>
+        <ul class="lg:col-span-7 list-none">
+            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-graduation-cap"></i></span><div><p class="font-semibold text-ink">Education and migration</p><p class="text-sm text-ink-muted">Consultancies, study abroad partners and schools</p></div></li>
+            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-utensils"></i></span><div><p class="font-semibold text-ink">Hospitality and food</p><p class="text-sm text-ink-muted">Cafes, restaurants, hotels and distilleries</p></div></li>
+            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-car"></i></span><div><p class="font-semibold text-ink">Automotive</p><p class="text-sm text-ink-muted">Car brands and dealerships</p></div></li>
+            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-bag-shopping"></i></span><div><p class="font-semibold text-ink">Retail and lifestyle</p><p class="text-sm text-ink-muted">Fashion, footwear and youth brands</p></div></li>
+            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-calendar-check"></i></span><div><p class="font-semibold text-ink">Events and community</p><p class="text-sm text-ink-muted">Conferences and youth platforms</p></div></li>
+            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-industry"></i></span><div><p class="font-semibold text-ink">Manufacturing and enterprise</p><p class="text-sm text-ink-muted">Fabrication, organic products and finance</p></div></li>
+        </ul>
     </div>
 </section>
 
 {% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading='Interested in partnering with us?' text="Let's talk about what we can build together." %}
+{% include 'main/dm/_cta.html' with heading='Want to join them?' text="Tell us about your business and we'll show you what a campaign could do." %}
 
 {% endblock %}

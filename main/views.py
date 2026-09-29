@@ -45,6 +45,8 @@ def index(request):
     return render(request, 'main/index.html', {
         'google_review_url': GOOGLE_REVIEW_URL,
         'google_reviews': GOOGLE_REVIEWS,
+        'clients': CLIENTS,
+        'featured_clients': [c for c in CLIENTS if c.get('logo')][:12],
     })  # homepage template
 
 from django.core.validators import validate_email
@@ -60,6 +62,7 @@ def contact(request):
             email = request.POST.get('email', '').strip()
             phone = request.POST.get('phone', '').strip()
             message = request.POST.get('message', '').strip()
+            service = request.POST.get('service', '').strip()[:60]
 
             # Validation
             if not all([name, email, message]):
@@ -95,6 +98,7 @@ def contact(request):
                 f"Name: {name}\n"
                 f"Email: {email}\n"
                 f"Phone: {phone}\n"
+                f"Interested in: {service}\n"
                 f"Message: {message}\n\n"
                 f"Additional Information:\n"
                 f"IP Address: {ip_address}\n"
@@ -133,8 +137,11 @@ def about(request):
 def services(request):
     return render(request, 'main/services.html')
 
+from .clients import CLIENTS
+
+
 def work(request):
-    return render(request, 'main/work.html')
+    return render(request, 'main/work.html', {'clients': CLIENTS})
 
 def brand_campaign(request):
     return _br_page(request, 'main/brand_campaign.html', 'hub')
@@ -154,10 +161,11 @@ def br_story(request):
 
 import json
 from django.urls import reverse
+from .clients import CLIENTS
 from .seo_data import DM_PAGES, BR_PAGES, PR_PAGES, IT_PAGES, AB_PAGES
 
 
-def _section_page(request, template, page, is_hub, parent_name, parent_url_name):
+def _section_page(request, template, page, is_hub, parent_name, parent_url_name, extra=None):
     """Render a service page with its keywords, FAQs and JSON-LD schema (FAQPage, Service, BreadcrumbList)."""
     base = f"{request.scheme}://{request.get_host()}"
     schema = [
@@ -174,7 +182,9 @@ def _section_page(request, template, page, is_hub, parent_name, parent_url_name)
         ] + ([] if is_hub else [
             {"@type": "ListItem", "position": 3, "name": page["name"], "item": base + reverse(page["url_name"])}])},
     ]
-    return render(request, template, {"dm": page, "dm_schema": json.dumps(schema, ensure_ascii=False)})
+    ctx = {"dm": page, "dm_schema": json.dumps(schema, ensure_ascii=False)}
+    ctx.update(extra or {})
+    return render(request, template, ctx)
 
 
 def _dm_page(request, template, key):
@@ -189,8 +199,8 @@ def _it_page(request, template, key):
     return _section_page(request, template, IT_PAGES[key], key == "hub", "IT Solutions", "it_solutions")
 
 
-def _ab_page(request, template, key):
-    return _section_page(request, template, AB_PAGES[key], True, "About Us", "about")
+def _ab_page(request, template, key, extra=None):
+    return _section_page(request, template, AB_PAGES[key], True, "About Us", "about", extra)
 
 
 def _br_page(request, template, key):
@@ -244,14 +254,15 @@ def maintenance(request):
     return _it_page(request, 'main/maintenance.html', 'maint')
 
 def partners(request):
-    return _ab_page(request, 'main/partners.html', 'partners')
+    """Our Clients page (URL name kept as 'partners' so existing links keep working)."""
+    return _ab_page(request, 'main/partners.html', 'partners', extra={'clients': CLIENTS})
 
 
 # Team members shown on /team/. Edit roles/bios here; add a photo by setting
 # "photo" to a file under static/main/images/team/ (e.g. "team/jenisha.jpg").
 TEAM_MEMBERS = [
     {"name": "Saksham Karki", "role": "Founder & CEO", "photo": "home/team-founder.jpg",
-     "bio": "Leads Trend Crafters from our Tempo Park, Lalitpur studio, pairing local market insight with international creative standards.",
+     "bio": "Leads Trend Crafters from our Tinkune Sahyoginagar, Kathmandu studio, pairing local market insight with international creative standards.",
      "linkedin": "", "featured": True},
     {"name": "Jenisha Chaulagain", "role": "Project Manager", "photo": "", "bio": "",
      "linkedin": "https://www.linkedin.com/in/jenisha-chaulagain-7423232ba/"},

@@ -71,7 +71,7 @@
     <meta property="og:locale" content="en_US">
     <meta name="author" content="Trend Crafters Global">
     <meta name="geo.region" content="NP-BA">
-    <meta name="geo.placename" content="Lalitpur, Kathmandu Valley, Nepal">
+    <meta name="geo.placename" content="Tinkune Sahyoginagar, Kathmandu, Nepal">
     <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
     <meta property="og:title" content="{% block og_title %}TrendCrafters - Digital Marketing & IT Solutions Agency{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Trend Crafters Global provides digital marketing, SEO, branding and campaigns, professional photo & video production, and IT solutions - web development, web app development, and website maintenance - in Nepal and worldwide.{% endblock %}">
@@ -108,13 +108,15 @@
         "url": "https://trendcrafters.global/",
         "logo": "https://trendcrafters.global{% static 'main/images/logo_transparent_black.png' %}",
         "image": "https://trendcrafters.global{% static 'main/images/og-image.png' %}",
-        "telephone": "+977-9863998413",
+        "telephone": ["+977-9827877621", "+977-9863998413"],
         "email": "trendcraftersglobal@gmail.com",
         "priceRange": "$$",
+        "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "17:30"}],
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Tempo Park",
-            "addressLocality": "Lalitpur",
+            "streetAddress": "Tinkune Sahyoginagar",
+            "addressLocality": "Kathmandu",
             "postalCode": "44600",
             "addressCountry": "NP"
         },
@@ -241,7 +243,7 @@
                         <div class="absolute left-0 top-full w-full h-3 bg-transparent"></div>
                         <div class="absolute left-0 top-full mt-1 hidden group-hover:block bg-surface-raised shadow-xl rounded-lg w-44 z-50 border border-surface-border desktop-services-menu overflow-hidden">
                             <a href="{% url 'about' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 8h.01"/><path stroke-linecap="round" stroke-linejoin="round" d="M11 12h1v5h1"/></svg>About Us</a>
-                            <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Partners</a>                            <a href="{% url 'team' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Team</a>
+                            <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Clients</a>                            <a href="{% url 'team' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Team</a>
                         </div>
                     </div>
 
@@ -332,7 +334,7 @@
               </button>
               <div class="mobile-dropdown-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex flex-col space-y-1 mt-1 pl-6">
                 <a href="{% url 'about' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 8h.01"/><path stroke-linecap="round" stroke-linejoin="round" d="M11 12h1v5h1"/></svg>About Us</a>
-                <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Partners</a>                <a href="{% url 'team' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Team</a>
+                <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Clients</a>                <a href="{% url 'team' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Team</a>
               </div>
             </div>
 
@@ -377,15 +379,16 @@
                     <ul class="space-y-3 text-white/50">
                         <li><a href="{% url 'about' %}" class="hover:text-brand-400 transition-colors">About Us</a></li>
                         <li><a href="{% url 'work' %}" class="hover:text-brand-400 transition-colors">Our Work & Clients</a></li>
-                        <li><a href="{% url 'partners' %}" class="hover:text-brand-400 transition-colors">Our Partners</a></li>                        <li><a href="{% url 'team' %}" class="hover:text-brand-400 transition-colors">Our Team</a></li>
+                        <li><a href="{% url 'partners' %}" class="hover:text-brand-400 transition-colors">Our Clients</a></li>                        <li><a href="{% url 'team' %}" class="hover:text-brand-400 transition-colors">Our Team</a></li>
                         <li><a href="{% url 'contact' %}" class="hover:text-brand-400 transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Contact</h4>
                     <ul class="space-y-3 text-white/50">
-                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-brand-400"></i> <a href="https://www.google.com/maps/place/Trend+Crafters,+Tempo+park,+Lalitpur+44600/@27.6537731,85.3491453,17z/data=!4m6!3m5!1s0x39cf1b3b8c9c9c9d:0x8c9c9c9d8c9c9c9d!8m2!3d27.6537731!4d85.3491453!16s%2Fg%2F11t8b8b8b8" target="_blank" class="hover:text-brand-400 transition-colors">Tempo Park, Lalitpur</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-phone text-brand-400"></i> <a href="tel:9863998413" class="hover:text-brand-400 transition-colors">9863998413</a></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-brand-400"></i> <a href="https://www.google.com/maps/search/?api=1&amp;query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" class="hover:text-brand-400 transition-colors">Tinkune Sahyoginagar, Kathmandu</a></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-phone mt-1 text-brand-400"></i> <span><a href="tel:+9779827877621" class="hover:text-brand-400 transition-colors">+977 982-7877621</a><br><a href="tel:+9779863998413" class="hover:text-brand-400 transition-colors">+977 986-3998413</a></span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-clock text-brand-400"></i> Sun to Fri, 10 AM to 5:30 PM</li>
                         <li class="flex items-center gap-2"><i class="fab fa-whatsapp text-brand-400"></i> <a href="https://wa.me/9779827877621" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors">WhatsApp chat</a></li>
                         <li class="flex items-center gap-2"><i class="fas fa-envelope text-brand-400"></i> <a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="hover:text-brand-400 transition-colors text-[13px] whitespace-nowrap">trendcraftersglobal@gmail.com</a></li>
                     </ul>
