@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from . import views
 
 urlpatterns = [
+    # Google Search Console ownership verification
+    path('googlecf3f0f13be39c99d.html', lambda request: HttpResponse('google-site-verification: googlecf3f0f13be39c99d.html', content_type='text/html'), name='google_verify'),
     path('health/', lambda request: HttpResponse('ok', content_type='text/plain'), name='health'),
     path('', views.index, name='index'),         # Landing page
     path('about/', views.about, name='about'),
