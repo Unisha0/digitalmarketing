@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# One-time server setup for Ubuntu 22.04/24.04 on AWS EC2. Run as the "ubuntu" user from the
+# project directory (~/trendcrafters):   bash deploy/setup_ec2.sh
+set -euo pipefail
+APP_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$APP_DIR"
+
+sudo apt-get update
+sudo apt-get install -y python3-venv python3-pip nginx certbot python3-certbot-nginx git
+
+python3 -m venv .venv
+.venv/bin/pip install --upgrade pip
+.venv/bin/pip install -r requirements.txt
+
+if [ ! -f .env ]; then
+  cp .env.example .env
+  KEY=$(.venv/bin/python -c "import secrets;print(secrets.token_urlsafe(50))")
+  sed -i "s|^DJANGO_SECRET_KEY=.*|DJANGO_SECRET_KEY=$KEY|" .env
+  echo ">> Created .env - edit it now and set EMAIL_HOST_PASSWORD (nano .env)."
+fi
+
+mkdir -p logs
+.venv/bin/python manage.py collectstatic --noinput
+.venv/bin/python manage.py check --deploy || true
+
+sudo cp deploy/gunicorn-trendcrafters.service /etc/systemd/system/
+sudo cp deploy/nginx-trendcrafters.conf /etc/nginx/sites-available/trendcrafters
+sudo ln -sf /etc/nginx/sites-available/trendcrafters /etc/nginx/sites-enabled/trendcrafters
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo chmod 711 /home/ubuntu   # lets nginx (www-data) traverse to staticfiles/
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now gunicorn-trendcrafters
+sudo nginx -t && sudo systemctl reload nginx
+
+echo
+echo "Next: point DNS A records (trendcrafters.global + www) to this server's Elastic IP, then run:"
+echo "  sudo certbot --nginx -d trendcrafters.global -d www.trendcrafters.global"

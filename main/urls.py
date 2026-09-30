@@ -1,8 +1,10 @@
 from django.urls import path
 from django.views.generic import RedirectView
+from django.http import HttpResponse
 from . import views
 
 urlpatterns = [
+    path('health/', lambda request: HttpResponse('ok', content_type='text/plain'), name='health'),
     path('', views.index, name='index'),         # Landing page
     path('about/', views.about, name='about'),
     path('services/', views.services, name='services'),

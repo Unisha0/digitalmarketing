@@ -1,15 +1,12 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block title %}Brand Campaign Agency in Nepal | Trend Crafters{% endblock %}
-{% block meta_description %}End to end brand campaigns for Nepal and beyond: concept, storyboard, cinematic production, multi platform distribution and measurement from Trend Crafters.{% endblock %}
+{% block meta_description %}End to end brand campaigns in Nepal: strategy, creative, video and paid media that win local attention and scale globally. Talk to Trend Crafters.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
 {% block content %}
 
 <!-- Cinematic hero: full-bleed reel behind the copy -->
 <section class="relative overflow-hidden bg-black mt-20 min-h-[34rem] flex items-center">
-    {% for r in reels %}{% if r.client == 'Changan Nepal' %}
-    <video class="absolute inset-0 w-full h-full object-cover opacity-50" src="{{ r.src }}#t=0.1" muted loop playsinline preload="none" data-reel aria-hidden="true"></video>
-    {% endif %}{% endfor %}
     <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20"></div>
     <div class="relative content-container py-16">
         <div class="max-w-2xl text-center lg:text-left" data-aos="fade-up">
@@ -41,7 +38,6 @@
 </section>
 
 <span id="campaign-reels"></span>
-{% include 'main/includes/reel_carousel.html' with heading="Campaign films" sub="Automotive, hospitality and fashion stories shot and edited by our team." kind="brand" dark=True %}
 
 <!-- Visual concepts -->
 <section class="py-medium bg-white">

@@ -2,8 +2,11 @@
 
 // Initialize AOS
 AOS.init({
-    duration: 800,
-    once: true
+    duration: 600,
+    easing: 'ease-out-cubic',
+    offset: 40,
+    once: true,
+    disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 
 // Mobile menu toggle
@@ -12,9 +15,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.querySelector('.mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('open');
-        });
+        const setMenu = (open) => {
+            mobileMenu.classList.toggle('open', open);
+            document.body.classList.toggle('menu-open', open);
+            mobileMenuButton.setAttribute('aria-expanded', String(open));
+            mobileMenuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        mobileMenuButton.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+        // close on link tap, backdrop tap, Escape, or when growing to desktop width
+        mobileMenu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+        const backdrop = document.querySelector('.mobile-menu-backdrop');
+        if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+        window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
     }
     
     // Navbar scroll effect
@@ -49,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Prevent horizontal overflow
-    document.body.style.overflowX = 'hidden';
+    // (sideways overflow is clipped on <html> in CSS; body must not become a scroll container)
     
     // Check for any elements causing horizontal overflow
     function checkOverflow() {
@@ -59,8 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (bodyWidth > windowWidth) {
             console.log('Horizontal overflow detected');
             // Force body to window width
-            document.body.style.width = '100vw';
-            document.body.style.overflowX = 'hidden';
         }
     }
     

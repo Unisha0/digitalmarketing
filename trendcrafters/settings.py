@@ -17,13 +17,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -----------------------------------------------------------
 # SECURITY SETTINGS
 # -----------------------------------------------------------
-SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
 DEBUG = config('DEBUG', default=False, cast=bool)
+# Production must set DJANGO_SECRET_KEY (a random per-process key would break signed cookies
+# across gunicorn workers/restarts). A throwaway key is only allowed in DEBUG.
+SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key() if DEBUG else '')
+if not SECRET_KEY:
+    raise RuntimeError('DJANGO_SECRET_KEY must be set when DEBUG is False (see .env.example).')
 
-ALLOWED_HOSTS = config(
+ALLOWED_HOSTS = [h.strip() for h in config(
     'ALLOWED_HOSTS',
     default='localhost,127.0.0.1,trendcrafters.global,www.trendcrafters.global'
-).split(',')
+).split(',') if h.strip()]
 
 # During local development it's convenient to allow all hosts when DEBUG is True
 # so accessing the dev server via LAN IPs (e.g. 192.168.x.x) works without raising
@@ -44,7 +48,7 @@ CSRF_TRUSTED_ORIGINS = [
 INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'main.apps.StaticFilesConfig',  # django.contrib.staticfiles + ignores Tailwind source
     'django.contrib.sitemaps',
     'main',  # Your main app
 ]
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'main.middleware.SeoSyncMiddleware',
 ]
 
 # No admin panel, no accounts - this is a marketing site with a single contact-form
@@ -88,16 +93,7 @@ WSGI_APPLICATION = 'trendcrafters.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'NAME': 'crafter_dj2',
-        # 'USER': 'crafter_dj2',
-        # 'PASSWORD': 'G&GozBDGoH?+',
-        # 'HOST': 'localhost',  # Or the IP/hostname of your MySQL server
-        # 'PORT': '3306',       # Default MySQL port
-        # 'OPTIONS': {
-        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        #     'charset': 'utf8mb4', # Recommended for full Unicode support
-        # }
+        'NAME': config('DATABASE_PATH', default=str(BASE_DIR / 'db.sqlite3')),
     }
 }
 
@@ -123,9 +119,16 @@ USE_TZ = True
 # STATIC FILES
 # -----------------------------------------------------------
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main', 'static')]
+# main/static is picked up automatically via the 'main' app (AppDirectoriesFinder).
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Django 5.1+ removed STATICFILES_STORAGE; hashed + compressed files come from whitenoise.
+STORAGES = {
+    'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
+    'staticfiles': {
+        'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage' if DEBUG
+        else 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 # -----------------------------------------------------------
 # EMAIL CONFIGURATION
@@ -138,21 +141,24 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='trendcraftersglobal@gmail.c
 # No hardcoded fallback: this was previously a leaked Gmail app password checked into
 # source control. Requires EMAIL_HOST_PASSWORD to be set via environment/.env; rotate
 # the Gmail app password (the old one is exposed in git history) before deploying.
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 
 # -----------------------------------------------------------
 # SECURITY ENHANCEMENTS (PRODUCTION)
 # -----------------------------------------------------------
-SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=True, cast=bool)
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-X_FRAME_OPTIONS = 'DENY'
+# HTTPS is terminated by nginx / the AWS load balancer, which sets X-Forwarded-Proto.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=not DEBUG, cast=bool)
+SECURE_REDIRECT_EXEMPT = [r'^health/$']  # load-balancer health checks arrive over plain HTTP
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
+X_FRAME_OPTIONS = 'DENY'
+if not DEBUG:
+    SECURE_HSTS_SECONDS = config('SECURE_HSTS_SECONDS', default=31536000, cast=int)
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 # -----------------------------------------------------------
 # CACHE SETTINGS
@@ -166,6 +172,9 @@ CACHES = {
 # -----------------------------------------------------------
 # LOGGING CONFIGURATION
 # -----------------------------------------------------------
+LOG_DIR = Path(config('LOG_DIR', default=str(BASE_DIR / 'logs')))
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -179,7 +188,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs/django.log',
+            'filename': LOG_DIR / 'django.log',
             'formatter': 'verbose',
         },
         'console': {

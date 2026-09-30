@@ -1,5 +1,5 @@
 {# Sticky pill navigation for About Trend Crafters pages. Pass active="..." #}
-<nav class="sticky top-20 z-30 bg-white/90 backdrop-blur border-b border-ink/5" aria-label="About Trend Crafters">
+<nav class="bg-white/90 backdrop-blur border-b border-ink/5" aria-label="About Trend Crafters">
     <div class="content-container">
         <ul class="flex gap-2 overflow-x-auto py-3 text-sm font-medium whitespace-nowrap [scrollbar-width:none]">
             <li><a href="{% url 'about' %}" class="dm-pill {% if active == 'about' %}dm-pill-active{% endif %}">About Us</a></li>

@@ -31,14 +31,16 @@ fi
 echo "Applying database migrations..."
 python manage.py migrate --noinput
 
+echo "Running deployment checks..."
+python manage.py check --deploy || true
+
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
-echo "Note: Ensure your nginx serves the path configured in STATIC_ROOT and that permissions are correct."
 
 echo "Restarting application services (update service names if necessary)..."
 if systemctl list-units --type=service --all | grep -q "$GUNICORN_SERVICE"; then
-  sudo systemctl restart "$GUNICORN_SERVICE"
+  sudo systemctl reload "$GUNICORN_SERVICE" || sudo systemctl restart "$GUNICORN_SERVICE"
 else
   echo "Service $GUNICORN_SERVICE not found. Please restart your WSGI process manually." 
 fi
@@ -46,5 +48,9 @@ fi
 if systemctl list-units --type=service --all | grep -q nginx; then
   sudo systemctl reload nginx || true
 fi
+
+echo "Smoke test..."
+sleep 2
+curl -fsS -H "X-Forwarded-Proto: https" -H "Host: trendcrafters.global" http://127.0.0.1/health/ >/dev/null && echo "health OK" || echo "WARNING: health check failed"
 
 echo "Deployment completed."

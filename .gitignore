@@ -58,3 +58,13 @@ Thumbs.db
 
 # Node (Tailwind build tooling - the compiled tailwind-built.css output IS committed)
 node_modules/
+
+# Local-only assets, never deploy
+Claude.dmg
+client_details*/
+.venv/
+
+# Python bytecode already covered above; keep tooling dirs out of git
+node_modules/
+.venv/
+logs/

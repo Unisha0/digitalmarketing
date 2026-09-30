@@ -264,14 +264,14 @@ TEAM_MEMBERS = [
     {"name": "Saksham Karki", "role": "Founder & CEO", "photo": "home/team-founder.jpg",
      "bio": "Leads Trend Crafters from our Tinkune Sahyoginagar, Kathmandu studio, pairing local market insight with international creative standards.",
      "linkedin": "", "featured": True},
-    {"name": "Jenisha Chaulagain", "role": "Project Manager", "photo": "", "bio": "",
+    {"name": "Jenisha Chaulagain", "role": "Project Manager", "photo": "team/jenisha-chaulagain.jpg", "pos": "62% 68%", "bio": "",
      "linkedin": "https://www.linkedin.com/in/jenisha-chaulagain-7423232ba/"},
     {"name": "Devashish Shrestha", "role": "Marketing Head", "photo": "", "bio": "",
      "linkedin": "https://www.linkedin.com/in/devashishshresthaofficial/"},
     {"name": "Divyam Koirala", "role": "Social Media Manager", "photo": "", "bio": "",
      "linkedin": "https://www.linkedin.com/in/divyam-koirala-853922378/"},
-    {"name": "Dipankar Tamrakar", "role": "Editor", "photo": "", "bio": "", "linkedin": ""},
-    {"name": "Sumit Mishra", "role": "Graphic Designer", "photo": "", "bio": "", "linkedin": ""},
+    {"name": "Dipankar Tamrakar", "role": "Graphic Designer", "photo": "", "bio": "", "linkedin": ""},
+    {"name": "Sumit Mishra", "role": "Video Editor", "photo": "", "bio": "", "linkedin": ""},
 ]
 
 

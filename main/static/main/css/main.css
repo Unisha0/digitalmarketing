@@ -8,7 +8,6 @@
    every Tailwind spacing utility (space-x-*, gap-*, etc). */
 
 html, body {
-    overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -20,7 +19,6 @@ body {
     background-color: #FFFFFF;
     color: var(--color-ink);
     max-width: 100vw;
-    overflow-x: hidden;
 }
 
 /* Selection color matches brand accent */
@@ -34,7 +32,7 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* Tablet devices */
@@ -74,7 +72,7 @@ body {
 section {
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* Video element base styles
@@ -375,7 +373,7 @@ video {
 /* Universal container padding fix */
 .container {
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* Mobile container padding */
@@ -550,3 +548,7 @@ img.absolute.inset-0 { height: 100% !important; object-fit: cover; }
 
 /* Videos placed as covers inside positioned frames (phones, cards) must also fill their box */
 video.absolute.inset-0 { height: 100% !important; width: 100% !important; object-fit: cover; }
+
+/* Sideways overflow is clipped on the viewport only, so the page scrolls as one piece */
+html { overflow-x: hidden; }
+body { overflow: visible; }

@@ -1,0 +1,17 @@
+[Unit]
+Description=Trend Crafters gunicorn
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/trendcrafters
+EnvironmentFile=/home/ubuntu/trendcrafters/.env
+RuntimeDirectory=gunicorn-trendcrafters
+ExecStart=/home/ubuntu/trendcrafters/.venv/bin/gunicorn -c deploy/gunicorn.conf.py trendcrafters.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

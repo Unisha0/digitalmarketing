@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% block title %}Our Team | Trend Crafters{% endblock %}
-{% block meta_description %}Meet the Trend Crafters team - the strategists, creators and developers behind our digital marketing, branding, production and web work in Kathmandu, Nepal.{% endblock %}
+{% block title %}Meet the Team | Trend Crafters Kathmandu Agency{% endblock %}
+{% block meta_description %}Meet the strategists, creators, editors, designers and developers behind Trend Crafters, a Kathmandu digital marketing and creative agency.{% endblock %}
 {% block meta_keywords %}Trend Crafters team, digital marketing team Nepal, creative team Kathmandu, marketing agency people Nepal, Saksham Karki CEO{% endblock %}
 {% block content %}
 
@@ -9,17 +9,17 @@
     <div class="absolute -top-16 -left-16 w-[26rem] h-[26rem] rounded-full bg-gradient-to-br from-brand-200/50 to-pink-100/60 blur-3xl pointer-events-none"></div>
     <div class="relative content-container">
         <div class="grid lg:grid-cols-12 gap-10 items-end">
-            <div class="lg:col-span-6 pb-2" data-aos="fade-up">
+            <div class="lg:col-span-5 pb-2" data-aos="fade-up">
                 <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-users"></i> Our team</p>
                 <h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl mb-5">The people <span class="gradient-text">behind the work.</span></h1>
                 <p class="text-ink-muted text-lg mb-6 max-w-xl">A Kathmandu based team of strategists, creators, editors, designers and developers working as one growth ecosystem, from our studio in Kathmandu.</p>
                 <div class="flex flex-wrap gap-2 mb-6"><span class="role-chip">Project management</span><span class="role-chip">Marketing</span><span class="role-chip">Social media</span><span class="role-chip">Editing</span><span class="role-chip">Graphic design</span><span class="role-chip">Development</span></div>
                 <a href="{% url 'contact' %}" class="btn-logo">Work With Us <i class="fas fa-arrow-right text-sm"></i></a>
             </div>
-            <div class="lg:col-span-6 flex items-end justify-center gap-3 sm:gap-4" data-aos="fade-left" aria-hidden="true">
-                <div class="arch" style="height:15rem"><img src="{% static 'main/images/home/production.jpg' %}" alt=""></div>
-                <div class="arch" style="height:21rem"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt=""></div>
-                <div class="arch" style="height:17rem"><img src="{% static 'main/images/home/branding.jpg' %}" alt=""></div>
+            <div class="lg:col-span-7 flex items-end justify-end gap-3 sm:gap-4 lg:-mr-4" data-aos="fade-left" aria-hidden="true">
+                <div class="arch !max-w-none" style="height:17rem"><img src="{% static 'main/images/home/production.jpg' %}" alt=""></div>
+                <div class="arch !max-w-none" style="height:24rem"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt=""></div>
+                <div class="arch !max-w-none" style="height:19rem"><img src="{% static 'main/images/home/branding.jpg' %}" alt=""></div>
             </div>
         </div>
     </div>
@@ -28,32 +28,26 @@
 {% include 'main/ab/_subnav.html' with active='team' %}
 
 <section class="py-medium bg-white">
-    <div class="content-container">
-        {% for m in members %}{% if m.featured %}
-        <div class="grid md:grid-cols-12 gap-6 items-center max-w-6xl mx-auto mb-12 rounded-3xl bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 p-6 sm:p-8" data-aos="fade-up">
-            <div class="md:col-span-8 flex items-start gap-4"><span class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-display text-xl font-semibold flex items-center justify-center flex-shrink-0">{{ m.name|slice:":1" }}</span><div><p class="text-pink-600 font-semibold text-xs tracking-wide uppercase mb-1">{{ m.role }}</p><h3 class="font-display text-2xl md:text-3xl font-semibold text-ink mb-2">{{ m.name }}</h3><p class="text-ink-muted">{{ m.bio }}</p></div></div>
-            <div class="md:col-span-4 md:text-right"><a href="{% url 'contact' %}" class="btn-logo">Get in touch <i class="fas fa-arrow-right text-sm"></i></a></div>
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-10" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The people behind Trend Crafters</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Meet the <span class="gradient-text">team</span></p>
         </div>
-        {% endif %}{% endfor %}
-
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The team</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">The people who <span class="gradient-text">make it happen</span></p>
-        </div>
-        {# Rectangular team boxes. Photo area stays blank until you set "photo" for each person in views.py #}
-        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 max-w-6xl mx-auto">
-            {% for m in members %}{% if not m.featured %}
-            <article class="rounded-2xl border border-ink/10 bg-white shadow-card overflow-hidden" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
-                <div class="relative aspect-[4/5] bg-surface-subtle">
-                    {% if m.photo %}<img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover">{% endif %}
+        {# Photos: set "photo" per person in views.py. Blank photos show an initial until then. #}
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for m in members %}
+            <article class="group rounded-3xl bg-white border border-ink/10 shadow-card overflow-hidden transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+                <div class="relative aspect-[4/5] bg-gradient-to-br from-brand-50 to-pink-100 overflow-hidden">
+                    {% if m.photo %}<img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }} at Trend Crafters" loading="lazy" style="object-position:{{ m.pos|default:'70% 25%' }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">{% else %}<span class="absolute inset-0 flex items-center justify-center font-display text-7xl font-semibold text-pink-300/70">{{ m.name|slice:":1" }}</span>{% endif %}
                 </div>
-                <div class="p-4 text-center">
-                    <h3 class="font-display text-base sm:text-lg font-semibold text-ink leading-tight">{{ m.name }}</h3>
-                    <p class="text-sm text-brand-600 font-medium mt-1">{{ m.role }}</p>
-                    {% if m.linkedin %}<a href="{{ m.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ m.name }} on LinkedIn" class="inline-flex items-center gap-1.5 mt-2 text-xs text-ink-muted hover:text-brand-600 transition-colors"><i class="fab fa-linkedin-in"></i> LinkedIn</a>{% endif %}
+                <div class="p-5">
+                    <p class="text-pink-600 font-semibold text-xs tracking-wide uppercase mb-1">{{ m.role }}</p>
+                    <h3 class="font-display text-xl font-semibold text-ink leading-tight">{{ m.name }}</h3>
+                    {% if m.bio %}<p class="text-sm text-ink-muted mt-2">{{ m.bio }}</p>{% endif %}
+                    {% if m.linkedin %}<a href="{{ m.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ m.name }} on LinkedIn" class="inline-flex items-center gap-1.5 mt-3 text-xs text-ink-muted hover:text-brand-600 transition-colors"><i class="fab fa-linkedin-in"></i> LinkedIn</a>{% endif %}
                 </div>
             </article>
-            {% endif %}{% endfor %}
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -68,7 +62,7 @@
         </div>
         <div class="grid md:grid-cols-3 gap-4 items-stretch">
             <div class="relative rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:min-h-[32rem] bg-black" data-aos="fade-up">
-                <video class="absolute inset-0 w-full h-full object-cover" src="{% static 'main/videos/team-behind-the-scenes.mp4' %}" poster="{% static 'main/images/home/bts-video-poster.jpg' %}" muted loop playsinline controls preload="metadata" data-reel aria-label="Behind the scenes video of the Trend Crafters team"></video>
+                <img src="{% static 'main/images/home/bts-video-poster.jpg' %}" alt="Behind the scenes at the Trend Crafters studio" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[32rem]" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt="Interview shoot in the Trend Crafters studio" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
             <div class="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[32rem]" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/home/bts-camera.jpg' %}" alt="Camera on a tripod monitoring a shoot" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>

@@ -16,7 +16,7 @@
     <link rel="preload" as="image" type="image/png" href="{% static 'main/images/logo_transparent_black.png' %}" fetchpriority="high">
 
     <!-- SEO: allow indexing by default (override per-page if needed) -->
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="{% block robots %}index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1{% endblock %}">
     <title>{% block title %}TrendCrafters - Digital Marketing & IT Solutions Agency{% endblock %}</title>
 
     <!-- Critical CSS: stabilise navbar/logo before styles fully load.
@@ -63,7 +63,9 @@
     <meta name="keywords" content="{% block meta_keywords %}digital marketing Nepal, SEO Nepal, branding agency Nepal, photoshoot services Nepal, video production, web development, web app development, website maintenance{% endblock %}">
 
     <!-- Canonical - pages can override -->
-    <link rel="canonical" href="{% block canonical %}{{ request.scheme }}://{{ request.get_host }}{{ request.path }}{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}https://trendcrafters.global{{ request.path }}{% endblock %}">
+    <link rel="alternate" hreflang="en" href="https://trendcrafters.global{{ request.path }}">
+    <link rel="alternate" hreflang="x-default" href="https://trendcrafters.global{{ request.path }}">
 
     <!-- Open Graph (defaults, pages can override) -->
     <meta property="og:type" content="website">
@@ -72,11 +74,13 @@
     <meta name="author" content="Trend Crafters Global">
     <meta name="geo.region" content="NP-BA">
     <meta name="geo.placename" content="Tinkune Sahyoginagar, Kathmandu, Nepal">
-    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}https://trendcrafters.global{{ request.path }}{% endblock %}">
     <meta property="og:title" content="{% block og_title %}TrendCrafters - Digital Marketing & IT Solutions Agency{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Trend Crafters Global provides digital marketing, SEO, branding and campaigns, professional photo & video production, and IT solutions - web development, web app development, and website maintenance - in Nepal and worldwide.{% endblock %}">
     <!-- Prefer a large OG image; fall back to logo if og-image.png is not provided -->
     <meta property="og:image" content="{% block og_image %}{% static 'main/images/og-image.png' %}{% endblock %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="TrendCrafters Logo and preview image">
     <meta name="image" content="{% static 'main/images/og-image.png' %}">
 
@@ -108,11 +112,10 @@
         "url": "https://trendcrafters.global/",
         "logo": "https://trendcrafters.global{% static 'main/images/logo_transparent_black.png' %}",
         "image": "https://trendcrafters.global{% static 'main/images/og-image.png' %}",
-        "telephone": ["+977-9827877621", "+977-9863998413"],
+        "telephone": ["+977-9827877621"],
         "email": "trendcraftersglobal@gmail.com",
         "priceRange": "$$",
         "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "17:30"}],
-        "hasMap": "https://www.google.com/maps/search/?api=1&query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Tinkune Sahyoginagar",
@@ -260,15 +263,16 @@
 
                 <!-- Mobile menu button -->
                 <div class="lg:hidden">
-                    <button type="button" class="mobile-menu-button">
-                        <i class="fas fa-bars text-ink text-2xl"></i>
+                    <button type="button" class="mobile-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile menu -->
-        <div class="mobile-menu lg:hidden">
+        <div class="mobile-menu-backdrop lg:hidden" aria-hidden="true"></div>
+        <div class="mobile-menu lg:hidden" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1 bg-surface-raised border-t border-surface-border max-h-[calc(100vh-5rem)] overflow-y-auto">
 
             <!-- Digital Marketing (Social Media + SEO merged) -->
@@ -389,7 +393,7 @@
                     <h4 class="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Contact</h4>
                     <ul class="space-y-3 text-white/50">
                         <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-brand-400"></i> <a href="https://www.google.com/maps/search/?api=1&amp;query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" class="hover:text-brand-400 transition-colors">Tinkune Sahyoginagar, Kathmandu</a></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-phone mt-1 text-brand-400"></i> <span><a href="tel:+9779827877621" class="hover:text-brand-400 transition-colors">+977 982-7877621</a><br><a href="tel:+9779863998413" class="hover:text-brand-400 transition-colors">+977 986-3998413</a></span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-phone mt-1 text-brand-400"></i> <span><a href="tel:+9779827877621" class="hover:text-brand-400 transition-colors">+977 982-7877621</a></span></li>
                         <li class="flex items-center gap-2"><i class="fas fa-clock text-brand-400"></i> Sun to Fri, 10 AM to 5:30 PM</li>
                         <li class="flex items-center gap-2"><i class="fab fa-whatsapp text-brand-400"></i> <a href="https://wa.me/9779827877621" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors">WhatsApp chat</a></li>
                         <li class="flex items-center gap-2"><i class="fas fa-envelope text-brand-400"></i> <a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="hover:text-brand-400 transition-colors text-[13px] whitespace-nowrap">trendcraftersglobal@gmail.com</a></li>

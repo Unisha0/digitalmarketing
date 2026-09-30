@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% block title %}Our Work & Clients | Trend Crafters Portfolio{% endblock %}
-{% block meta_description %}Explore Trend Crafters' portfolio and the brands that trust us to lead - from education and hospitality to lifestyle, retail, and manufacturing, in Nepal and worldwide.{% endblock %}
+{% block title %}Our Work: Portfolio & Case Studies | Trend Crafters{% endblock %}
+{% block meta_description %}Explore Trend Crafters work: reels, campaigns, brand identities, photography and websites for clients across Nepal and abroad. See the results.{% endblock %}
 {% block meta_keywords %}digital marketing portfolio Nepal, brand campaign case studies Nepal, video production portfolio Nepal, reels examples Nepal, marketing agency clients Nepal, Changan Nepal campaign, Himalayan Java social media, PIEC campaign, Sasurali branding, Trend Crafters work{% endblock %}
 {% block content %}
 <section class="relative overflow-hidden pt-28 sm:pt-32 pb-14">
@@ -29,14 +29,13 @@
 
 
 
-{% include 'main/includes/reel_carousel.html' with heading="Ten reels, ten brands, one standard" sub="Real campaigns we shot, edited and shipped for clients in Nepal." %}
 
 <!-- Brands: a logo cloud, no boxes and no headings per industry -->
 <section class="py-medium bg-white">
     <div class="content-container max-w-6xl mx-auto">
         <div class="mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Brands we've grown</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Trusted across <span class="gradient-text">every industry</span></p></div>
         <ul class="tiles" data-aos="fade-up">
-            {% for c in clients %}<li class="tile{% if not c.logo %} tile-word tw-{{ forloop.counter0|add:0 }}{% endif %}" title="{{ c.name }}">{% if c.logo %}<span class="tile-logo"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span><span class="tile-name">{{ c.name }}</span>{% else %}<span class="tile-wm">{{ c.name }}</span>{% endif %}</li>{% endfor %}
+            {% for c in clients %}<li class="tile{% if c.zoom %} tile-zoom{% endif %}{% if not c.logo %} tile-word tw-{{ forloop.counter0|add:0 }}{% endif %}" title="{{ c.name }}">{% if c.logo %}<span class="tile-logo"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span><span class="tile-name">{{ c.name }}</span>{% else %}<span class="tile-wm">{{ c.name }}</span>{% endif %}</li>{% endfor %}
         </ul>
     </div>
 </section>

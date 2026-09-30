@@ -3,8 +3,13 @@ from django.urls import reverse
 
 
 class StaticViewSitemap(Sitemap):
-    priority = 0.7
     changefreq = 'weekly'
+    protocol = 'https'
+    HIGH = {'index': 1.0, 'digital_marketing': 0.9, 'brand_campaign': 0.9, 'production': 0.9, 'it_solutions': 0.9,
+            'dm_social_media': 0.9, 'contact': 0.8, 'work': 0.8, 'about': 0.8, 'services': 0.8}
+
+    def priority(self, item):
+        return self.HIGH.get(item, 0.7)
 
     def items(self):
         # list the view names for static/important pages
