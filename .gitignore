@@ -54,7 +54,6 @@ Thumbs.db
 *.webm
 *.mpeg
 *.mpg
-!main/static/main/videos/**
 
 # Node (Tailwind build tooling - the compiled tailwind-built.css output IS committed)
 node_modules/
@@ -69,3 +68,18 @@ node_modules/
 .venv/
 logs/
 !.env.example
+
+# ---- Private client/brand material: never commit (repo is public) ----
+Trend_Crafters_*.pdf
+*.pdf
+client_details*/
+stitch_trend_crafters_digital_platform/
+IMAGE_CREDITS.md
+PERFORMANCE_GUIDE.md
+TESTING_CHECKLIST.md
+DEPLOY_AWS.md
+db.sqlite3
+.DS_Store
+# Site media (client photos, logos, videos) is synced to the server with deploy/release.sh
+main/static/main/images/
+main/static/main/videos/
