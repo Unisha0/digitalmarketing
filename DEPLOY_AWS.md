@@ -37,3 +37,10 @@ cd ~/trendcrafters && bash deploy.sh
 2. Bing Webmaster Tools → import from Search Console.
 3. Claim/verify the Google Business Profile with the same name, address and phone as the site's schema.
 4. Test a page in the Rich Results Test and share a link on WhatsApp/Facebook to confirm the new 1200×630 preview image.
+
+## SSH shortcut
+`~/.ssh/config` has a `trendcraftersaws` host (13.49.74.241, user `ubuntu`, key `~/.ssh/trendcrafters-key.pem`):
+```bash
+ssh trendcraftersaws                                   # log in
+ssh trendcraftersaws 'cd ~/trendcrafters && bash deploy.sh'   # deploy from your laptop
+```
