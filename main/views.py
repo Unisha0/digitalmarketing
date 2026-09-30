@@ -110,7 +110,7 @@ def contact(request):
             try:
                 # Sender shows as "Trendcrafters Enquiry" (not "me"); replying goes to the visitor.
                 EmailMessage(
-                    subject=f"Trendcrafters Enquiry: {name}",
+                    subject="Trendcrafters Enquiry",
                     body=full_message,
                     from_email=f"Trendcrafters Enquiry <{settings.EMAIL_HOST_USER}>",
                     to=[settings.EMAIL_HOST_USER],
