@@ -27,6 +27,6 @@ urlpatterns = [
     # No admin needed
     path('', include('main.urls')),  # main app handles all routes
     # SEO: sitemap and robots
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps, 'template_name': 'main/sitemap.xml'}, name='sitemap'),
     path('robots.txt', TemplateView.as_view(template_name='main/robots.txt', content_type='text/plain')),
 ]
