@@ -39,13 +39,13 @@ python manage.py collectstatic --noinput
 
 
 echo "Restarting application services (update service names if necessary)..."
-if systemctl list-units --type=service --all | grep -q "$GUNICORN_SERVICE"; then
+if systemctl cat "$GUNICORN_SERVICE" >/dev/null 2>&1; then
   sudo systemctl reload "$GUNICORN_SERVICE" || sudo systemctl restart "$GUNICORN_SERVICE"
 else
   echo "Service $GUNICORN_SERVICE not found. Please restart your WSGI process manually." 
 fi
 
-if systemctl list-units --type=service --all | grep -q nginx; then
+if systemctl cat nginx >/dev/null 2>&1; then
   sudo systemctl reload nginx || true
 fi
 
