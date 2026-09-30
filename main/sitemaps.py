@@ -59,7 +59,7 @@ def _lastmod(name):
 def _images(url):
     """Own-site photos shown on the page, for the image sitemap (first 12, de-duplicated)."""
     try:
-        page = Client(HTTP_HOST='trendcrafters.global', secure=True).get(url).content.decode('utf-8', 'ignore')
+        page = Client(HTTP_HOST='trendcrafters.global', HTTP_X_FORWARDED_PROTO='https').get(url).content.decode('utf-8', 'ignore')
     except Exception:
         return []
     seen, out = set(), []
