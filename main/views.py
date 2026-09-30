@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail
+from django.conf import settings
+from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.core.cache import cache
 from django.http import HttpResponse
@@ -107,13 +108,14 @@ def contact(request):
             )
 
             try:
-                send_mail(
-                    subject=f"New Contact Form Submission from {name}",
-                    message=full_message,
-                    from_email=email,
-                    recipient_list=['trendcraftersglobal@gmail.com'],
-                    fail_silently=False,
-                )
+                # Sender shows as "Trendcrafters Enquiry" (not "me"); replying goes to the visitor.
+                EmailMessage(
+                    subject=f"Trendcrafters Enquiry: {name}",
+                    body=full_message,
+                    from_email=f"Trendcrafters Enquiry <{settings.EMAIL_HOST_USER}>",
+                    to=[settings.EMAIL_HOST_USER],
+                    reply_to=[email],
+                ).send(fail_silently=False)
                 messages.success(request, "Thank you for your message! We'll get back to you soon.")
             except Exception as e:
                 messages.error(request, "There was an error sending your message. Please try again later.")
