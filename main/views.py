@@ -15,7 +15,10 @@ def rate_limit(key_prefix, limit=20, period=60):
     def decorator(view_func):
         @wraps(view_func)
         def _wrapped_view(request, *args, **kwargs):
-            key = f"{key_prefix}:{request.META.get('REMOTE_ADDR', '')}"
+            # Behind nginx (unix socket) REMOTE_ADDR is empty; nginx sets X-Real-IP to the real
+            # visitor IP (restored from Cloudflare's CF-Connecting-IP).
+            ip = request.META.get('HTTP_X_REAL_IP') or request.META.get('REMOTE_ADDR', '')
+            key = f"{key_prefix}:{ip}"
             requests = cache.get(key, [])
             now = time.time()
             
