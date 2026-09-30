@@ -62,7 +62,7 @@
         </div>
         <div class="grid md:grid-cols-3 gap-4 items-stretch">
             <div class="relative rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:min-h-[32rem] bg-black" data-aos="fade-up">
-                <img src="{% static 'main/images/home/bts-video-poster.jpg' %}" alt="Behind the scenes at the Trend Crafters studio" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+                <video class="absolute inset-0 w-full h-full object-cover" src="{% static 'main/videos/team-behind-the-scenes.mp4' %}" poster="{% static 'main/images/home/bts-video-poster.jpg' %}" muted loop playsinline controls preload="metadata" data-reel aria-label="Behind the scenes video of the Trend Crafters team"></video>
             </div>
             <div class="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[32rem]" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt="Interview shoot in the Trend Crafters studio" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
             <div class="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[32rem]" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/home/bts-camera.jpg' %}" alt="Camera on a tripod monitoring a shoot" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>

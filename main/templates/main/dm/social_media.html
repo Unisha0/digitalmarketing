@@ -34,6 +34,7 @@
                         <div class="flex items-center gap-2.5 px-4 py-3 border-b border-ink/5"><img src="{% static 'main/images/logo_transparent_black.png' %}" alt="" class="h-8 w-8 object-contain"><div class="leading-tight"><p class="text-sm font-semibold text-ink">trendcraftersglobal</p><p class="text-[11px] text-ink-faint">Kathmandu, Nepal</p></div><i class="fas fa-ellipsis ml-auto text-ink-faint"></i></div>
                         <div class="relative aspect-[4/5] bg-gradient-to-br from-brand-400 via-pink-500 to-pink-700">
                             <img src="{% static 'main/images/home/hero-landing.jpg' %}" alt="Trend Crafters social post" class="absolute inset-0 w-full h-full object-cover">
+                            {% for r in reels %}{% if r.kind == 'social' and forloop.counter == 2 %}<video class="absolute inset-0 w-full h-full object-cover" src="{{ r.src }}#t=0.1" muted loop playsinline preload="none" data-reel aria-label="{{ r.client }} reel"></video>{% endif %}{% endfor %}
                         </div>
                         <div class="px-4 py-3 text-ink"><div class="flex gap-4 text-lg mb-1.5"><i class="far fa-heart"></i><i class="far fa-comment"></i><i class="far fa-paper-plane"></i><i class="far fa-bookmark ml-auto"></i></div><p class="text-xs"><strong>trendcraftersglobal</strong> We don't just follow trends. We engineer them.</p></div>
                     </div>

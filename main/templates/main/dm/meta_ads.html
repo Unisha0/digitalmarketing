@@ -34,7 +34,7 @@
                         <div class="flex items-center gap-2 px-3 py-2"><img src="{% static 'main/images/favicon.png' %}" alt="" class="h-7 w-7 rounded-full object-contain bg-white"><div class="leading-tight"><p class="text-[11px] font-semibold text-ink">Trend Crafters</p><p class="text-[9px] text-ink-faint">Sponsored · <i class="fas fa-earth-asia"></i></p></div><i class="fas fa-ellipsis ml-auto text-ink-faint text-xs"></i></div>
                         <p class="px-3 pb-2 text-[10px] text-ink">Your next customer is scrolling right now. Meet them with the right ad.</p>
                         <div class="relative aspect-[4/5] bg-black">
-                            <img src="{% static 'main/images/home/hero-landing.jpg' %}" alt="Trend Crafters Meta ad creative" class="absolute inset-0 w-full h-full object-cover">
+                            {% for r in reels %}{% if forloop.first %}<video class="absolute inset-0 w-full h-full object-cover" src="{{ r.src }}#t=0.1" muted loop playsinline preload="auto" autoplay data-reel aria-label="{{ r.client }} ad"></video>{% endif %}{% endfor %}
                         </div>
                         <div class="flex items-center justify-between bg-surface-subtle px-3 py-2"><div><p class="text-[9px] text-ink-faint">trendcrafters.global</p><p class="text-[11px] font-semibold text-ink">Book a free ad plan</p></div><span class="text-[10px] font-semibold bg-blue-600 text-white rounded-md px-3 py-1.5">Learn more</span></div>
                         <div class="flex gap-4 px-3 py-2 text-ink-muted text-xs border-t border-ink/5"><span><i class="far fa-thumbs-up"></i> Like</span><span><i class="far fa-comment"></i> Comment</span><span><i class="far fa-share-from-square"></i> Share</span></div>
