@@ -1,0 +1,106 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Google Ads Agency in Nepal | Trend Crafters{% endblock %}
+{% block meta_description %}Google Ads management in Kathmandu, Nepal: search, display, YouTube and Maps campaigns with conversion tracking and monthly reporting. You own the account.{% endblock %}
+{% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block content %}
+
+<!-- Hero: copy + a search results mock-up -->
+<section class="dm-hero relative overflow-hidden bg-[#0b1220] mt-20 pt-10 sm:pt-14 pb-16">
+    <div class="absolute -top-24 -left-24 w-[32rem] h-[32rem] rounded-full bg-blue-600/25 blur-3xl"></div>
+    <div class="absolute -bottom-32 right-0 w-[34rem] h-[34rem] rounded-full bg-gradient-to-br from-yellow-400/20 to-brand-500/20 blur-3xl"></div>
+    <div class="relative content-container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-blue-300 mb-4"><i class="fab fa-google"></i> Google Ads agency in Nepal</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Google Ads Agency in Nepal</span>Be there the moment <span class="gradient-text">customers search</span></h1>
+                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">People on Google already know what they want. We build and manage Google Ads campaigns in Kathmandu and across Nepal that put your business in front of them at that moment, and track every enquiry back to the ad that produced it.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Get a Google Ads Plan <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20with%20Google%20Ads." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Talk on WhatsApp</a>
+                </div>
+                <ul class="mt-8 grid grid-cols-2 gap-3 max-w-md mx-auto lg:mx-0 text-left text-sm text-white/80">
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Keyword and intent research</li>
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Conversion tracking</li>
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>You own the account</li>
+                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Monthly plain reports</li>
+                </ul>
+            </div>
+
+            <!-- Search results mock-up (illustration) -->
+            <div class="relative mx-auto w-full max-w-md" data-aos="fade-left" aria-hidden="true">
+                <div class="rounded-3xl bg-white p-5 shadow-2xl rotate-1">
+                    <div class="flex items-center gap-2 rounded-full border border-ink/10 px-4 py-2.5 mb-4 text-sm text-ink"><i class="fas fa-magnifying-glass text-ink-faint"></i> digital marketing agency kathmandu</div>
+                    <div class="rounded-2xl bg-blue-50/60 p-4 mb-3">
+                        <p class="text-[11px] font-semibold text-ink mb-1"><span class="border border-ink rounded px-1 mr-1">Ad</span>trendcrafters.global</p>
+                        <p class="text-blue-700 font-semibold text-base leading-snug">Digital Marketing Agency in Kathmandu</p>
+                        <p class="text-xs text-ink-muted mt-1">Social media, Meta and Google Ads, SEO, branding and web. One team, measurable growth.</p>
+                    </div>
+                    <div class="px-2 pb-1"><div class="h-2.5 w-1/2 rounded bg-ink/10 mb-2"></div><div class="h-2 w-5/6 rounded bg-ink/5 mb-1.5"></div><div class="h-2 w-2/3 rounded bg-ink/5"></div></div>
+                    <p class="text-[10px] text-ink-faint mt-4">Illustration. Actual ad positions vary with bids, quality and competition.</p>
+                </div>
+                <div class="hidden sm:block absolute -left-8 bottom-6 bg-white rounded-2xl shadow-card px-3 py-2"><p class="text-[10px] text-ink-faint">Tracked</p><p class="text-sm font-semibold text-ink"><i class="fas fa-phone text-brand-500 mr-1"></i>Calls, forms, WhatsApp</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'main/dm/_subnav.html' with active='gads' %}
+
+<!-- Formats -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="max-w-2xl mx-auto text-center mb-10" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we run</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every Google Ads format, <span class="gradient-text">matched to your goal</span></p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            <div class="service-card" data-aos="fade-up"><i class="fas fa-magnifying-glass text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Search ads</h3><p class="text-sm text-ink-muted">Text ads shown when people search your service, built around high intent keywords in English and Nepali.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-rocket text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Performance Max</h3><p class="text-sm text-ink-muted">Google's automated campaigns across Search, YouTube, Display and Maps, guided by your conversion goals and creative.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-rectangle-ad text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Display and remarketing</h3><p class="text-sm text-ink-muted">Banner ads that bring back visitors who looked at your site but did not enquire.</p></div>
+            <div class="service-card" data-aos="fade-up"><i class="fab fa-youtube text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">YouTube ads</h3><p class="text-sm text-ink-muted">Video campaigns that reuse your reels and brand films to build awareness and warm audiences.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-bag-shopping text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Shopping ads</h3><p class="text-sm text-ink-muted">Product listings with image and price for online stores, managed from your product feed.</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-location-dot text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Local and Maps campaigns</h3><p class="text-sm text-ink-muted">Reach customers near you in Kathmandu Valley and support your Google Business Profile visibility.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="py-medium bg-surface-subtle">
+    <div class="content-container max-w-5xl mx-auto">
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How it works</h2>
+            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">From first call to <span class="gradient-text">steady leads</span></p>
+        </div>
+        <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <li class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up"><span class="font-display text-3xl font-semibold gradient-text">01</span><h3 class="font-semibold text-ink mt-2 mb-1">Audit and goals</h3><p class="text-sm text-ink-muted">We review your offer, website and any past ads, then agree what a good lead or sale is worth.</p></li>
+            <li class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><span class="font-display text-3xl font-semibold gradient-text">02</span><h3 class="font-semibold text-ink mt-2 mb-1">Build and track</h3><p class="text-sm text-ink-muted">Keyword research, campaign structure, ad copy and conversion tracking for calls, forms and WhatsApp clicks.</p></li>
+            <li class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><span class="font-display text-3xl font-semibold gradient-text">03</span><h3 class="font-semibold text-ink mt-2 mb-1">Launch and optimise</h3><p class="text-sm text-ink-muted">We trim wasted clicks, test new ads and adjust bids and audiences as the data comes in.</p></li>
+            <li class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="240"><span class="font-display text-3xl font-semibold gradient-text">04</span><h3 class="font-semibold text-ink mt-2 mb-1">Report and scale</h3><p class="text-sm text-ink-muted">A monthly report in plain language: spend, leads, cost per lead and what we will test next.</p></li>
+        </ol>
+    </div>
+</section>
+
+<!-- Transparency -->
+<section class="py-medium bg-white">
+    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Honest by design</h2>
+            <p class="font-display text-3xl font-semibold text-ink mb-4">Your account. Your data. <span class="gradient-text">Your budget.</span></p>
+            <p class="text-ink-muted mb-4">We run campaigns inside your own Google Ads account, so you can see every click and rupee at any time. Ad spend goes straight to Google and our management fee is agreed separately in writing.</p>
+            <p class="text-ink-muted">Google Ads works best alongside strong <a href="{% url 'dm_seo' %}" class="text-brand-600 font-semibold">SEO</a>, social content and a fast website. We can connect them: <a href="{% url 'dm_meta_ads' %}" class="text-brand-600 font-semibold">Meta ads</a> for demand, Google Ads for capture, and a <a href="{% url 'web_development' %}" class="text-brand-600 font-semibold">website built to convert</a>.</p>
+        </div>
+        <ul class="space-y-3" data-aos="fade-left">
+            <li class="rounded-2xl bg-brand-50 p-5"><p class="font-semibold text-ink"><i class="fas fa-key text-brand-500 mr-2"></i>You own the account</p><p class="text-sm text-ink-muted mt-1">We get manager access. Nothing is locked to us.</p></li>
+            <li class="rounded-2xl bg-pink-50 p-5"><p class="font-semibold text-ink"><i class="fas fa-bullseye text-pink-600 mr-2"></i>Tracking before spending</p><p class="text-sm text-ink-muted mt-1">Calls, forms and WhatsApp taps are measured from day one.</p></li>
+            <li class="rounded-2xl bg-brand-50 p-5"><p class="font-semibold text-ink"><i class="fas fa-ban text-brand-500 mr-2"></i>No guaranteed rankings</p><p class="text-sm text-ink-muted mt-1">We promise a clear plan and transparent reporting, not a fixed position.</p></li>
+        </ul>
+    </div>
+</section>
+
+{% include 'main/dm/_seo_block.html' %}
+
+{% include 'main/dm/_more.html' with exclude='gads' %}
+{% include 'main/dm/_cta.html' with heading='Ready to show up when customers search?' text='Share your goal and monthly budget. We will come back with a keyword, campaign and tracking plan.' %}
+
+{% endblock %}

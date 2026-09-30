@@ -1,10 +1,11 @@
-{# Sticky pill navigation shared by all digital marketing pages. Pass active="social|meta|tiktok|content|seo|community|hub" #}
+{# Sticky pill navigation shared by all digital marketing pages. Pass active="social|meta|gads|tiktok|content|seo|community|hub" #}
 <nav class="bg-white/90 backdrop-blur border-b border-ink/5" aria-label="Digital marketing services">
     <div class="content-container">
         <ul class="flex gap-2 overflow-x-auto py-3 text-sm font-medium whitespace-nowrap [scrollbar-width:none]">
             <li><a href="{% url 'digital_marketing' %}" class="dm-pill {% if active == 'hub' %}dm-pill-active{% endif %}">Overview</a></li>
             <li><a href="{% url 'dm_social_media' %}" class="dm-pill {% if active == 'social' %}dm-pill-active{% endif %}">Social Media</a></li>
             <li><a href="{% url 'dm_meta_ads' %}" class="dm-pill {% if active == 'meta' %}dm-pill-active{% endif %}">Meta Ads</a></li>
+            <li><a href="{% url 'dm_google_ads' %}" class="dm-pill {% if active == 'gads' %}dm-pill-active{% endif %}">Google Ads</a></li>
             <li><a href="{% url 'dm_tiktok' %}" class="dm-pill {% if active == 'tiktok' %}dm-pill-active{% endif %}">TikTok</a></li>
             <li><a href="{% url 'dm_content_reels' %}" class="dm-pill {% if active == 'content' %}dm-pill-active{% endif %}">Content &amp; Reels</a></li>
             <li><a href="{% url 'dm_seo' %}" class="dm-pill {% if active == 'seo' %}dm-pill-active{% endif %}">SEO</a></li>

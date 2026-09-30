@@ -108,6 +108,23 @@ DM_PAGES = {
             ("Can you guarantee first page rankings?", "No honest agency can. We commit to a clear plan, transparent work and monthly reporting on rankings, traffic and enquiries."),
         ],
     },
+    "gads": {
+        "name": "Google Ads",
+        "url_name": "dm_google_ads",
+        "keywords": [
+            "Google Ads agency Nepal", "Google Ads management Kathmandu", "Google Ads company Nepal",
+            "PPC agency Nepal", "search ads Nepal", "YouTube ads Nepal", "Google Display ads Nepal",
+            "Google Maps ads Nepal", "Performance Max Nepal", "lead generation Google Ads Nepal",
+        ],
+        "faqs": [
+            ("What does a Google Ads agency in Nepal do?", "We set up and manage your Google Ads account: keyword research, search and display campaigns, ad copy, landing pages, conversion tracking and monthly reporting, so your budget reaches people who are actively searching for what you sell."),
+            ("How much should I spend on Google Ads in Nepal?", "It depends on your industry, competition and goal. We recommend a budget after reviewing your keywords and margins, and ad spend is always paid directly to Google from your own account, separate from our management fee."),
+            ("What is the difference between Google Ads and SEO?", "Google Ads gives you visibility immediately and stops when the budget stops. SEO takes longer to build but keeps compounding. Many businesses run both: ads for fast leads while SEO grows."),
+            ("Which Google Ads formats do you run?", "Search ads, Display, YouTube video ads, Shopping for product businesses, Performance Max and local campaigns that support Google Maps visibility."),
+            ("Will I own my Google Ads account?", "Yes. Your account, your data and your payment method stay with you. We get manager access, and you can see every campaign and number at any time."),
+            ("Can you guarantee the top spot on Google?", "No honest agency can. Positions depend on bids, quality and competition. We commit to a clear plan, transparent tracking and steady optimisation toward your lead and sales targets."),
+        ],
+    },
     "community": {
         "name": "Community Management",
         "url_name": "dm_community",

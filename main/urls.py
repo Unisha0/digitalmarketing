@@ -20,6 +20,7 @@ urlpatterns = [
     path('digital-marketing/', views.digital_marketing, name='digital_marketing'),
     path('digital-marketing/social-media-marketing/', views.dm_social_media, name='dm_social_media'),
     path('digital-marketing/meta-ads/', views.dm_meta_ads, name='dm_meta_ads'),
+    path('digital-marketing/google-ads/', views.dm_google_ads, name='dm_google_ads'),
     path('digital-marketing/tiktok-marketing/', views.dm_tiktok, name='dm_tiktok'),
     path('digital-marketing/content-reels-strategy/', views.dm_content_reels, name='dm_content_reels'),
     path('digital-marketing/seo/', views.dm_seo, name='dm_seo'),

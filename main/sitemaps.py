@@ -25,7 +25,7 @@ def _page_templates(name):
         'contact': ['contact.html'], 'photo_shoot': ['photo_shoot.html'], 'production': ['production.html'],
         'pr_video': ['pr/video.html'], 'pr_ads': ['pr/ads.html'], 'it_solutions': ['it/hub.html'],
         'digital_marketing': ['digital_marketing.html'], 'dm_social_media': ['dm/social_media.html'],
-        'dm_meta_ads': ['dm/meta_ads.html'], 'dm_tiktok': ['dm/tiktok.html'],
+        'dm_meta_ads': ['dm/meta_ads.html'], 'dm_google_ads': ['dm/google_ads.html'], 'dm_tiktok': ['dm/tiktok.html'],
         'dm_content_reels': ['dm/content_reels.html'], 'dm_seo': ['dm/seo.html'],
         'dm_community': ['dm/community.html'], 'brand_campaign': ['brand_campaign.html'],
         'br_identity': ['br/identity.html'], 'br_campaigns': ['br/campaigns.html'],
@@ -79,7 +79,7 @@ class StaticViewSitemap(Sitemap):
     changefreq = 'weekly'
     protocol = 'https'
     HIGH = {'index': 1.0, 'digital_marketing': 0.9, 'brand_campaign': 0.9, 'production': 0.9, 'it_solutions': 0.9,
-            'dm_social_media': 0.9, 'contact': 0.8, 'work': 0.8, 'about': 0.8, 'services': 0.8}
+            'dm_social_media': 0.9, 'dm_google_ads': 0.9, 'contact': 0.8, 'work': 0.8, 'about': 0.8, 'services': 0.8}
 
     def priority(self, item):
         return self.HIGH.get(item, 0.7)
@@ -100,6 +100,7 @@ class StaticViewSitemap(Sitemap):
             'digital_marketing',
             'dm_social_media',
             'dm_meta_ads',
+            'dm_google_ads',
             'dm_tiktok',
             'dm_content_reels',
             'dm_seo',

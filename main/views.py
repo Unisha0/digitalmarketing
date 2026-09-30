@@ -222,6 +222,9 @@ def dm_social_media(request):
 def dm_meta_ads(request):
     return _dm_page(request, 'main/dm/meta_ads.html', 'meta')
 
+def dm_google_ads(request):
+    return _dm_page(request, 'main/dm/google_ads.html', 'gads')
+
 def dm_tiktok(request):
     return _dm_page(request, 'main/dm/tiktok.html', 'tiktok')
 
