@@ -7,6 +7,11 @@ page has none of its own.
 import html
 import json
 import re
+import struct
+from functools import lru_cache
+
+from django.conf import settings
+from django.contrib.staticfiles import finders
 
 SITE = 'https://trendcrafters.global'
 
@@ -33,6 +38,65 @@ def _breadcrumb(path, title):
         name = CRUMBS.get(p) or (title.split('|')[0].strip() if i == len(parts) + 1 else p.replace('-', ' ').title())
         items.append({"@type": "ListItem", "position": i, "name": name, "item": SITE + url + '/'})
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
+
+
+_IMG_TAG = re.compile(r'<img\b[^>]*>', re.I)
+
+
+def _read_size(path):
+    """(width, height) from a PNG/JPEG/GIF/WebP header, or None."""
+    try:
+        with open(path, 'rb') as f:
+            head = f.read(32)
+            if head[:8] == b'\x89PNG\r\n\x1a\n':
+                return struct.unpack('>II', head[16:24])
+            if head[:6] in (b'GIF87a', b'GIF89a'):
+                return struct.unpack('<HH', head[6:10])
+            if head[:4] == b'RIFF' and head[8:12] == b'WEBP':
+                if head[12:16] == b'VP8 ':
+                    w, h = struct.unpack('<HH', head[26:30]); return w & 0x3FFF, h & 0x3FFF
+                if head[12:16] == b'VP8L':
+                    b = struct.unpack('<I', head[21:25])[0]; return (b & 0x3FFF) + 1, ((b >> 14) & 0x3FFF) + 1
+                if head[12:16] == b'VP8X':
+                    return int.from_bytes(head[24:27], 'little') + 1, int.from_bytes(head[27:30], 'little') + 1
+            if head[:2] == b'\xff\xd8':
+                f.seek(2)
+                while True:
+                    marker = f.read(2)
+                    if len(marker) < 2 or marker[0] != 0xFF:
+                        return None
+                    if marker[1] in (0xC0, 0xC1, 0xC2):
+                        f.read(3); h, w = struct.unpack('>HH', f.read(4)); return w, h
+                    seglen = struct.unpack('>H', f.read(2))[0]
+                    f.seek(seglen - 2, 1)
+    except Exception:
+        return None
+    return None
+
+
+@lru_cache(maxsize=None)
+def _static_size(url_path):
+    rel = url_path[len(settings.STATIC_URL):]
+    found = finders.find(rel) if settings.DEBUG else None
+    path = found or str(settings.STATIC_ROOT / rel)
+    return _read_size(path)
+
+
+def _add_dimensions(body):
+    """Declare width/height on <img> tags that lack them, so the browser reserves space (less layout shift)."""
+    def fix(m):
+        tag = m.group(0)
+        if re.search(r'\swidth=', tag, re.I) or re.search(r'\sheight=', tag, re.I):
+            return tag
+        src = re.search(r'\ssrc="([^"?#]+)', tag)
+        if not src or not src.group(1).startswith(settings.STATIC_URL):
+            return tag
+        size = _static_size(src.group(1))
+        if not size:
+            return tag
+        end = '/>' if tag.endswith('/>') else '>'
+        return tag[:-len(end)].rstrip() + f' width="{size[0]}" height="{size[1]}"' + end
+    return _IMG_TAG.sub(fix, body)
 
 
 def _set(body, pattern, value):
@@ -63,6 +127,7 @@ class SeoSyncMiddleware:
             ld = _breadcrumb(request.path, title)
             if ld:
                 body = body.replace('</head>', '<script type="application/ld+json">' + json.dumps(ld) + '</script>\n</head>', 1)
+        body = _add_dimensions(body)
         response.content = body.encode(response.charset or 'utf-8')
         if response.has_header('Content-Length'):
             response['Content-Length'] = str(len(response.content))
