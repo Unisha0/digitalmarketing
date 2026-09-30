@@ -68,3 +68,4 @@ client_details*/
 node_modules/
 .venv/
 logs/
+!.env.example
