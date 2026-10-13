@@ -1,0 +1,8 @@
+{# "More services" icon row for branding heroes. Pass exclude="identity|campaigns|graphic|story" and light=True on light heroes #}
+<p class="mt-8 mb-2 text-[11px] font-semibold uppercase tracking-[.14em] {% if light %}text-ink-faint{% else %}text-white/50{% endif %} text-center lg:text-left">More services</p>
+<nav class="hero-svcs hero-svcs-dark{% if light %} hero-svcs-light{% endif %}" aria-label="More branding and campaign services">
+    {% if exclude != 'identity' %}<a href="{% url 'br_identity' %}" class="hero-svc"><i class="fas fa-fingerprint"></i><span>Brand Identity</span></a>{% endif %}
+    {% if exclude != 'campaigns' %}<a href="{% url 'br_campaigns' %}" class="hero-svc"><i class="fas fa-rocket"></i><span>Brand Campaigns</span></a>{% endif %}
+    {% if exclude != 'graphic' %}<a href="{% url 'br_graphic' %}" class="hero-svc"><i class="fas fa-pen-ruler"></i><span>Graphic Design</span></a>{% endif %}
+    {% if exclude != 'story' %}<a href="{% url 'br_story' %}" class="hero-svc"><i class="fas fa-book-open"></i><span>Storytelling</span></a>{% endif %}
+</nav>

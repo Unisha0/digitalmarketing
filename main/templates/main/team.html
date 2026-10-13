@@ -3,48 +3,54 @@
 {% block title %}Meet the Team | Trend Crafters Kathmandu Agency{% endblock %}
 {% block meta_description %}Meet the strategists, creators, editors, designers and developers behind Trend Crafters, a Kathmandu digital marketing and creative agency.{% endblock %}
 {% block meta_keywords %}Trend Crafters team, digital marketing team Nepal, creative team Kathmandu, marketing agency people Nepal, Saksham Karki CEO{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<section class="relative overflow-hidden pt-28 sm:pt-32 pb-10">
-    <div class="absolute -top-16 -left-16 w-[26rem] h-[26rem] rounded-full bg-gradient-to-br from-brand-200/50 to-pink-100/60 blur-3xl pointer-events-none"></div>
-    <div class="relative content-container">
-        <div class="grid lg:grid-cols-12 gap-10 items-end">
-            <div class="lg:col-span-5 pb-2" data-aos="fade-up">
-                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-users"></i> Our team</p>
-                <h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl mb-5">The people <span class="gradient-text">behind the work.</span></h1>
-                <p class="text-ink-muted text-lg mb-6 max-w-xl">A Kathmandu based team of strategists, creators, editors, designers and developers working as one growth ecosystem, from our studio in Kathmandu.</p>
-                <div class="flex flex-wrap gap-2 mb-6"><span class="role-chip">Project management</span><span class="role-chip">Marketing</span><span class="role-chip">Social media</span><span class="role-chip">Editing</span><span class="role-chip">Graphic design</span><span class="role-chip">Development</span></div>
-                <a href="{% url 'contact' %}" class="btn-logo">Work With Us <i class="fas fa-arrow-right text-sm"></i></a>
+<!-- Hero: dark band, copy left, studio collage right -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Our Team</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">The people <span class="gradient-text">behind the work.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">Strategists, creators, editors, designers and developers working as one team from our studio in Kathmandu.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Work With Us <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="#crew" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-arrow-down text-xs"></i></span> Meet the crew</a>
+                </div>
+                {% include 'main/ab/_more_icons.html' with exclude='team' %}
             </div>
-            <div class="lg:col-span-7 flex items-end justify-end gap-3 sm:gap-4 lg:-mr-4" data-aos="fade-left" aria-hidden="true">
-                <div class="arch !max-w-none" style="height:17rem"><img src="{% static 'main/images/home/production.jpg' %}" alt=""></div>
-                <div class="arch !max-w-none" style="height:24rem"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt=""></div>
-                <div class="arch !max-w-none" style="height:19rem"><img src="{% static 'main/images/home/branding.jpg' %}" alt=""></div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/studio/editors-at-work.jpg' %}" alt="Editors at work in the Trend Crafters studio" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/work/bts-3.jpg' %}" alt="Filming an outdoor interview" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/studio/team-editing.jpg' %}" alt="Team editing footage" loading="lazy"></div>
             </div>
         </div>
     </div>
 </section>
 
-{% include 'main/ab/_subnav.html' with active='team' %}
-
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="max-w-2xl mb-10" data-aos="fade-up">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The people behind Trend Crafters</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">Meet the <span class="gradient-text">team</span></p>
+<!-- The crew -->
+<section class="bg-white py-14 lg:py-16" id="crew">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">The crew</p>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Meet the <span class="gradient-text">team</span></h2>
+            </div>
+            <p class="text-ink-muted max-w-md">Project management, marketing, social media, editing, design and development, all under one roof.</p>
         </div>
         {# Photos: set "photo" per person in views.py. Blank photos show an initial until then. #}
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {% for m in members %}
-            <article class="group rounded-3xl bg-white border border-ink/10 shadow-card overflow-hidden transition-transform duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
-                <div class="relative aspect-[4/5] bg-gradient-to-br from-brand-50 to-pink-100 overflow-hidden">
-                    {% if m.photo %}<img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }} at Trend Crafters" loading="lazy" style="object-position:{{ m.pos|default:'70% 25%' }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">{% else %}<span class="absolute inset-0 flex items-center justify-center font-display text-7xl font-semibold text-pink-300/70">{{ m.name|slice:":1" }}</span>{% endif %}
+            <article class="tm-card group" data-aos="fade-up" data-aos-delay="{% widthratio forloop.counter0 1 60 %}">
+                <div class="tm-photo">
+                    {% if m.photo %}<img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }} at Trend Crafters" loading="lazy" style="object-position:{{ m.pos|default:'70% 25%' }}">{% else %}<span class="wk-member-initial !text-7xl">{{ m.name|slice:":1" }}</span>{% endif %}
+                    {% if m.linkedin %}<a href="{{ m.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ m.name }} on LinkedIn" class="tm-in"><i class="fab fa-linkedin-in"></i></a>{% endif %}
                 </div>
-                <div class="p-5">
-                    <p class="text-pink-600 font-semibold text-xs tracking-wide uppercase mb-1">{{ m.role }}</p>
+                <div class="pt-4">
+                    <p class="wk-member-role !mt-0">{{ m.role }}</p>
                     <h3 class="font-display text-xl font-semibold text-ink leading-tight">{{ m.name }}</h3>
                     {% if m.bio %}<p class="text-sm text-ink-muted mt-2">{{ m.bio }}</p>{% endif %}
-                    {% if m.linkedin %}<a href="{{ m.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ m.name }} on LinkedIn" class="inline-flex items-center gap-1.5 mt-3 text-xs text-ink-muted hover:text-brand-600 transition-colors"><i class="fab fa-linkedin-in"></i> LinkedIn</a>{% endif %}
                 </div>
             </article>
             {% endfor %}
@@ -52,29 +58,28 @@
     </div>
 </section>
 
-<!-- Behind the scenes -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
-            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Behind the scenes</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-white">Inside our <span class="gradient-text">Kathmandu studio</span></p>
-            <p class="text-white/60 mt-3">Cameras, lights and a team that loves the craft. Here's a look at a day on set.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-4 items-stretch">
-            <div class="relative rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:min-h-[32rem] bg-black" data-aos="fade-up">
-                <video class="absolute inset-0 w-full h-full object-cover" src="{% static 'main/videos/team-behind-the-scenes.mp4' %}" poster="{% static 'main/images/home/bts-video-poster.jpg' %}" muted loop playsinline controls preload="metadata" data-reel aria-label="Behind the scenes video of the Trend Crafters team"></video>
+<!-- Behind the scenes: video + studio photos -->
+<section class="bg-[#F7F3EE] py-14 lg:py-16">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">Behind the scenes</p>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Inside our <span class="gradient-text">Kathmandu studio</span></h2>
             </div>
-            <div class="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[32rem]" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt="Interview shoot in the Trend Crafters studio" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[32rem]" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/home/bts-camera.jpg' %}" alt="Camera on a tripod monitoring a shoot" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+            <p class="text-ink-muted max-w-md">Cameras, lights and a team that loves the craft.</p>
+        </div>
+        <div class="tm-bts">
+            <div class="tm-bts-video" data-aos="fade-up">
+                <video src="{% static 'main/videos/team-behind-the-scenes.mp4' %}" poster="{% static 'main/images/home/bts-video-poster.jpg' %}" muted loop playsinline controls preload="metadata" aria-label="Behind the scenes video of the Trend Crafters team"></video>
+            </div>
+            <figure data-aos="fade-up" data-aos-delay="60"><img src="{% static 'main/images/studio/bts-studio-shoot.jpg' %}" alt="Crew on a studio shoot" loading="lazy"></figure>
+            <figure data-aos="fade-up" data-aos-delay="120"><img src="{% static 'main/images/studio/ceo-cabin.jpg' %}" alt="The CEO's cabin at the Trend Crafters office" style="object-position:50% 75%" loading="lazy"></figure>
+            <figure data-aos="fade-up" data-aos-delay="180"><img src="{% static 'main/images/studio/token-of-appreciation.jpg' %}" alt="Trend Crafters receiving a token of appreciation" style="object-position:50% 40%" loading="lazy"></figure>
+            <figure data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/work/bts-2.jpg' %}" alt="Camera on a gimbal during a shoot" loading="lazy"></figure>
         </div>
     </div>
 </section>
 
+{% include 'main/br/_cta.html' with heading='Want to work with us?' text="Tell us about your project and we'll match you with the right people." button='Start Your Project' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20work%20with%20your%20team.' %}
 
-<section class="py-medium bg-brand-50">
-    <div class="content-container max-w-6xl mx-auto grid md:grid-cols-5 gap-6 items-center">
-        <div class="md:col-span-3"><h2 class="font-display text-2xl md:text-3xl font-semibold text-ink mb-2">Want to work with us?</h2><p class="text-ink-muted">Tell us about your project and we'll match you with the right people.</p></div>
-        <div class="md:col-span-2 md:text-right"><a href="{% url 'contact' %}" class="btn-logo">Start Your Project <i class="fas fa-arrow-right text-sm"></i></a></div>
-    </div>
-</section>
 {% endblock %}

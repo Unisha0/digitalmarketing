@@ -45,7 +45,7 @@ To work on the project locally:
 Production site:
 
 - https://trendcrafters.global/
-
+ 
 
 ## License
 

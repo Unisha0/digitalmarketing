@@ -3,121 +3,144 @@
 {% block title %}About Trend Crafters | Creative Agency in Kathmandu, Nepal{% endblock %}
 {% block meta_description %}Meet Trend Crafters, a Kathmandu agency combining digital marketing, branding, production and IT under one roof for brands in Nepal and worldwide.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<section class="relative overflow-hidden pt-28 sm:pt-32 pb-10">
-    <div class="absolute top-10 -left-24 w-[26rem] h-[26rem] rounded-full bg-gradient-to-br from-pink-200/50 to-brand-100/60 blur-3xl pointer-events-none"></div>
-    <div class="relative content-container">
-        <p class="text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-5" data-aos="fade-up">About Trend Crafters</p>
-        <h1 class="font-display font-semibold text-ink leading-[1.08] text-4xl sm:text-6xl xl:text-7xl" data-aos="fade-up">
-            We don't <span class="pill-img"><img src="{% static 'main/images/ab/team-laptops.jpg' %}" alt=""></span> just follow trends.
-            We <span class="pill-img"><img src="{% static 'main/images/home/bts-camera.jpg' %}" alt=""></span> <span class="gradient-text">engineer</span> <span class="pill-img"><img src="{% static 'main/images/ab/team-planning.jpg' %}" alt=""></span> them.
-        </h1>
-        <div class="grid lg:grid-cols-12 gap-8 mt-10 items-start">
-            <p class="lg:col-span-6 text-ink-muted text-lg" data-aos="fade-up">We know how frustrating it is to invest in marketing and get nothing but vanity metrics and empty promises. That's exactly why we built Trend Crafters: one team for strategy, creative, production and technology.</p>
-            <div class="lg:col-span-6 grid grid-cols-4 gap-0 border-t border-ink/15" data-aos="fade-up">
-                <div class="pt-4 pr-3"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-xs text-ink-muted">Clients</p></div>
-                <div class="pt-4 pr-3 border-l border-ink/10 pl-4"><p class="font-display text-3xl font-semibold gradient-text">4</p><p class="text-xs text-ink-muted">Disciplines</p></div>
-                <div class="pt-4 pr-3 border-l border-ink/10 pl-4"><p class="font-display text-3xl font-semibold gradient-text">3</p><p class="text-xs text-ink-muted">Continents</p></div>
-                <div class="pt-4 border-l border-ink/10 pl-4"><p class="font-display text-3xl font-semibold gradient-text">5★</p><p class="text-xs text-ink-muted">Rating</p></div>
+<!-- Hero: dark band, copy left, studio collage right -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>About Us</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">We don&rsquo;t just follow trends. <span class="gradient-text">We engineer them.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">One Kathmandu team for strategy, creative, production and technology, built for businesses tired of vanity metrics and empty promises.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Work With Us <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20know%20more%20about%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
+                </div>
+                {% include 'main/ab/_more_icons.html' with exclude='about' %}
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/studio/team-at-work.jpg' %}" alt="Trend Crafters editors and designers at work in the Kathmandu studio" style="object-position:50% 80%" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/studio/bts-studio-shoot.jpg' %}" alt="Crew on a studio shoot" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/work/bts-4.jpg' %}" alt="Team meeting in the Trend Crafters office" loading="lazy"></div>
             </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 mt-8"><a href="{% url 'contact' %}" class="btn-logo">Work With Us <i class="fas fa-arrow-right text-sm"></i></a><a href="{% url 'team' %}" class="btn-ghost-link justify-center">Meet the team <i class="fas fa-arrow-right text-xs"></i></a></div>
     </div>
 </section>
 
-{% include 'main/ab/_subnav.html' with active='about' %}
-
-<!-- Hello -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Hello, we are Trend Crafters</h2>
-            <p class="font-display text-3xl font-semibold text-ink mb-4">Your dedicated <span class="gradient-text">growth partner</span></p>
-            <p class="text-ink-muted mb-4">Based in Kathmandu, Nepal, we are a digital marketing, branding and production agency designed to bring international standard creative execution right to your doorstep.</p>
-            <p class="text-ink-muted">We bridge high end visual craftsmanship and data driven marketing, so your business doesn't just compete. It leads. From hyper realistic studio production to precise Meta ads and fast, secure websites, we build ecosystems that turn attention into revenue.</p>
+<!-- Our story + founder -->
+<section class="bg-white py-14 lg:py-16">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div class="lg:col-span-6" data-aos="fade-up">
+                <p class="wk-kicker wk-kicker-dark">Our story</p>
+                <h2 class="font-display text-3xl md:text-[2.6rem] leading-[1.1] font-semibold text-ink mb-5">Hello, we are Trend Crafters. <span class="gradient-text">Your growth partner.</span></h2>
+                <p class="text-ink-muted leading-relaxed mb-4">Based in Tinkune, Kathmandu, we are a digital marketing, branding, production and IT agency that brings international standard creative work right to your doorstep.</p>
+                <p class="text-ink-muted leading-relaxed mb-7">We pair high end visual craft with data driven marketing, so your business doesn&rsquo;t just compete. It leads. Studio production, Meta and Google ads, brand kits and fast websites all come from the same team.</p>
+                <figure class="ab-founder">
+                    <img src="{% static 'main/images/home/team-founder.jpg' %}" alt="Saksham Karki, Founder and CEO of Trend Crafters" loading="lazy">
+                    <div>
+                        <blockquote class="font-display text-lg sm:text-xl text-ink leading-snug">&ldquo;Every project is more than marketing. It&rsquo;s strategy and craft combined, so brands are not only seen, but remembered.&rdquo;</blockquote>
+                        <figcaption class="mt-2 text-sm text-ink-muted"><b class="text-ink">Saksham Karki</b> &middot; Founder &amp; CEO</figcaption>
+                    </div>
+                </figure>
+            </div>
+            <div class="lg:col-span-6 ab-story-media" data-aos="fade-left">
+                <figure class="ab-story-a"><img src="{% static 'main/images/studio/kathmandu-studio.jpg' %}" alt="The Trend Crafters studio in Kathmandu" loading="lazy"></figure>
+                <figure class="ab-story-b"><img src="{% static 'main/images/studio/token-of-appreciation.jpg' %}" alt="Trend Crafters receiving a token of appreciation" style="object-position:50% 40%" loading="lazy"></figure>
+                <div class="ab-story-stat"><p>50+</p><span>Clients in Nepal &amp; abroad</span></div>
+            </div>
         </div>
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-            <div class="rounded-2xl bg-brand-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">50+</p><p class="text-sm text-ink-muted">Clients served</p></div>
-            <div class="rounded-2xl bg-pink-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">4</p><p class="text-sm text-ink-muted">Disciplines, one team</p></div>
-            <div class="rounded-2xl bg-pink-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">3</p><p class="text-sm text-ink-muted">Continents served</p></div>
-            <div class="rounded-2xl bg-brand-50 p-6"><p class="font-display text-3xl font-semibold gradient-text">5<span class="text-2xl">★</span></p><p class="text-sm text-ink-muted">Client rating</p></div>
+    </div>
+</section>
+
+<!-- Vision, mission and values -->
+<section class="bg-[#F7F3EE] py-14 lg:py-16">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+            <div class="lg:col-span-5 grid gap-5">
+                <div class="ab-vm ab-vm-dark" data-aos="fade-up"><i class="fas fa-eye"></i><h2 class="font-display text-2xl font-semibold mb-2">Our vision</h2><p>To be your most trusted digital partner, setting the benchmark for creative excellence in Nepal and delivering on a global scale.</p></div>
+                <div class="ab-vm ab-vm-grad" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-bullseye"></i><h2 class="font-display text-2xl font-semibold mb-2">Our mission</h2><p>To empower your brand with high performance marketing and a premium visual identity, combining world class production with sharp strategy to deliver measurable ROI.</p></div>
+            </div>
+            <div class="lg:col-span-7" data-aos="fade-up">
+                <p class="wk-kicker wk-kicker-dark">What we stand for</p>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink mb-6">Logic <span class="gradient-text">and magic</span></h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="ab-value"><i class="fas fa-gem"></i><h3>Uncompromising craft</h3><p>We reject &ldquo;good enough&rdquo;, from cinematic lighting to seamless code.</p></div>
+                    <div class="ab-value"><i class="fas fa-chart-line"></i><h3>Data driven</h3><p>Every ad, content plan and SEO move is backed by analytics.</p></div>
+                    <div class="ab-value"><i class="fas fa-earth-asia"></i><h3>Local soul, global standard</h3><p>We understand Nepal and deliver to international expectations.</p></div>
+                    <div class="ab-value"><i class="fas fa-scale-balanced"></i><h3>Total transparency</h3><p>Clear metrics, honest communication and proof of ROI.</p></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Vision & mission -->
-<!-- Vision & mission -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-5">
-        <div class="rounded-3xl bg-white/5 border border-white/10 p-8" data-aos="fade-up"><i class="fas fa-eye text-brand-400 text-2xl mb-3"></i><h2 class="font-display text-2xl font-semibold text-white mb-2">Our vision</h2><p class="text-white/70 text-sm">To be your most trusted digital partner, setting the benchmark for creative excellence in Nepal and executing your vision on a global scale.</p></div>
-        <div class="rounded-3xl bg-gradient-to-br from-brand-500/20 to-pink-600/20 border border-pink-400/30 p-8" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-bullseye text-brand-400 text-2xl mb-3"></i><h2 class="font-display text-2xl font-semibold text-white mb-2">Our mission</h2><p class="text-white/80 text-sm">To empower your brand with high performance marketing ecosystems and a premium visual identity. We strip away the guesswork, combining world class production values with sharp digital strategy to deliver measurable ROI.</p></div>
-    </div>
-</section>
-
-<!-- What we believe -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
-        <p class="lg:col-span-7 font-display text-2xl sm:text-4xl font-medium text-ink leading-snug border-l-4 pl-5" style="border-image:linear-gradient(to bottom,#FF9F1C,#E0266E) 1" data-aos="fade-right">"Aesthetic without strategy is just art. Strategy without aesthetic is invisible."</p>
-        <p class="lg:col-span-5 text-ink-muted" data-aos="fade-left">We believe in the perfect balance of logic and magic. Breathtaking visuals must be backed by data driven distribution. You won't find cheap CGI, cartoonish branding or spray and pray marketing here, only tactile, material realism that makes your business look expensive and authoritative.</p>
-    </div>
-</section>
-
-<!-- Values -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our commitment to you</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Core <span class="gradient-text">values</span></p></div>
+<!-- What we do: the four disciplines -->
+<section class="bg-white py-14 lg:py-16">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">What we do</p>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Four disciplines, <span class="gradient-text">one team</span></h2>
+            </div>
+            <a href="{% url 'work' %}" class="wk-link">See our work <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="service-card" data-aos="fade-up"><i class="fas fa-gem text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Uncompromising craftsmanship</h3><p class="text-sm text-ink-muted">We reject "good enough", from cinematic lighting to seamless code.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-chart-line text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Data driven execution</h3><p class="text-sm text-ink-muted">Every ad spend, content schedule and SEO plan is backed by analytics.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-earth-asia text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Local soul, global standards</h3><p class="text-sm text-ink-muted">We understand Nepal and deliver to international expectations.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-scale-balanced text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Absolute transparency</h3><p class="text-sm text-ink-muted">Clear metrics, honest communication and proof of ROI.</p></div>
+            <a href="{% url 'digital_marketing' %}" class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/home/digital-marketing.jpg' %}" alt="Digital marketing" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Digital Marketing</h3><p class="text-sm text-white/80 mb-2">Social, Meta, Google and TikTok ads, SEO and content.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'brand_campaign' %}" class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/branding.jpg' %}" alt="Branding and campaigns" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Branding &amp; Campaigns</h3><p class="text-sm text-white/80 mb-2">Brand kits, campaigns, design and storytelling.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'production' %}" class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/home/production.jpg' %}" alt="Photo and video production" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Production</h3><p class="text-sm text-white/80 mb-2">Photography, reels and commercial ads.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'it_solutions' %}" class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/home/it-solutions.jpg' %}" alt="IT solutions" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">IT Solutions</h3><p class="text-sm text-white/80 mb-2">Websites, web apps, maintenance and SEO.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
         </div>
     </div>
 </section>
 
-<!-- How our team works -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72"><img src="{% static 'main/images/ab/meeting.jpg' %}" alt="Consultant meeting with clients" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72 mt-8"><img src="{% static 'main/images/ab/team-table.jpg' %}" alt="Team working together at a table" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+<!-- Our team preview -->
+<section class="wk-team" aria-labelledby="ab-team-h">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">Our team</p>
+                <h2 id="ab-team-h" class="font-display text-3xl md:text-4xl font-semibold text-ink">The people <span class="gradient-text">behind the work</span></h2>
+            </div>
+            <a href="{% url 'team' %}" class="btn-logo self-start lg:self-auto">Our Team <i class="fas fa-arrow-right text-sm"></i></a>
         </div>
-        <div data-aos="fade-left">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How our team works</h2>
-            <p class="font-display text-3xl font-semibold text-ink mb-4">Strategists, creators and <span class="gradient-text">developers, together</span></p>
-            <ul class="space-y-3 text-sm">
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-clipboard-list text-brand-500 mt-1"></i><span class="text-ink"><strong>Project management</strong> keeps every brief, deadline and handover on track.</span></li>
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-bullhorn text-brand-500 mt-1"></i><span class="text-ink"><strong>Marketing and social</strong> plan, publish and grow your channels.</span></li>
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-photo-film text-brand-500 mt-1"></i><span class="text-ink"><strong>Editing and design</strong> turn footage and ideas into polished assets.</span></li>
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-code text-brand-500 mt-1"></i><span class="text-ink"><strong>Developers and SEO</strong> build and optimise the websites that convert.</span></li>
-            </ul>
-        </div>
+        <ul class="wk-crew">
+            {% for m in members %}
+            <li class="wk-member" data-aos="fade-up" data-aos-delay="{% widthratio forloop.counter0 1 60 %}">
+                <a href="{% url 'team' %}" class="block group">
+                    <div class="wk-member-photo">{% if m.photo %}<img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }}" loading="lazy" style="object-position:{{ m.pos|default:'50% 30%' }}">{% else %}<span class="wk-member-initial">{{ m.name|slice:":1" }}</span>{% endif %}</div>
+                    <p class="wk-member-role">{{ m.role }}</p>
+                    <p class="wk-member-name">{{ m.name }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </section>
 
-<!-- How we stand out -->
-<!-- How we stand out -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we stand out</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Beautiful creative <span class="gradient-text">and</span> aggressive media</p></div>
-        <div class="grid md:grid-cols-3 gap-5">
-            <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up"><i class="fas fa-mobile-alt text-brand-500 text-2xl mb-3"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">The 9:16 advantage</h3><p class="text-sm text-ink-muted">A balanced mix of engaging reels and statics that train social algorithms to favour your brand.</p></div>
-            <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-cubes text-brand-500 text-2xl mb-3"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Tactile visuals</h3><p class="text-sm text-ink-muted">Material realism that highlights the physical weight of rich wood and polished metal.</p></div>
-            <div class="rounded-3xl bg-white p-8 shadow-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-bullseye text-brand-500 text-2xl mb-3"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Retargeting funnels</h3><p class="text-sm text-ink-muted">Sophisticated funnels that capture conversions when it matters most.</p></div>
+<!-- Our clients preview -->
+<section class="wk-brands" aria-labelledby="ab-clients-h">
+    <div class="content-container">
+        <div class="ab-clients-head" data-aos="fade-up">
+            <div class="wk-brands-head !mb-0">
+                <p class="wk-kicker">Our clients</p>
+                <h2 id="ab-clients-h" class="font-display text-2xl md:text-4xl font-semibold text-white"><span class="gradient-text">50+ brands</span> trust our crew</h2>
+            </div>
+            <a href="{% url 'partners' %}" class="btn-logo">Our Clients <i class="fas fa-arrow-right text-sm"></i></a>
         </div>
     </div>
-</section>
-
-<!-- Founder -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-4" data-aos="fade-right"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">From our founder</h2><div class="flex items-center gap-3"><span class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-display font-semibold flex items-center justify-center">S</span><div class="leading-tight"><p class="font-semibold text-ink">Saksham Karki</p><p class="text-xs text-ink-muted">Founder &amp; CEO, Trend Crafters</p></div></div></div>
-        <div class="lg:col-span-8" data-aos="fade-left"><p class="font-display text-2xl sm:text-3xl font-medium text-ink leading-snug mb-4">At Trend Crafters, we don't just follow trends. We create them.</p><p class="text-ink-muted">Our journey began with a single vision: to redefine how brands connect, grow and inspire in the digital era. Every project is more than marketing. It's strategy and craft combined, empowering businesses not only to be seen, but to be remembered and to lead their market.</p></div>
+    <div class="wk-marquee">
+        <ul class="wk-marquee-track">
+            {% for pass in "12" %}{% for c in clients %}
+            <li class="wk-logo"{% if pass == '2' %} aria-hidden="true"{% endif %} title="{{ c.name }}">{% if c.logo %}<img src="{% static 'main/images/'|add:c.logo %}" alt="{% if pass == '1' %}{{ c.name }} logo{% endif %}" loading="lazy">{% else %}<span class="wk-logo-word">{{ c.name }}</span>{% endif %}</li>
+            {% endfor %}{% endfor %}
+        </ul>
     </div>
 </section>
 
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading="Let's build something exceptional together" text="Whether you're dominating Kathmandu or scaling globally, our team is ready to engineer your growth." %}
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading="Let's build something exceptional together" text="Whether you're growing in Kathmandu or scaling globally, our team is ready to engineer your growth." button='Work With Us' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20work%20with%20you.' %}
 
 {% endblock %}

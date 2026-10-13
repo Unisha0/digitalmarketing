@@ -1,0 +1,8 @@
+{# "More services" icon row for production heroes. Pass exclude="photo|video|ads" #}
+<p class="mt-8 mb-2 text-[11px] font-semibold uppercase tracking-[.14em] text-white/50 text-center lg:text-left">More services</p>
+<nav class="hero-svcs hero-svcs-dark" aria-label="More production services">
+    {% if exclude != 'photo' %}<a href="{% url 'photo_shoot' %}" class="hero-svc"><i class="fas fa-camera"></i><span>Photography</span></a>{% endif %}
+    {% if exclude != 'video' %}<a href="{% url 'pr_video' %}" class="hero-svc"><i class="fas fa-video"></i><span>Video &amp; Reels</span></a>{% endif %}
+    {% if exclude != 'ads' %}<a href="{% url 'pr_ads' %}" class="hero-svc"><i class="fas fa-clapperboard"></i><span>Commercial Ads</span></a>{% endif %}
+    <a href="{% url 'work' %}" class="hero-svc"><i class="fas fa-play"></i><span>Our Work</span></a>
+</nav>

@@ -32,7 +32,7 @@
                 background: transparent; border-bottom: 1px solid transparent;
                 min-height: 5rem; }
       .navbar .logo-img { height: 4rem; width: auto; display: block; aspect-ratio: 1; }
-      @media (min-width: 640px) { .navbar .logo-img { height: 6rem; } }
+      @media (min-width: 640px) { .navbar .logo-img { height: 6.75rem; } }
     </style>
 
     <!-- Custom CSS -->
@@ -98,7 +98,7 @@
     <link rel="apple-touch-icon" href="{% static 'main/apple-touch-icon.svg' %}">
     <link rel="icon" href="{% static 'main/favicon.svg' %}">
     <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#FAF8F5">
+    <meta name="theme-color" content="#FFFFFF">
 
     <!-- Schema: local agency (ProfessionalService) + WebSite -->
     <script type="application/ld+json">
@@ -156,17 +156,19 @@
 
     <!-- Navigation: transparent on load, gains a frosted surface once .scrolled is added
          by main.js. Six top-level entities - five are dropdown categories covering the
-         full service line, About Us also carries a small dropdown (About / Partners) so
+         full service line, About Us also carries a small dropdown (Our Clients / Our Team) so
          the primary bar itself stays short. -->
-    <nav class="navbar">
+    <nav class="navbar{% block nav_class %}{% endblock %}">
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-5">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center space-x-2">
                     <a href="{% url 'index' %}" class="flex items-center">
+                        <img src="{% static 'main/images/logo_transparent.png' %}" alt="" aria-hidden="true"
+                             class="logo-img logo-light h-16 sm:h-24 w-auto" width="96" height="96" loading="lazy">
                         <img src="{% static 'main/images/logo_transparent_black.png' %}"
                              alt="Trend Crafters Global Logo"
-                             class="logo-img h-16 sm:h-24 w-auto"
+                             class="logo-img logo-dark h-16 sm:h-24 w-auto"
                              loading="eager"
                              fetchpriority="high"
                              width="96"
@@ -176,7 +178,7 @@
                 </div>
 
                 <!-- Desktop menu -->
-                <div class="hidden lg:flex items-center space-x-5 xl:space-x-6">
+                <div class="hidden lg:flex items-center space-x-2 xl:space-x-6">
 
                     <!-- Digital Marketing (Social Media + SEO merged - social/Meta ads is the core specialty, SEO supports it rather than standing alone) -->
                     <div class="relative group">
@@ -213,7 +215,7 @@
 
                     <!-- Production (photo/video work - the term agencies actually use, not "Creatives") -->
                     <div class="relative group">
-                        <a href="{% url 'work' %}" class="flex items-center px-2 py-2 nav-link text-sm whitespace-nowrap">
+                        <a href="{% url 'production' %}" class="flex items-center px-2 py-2 nav-link text-sm whitespace-nowrap">
                             Production
                             <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
                         </a>
@@ -248,18 +250,18 @@
                         </a>
                         <div class="absolute left-0 top-full w-full h-3 bg-transparent"></div>
                         <div class="absolute left-0 top-full mt-1 hidden group-hover:block bg-surface-raised shadow-xl rounded-lg w-44 z-50 border border-surface-border desktop-services-menu overflow-hidden">
-                            <a href="{% url 'about' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 8h.01"/><path stroke-linecap="round" stroke-linejoin="round" d="M11 12h1v5h1"/></svg>About Us</a>
-                            <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Clients</a>                            <a href="{% url 'team' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Team</a>
+                            <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Clients</a>
+                            <a href="{% url 'team' %}" class="flex items-center gap-2 px-3.5 py-2.5 text-sm text-ink-muted hover:bg-brand-50 hover:text-brand-600 transition-colors duration-200"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path stroke-linecap="round" d="M3.5 19a5.5 5.5 0 0111 0"/><circle cx="17" cy="9" r="2.3"/><path stroke-linecap="round" d="M15.5 14.2A4.5 4.5 0 0121 19"/></svg>Our Team</a>
                         </div>
                     </div>
 
-                    <a href="{% url 'contact' %}" class="px-5 py-2 rounded-md bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap">Contact Us</a>
+                    <a href="{% url 'contact' %}" class="btn-logo !py-2.5 !px-5 text-sm whitespace-nowrap">Contact Us <i class="fas fa-arrow-right text-xs"></i></a>
 
                     <!-- Social icons -->
-                    <a href="https://www.tiktok.com/@trendcraftersglobal?_r=1&_t=ZS-91hN5vCD4rs" target="_blank" rel="noopener noreferrer" class="text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" class="text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer" class="text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer" class="text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.tiktok.com/@trendcraftersglobal?_r=1&_t=ZS-91hN5vCD4rs" target="_blank" rel="noopener noreferrer" class="hidden xl:inline text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" class="hidden xl:inline text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer" class="hidden xl:inline text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer" class="hidden xl:inline text-ink-faint hover:text-brand-500 transition-colors"><i class="fab fa-linkedin-in"></i></a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -341,8 +343,8 @@
                 <svg class="mobile-dropdown-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
               </button>
               <div class="mobile-dropdown-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex flex-col space-y-1 mt-1 pl-6">
-                <a href="{% url 'about' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 8h.01"/><path stroke-linecap="round" stroke-linejoin="round" d="M11 12h1v5h1"/></svg>About Us</a>
-                <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Clients</a>                <a href="{% url 'team' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Team</a>
+                <a href="{% url 'partners' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15l6-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 13a3 3 0 010-4l2-2a3 3 0 014 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11a3 3 0 010 4l-2 2a3 3 0 01-4-4"/></svg>Our Clients</a>
+                <a href="{% url 'team' %}" class="flex items-center gap-2 px-3 py-1.5 text-ink-faint hover:bg-brand-50 hover:text-brand-600 rounded-md text-sm"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path stroke-linecap="round" d="M3.5 19a5.5 5.5 0 0111 0"/><circle cx="17" cy="9" r="2.3"/><path stroke-linecap="round" d="M15.5 14.2A4.5 4.5 0 0121 19"/></svg>Our Team</a>
               </div>
             </div>
 
@@ -364,55 +366,67 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-ink-dark text-white py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
-                <div class="space-y-5 lg:col-span-1">
-                    <img src="{% static 'main/images/logo_transparent.png' %}" alt="TrendCrafters Logo" class="h-16 sm:h-20 w-auto" loading="lazy">
-                    <p class="font-display text-lg font-semibold text-brand-400">Crafting Digital Authority. Engineering Global Growth.</p>
-                    <p class="text-white/40 text-sm">A digital marketing, branding, and production agency based in Kathmandu, Nepal - serving clients locally and worldwide.</p>
+    <footer class="site-footer">
+        <div class="ft-wrap">
+            <div class="ft-grid">
+                <div class="ft-col">
+                    <a href="{% url 'index' %}" class="ft-h ft-h-logo" aria-label="Trend Crafters home"><img src="{% static 'main/images/logo_footer.png' %}" alt="Trend Crafters" class="ft-logo" loading="lazy" width="600" height="353"></a>
+                    <p class="ft-tag">Digital marketing, branding, production and IT, from our studio in Kathmandu.</p>
+                    <ul class="ft-quick" aria-label="Contact Trend Crafters">
+                        <li><a href="tel:+9779827877621"><i class="fas fa-phone"></i><span>Call</span></a></li>
+                        <li><a href="https://wa.me/9779827877621" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a></li>
+                        <li><a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry"><i class="fas fa-envelope"></i><span>Email</span></a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" rel="noopener noreferrer"><i class="fas fa-location-dot"></i><span>Visit</span></a></li>
+                    </ul>
+                    <ul class="ft-contact">
+                        <li><span class="ft-ic"><i class="fas fa-envelope"></i></span><a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry">trendcraftersglobal<wbr>@gmail.com</a></li>
+                        <li><span class="ft-ic"><i class="fab fa-whatsapp"></i></span><a href="https://wa.me/9779827877621" target="_blank" rel="noopener noreferrer">+977 982-7877621</a></li>
+                        <li><span class="ft-ic"><i class="fas fa-phone"></i></span><a href="tel:+9779827877621">+977 982-7877621</a></li>
+                        <li><span class="ft-ic"><i class="fas fa-location-dot"></i></span><a href="https://www.google.com/maps/search/?api=1&amp;query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" rel="noopener noreferrer" class="text-white/65">Tinkune Sahyoginagar,<br>Kathmandu, Nepal</a></li>
+                                            </ul>
                 </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Services</h4>
-                    <ul class="space-y-3 text-white/50">
-                        <li><a href="{% url 'digital_marketing' %}" class="hover:text-brand-400 transition-colors">Digital Marketing</a></li>
-                        <li><a href="{% url 'brand_campaign' %}" class="hover:text-brand-400 transition-colors">Branding & Campaigns</a></li>
-                        <li><a href="{% url 'work' %}" class="hover:text-brand-400 transition-colors">Production</a></li>
-                        <li><a href="{% url 'web_development' %}" class="hover:text-brand-400 transition-colors">IT Solutions</a></li>
-                        <li><a href="{% url 'services' %}" class="hover:text-brand-400 transition-colors">All Services</a></li>
+                <div class="ft-col">
+                    <h4 class="ft-h">Services</h4>
+                    <ul class="ft-list">
+                        <li><a href="{% url 'digital_marketing' %}">Digital Marketing</a></li>
+                        <li><a href="{% url 'brand_campaign' %}">Branding &amp; Campaigns</a></li>
+                        <li><a href="{% url 'production' %}">Production</a></li>
+                        <li><a href="{% url 'it_solutions' %}">IT Solutions</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Company</h4>
-                    <ul class="space-y-3 text-white/50">
-                        <li><a href="{% url 'about' %}" class="hover:text-brand-400 transition-colors">About Us</a></li>
-                        <li><a href="{% url 'work' %}" class="hover:text-brand-400 transition-colors">Our Work & Clients</a></li>
-                        <li><a href="{% url 'partners' %}" class="hover:text-brand-400 transition-colors">Our Clients</a></li>                        <li><a href="{% url 'team' %}" class="hover:text-brand-400 transition-colors">Our Team</a></li>
-                        <li><a href="{% url 'contact' %}" class="hover:text-brand-400 transition-colors">Contact Us</a></li>
+                <div class="ft-col">
+                    <h4 class="ft-h">Company</h4>
+                    <ul class="ft-list">
+                        <li><a href="{% url 'about' %}">About us</a></li>
+                        <li><a href="{% url 'team' %}">Meet the team</a></li>
+                        <li><a href="{% url 'work' %}">Our work</a></li>
+                        <li><a href="{% url 'partners' %}">Our clients</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Contact</h4>
-                    <ul class="space-y-3 text-white/50">
-                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-brand-400"></i> <a href="https://www.google.com/maps/search/?api=1&amp;query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" class="hover:text-brand-400 transition-colors">Tinkune Sahyoginagar, Kathmandu</a></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-phone mt-1 text-brand-400"></i> <span><a href="tel:+9779827877621" class="hover:text-brand-400 transition-colors">+977 982-7877621</a></span></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-clock text-brand-400"></i> Sun to Fri, 10 AM to 5:30 PM</li>
-                        <li class="flex items-center gap-2"><i class="fab fa-whatsapp text-brand-400"></i> <a href="https://wa.me/9779827877621" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors">WhatsApp chat</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-envelope text-brand-400"></i> <a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="hover:text-brand-400 transition-colors text-[13px] whitespace-nowrap">trendcraftersglobal@gmail.com</a></li>
+                <div class="ft-col">
+                    <h4 class="ft-h">Support</h4>
+                    <ul class="ft-list">
+                        <li><a href="{% url 'index' %}#faq">FAQs</a></li>
+                        <li><a href="{% url 'contact' %}">Contact us</a></li>
+                        <li><a href="{% url 'services' %}">All services</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Follow Us</h4>
-                    <ul class="space-y-3 text-white/50">
-                        <li><a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-brand-400 transition-colors"><i class="fab fa-instagram w-4"></i> Instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@trendcraftersglobal?_r=1&_t=ZS-91hN5vCD4rs" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-brand-400 transition-colors"><i class="fab fa-tiktok w-4"></i> TikTok</a></li>
-                        <li><a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-brand-400 transition-colors"><i class="fab fa-facebook-f w-4"></i> Facebook</a></li>
-                        <li><a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-brand-400 transition-colors"><i class="fab fa-linkedin-in w-4"></i> LinkedIn</a></li>
+                <div class="ft-col">
+                    <h4 class="ft-h">Follow us</h4>
+                    <ul class="ft-list ft-follow">
+                        <li><a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> <span>Instagram</span></a></li>
+                        <li><a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> <span>Facebook</span></a></li>
+                        <li><a href="https://www.tiktok.com/@trendcraftersglobal?_r=1&_t=ZS-91hN5vCD4rs" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> <span>TikTok</span></a></li>
+                        <li><a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i> <span>LinkedIn</span></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-                <p>&copy; {% now "Y" %} TrendCrafters. All rights reserved.</p>
+            <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-white/50 text-[13px]">
+                <p>&copy; {% now "Y" %} Trend Crafters</p>
+                <div class="flex items-center gap-6">
+                    <a href="{% url 'privacy' %}" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{% url 'terms' %}" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+                </div>
             </div>
         </div>
     </footer>

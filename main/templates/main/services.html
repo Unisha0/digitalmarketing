@@ -6,100 +6,90 @@
 {% block content %}
 
 <!-- Hero -->
-<section class="relative overflow-hidden bg-surface pt-32 pb-16 sm:pt-36 sm:pb-20">
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-brand-100 via-brand-50 to-transparent rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-4"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Digital Marketing, Branding &amp; IT Services in Nepal</span>All Services</h1>
-        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-ink mb-6">
-            Four Disciplines, <span class="gradient-text">One Team</span>
-        </h2>
-        <p class="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto">
-            We bridge the gap between high-end visual craftsmanship and aggressive, data-driven marketing - so your business doesn't just compete, it leads.
-        </p>
-    </div>
-</section>
-
-<!-- Digital Marketing -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6" data-aos="fade-up">
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink">1. Digital Marketing Services</h2>
-            <a href="{% url 'digital_marketing' %}" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors whitespace-nowrap">View details <i class="fas fa-arrow-right text-sm"></i></a>
+<section class="bg-white pt-32 sm:pt-36 pb-10">
+    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-end" data-aos="fade-up">
+        <div class="lg:col-span-7">
+            <h1 class="inline-flex items-center gap-3 text-pink-600 font-semibold text-sm tracking-[.14em] uppercase mb-4"><span class="w-8 h-0.5 bg-gradient-to-r from-brand-500 to-pink-500"></span>Digital Marketing, Branding &amp; IT Services in Nepal</h1>
+            <p class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] font-semibold text-ink">Four disciplines. <span class="gradient-text">One team.</span></p>
         </div>
-        <p class="text-ink-muted mb-6" data-aos="fade-up" data-aos-delay="50">Turn attention into global revenue with structured growth channels built for local and international audiences.</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" data-aos="fade-up" data-aos-delay="100">
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Social Media Marketing</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Meta Ads</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">TikTok Marketing</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Content & Reels Strategy</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">SEO & Search</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Community Management</span>
+        <div class="lg:col-span-5">
+            <p class="text-ink-muted text-lg leading-relaxed mb-5">We bridge the gap between high-end visual craftsmanship and data-driven marketing, so your business doesn't just compete, it leads.</p>
+            <a href="{% url 'contact' %}" class="btn-logo">Get a Free Consultation <i class="fas fa-arrow-right text-sm"></i></a>
         </div>
     </div>
 </section>
 
-<!-- Branding & Campaigns -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6" data-aos="fade-up">
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink">2. Branding & Campaigns</h2>
-            <a href="{% url 'brand_campaign' %}" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors whitespace-nowrap">View details <i class="fas fa-arrow-right text-sm"></i></a>
-        </div>
-        <p class="text-ink-muted mb-6" data-aos="fade-up" data-aos-delay="50">Identities and campaigns built on material realism - built to command authority, not just attention.</p>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" data-aos="fade-up" data-aos-delay="100">
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Brand Identity</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Brand Campaigns</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Graphic Design</span>
-            <span class="service-card !p-3 text-center text-sm font-semibold text-ink">Brand Storytelling</span>
-        </div>
-    </div>
-</section>
-
-<!-- Production Services -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6" data-aos="fade-up">
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink">3. Production Services</h2>
-            <a href="{% url 'production' %}" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors whitespace-nowrap">View details <i class="fas fa-arrow-right text-sm"></i></a>
-        </div>
-        <p class="text-ink-muted mb-6" data-aos="fade-up" data-aos-delay="50">International cinematic standards brought to every single frame, from Kathmandu to the world.</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" data-aos="fade-up" data-aos-delay="100">
-            <a href="{% url 'photo_shoot' %}" class="service-card !p-3 text-center text-sm font-semibold text-ink hover:text-brand-600 transition-colors">Photography</a>
-            <a href="{% url 'production' %}" class="service-card !p-3 text-center text-sm font-semibold text-ink hover:text-brand-600 transition-colors">Video & Reels</a>
-            <a href="{% url 'production' %}" class="service-card !p-3 text-center text-sm font-semibold text-ink hover:text-brand-600 transition-colors">Commercial Ads</a>
-        </div>
-    </div>
-</section>
-
-<!-- IT Solutions -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6" data-aos="fade-up">
-            <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink">4. IT Solutions</h2>
-            <a href="{% url 'web_development' %}" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors whitespace-nowrap">View details <i class="fas fa-arrow-right text-sm"></i></a>
-        </div>
-        <p class="text-ink-muted mb-6" data-aos="fade-up" data-aos-delay="50">High-performance digital ecosystems - the foundation for your local and global growth.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" data-aos="fade-up" data-aos-delay="100">
-            <a href="{% url 'web_development' %}" class="service-card !p-3 text-center text-sm font-semibold text-ink hover:text-brand-600 transition-colors">Web Development</a>
-            <a href="{% url 'web_app_development' %}" class="service-card !p-3 text-center text-sm font-semibold text-ink hover:text-brand-600 transition-colors">Web App Development</a>
-            <a href="{% url 'maintenance' %}" class="service-card !p-3 text-center text-sm font-semibold text-ink hover:text-brand-600 transition-colors">Maintenance & SEO</a>
+<!-- Service cards -->
+<section class="bg-white pb-20">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <article class="svc-card" data-aos="fade-up" data-aos-delay="0">
+                <a href="{% url 'digital_marketing' %}" class="svc-media" aria-label="Digital Marketing">
+                    <img src="{% static 'main/images/home/digital-marketing-team.jpg' %}" alt="" loading="lazy">
+                    <span class="svc-num">01</span>
+                    <span class="svc-badge"><i class="fas fa-bullhorn"></i></span>
+                </a>
+                <div class="p-6 sm:p-7 flex flex-col flex-1">
+                    <h2 class="font-display text-2xl font-semibold text-ink mb-2"><a href="{% url 'digital_marketing' %}" class="hover:text-brand-600 transition-colors">Digital Marketing</a></h2>
+                    <p class="text-ink-muted mb-5">Turn attention into global revenue with structured growth channels built for local and international audiences.</p>
+                    <div class="flex flex-wrap gap-2 mb-6"><a href="{% url 'dm_social_media' %}" class="svc-chip">Social Media Marketing</a><a href="{% url 'dm_meta_ads' %}" class="svc-chip">Meta Ads</a><a href="{% url 'dm_google_ads' %}" class="svc-chip">Google Ads</a><a href="{% url 'dm_tiktok' %}" class="svc-chip">TikTok Marketing</a><a href="{% url 'dm_content_reels' %}" class="svc-chip">Content &amp; Reels</a><a href="{% url 'dm_seo' %}" class="svc-chip">SEO &amp; Search</a><a href="{% url 'dm_community' %}" class="svc-chip">Community Management</a></div>
+                    <a href="{% url 'digital_marketing' %}" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-600 hover:text-brand-700">View details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </article>
+            <article class="svc-card" data-aos="fade-up" data-aos-delay="80">
+                <a href="{% url 'brand_campaign' %}" class="svc-media" aria-label="Branding &amp; Campaigns">
+                    <img src="{% static 'main/images/home/branding-team-table.jpg' %}" alt="" loading="lazy">
+                    <span class="svc-num">02</span>
+                    <span class="svc-badge"><i class="fas fa-pen-nib"></i></span>
+                </a>
+                <div class="p-6 sm:p-7 flex flex-col flex-1">
+                    <h2 class="font-display text-2xl font-semibold text-ink mb-2"><a href="{% url 'brand_campaign' %}" class="hover:text-brand-600 transition-colors">Branding &amp; Campaigns</a></h2>
+                    <p class="text-ink-muted mb-5">Identities and campaigns built on material realism, made to command authority, not just attention.</p>
+                    <div class="flex flex-wrap gap-2 mb-6"><a href="{% url 'br_identity' %}" class="svc-chip">Brand Identity</a><a href="{% url 'br_campaigns' %}" class="svc-chip">Brand Campaigns</a><a href="{% url 'br_graphic' %}" class="svc-chip">Graphic Design</a><a href="{% url 'br_story' %}" class="svc-chip">Brand Storytelling</a></div>
+                    <a href="{% url 'brand_campaign' %}" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-600 hover:text-brand-700">View details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </article>
+            <article class="svc-card" data-aos="fade-up" data-aos-delay="0">
+                <a href="{% url 'production' %}" class="svc-media" aria-label="Production">
+                    <img src="{% static 'main/images/home/production.jpg' %}" alt="" loading="lazy">
+                    <span class="svc-num">03</span>
+                    <span class="svc-badge"><i class="fas fa-clapperboard"></i></span>
+                </a>
+                <div class="p-6 sm:p-7 flex flex-col flex-1">
+                    <h2 class="font-display text-2xl font-semibold text-ink mb-2"><a href="{% url 'production' %}" class="hover:text-brand-600 transition-colors">Production</a></h2>
+                    <p class="text-ink-muted mb-5">International cinematic standards brought to every single frame, from Kathmandu to the world.</p>
+                    <div class="flex flex-wrap gap-2 mb-6"><a href="{% url 'photo_shoot' %}" class="svc-chip">Photography</a><a href="{% url 'pr_video' %}" class="svc-chip">Video &amp; Reels</a><a href="{% url 'pr_ads' %}" class="svc-chip">Commercial Ads</a></div>
+                    <a href="{% url 'production' %}" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-600 hover:text-brand-700">View details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </article>
+            <article class="svc-card" data-aos="fade-up" data-aos-delay="80">
+                <a href="{% url 'it_solutions' %}" class="svc-media" aria-label="IT Solutions">
+                    <img src="{% static 'main/images/home/it-solutions.jpg' %}" alt="" loading="lazy">
+                    <span class="svc-num">04</span>
+                    <span class="svc-badge"><i class="fas fa-code"></i></span>
+                </a>
+                <div class="p-6 sm:p-7 flex flex-col flex-1">
+                    <h2 class="font-display text-2xl font-semibold text-ink mb-2"><a href="{% url 'it_solutions' %}" class="hover:text-brand-600 transition-colors">IT Solutions</a></h2>
+                    <p class="text-ink-muted mb-5">High-performance digital ecosystems: the foundation for your local and global growth.</p>
+                    <div class="flex flex-wrap gap-2 mb-6"><a href="{% url 'web_development' %}" class="svc-chip">Web Development</a><a href="{% url 'web_app_development' %}" class="svc-chip">Web App Development</a><a href="{% url 'maintenance' %}" class="svc-chip">Maintenance &amp; SEO</a></div>
+                    <a href="{% url 'it_solutions' %}" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-600 hover:text-brand-700">View details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </article>
         </div>
     </div>
 </section>
 
 <!-- CTA -->
-<section class="relative py-20 flex items-center justify-center bg-gradient-to-r from-brand-500 via-pink-500 to-ink-dark text-center overflow-hidden">
-  <div class="content-container px-6">
-    <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold text-white mb-6">Not Sure Where to Start?</h2>
-      <p class="text-white/90 mb-8">Tell us your business goal and we'll point you to the right service.</p>
-      <a href="{% url 'contact' %}" class="inline-block px-8 py-4 bg-white text-brand-600 font-semibold rounded-lg hover:bg-surface hover:-translate-y-0.5 shadow-lg transition-all">
-        Get in Touch
-      </a>
+<section class="py-medium bg-white">
+    <div class="content-container max-w-6xl mx-auto">
+        <div class="rounded-3xl bg-gradient-to-r from-brand-500 via-pink-500 to-pink-700 text-white p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-aos="fade-up">
+            <div>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold mb-2">Not sure where to start?</h2>
+                <p class="text-white/90">Tell us your business goal and we'll point you to the right service.</p>
+            </div>
+            <a href="{% url 'contact' %}" class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white text-pink-600 font-semibold shadow-lg hover:-translate-y-0.5 transition-transform whitespace-nowrap self-start md:self-auto">Get in Touch <i class="fas fa-arrow-right text-sm"></i></a>
+        </div>
     </div>
-  </div>
 </section>
 
 {% endblock %}

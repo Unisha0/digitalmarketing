@@ -137,16 +137,18 @@ def contact(request):
 
 
 def about(request):
-    return _ab_page(request, 'main/about.html', 'about')
+    return _ab_page(request, 'main/about.html', 'about', extra={'members': TEAM_MEMBERS, 'clients': CLIENTS})
 
 def services(request):
     return render(request, 'main/services.html')
 
 from .clients import CLIENTS
+from .reels import WORK_REELS, WORK_FILMS
 
 
 def work(request):
-    return render(request, 'main/work.html', {'clients': CLIENTS})
+    return render(request, 'main/work.html', {
+        'clients': CLIENTS, 'members': TEAM_MEMBERS, 'work_reels': WORK_REELS, 'films': WORK_FILMS})
 
 def brand_campaign(request):
     return _br_page(request, 'main/brand_campaign.html', 'hub')
@@ -170,13 +172,15 @@ from .clients import CLIENTS
 from .seo_data import DM_PAGES, BR_PAGES, PR_PAGES, IT_PAGES, AB_PAGES
 
 
-def _section_page(request, template, page, is_hub, parent_name, parent_url_name, extra=None):
-    """Render a service page with its keywords, FAQs and JSON-LD schema (FAQPage, Service, BreadcrumbList)."""
+def _section_page(request, template, page, is_hub, parent_name, parent_url_name, extra=None, faqs=True):
+    """Render a service page with its keywords, FAQs and JSON-LD schema (FAQPage, Service, BreadcrumbList).
+    Pass faqs=False when the page doesn't show the FAQ block, so FAQPage schema isn't emitted."""
     base = f"{request.scheme}://{request.get_host()}"
-    schema = [
+    schema = ([
         {"@context": "https://schema.org", "@type": "FAQPage",
          "mainEntity": [{"@type": "Question", "name": q,
                          "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in page["faqs"]]},
+    ] if faqs else []) + [
         {"@context": "https://schema.org", "@type": "Service", "name": page["name"],
          "serviceType": page["name"], "provider": {"@id": "https://trendcrafters.global/#organization"},
          "areaServed": ["Nepal", "Kathmandu", "Lalitpur", "Bhaktapur"],
@@ -197,19 +201,19 @@ def _dm_page(request, template, key):
 
 
 def _pr_page(request, template, key):
-    return _section_page(request, template, PR_PAGES[key], key == "hub", "Production Services", "production")
+    return _section_page(request, template, PR_PAGES[key], key == "hub", "Production Services", "production", faqs=False)
 
 
 def _it_page(request, template, key):
-    return _section_page(request, template, IT_PAGES[key], key == "hub", "IT Solutions", "it_solutions")
+    return _section_page(request, template, IT_PAGES[key], key == "hub", "IT Solutions", "it_solutions", faqs=False)
 
 
 def _ab_page(request, template, key, extra=None):
-    return _section_page(request, template, AB_PAGES[key], True, "About Us", "about", extra)
+    return _section_page(request, template, AB_PAGES[key], True, "About Us", "about", extra, faqs=False)
 
 
 def _br_page(request, template, key):
-    return _section_page(request, template, BR_PAGES[key], key == "hub", "Branding & Campaigns", "brand_campaign")
+    return _section_page(request, template, BR_PAGES[key], key == "hub", "Branding & Campaigns", "brand_campaign", faqs=False)
 
 
 def digital_marketing(request):
@@ -274,13 +278,21 @@ TEAM_MEMBERS = [
      "linkedin": "", "featured": True},
     {"name": "Jenisha Chaulagain", "role": "Project Manager", "photo": "team/jenisha-chaulagain.jpg", "pos": "62% 68%", "bio": "",
      "linkedin": "https://www.linkedin.com/in/jenisha-chaulagain-7423232ba/"},
-    {"name": "Devashish Shrestha", "role": "Marketing Head", "photo": "", "bio": "",
+    {"name": "Devashish Shrestha", "role": "Marketing Head", "photo": "team/devashish-shrestha.jpg", "pos": "50% 70%", "bio": "",
      "linkedin": "https://www.linkedin.com/in/devashishshresthaofficial/"},
-    {"name": "Divyam Koirala", "role": "Social Media Manager", "photo": "", "bio": "",
+    {"name": "Divyam Koirala", "role": "Social Media Manager", "photo": "team/divyam-koirala.jpg", "pos": "50% 35%", "bio": "",
      "linkedin": "https://www.linkedin.com/in/divyam-koirala-853922378/"},
-    {"name": "Dipankar Tamrakar", "role": "Graphic Designer", "photo": "", "bio": "", "linkedin": ""},
+    {"name": "Dipankar Tamrakar", "role": "Graphic Designer", "photo": "team/dipankar-tamrakar.jpg", "pos": "50% 75%", "bio": "", "linkedin": ""},
     {"name": "Sumit Mishra", "role": "Video Editor", "photo": "", "bio": "", "linkedin": ""},
 ]
+
+
+def privacy(request):
+    return render(request, 'main/privacy.html')
+
+
+def terms(request):
+    return render(request, 'main/terms.html')
 
 
 def team(request):

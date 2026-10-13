@@ -2,57 +2,316 @@
 {% load static %}
 {% block title %}Our Work: Portfolio & Case Studies | Trend Crafters{% endblock %}
 {% block meta_description %}Explore Trend Crafters work: reels, campaigns, brand identities, photography and websites for clients across Nepal and abroad. See the results.{% endblock %}
-{% block meta_keywords %}digital marketing portfolio Nepal, brand campaign case studies Nepal, video production portfolio Nepal, reels examples Nepal, marketing agency clients Nepal, Changan Nepal campaign, Himalayan Java social media, PIEC campaign, Sasurali branding, Trend Crafters work{% endblock %}
+{% block meta_keywords %}digital marketing portfolio Nepal, brand campaign case studies Nepal, video production portfolio Nepal, reels examples Nepal, marketing agency clients Nepal, Changan Nepal campaign, Himalayan Java social media, PIEC campaign, Trend Crafters work{% endblock %}
 {% block content %}
-<section class="relative overflow-hidden pt-28 sm:pt-32 pb-14">
-    <div class="absolute -top-10 right-[-6rem] w-[30rem] h-[30rem] rounded-full bg-gradient-to-br from-brand-200/60 to-pink-200/50 blur-3xl pointer-events-none"></div>
-    <div class="relative content-container">
-        <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4" data-aos="fade-up"><span class="w-8 h-px bg-pink-500"></span> Portfolio / Our work</p>
-        <h1 class="font-display font-semibold text-ink leading-[1.02] text-5xl sm:text-6xl xl:text-7xl max-w-5xl" data-aos="fade-up"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Client Work &amp; Case Studies, Nepal</span>The proof is in <span class="gradient-text">the performance.</span></h1>
-        <div class="grid lg:grid-cols-12 gap-6 mt-6 items-end">
-            <p class="lg:col-span-6 text-ink-muted text-lg" data-aos="fade-up">Exceptional execution speaks louder than any sales pitch. From ambitious local startups in Kathmandu to established international enterprises on the Gold Coast, we partner with brands that refuse to settle for average.</p>
-            <dl class="lg:col-span-6 grid grid-cols-3 gap-6 lg:justify-items-end" data-aos="fade-up">
-                <div><dt class="text-xs text-ink-faint uppercase tracking-wider">Clients</dt><dd class="font-display text-4xl font-semibold gradient-text">50+</dd></div>
-                <div><dt class="text-xs text-ink-faint uppercase tracking-wider">Engagement lift</dt><dd class="font-display text-4xl font-semibold gradient-text">60%+</dd></div>
-                <div><dt class="text-xs text-ink-faint uppercase tracking-wider">Continents</dt><dd class="font-display text-4xl font-semibold gradient-text">3</dd></div>
-            </dl>
-        </div>
-        <div class="fan mt-10" aria-hidden="true">
-            <figure class="fan-card" style="--r:-6deg;--y:1rem"><img src="{% static 'main/images/home/hero-landing.jpg' %}" alt=""></figure>
-            <figure class="fan-card" style="--r:3deg;--y:-.5rem"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt=""></figure>
-            <figure class="fan-card" style="--r:-3deg;--y:1.25rem"><img src="{% static 'main/images/home/retail.jpg' %}" alt=""></figure>
-            <figure class="fan-card hidden sm:block" style="--r:5deg;--y:0rem"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt=""></figure>
-            <figure class="fan-card hidden lg:block" style="--r:-4deg;--y:1rem"><img src="{% static 'main/images/home/hospitality.jpg' %}" alt=""></figure>
+<!-- Hero: copy left, a moving gallery of real work on the right -->
+<section class="wk-hero">
+    <div class="content-container">
+        <div class="wk-hero-grid">
+            <div class="wk-hero-copy" data-aos="fade-up">
+                <p class="wk-kicker wk-kicker-dark">Portfolio &middot; Client work &amp; case studies, Nepal</p>
+                <h1 class="font-display font-semibold text-ink leading-[1.02] text-[2.75rem] sm:text-6xl xl:text-[4.5rem]">The proof is in <span class="gradient-text">the performance.</span></h1>
+                <p class="text-ink-muted text-lg leading-relaxed mt-6 max-w-xl">Reels, films, brand kits and campaigns for ambitious startups in Kathmandu and established businesses on the Gold Coast. Every piece on this page was planned, shot and finished by our own crew.</p>
+                <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                    <a href="#reels" class="btn-logo">Watch the Reels <i class="fas fa-play text-xs"></i></a>
+                    <a href="{% url 'contact' %}" class="wk-ghost">Start a Project</a>
+                </div>
+                <dl class="wk-hero-stats">
+                    <div><dt>Clients</dt><dd>50+</dd></div>
+                    <div><dt>Films &amp; reels</dt><dd>{{ work_reels|length|add:2 }}</dd></div>
+                    <div><dt>Engagement lift</dt><dd>60%+</dd></div>
+                    <div><dt>Continents</dt><dd>3</dd></div>
+                </dl>
+            </div>
+            <div class="wk-gallery" aria-label="A selection of our work" data-aos="fade-left">
+                <div class="wk-gal-col "><div class="wk-gal-track">
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/work/reel-mediquest-poster.jpg' %}" alt="MediQuest Diagnostic storytelling reel" fetchpriority="high"></figure>
+                    <figure class="wk-gal-wide"><img src="{% static 'main/images/br/kit-trendcrafters-dark.jpg' %}" alt="Trend Crafters dark luxe brand kit" loading="lazy"></figure>
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/home/reel-ford-poster.jpg' %}" alt="Ford automotive reel" loading="lazy"></figure>
+                    <figure class="wk-gal-square"><img src="{% static 'main/images/work/bts-4.jpg' %}" alt="Trend Crafters team in the office" loading="lazy"></figure>
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/work/poster-piec-brand-campaign.jpg' %}" alt="PIEC brand campaign reel" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/work/reel-mediquest-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-wide" aria-hidden="true"><img src="{% static 'main/images/br/kit-trendcrafters-dark.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/home/reel-ford-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-square" aria-hidden="true"><img src="{% static 'main/images/work/bts-4.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/work/poster-piec-brand-campaign.jpg' %}" alt="" loading="lazy"></figure>
+                </div></div>
+                <div class="wk-gal-col wk-col-down"><div class="wk-gal-track">
+                    <figure class="wk-gal-wide"><img src="{% static 'main/images/br/mingma-poster.jpg' %}" alt="Mingma David Sherpa on a summit" fetchpriority="high"></figure>
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/work/reel-blue-spot-poster.jpg' %}" alt="Blue Spot cocktail film" loading="lazy"></figure>
+                    <figure class="wk-gal-square"><img src="{% static 'main/images/work/bts-2.jpg' %}" alt="Camera on a gimbal during a shoot" loading="lazy"></figure>
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/home/reel-brand-film-poster.jpg' %}" alt="Vermi Perfume brand film" loading="lazy"></figure>
+                    <figure class="wk-gal-wide"><img src="{% static 'main/images/work/web-nexo.jpg' %}" alt="Nexo Migration website design" loading="lazy"></figure>
+                    <figure class="wk-gal-wide" aria-hidden="true"><img src="{% static 'main/images/br/mingma-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/work/reel-blue-spot-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-square" aria-hidden="true"><img src="{% static 'main/images/work/bts-2.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/home/reel-brand-film-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-wide" aria-hidden="true"><img src="{% static 'main/images/work/web-nexo.jpg' %}" alt="" loading="lazy"></figure>
+                </div></div>
+                <div class="wk-gal-col wk-col-slow"><div class="wk-gal-track">
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/work/poster-changan-nepal-brand-film.jpg' %}" alt="Changan Nepal brand film" fetchpriority="high"></figure>
+                    <figure class="wk-gal-wide"><img src="{% static 'main/images/work/film-sasurali-poster.jpg' %}" alt="Sasurali Restaurant drone film" loading="lazy"></figure>
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/home/reel-wildfire-poster.jpg' %}" alt="Wildfire product film" loading="lazy"></figure>
+                    <figure class="wk-gal-wide"><img src="{% static 'main/images/br/kit-nexo-blue.jpg' %}" alt="Nexo Migration brand kit" loading="lazy"></figure>
+                    <figure class="wk-gal-tall"><img src="{% static 'main/images/work/poster-himalayan-java-brand-storytelling.jpg' %}" alt="Himalayan Java storytelling reel" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/work/poster-changan-nepal-brand-film.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-wide" aria-hidden="true"><img src="{% static 'main/images/work/film-sasurali-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/home/reel-wildfire-poster.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-wide" aria-hidden="true"><img src="{% static 'main/images/br/kit-nexo-blue.jpg' %}" alt="" loading="lazy"></figure>
+                    <figure class="wk-gal-tall" aria-hidden="true"><img src="{% static 'main/images/work/poster-himalayan-java-brand-storytelling.jpg' %}" alt="" loading="lazy"></figure>
+                </div></div>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- Feature films: widescreen work, full-bleed dark band -->
+<section class="wk-films" aria-labelledby="wk-films-h">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker">01 &middot; Feature films</p>
+                <h2 id="wk-films-h" class="font-display text-3xl md:text-5xl font-semibold text-white leading-[1.05]">Stories told <span class="gradient-text">in widescreen</span></h2>
+            </div>
+            <p class="text-white/60 max-w-md">Longer films where the story matters as much as the shot. Tap a film to play it right here.</p>
+        </div>
+        <div class="wk-films-grid">
+            {% for f in films %}
+            <div class="wk-film{% if forloop.first %} wk-film-main{% endif %}" role="button" tabindex="0" aria-label="Play {{ f.client }}: {{ f.category }}" data-aos="fade-up"{% if not forloop.first %} data-aos-delay="100"{% endif %}>
+                <img src="{% static f.poster %}" alt="{{ f.client }} {{ f.category|lower }}" loading="lazy">
+                <video playsinline preload="none" poster="{% static f.poster %}" data-src="{% static f.static %}"></video>
+                <span class="wk-film-shade"></span>
+                <span class="wk-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                <span class="wk-film-info">
+                    <span class="wk-chip">{{ f.category }} &middot; {{ f.tag }}</span>
+                    <span class="wk-film-title">{{ f.client }}</span>
+                    <span class="wk-film-blurb">{{ f.blurb }}</span>
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
+<!-- The reel wall: every vertical video, filterable -->
+<section class="wk-reels" id="reels" aria-labelledby="wk-reels-h">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">02 &middot; Reels &amp; TikToks</p>
+                <h2 id="wk-reels-h" class="font-display text-3xl md:text-5xl font-semibold text-ink leading-[1.05]">Every reel, <span class="gradient-text">every brand</span></h2>
+            </div>
+            <div class="wk-filters" role="group" aria-label="Filter reels">
+                <button type="button" class="wk-filter is-active" data-filter="all">All <span>{{ work_reels|length }}</span></button>
+                <button type="button" class="wk-filter" data-filter="brand">Brand films</button>
+                <button type="button" class="wk-filter" data-filter="product">Product &amp; ads</button>
+                <button type="button" class="wk-filter" data-filter="social">Stories &amp; social</button>
+                <button type="button" class="wk-filter" data-filter="bts">Behind the scenes</button>
+            </div>
+        </div>
+        <div class="wk-wall">
+            {% for r in work_reels %}
+            <div class="wk-reel wk-player" data-group="{{ r.group }}">
+                <video muted loop playsinline preload="none" poster="{% static r.poster %}" src="{% if r.static %}{% static r.static %}{% else %}{{ r.src }}{% endif %}" aria-label="{{ r.client }}: {{ r.category }}"></video>
+                <button type="button" class="wk-sound" aria-label="Turn sound on"><i class="fas fa-volume-xmark"></i></button>
+                <span class="wk-reel-shade"></span>
+                <span class="wk-play wk-play-sm" aria-hidden="true"><i class="fas fa-play"></i></span>
+                <span class="wk-reel-info">
+                    <span class="wk-chip">{{ r.category }}</span>
+                    <span class="wk-reel-title">{{ r.client }}</span>
+                    <span class="wk-reel-blurb">{{ r.blurb }}</span>
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-{% include 'main/includes/reel_carousel.html' with heading="Ten reels, ten brands, one standard" sub="Real campaigns we shot, edited and shipped for clients in Nepal." %}
+<!-- Brand kits and design work: bento -->
+<section class="wk-kits" aria-labelledby="wk-kits-h">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">03 &middot; Identity &amp; design</p>
+                <h2 id="wk-kits-h" class="font-display text-3xl md:text-5xl font-semibold text-ink leading-[1.05]">Brand kits <span class="gradient-text">we&rsquo;ve built</span></h2>
+            </div>
+            <a href="{% url 'br_identity' %}" class="wk-link">How we build a brand kit <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+        <div class="wk-bento">
+            <figure class="wk-kit" data-aos="fade-up">
+                <img src="{% static 'main/images/br/kit-trendcrafters-dark.jpg' %}" alt="Trend Crafters dark luxe brand kit: logo, palette, typography and stationery" loading="lazy">
+                <figcaption class="wk-kit-cap"><b>Trend Crafters</b> Dark luxe kit</figcaption>
+            </figure>
+            <figure class="wk-kit" data-aos="fade-up" data-aos-delay="80">
+                <img src="{% static 'main/images/br/kit-nexo-blue.jpg' %}" alt="Nexo Migration brand kit: logo, colours, social and stationery" loading="lazy">
+                <figcaption class="wk-kit-cap"><b>Nexo Migration</b> Brand system</figcaption>
+            </figure>
+            <figure class="wk-kit" data-aos="fade-up">
+                <img src="{% static 'main/images/br/kit-trendcrafters.jpg' %}" alt="Trend Crafters brand kit: logo, colours, typography and digital" loading="lazy">
+                <figcaption class="wk-kit-cap"><b>Trend Crafters</b> Signature kit</figcaption>
+            </figure>
+            <figure class="wk-kit" data-aos="fade-up" data-aos-delay="80">
+                <img src="{% static 'main/images/br/kit-nexo.jpg' %}" alt="Nexo Migration brand kit proposal" loading="lazy">
+                <figcaption class="wk-kit-cap"><b>Nexo Migration</b> Kit proposal</figcaption>
+            </figure>
+            <figure class="wk-kit" data-aos="fade-up">
+                <img src="{% static 'main/images/work/web-nexo.jpg' %}" alt="Nexo Migration website on a laptop and phone" loading="lazy">
+                <figcaption class="wk-kit-cap"><b>Nexo Migration</b> Website design</figcaption>
+            </figure>
+            <div class="wk-kit-note" data-aos="fade-up" data-aos-delay="80">
+                <p class="wk-kicker wk-kicker-dark">Every kit includes</p>
+                <ul class="kit-list"><li><i class="fas fa-shapes"></i>Logo suite</li><li><i class="fas fa-palette"></i>Colour palette</li><li><i class="fas fa-font"></i>Typography</li><li><i class="fas fa-table-cells"></i>Brand patterns</li><li><i class="fas fa-image"></i>Photo direction</li><li><i class="fas fa-book"></i>Usage guidelines</li></ul>
+                <a href="{% url 'br_identity' %}" class="btn-logo mt-6 self-start">Get Your Brand Kit <i class="fas fa-arrow-right text-sm"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Brands: a logo cloud, no boxes and no headings per industry -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Brands we've grown</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Trusted across <span class="gradient-text">every industry</span></p></div>
-        <ul class="tiles" data-aos="fade-up">
-            {% for c in clients %}<li class="tile{% if c.zoom %} tile-zoom{% endif %}{% if not c.logo %} tile-word tw-{{ forloop.counter0|add:0 }}{% endif %}" title="{{ c.name }}">{% if c.logo %}<span class="tile-logo"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span><span class="tile-name">{{ c.name }}</span>{% else %}<span class="tile-wm">{{ c.name }}</span>{% endif %}</li>{% endfor %}
+<!-- Brands: one marquee row on a slim dark band -->
+<section class="wk-brands" aria-labelledby="wk-brands-h">
+    <div class="content-container">
+        <div class="wk-brands-head" data-aos="fade-up">
+            <p class="wk-kicker">04 &middot; Brands</p>
+            <h2 id="wk-brands-h" class="font-display text-2xl md:text-4xl font-semibold text-white"><span class="gradient-text">50+ brands</span> trust our crew</h2>
+        </div>
+    </div>
+    <div class="wk-marquee">
+        <ul class="wk-marquee-track">
+            {% for pass in "12" %}{% for c in clients %}
+            <li class="wk-logo"{% if pass == '2' %} aria-hidden="true"{% endif %} title="{{ c.name }}">{% if c.logo %}<img src="{% static 'main/images/'|add:c.logo %}" alt="{% if pass == '1' %}{{ c.name }} logo{% endif %}" loading="lazy">{% else %}<span class="wk-logo-word">{{ c.name }}</span>{% endif %}</li>
+            {% endfor %}{% endfor %}
         </ul>
     </div>
 </section>
 
-
-
-<!-- Global reach, split not centred -->
-<section class="py-medium bg-brand-50">
-    <div class="content-container max-w-6xl mx-auto grid md:grid-cols-5 gap-8 items-center">
-        <div class="md:col-span-3" data-aos="fade-right"><h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-3">Global reach, <span class="gradient-text">local impact</span></h2><p class="text-ink-muted leading-relaxed">We've executed high converting, cross border digital campaigns for international clients on the Gold Coast, while building dominant market share for premier brands here in Nepal.</p></div>
-        <div class="md:col-span-2 grid grid-cols-2 gap-3" data-aos="fade-left"><div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-semibold gradient-text">45%</p><p class="text-xs text-ink-muted">Himalayan Java, 3 weeks</p></div><div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-semibold gradient-text">60%+</p><p class="text-xs text-ink-muted">Threads &amp; Trends</p></div></div>
+<!-- About us + behind the scenes -->
+<section class="wk-about" aria-labelledby="wk-about-h">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div class="lg:col-span-5" data-aos="fade-up">
+                <p class="wk-kicker wk-kicker-dark">05 &middot; About us</p>
+                <h2 id="wk-about-h" class="font-display text-3xl md:text-[2.75rem] leading-[1.08] font-semibold text-ink mb-5">One Kathmandu studio, <span class="gradient-text">an international standard</span></h2>
+                <p class="text-ink-muted leading-relaxed mb-4">Trend Crafters is a digital marketing, branding and production agency in Tinkune, Kathmandu. Strategy, design, shoots, edits and ads all happen under one roof, by one team.</p>
+                <p class="text-ink-muted leading-relaxed mb-7">Every reel and kit on this page was planned, shot and finished by the people below.</p>
+                <div class="wk-stats">
+                    <div><p>50+</p><span>Clients served</span></div>
+                    <div><p>{{ work_reels|length|add:2 }}</p><span>Films on this page</span></div>
+                    <div><p>3</p><span>Continents</span></div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                    <a href="{% url 'about' %}" class="btn-logo">About Trend Crafters <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="{% url 'team' %}" class="wk-ghost">Meet the team</a>
+                </div>
+            </div>
+            <div class="lg:col-span-7 wk-bts" data-aos="fade-left">
+                <figure class="wk-bts-1"><img src="{% static 'main/images/work/bts-4.jpg' %}" alt="Trend Crafters team meeting in the office" loading="lazy"></figure>
+                <figure class="wk-bts-2"><img src="{% static 'main/images/work/bts-2.jpg' %}" alt="Camera on a gimbal during a shoot" loading="lazy"></figure>
+                <figure class="wk-bts-3"><img src="{% static 'main/images/work/bts-3.jpg' %}" alt="Filming an outdoor interview" loading="lazy"></figure>
+                <figure class="wk-bts-4"><img src="{% static 'main/images/work/bts-6.jpg' %}" alt="Editing desks in the Trend Crafters studio" loading="lazy"></figure>
+                <figure class="wk-bts-5"><img src="{% static 'main/images/work/bts-1.jpg' %}" alt="Camera rig set up for a product shoot" loading="lazy"></figure>
+                <span class="wk-bts-tag"><i class="fas fa-video"></i> Behind the scenes</span>
+            </div>
+        </div>
     </div>
 </section>
 
-{% include 'main/includes/testimonials.html' %}
+<!-- Meet the team -->
+<section class="wk-team" aria-labelledby="wk-team-h">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">06 &middot; The crew</p>
+                <h2 id="wk-team-h" class="font-display text-3xl md:text-5xl font-semibold text-ink leading-[1.05]">Meet the people <span class="gradient-text">behind the work</span></h2>
+            </div>
+            <a href="{% url 'team' %}" class="btn-logo self-start lg:self-auto">Our Team <i class="fas fa-arrow-right text-sm"></i></a>
+        </div>
+        <ul class="wk-crew">
+            {% for m in members %}
+            <li class="wk-member" data-aos="fade-up" data-aos-delay="{% widthratio forloop.counter0 1 60 %}">
+                <a href="{% url 'team' %}" class="block group">
+                    <div class="wk-member-photo">
+                        {% if m.photo %}<img src="{% static 'main/images/'|add:m.photo %}" alt="{{ m.name }}, {{ m.role }}" loading="lazy" style="object-position:{{ m.pos|default:'50% 30%' }}">{% else %}<span class="wk-member-initial">{{ m.name|slice:":1" }}</span>{% endif %}
+                    </div>
+                    <p class="wk-member-role">{{ m.role }}</p>
+                    <p class="wk-member-name">{{ m.name }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
 
-{% include 'main/dm/_cta.html' with heading="Want results like these?" text="Tell us about your business and we'll show you what a campaign could do." %}
+{% include 'main/br/_cta.html' with heading='Want results like these?' text="Tell us about your business and we'll show you what a campaign could do." button='Start Your Project' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20results%20like%20your%20work.' %}
+
+
+<script>
+(function () {
+    // Filter chips: show one group of reels
+    var cards = [].slice.call(document.querySelectorAll('.wk-reel'));
+    document.querySelectorAll('.wk-filter').forEach(function (b) {
+        b.addEventListener('click', function () {
+            document.querySelectorAll('.wk-filter').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+            var g = b.dataset.filter;
+            cards.forEach(function (c) {
+                c.hidden = g !== 'all' && c.dataset.group !== g;
+                if (c.hidden) stop(c);
+            });
+        });
+    });
+
+    // Films and reels play like the home page reels: muted autoplay while on
+    // screen, tap to pause or resume, speaker button for sound.
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Feature films: tap to play in place with sound and controls (one at a time)
+    var films = [].slice.call(document.querySelectorAll('.wk-film'));
+    function stopFilm(f) { var v = f.querySelector('video'); if (f.classList.contains('is-active')) { v.pause(); v.controls = false; f.classList.remove('is-active'); } }
+    function startFilm(f) {
+        if (f.classList.contains('is-active')) return;
+        films.forEach(function (o) { if (o !== f) stopFilm(o); });
+        var v = f.querySelector('video');
+        if (!v.getAttribute('src')) v.src = v.dataset.src;
+        v.controls = true; f.classList.add('is-active');
+        var r = v.play(); if (r && r.catch) r.catch(function () {});
+    }
+    films.forEach(function (f) {
+        f.addEventListener('click', function () { startFilm(f); });
+        f.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startFilm(f); } });
+        f.querySelector('video').addEventListener('ended', function () { stopFilm(f); });
+    });
+
+    var players = [].slice.call(document.querySelectorAll('.wk-player'));
+    function stop(p) { p.querySelector('video').pause(); p.classList.remove('is-playing'); }
+    function play(p) {
+        var v = p.querySelector('video');
+        v.preload = 'auto';
+        var r = v.play(); if (r && r.catch) r.catch(function () {});
+        p.classList.add('is-playing');
+    }
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+            var p = e.target;
+            if (e.isIntersecting && e.intersectionRatio > 0.55 && !reduce && !p.hidden && !p.dataset.paused) play(p); else stop(p);
+        });
+    }, { threshold: [0, 0.55] }) : null;
+    players.forEach(function (p) {
+        var v = p.querySelector('video'), btn = p.querySelector('.wk-sound');
+        if (io) io.observe(p);
+        p.addEventListener('click', function (ev) {
+            if (ev.target.closest('.wk-sound')) return;
+            if (v.paused) { delete p.dataset.paused; play(p); } else { p.dataset.paused = '1'; stop(p); }
+        });
+        btn.addEventListener('click', function () {
+            v.muted = !v.muted;
+            if (!v.muted) {
+                // only one video plays with sound at a time
+                players.forEach(function (o) { if (o !== p) { var ov = o.querySelector('video'); ov.muted = true; o.querySelector('.wk-sound').innerHTML = '<i class="fas fa-volume-xmark"></i>'; } });
+                if (v.paused) { delete p.dataset.paused; play(p); }
+            }
+            btn.innerHTML = '<i class="fas ' + (v.muted ? 'fa-volume-xmark' : 'fa-volume-high') + '"></i>';
+            btn.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+        });
+    });
+})();
+</script>
 
 {% endblock %}

@@ -3,79 +3,77 @@
 {% block title %}Web Development Company in Nepal | Trend Crafters{% endblock %}
 {% block meta_description %}Fast, SEO ready websites for Nepali businesses: design, development, hosting and support from a Kathmandu web team. Get a free quote from Trend Crafters.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Light hero with browser mock -->
-<section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-pink-50 pt-28 sm:pt-32 pb-20">
-    <div class="relative content-container">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center lg:text-left" data-aos="fade-up">
-                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-700 mb-4"><i class="fas fa-code"></i> IT solutions · Web development</p>
-                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Web Development Company in Kathmandu</span>Your website is your ultimate <span class="gradient-text">digital storefront</span></h1>
-                <p class="text-ink-muted text-lg mb-8 max-w-xl mx-auto lg:mx-0">A slow or confusing website costs you customers. We don't just build websites. We engineer high performance digital ecosystems built for speed, security and sales, with no rigid, cookie cutter templates.</p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Start a Project <i class="fas fa-arrow-right text-sm"></i></a><a href="https://nexomigration.com" target="_blank" rel="noopener noreferrer" class="btn-ghost-link justify-center"><span class="btn-ghost-icon"><i class="fas fa-arrow-up-right-from-square text-xs"></i></span> See a site we built</a></div>
-            </div>
-            <div class="relative" data-aos="fade-left">
-                <div class="rounded-2xl bg-white shadow-2xl ring-1 ring-ink/10 overflow-hidden">
-                    <div class="flex items-center gap-2 px-4 py-3 bg-surface-subtle"><span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span><span class="ml-3 flex-1 rounded-full bg-white px-3 py-1 text-[11px] text-ink-faint">yourbrand.com</span></div>
-                    <div class="relative aspect-[16/10]"><img src="{% static 'main/images/br/ui-imac.jpg' %}" alt="Website designs on a desktop monitor" class="absolute inset-0 w-full h-full object-cover"></div>
+<!-- Hero: dark band, copy left, photo collage right (same layout as the IT hub) -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Web Development</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">Your website is your <span class="gradient-text">digital storefront.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">Custom websites built for speed, security and sales. Designed in Figma, coded by hand, never a cookie cutter template.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Start a Project <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://nexomigration.com" target="_blank" rel="noopener noreferrer" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-arrow-up-right-from-square text-xs"></i></span> See a site we built</a>
                 </div>
-                <div class="hidden sm:flex absolute -bottom-6 -left-4 items-center gap-2 bg-white rounded-2xl shadow-card px-3 py-2 float-card"><span class="w-8 h-8 rounded-lg bg-green-50 text-green-600 flex items-center justify-center"><i class="fas fa-gauge-high"></i></span><div><p class="text-xs font-semibold text-ink leading-tight">Fast by design</p><p class="text-[10px] text-ink-muted">Core Web Vitals</p></div></div>
+                {% include 'main/it/_more_icons.html' with exclude='web' %}
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/it/laptop-code.jpg' %}" alt="Laptop showing website code" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/br/ui-imac.jpg' %}" alt="Website designs on a desktop monitor" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/it/wireframe.jpg' %}" alt="Sketching a website wireframe" loading="lazy"></div>
             </div>
         </div>
     </div>
 </section>
 
-{% include 'main/it/_subnav.html' with active='web' %}
-
-<!-- What we build -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Custom digital architecture</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Meticulously coded, <span class="gradient-text">never templated</span></p></div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div class="service-card" data-aos="fade-up"><i class="fas fa-building text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Corporate and brand sites</h3><p class="text-sm text-ink-muted">Sleek, authoritative sites that build trust for Kathmandu based and international businesses.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-cart-shopping text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">E-commerce platforms</h3><p class="text-sm text-ink-muted">Complex online stores built for high traffic and measurable revenue on a global scale.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-mobile-alt text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Mobile first UX</h3><p class="text-sm text-ink-muted">Flawless experiences on every device, with no breakpoint left as an afterthought.</p></div>
-            <div class="service-card" data-aos="fade-up"><i class="fas fa-gauge-high text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Speed and performance</h3><p class="text-sm text-ink-muted">Fast load times engineered from day one.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-user-shield text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Security by default</h3><p class="text-sm text-ink-muted">Secure foundations so your storefront is never the weak link.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-route text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Frictionless conversion paths</h3><p class="text-sm text-ink-muted">Every journey mapped from first click to final conversion.</p></div>
+<!-- What we build: four photo cards -->
+<section class="bg-white pt-12 pb-12">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we build</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Meticulously coded, <span class="gradient-text">never templated</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/br/ui-imac.jpg' %}" alt="Corporate website on a desktop" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Corporate and brand sites</h3><p class="text-sm text-white/80">Authoritative sites that build trust in Nepal and abroad.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/retail.jpg' %}" alt="Retail store for an online shop" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">E-commerce</h3><p class="text-sm text-white/80">Online stores built for high traffic and real revenue.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/dm/iphone-apps.jpg' %}" alt="Website on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Mobile first</h3><p class="text-sm text-white/80">Fast and flawless on every phone, tablet and screen.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/dm/laptop-phone.jpg' %}" alt="Landing page on a laptop and phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Landing pages</h3><p class="text-sm text-white/80">Pages built for one goal, made to convert ad traffic.</p></div></div>
         </div>
     </div>
 </section>
 
-<!-- Figma to code -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Design to code</h2>
-            <p class="font-display text-3xl font-semibold text-white mb-4">Approved in Figma, <span class="gradient-text">then built exactly</span></p>
-            <p class="text-white/70 mb-5">You see and approve wireframes and a clickable prototype before we write a line of code. Our frontend developers then build it pixel for pixel, and our backend developers connect the forms, data and integrations behind it, in whichever stack suits the project.</p>
-            <div class="flex flex-wrap gap-2 text-xs text-white/75">
-                <span class="px-3 py-1.5 rounded-full border border-white/15">React</span><span class="px-3 py-1.5 rounded-full border border-white/15">Next.js</span><span class="px-3 py-1.5 rounded-full border border-white/15">Node.js</span><span class="px-3 py-1.5 rounded-full border border-white/15">MERN</span><span class="px-3 py-1.5 rounded-full border border-white/15">WordPress</span><span class="px-3 py-1.5 rounded-full border border-white/15">Shopify</span><span class="px-3 py-1.5 rounded-full border border-white/15">Tailwind</span><span class="px-3 py-1.5 rounded-full border border-white/15">SEO optimised</span>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-            <div class="relative rounded-3xl overflow-hidden h-52 sm:h-64"><img src="{% static 'main/images/it/wireframe.jpg' %}" alt="Sketching a website wireframe" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden h-52 sm:h-64 mt-8"><img src="{% static 'main/images/it/code-dark.jpg' %}" alt="Code on a dark editor" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        </div>
-    </div>
-</section>
+{% include 'main/it/_proof.html' %}
 
 <!-- Process -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Website process</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From brief to <span class="gradient-text">launch day</span></p></div>
-        <div class="grid md:grid-cols-4 gap-4">
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up"><span class="text-xs font-bold text-pink-600">01</span><h3 class="font-semibold text-ink mt-1 mb-1">Discover</h3><p class="text-sm text-ink-muted">Goals, audience, content and competitors.</p></div>
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><span class="text-xs font-bold text-pink-600">02</span><h3 class="font-semibold text-ink mt-1 mb-1">Design</h3><p class="text-sm text-ink-muted">Brand kit, wireframes and a Figma prototype.</p></div>
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><span class="text-xs font-bold text-pink-600">03</span><h3 class="font-semibold text-ink mt-1 mb-1">Build</h3><p class="text-sm text-ink-muted">Frontend, backend and SEO in reviewable milestones.</p></div>
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="240"><span class="text-xs font-bold text-pink-600">04</span><h3 class="font-semibold text-ink mt-1 mb-1">Launch</h3><p class="text-sm text-ink-muted">Testing, go live and ongoing care.</p></div>
+<section class="bg-white py-12">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we make it</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From brief to <span class="gradient-text">launch day</span></p></div>
+        <div class="pb-grid">
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="pb-img"><img src="{% static 'main/images/it/team-planning.jpg' %}" alt="Planning a website project" loading="lazy"><span class="pb-n">01</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Discover</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Goals, audience, content and competitors.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="pb-img"><img src="{% static 'main/images/it/wireframe.jpg' %}" alt="Wireframing the site" loading="lazy"><span class="pb-n">02</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Design</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Brand kit, wireframes and a Figma prototype you approve.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="pb-img"><img src="{% static 'main/images/it/code-dark.jpg' %}" alt="Coding the website" loading="lazy"><span class="pb-n">03</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Build</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Frontend, backend and SEO, shipped in reviewable milestones.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="180">
+                <div class="pb-img"><img src="{% static 'main/images/it/hands-laptop.jpg' %}" alt="Launching the finished website" loading="lazy"><span class="pb-n">04</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Launch</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Testing, go live and ongoing care.</p>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/it/_stack.html' %}
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading="Let's build something amazing together" text='Your brand deserves a website that performs as great as it looks.' %}
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading="Let's build something amazing together" text='Your brand deserves a website that performs as great as it looks.' button='Build My Website' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20a%20new%20website.' %}
 
 {% endblock %}

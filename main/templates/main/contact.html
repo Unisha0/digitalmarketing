@@ -3,68 +3,77 @@
 {% block title %}Contact Trend Crafters | Digital Agency in Kathmandu{% endblock %}
 {% block meta_description %}Call, WhatsApp or email Trend Crafters, or visit our Tinkune Sahyoginagar studio in Kathmandu. Open Sunday to Friday, 10 AM to 5:30 PM. Get a free quote.{% endblock %}
 {% block meta_keywords %}contact Trend Crafters, digital agency Tinkune Kathmandu, video production Kathmandu contact, hire marketing agency Nepal, get a marketing quote Nepal, WhatsApp marketing agency Nepal, Trend Crafters phone, Trend Crafters email, Trend Crafters address, book consultation Nepal{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Header + four quick ways to reach us -->
-<section class="relative overflow-hidden pt-28 sm:pt-32 pb-8">
-    <div class="absolute -top-16 right-0 w-[28rem] h-[28rem] rounded-full bg-gradient-to-bl from-pink-200/60 to-brand-100/50 blur-3xl pointer-events-none"></div>
-    <div class="relative content-container max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-6 items-end mb-8">
-            <div class="lg:col-span-7" data-aos="fade-up"><p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-headset"></i> Contact us</p><h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl">Let's build something <span class="gradient-text">exceptional.</span></h1></div>
-            <p class="lg:col-span-5 text-ink-muted text-lg" data-aos="fade-up">Tell us what you're trying to achieve. A real person from our Kathmandu studio will reply, usually within one working day.</p>
-        </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" data-aos="fade-up">
-            <a href="tel:+9779827877621" class="contact-tile"><span class="ct-ic bg-brand-50 text-brand-600"><i class="fas fa-phone"></i></span><span class="ct-t">Call us</span><span class="ct-s">+977 982-7877621</span></a>
-            <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20talk%20about%20my%20project." target="_blank" rel="noopener noreferrer" class="contact-tile"><span class="ct-ic bg-green-50 text-green-600"><i class="fab fa-whatsapp"></i></span><span class="ct-t">WhatsApp</span><span class="ct-s">Chat instantly</span></a>
-            <a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry" class="contact-tile"><span class="ct-ic bg-pink-50 text-pink-600"><i class="fas fa-envelope"></i></span><span class="ct-t">Email</span><span class="ct-s break-all">trendcraftersglobal@gmail.com</span></a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" rel="noopener noreferrer" class="contact-tile"><span class="ct-ic bg-blue-50 text-blue-600"><i class="fas fa-location-dot"></i></span><span class="ct-t">Visit us</span><span class="ct-s">Tinkune Sahyoginagar</span></a>
+<!-- Hero: dark band, how to reach us on the left, the form on the right -->
+<section class="dmx-hero ct-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <div class="lg:col-span-5 text-center lg:text-left lg:pt-6" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Contact Us</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.4rem] font-semibold text-white leading-[1.06] mb-5">Let&rsquo;s build something <span class="gradient-text">exceptional.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">Tell us what you&rsquo;re trying to achieve. A real person from our Kathmandu studio replies, usually within one working day.</p>
+                <ul class="ct-quick">
+                    <li><a href="tel:+9779827877621"><span class="ct-q-ic"><i class="fas fa-phone"></i></span><span><b>Call us</b>+977 982-7877621</span></a></li>
+                    <li><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20talk%20about%20my%20project." target="_blank" rel="noopener noreferrer"><span class="ct-q-ic ct-q-wa"><i class="fab fa-whatsapp"></i></span><span><b>WhatsApp</b>Chat with us instantly</span></a></li>
+                    <li><a href="mailto:trendcraftersglobal@gmail.com?subject=Website%20enquiry"><span class="ct-q-ic"><i class="fas fa-envelope"></i></span><span><b>Email</b>trendcraftersglobal@gmail.com</span></a></li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" rel="noopener noreferrer"><span class="ct-q-ic"><i class="fas fa-location-dot"></i></span><span><b>Visit the studio</b>Tinkune Sahyoginagar, Kathmandu</span></a></li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-7" data-aos="fade-left">
+                <div class="ct-form" id="message">
+                    <h2 class="font-display text-2xl sm:text-3xl font-semibold text-ink mb-1">Send us a message</h2>
+                    <p class="text-ink-muted text-sm mb-6">The more you tell us, the faster we can map a plan.</p>
+                    {% if messages %}{% for message in messages %}
+                    <div class="mb-5 p-3 sm:p-4 rounded-xl text-sm {% if message.tags == 'success' %}bg-green-50 text-green-700 border border-green-200{% else %}bg-red-50 text-red-700 border border-red-200{% endif %}" role="status">{{ message }}</div>
+                    {% endfor %}{% endif %}
+                    <form method="POST" action="{% url 'contact' %}#message" class="space-y-4">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend class="cf-label">I&rsquo;m interested in</legend>
+                            <div class="ct-chips">
+                                <label><input type="radio" name="service" value="Digital marketing" checked><span>Digital marketing</span></label>
+                                <label><input type="radio" name="service" value="Social media marketing"><span>Social media</span></label>
+                                <label><input type="radio" name="service" value="Meta or TikTok ads"><span>Meta or TikTok ads</span></label>
+                                <label><input type="radio" name="service" value="Branding and campaigns"><span>Branding</span></label>
+                                <label><input type="radio" name="service" value="Photo and video production"><span>Photo &amp; video</span></label>
+                                <label><input type="radio" name="service" value="Website or web app"><span>Website or app</span></label>
+                                <label><input type="radio" name="service" value="SEO and maintenance"><span>SEO &amp; maintenance</span></label>
+                                <label><input type="radio" name="service" value="Something else"><span>Something else</span></label>
+                            </div>
+                        </fieldset>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <label class="block"><span class="cf-label">Name</span><input type="text" name="name" placeholder="Your name" class="cf-input" autocomplete="name" required></label>
+                            <label class="block"><span class="cf-label">Email</span><input type="email" name="email" placeholder="you@company.com" class="cf-input" autocomplete="email" required></label>
+                        </div>
+                        <label class="block"><span class="cf-label">Phone <em class="normal-case font-normal not-italic text-ink-faint">(optional)</em></span><input type="tel" name="phone" placeholder="98XXXXXXXX" class="cf-input" autocomplete="tel"></label>
+                        <label class="block"><span class="cf-label">What&rsquo;s your business goal?</span><textarea name="message" rows="4" minlength="10" placeholder="e.g. Launch a Meta ads funnel for our next intake, shoot a brand film, or rebuild our website before a campaign..." class="cf-input resize-none" required></textarea></label>
+                        <button type="submit" class="btn-logo w-full justify-center text-base">Send message <i class="fas fa-paper-plane text-sm"></i></button>
+                        <p class="text-xs text-ink-faint text-center">We only use your details to reply to this enquiry.</p>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Form + details -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-
-        <div class="lg:col-span-7 rounded-3xl bg-white border border-ink/10 shadow-card p-6 sm:p-8" data-aos="fade-right">
-            <h2 class="font-display text-2xl font-semibold text-ink mb-1">Send us a message</h2>
-            <p class="text-ink-muted text-sm mb-5">The more you tell us, the faster we can map a plan.</p>
-            {% if messages %}{% for message in messages %}
-            <div class="mb-5 p-3 sm:p-4 rounded-xl text-sm {% if message.tags == 'success' %}bg-green-50 text-green-700 border border-green-200{% else %}bg-red-50 text-red-700 border border-red-200{% endif %}" role="status">{{ message }}</div>
-            {% endfor %}{% endif %}
-
-            <form method="POST" class="space-y-4">
-                {% csrf_token %}
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <label class="block"><span class="cf-label">Name</span><input type="text" name="name" placeholder="Your name" class="cf-input" required></label>
-                    <label class="block"><span class="cf-label">Email</span><input type="email" name="email" placeholder="you@company.com" class="cf-input" required></label>
+<!-- Studio, hours and socials -->
+<section class="bg-[#F7F3EE] py-14 lg:py-16">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="ct-card ct-place" data-aos="fade-up">
+                <div class="ct-place-img"><img src="{% static 'main/images/studio/kathmandu-studio.jpg' %}" alt="The Trend Crafters studio in Kathmandu" loading="lazy"></div>
+                <div class="ct-place-body">
+                    <h2 class="font-display text-xl font-semibold text-ink">Trend Crafters</h2>
+                    <p class="text-sm text-ink-muted mt-1">Tinkune Sahyoginagar, Kathmandu, Bagmati Province 44600, Nepal</p>
+                    <p class="ct-rating" aria-label="Rated 5.0 out of 5 from 2 Google reviews"><b>5.0</b><span class="ct-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span class="text-ink-faint">(2)</span></p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" rel="noopener noreferrer" class="ct-directions"><i class="fas fa-location-arrow"></i> Get directions</a>
                 </div>
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <label class="block"><span class="cf-label">Phone <em class="normal-case font-normal not-italic text-ink-faint">(optional)</em></span><input type="tel" name="phone" placeholder="98XXXXXXXX" class="cf-input"></label>
-                    <label class="block"><span class="cf-label">I'm interested in</span>
-                        <select name="service" class="cf-input">
-                            <option>Digital marketing</option><option>Social media marketing</option><option>Meta or TikTok ads</option><option>Branding and campaigns</option><option>Photo and video production</option><option>Website or web app</option><option>SEO and maintenance</option><option>Something else</option>
-                        </select>
-                    </label>
-                </div>
-                <label class="block"><span class="cf-label">What's your business goal?</span><textarea name="message" rows="5" placeholder="e.g. Launch a Meta ads funnel for our next intake, shoot a brand film, or rebuild our website before a campaign..." class="cf-input resize-none" required></textarea></label>
-                <button type="submit" class="btn-logo w-full justify-center text-base">Send message <i class="fas fa-paper-plane text-sm"></i></button>
-                <p class="text-xs text-ink-faint">We only use your details to reply to this enquiry.</p>
-            </form>
-        </div>
-
-        <aside class="lg:col-span-5 space-y-4" data-aos="fade-left">
-            <div class="rounded-3xl bg-ink-dark text-white p-6 sm:p-7">
-                <h2 class="font-display text-xl font-semibold mb-4">Studio details</h2>
-                <ul class="space-y-4 text-sm">
-                    <li class="flex gap-3"><i class="fas fa-location-dot text-brand-400 mt-1"></i><span>Trend Crafters<br><span class="text-white/70">Tinkune Sahyoginagar, Kathmandu, Bagmati Province 44600, Nepal</span></span></li>
-                    <li class="flex gap-3"><i class="fas fa-phone text-brand-400 mt-1"></i><span><a href="tel:+9779827877621" class="hover:text-brand-300">+977 982-7877621</a></span></li>
-                    <li class="flex gap-3"><i class="fas fa-envelope text-brand-400 mt-1"></i><a href="mailto:trendcraftersglobal@gmail.com" class="hover:text-brand-300 break-all">trendcraftersglobal@gmail.com</a></li>
-                </ul>
             </div>
-
-            <div class="rounded-3xl bg-white border border-ink/10 shadow-card p-6 sm:p-7">
-                <div class="flex items-center justify-between mb-4"><h2 class="font-display text-xl font-semibold text-ink">Opening hours</h2><span id="open-badge" class="text-xs font-semibold rounded-full px-3 py-1 bg-surface-subtle text-ink-muted">Checking...</span></div>
+            <div class="ct-card" data-aos="fade-up" data-aos-delay="80">
+                <div class="flex items-center justify-between mb-3"><h2 class="font-display text-xl font-semibold text-ink">Opening hours</h2><span id="open-badge" class="text-xs font-semibold rounded-full px-3 py-1 bg-surface-subtle text-ink-muted">Checking...</span></div>
                 <ul class="text-sm divide-y divide-ink/10" id="hours">
                     <li class="flex justify-between py-2" data-day="0"><span>Sunday</span><span>10:00 AM to 5:30 PM</span></li>
                     <li class="flex justify-between py-2" data-day="1"><span>Monday</span><span>10:00 AM to 5:30 PM</span></li>
@@ -74,28 +83,18 @@
                     <li class="flex justify-between py-2" data-day="5"><span>Friday</span><span>10:00 AM to 5:30 PM</span></li>
                     <li class="flex justify-between py-2 text-ink-faint" data-day="6"><span>Saturday</span><span>Closed</span></li>
                 </ul>
-                <p class="text-[11px] text-ink-faint mt-3">Nepal time (NPT).</p>
+                <p class="text-[11px] text-ink-faint mt-2">Nepal time (NPT).</p>
             </div>
-
-            <div class="rounded-3xl bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 p-6 sm:p-7">
-                <h2 class="font-display text-lg font-semibold text-ink mb-3">Follow our work</h2>
-                <div class="flex gap-3">
-                    <a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-11 h-11 rounded-full bg-white shadow-card text-pink-600 flex items-center justify-center hover:-translate-y-1 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@trendcraftersglobal" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="w-11 h-11 rounded-full bg-white shadow-card text-ink flex items-center justify-center hover:-translate-y-1 transition"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-11 h-11 rounded-full bg-white shadow-card text-blue-600 flex items-center justify-center hover:-translate-y-1 transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-full bg-white shadow-card text-sky-700 flex items-center justify-center hover:-translate-y-1 transition"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+            <div class="ct-card flex flex-col" data-aos="fade-up" data-aos-delay="160">
+                <h2 class="font-display text-xl font-semibold text-ink mb-1">Follow our work</h2>
+                <p class="text-sm text-ink-muted mb-4">New reels, shoots and launches every week.</p>
+                <ul class="ct-socials">
+                    <li><a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" style="color:#E1306C"></i>Instagram<span>@trendcraftersglobal</span></a></li>
+                    <li><a href="https://www.tiktok.com/@trendcraftersglobal" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i>TikTok<span>@trendcraftersglobal</span></a></li>
+                    <li><a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" style="color:#1877F2"></i>Facebook<span>Trend Crafters</span></a></li>
+                    <li><a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" style="color:#0A66C2"></i>LinkedIn<span>Trend Crafters Global</span></a></li>
+                </ul>
             </div>
-        </aside>
-    </div>
-</section>
-
-<!-- Map -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4" data-aos="fade-up"><div><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-2">Find us</h2><p class="font-display text-2xl md:text-3xl font-semibold text-ink">Tinkune Sahyoginagar, <span class="gradient-text">Kathmandu</span></p></div><a href="https://www.google.com/maps/search/?api=1&query=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600" target="_blank" rel="noopener noreferrer" class="btn-logo self-start sm:self-auto">Get directions <i class="fas fa-arrow-up-right-from-square text-xs"></i></a></div>
-        <div class="rounded-3xl overflow-hidden border border-ink/10 shadow-card h-80 sm:h-96" data-aos="fade-up">
-            <iframe title="Trend Crafters location, Tinkune Sahyoginagar, Kathmandu" src="https://maps.google.com/maps?q=Trend+Crafters+Tinkune+Sahyoginagar+Kathmandu+44600&output=embed" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -110,6 +109,10 @@
   var badge=document.getElementById('open-badge');
   if(badge){ badge.textContent=open?'Open now':'Closed now'; badge.className='text-xs font-semibold rounded-full px-3 py-1 '+(open?'bg-green-50 text-green-700':'bg-red-50 text-red-700'); }
   var row=document.querySelector('#hours [data-day="'+idx+'"]'); if(row){ row.classList.add('font-semibold','text-ink'); }
+
+  // Preselect the service chip from ?service=... (e.g. links from service pages)
+  var want=new URLSearchParams(location.search).get('service');
+  if(want){ var r=document.querySelector('.ct-chips input[value="'+want.replace(/"/g,'')+'"]'); if(r) r.checked=true; }
 })();
 </script>
 

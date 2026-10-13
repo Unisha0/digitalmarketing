@@ -3,74 +3,79 @@
 {% block title %}Video & Reels Production in Nepal | Trend Crafters{% endblock %}
 {% block meta_description %}Instagram Reels, TikTok and 9:16 vertical video production in Kathmandu that stops the scroll and lifts engagement. Start your project with Trend Crafters.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Dark hero: copy + phone-shaped 9:16 frame (image, no video, so the page stays light) -->
-<section class="relative overflow-hidden bg-black mt-20 pt-10 sm:pt-14 pb-16">
-    <div class="absolute -top-20 left-0 w-96 h-96 rounded-full bg-cyan-400/15 blur-3xl"></div>
-    <div class="absolute -bottom-20 right-0 w-96 h-96 rounded-full bg-pink-500/25 blur-3xl"></div>
-    <div class="relative content-container">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center lg:text-left" data-aos="fade-up">
-                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-video"></i> Video &amp; Reels</p>
-                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Video &amp; Reels Production in Nepal</span>Video is the undisputed <span class="gradient-text">king</span></h1>
-                <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">As a leading video production company in Nepal, we engineer dynamic visual experiences for local engagement in Kathmandu and global virality. Succeeding takes much more than hitting record.</p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Start Your Project <i class="fas fa-arrow-right text-sm"></i></a><a href="{% url 'work' %}" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-play text-xs"></i></span> See our reels</a></div>
-            </div>
-            <div class="flex justify-center" data-aos="fade-left">
-                <div class="relative w-64 sm:w-72 aspect-[9/16] rounded-[2.5rem] bg-black p-2.5 ring-1 ring-white/15 shadow-2xl rotate-2">
-                    <div class="relative w-full h-full rounded-[2rem] overflow-hidden"><img src="{% static 'main/images/pr/camera-setup.jpg' %}" alt="Video production desk with camera and monitors" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div><span class="absolute top-4 left-4 text-[10px] font-bold tracking-widest text-white bg-black/40 rounded-full px-3 py-1">9:16</span><div class="absolute bottom-5 left-5 right-5 text-white"><p class="text-sm font-semibold">Scroll-stopping in 3 seconds</p><p class="text-[11px] text-white/70">Trend Crafters</p></div><i class="fas fa-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/90 text-3xl"></i></div>
+<!-- Hero: dark band, copy left, photo collage right (same layout as the Production hub) -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Video &amp; Reels</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">Video is the <span class="gradient-text">undisputed king.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">Scroll stopping 9:16 video for Instagram Reels and TikTok: hooked in the first three seconds, shot with cinematic light and edited to keep people watching.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Start Your Project <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="#video-reels" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-play text-xs"></i></span> Watch our reels</a>
                 </div>
+                {% include 'main/pr/_more_icons.html' with exclude='video' %}
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/home/content-creator.jpg' %}" alt="Creator filming vertical video" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/pr/sony-lenses.jpg' %}" alt="Cinema camera rig on set" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/pr/camera-setup.jpg' %}" alt="Video edit desk with camera and monitors" loading="lazy"></div>
             </div>
         </div>
     </div>
 </section>
 
-{% include 'main/pr/_subnav.html' with active='video' %}
+<!-- Reel samples -->
+<div id="video-reels"></div>
+{% include 'main/includes/reel_carousel.html' with heading="Reels we've made" sub="Fashion, food, education and automotive reels shot and edited by our crew." %}
 
-<!-- Experts in 9:16 -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Absolute experts in 9:16</h2>
-            <p class="font-display text-3xl font-semibold text-ink mb-4">Designed for <span class="gradient-text">the scroll</span></p>
-            <p class="text-ink-muted mb-4">We design scroll-stopping visual hooks specifically for TikTok and Instagram Reels. Our team pushes the boundaries of short form media with advanced post production and directs on-screen talent to deliver performances with perfect, controlled intensity.</p>
-            <p class="text-ink-muted">Our video production is also strategic. We build a balanced, high impact mix of reels and static posts and keep a consistent posting schedule that holds your audience and lifts your conversion rates.</p>
-        </div>
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72"><img src="{% static 'main/images/pr/sony-lenses.jpg' %}" alt="Cinema camera rig on set" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72 mt-8"><img src="{% static 'main/images/pr/camera-flare.jpg' %}" alt="Film crew on an outdoor shoot" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Formats -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we make</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Formats that <span class="gradient-text">perform</span></p></div>
+<!-- What we make: four photo cards -->
+<section class="bg-white pt-4 pb-12">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we make</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Formats that <span class="gradient-text">perform</span></p></div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="service-card" data-aos="fade-up"><i class="fas fa-film text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Brand reels</h3><p class="text-sm text-ink-muted">Story led vertical video that builds identity.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="60"><i class="fas fa-bag-shopping text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Product videos</h3><p class="text-sm text-ink-muted">Hero shots and demos that drive purchase.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-user-group text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Testimonials</h3><p class="text-sm text-ink-muted">Authentic student, staff and client voices.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="180"><i class="fas fa-bullhorn text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Ad creatives</h3><p class="text-sm text-ink-muted">Vertical ads made for Meta and TikTok.</p></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt="Filming a brand reel" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Brand reels</h3><p class="text-sm text-white/80">Story led vertical video that builds who you are.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/hero-product.jpg' %}" alt="Product on set" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Product videos</h3><p class="text-sm text-white/80">Hero shots and demos that drive the purchase.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/home/industry-education.jpg' %}" alt="Students on camera for a testimonial" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Testimonials</h3><p class="text-sm text-white/80">Real voices from your students, staff and clients.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/dm/facebook-phone.jpg' %}" alt="Ad playing on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Ad creatives</h3><p class="text-sm text-white/80">Vertical ads cut for Meta and TikTok placements.</p></div></div>
         </div>
     </div>
 </section>
 
 <!-- Workflow -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Our production workflow</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">Strategy first, <span class="gradient-text">then action</span></p></div>
-        <div class="grid md:grid-cols-4 gap-4">
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6 text-white" data-aos="fade-up"><i class="fas fa-bullseye text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">1. Strategy</h3><p class="text-sm text-white/65">Audience, narrative hook and KPIs mapped before a single frame is shot.</p></div>
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6 text-white" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-video text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">2. Shoot</h3><p class="text-sm text-white/65">Cinematic lighting, efficient crew and structured shot lists.</p></div>
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6 text-white" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-scissors text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">3. Edit</h3><p class="text-sm text-white/65">Trend aware cuts, colour grade, sound design and captions.</p></div>
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6 text-white" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-rocket text-brand-400 mb-3"></i><h3 class="font-semibold mb-1">4. Amplify</h3><p class="text-sm text-white/65">Posting strategy, paid boost and creative testing to scale winners.</p></div>
+<section class="bg-white py-12 border-t border-ink/[0.06]">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we make it</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Strategy first, <span class="gradient-text">then action</span></p></div>
+        <div class="pb-grid">
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="pb-img"><img src="{% static 'main/images/pr/team-planning.jpg' %}" alt="Planning reel hooks and scripts" loading="lazy"><span class="pb-n">01</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Strategy</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Audience, hook and goals mapped before a single frame is shot.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="pb-img"><img src="{% static 'main/images/pr/camera-flare.jpg' %}" alt="Crew filming on location" loading="lazy"><span class="pb-n">02</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Shoot</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Cinematic lighting, directed talent and a structured shot list.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="pb-img"><img src="{% static 'main/images/pr/desk-camera.jpg' %}" alt="Editing video at a desk" loading="lazy"><span class="pb-n">03</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Edit</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Trend aware cuts, colour grade, sound design and captions.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="180">
+                <div class="pb-img"><img src="{% static 'main/images/dm/analytics-dark.jpg' %}" alt="Reel performance analytics" loading="lazy"><span class="pb-n">04</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Amplify</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Posting plan, paid boosts and testing to scale what works.</p>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading='Ready to scale with short form video?' text='Send a brief about your product and we will suggest a reel plan and quote.' %}
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading='Ready to scale with short form video?' text='Send a brief about your product and we will suggest a reel plan and quote.' button='Plan My Reels' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20reels%20for%20my%20brand.' %}
 
 {% endblock %}

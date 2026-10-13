@@ -3,49 +3,70 @@
 {% block title %}Our Clients in Nepal & Abroad | Trend Crafters{% endblock %}
 {% block meta_description %}Brands that trust Trend Crafters: hospitality, education, automotive, finance and more across Nepal, Australia and beyond. See our clients and their results.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<section class="relative overflow-hidden pt-28 sm:pt-32 pb-8">
-    <div class="absolute -top-16 right-0 w-[28rem] h-[28rem] rounded-full bg-gradient-to-bl from-pink-200/60 to-brand-100/50 blur-3xl pointer-events-none"></div>
-    <div class="relative content-container">
-        <div class="grid lg:grid-cols-12 gap-8 items-end">
-            <div class="lg:col-span-7" data-aos="fade-up"><p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-handshake"></i> Our clients</p><h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl">Brands that <span class="gradient-text">trust us.</span></h1></div>
-            <div class="lg:col-span-5" data-aos="fade-up"><p class="text-ink-muted text-lg mb-5">From schools and consultancies to cafes, hotels and car brands, these are the businesses we grow with, in Nepal and abroad.</p><div class="flex flex-col sm:flex-row gap-3"><a href="{% url 'contact' %}" class="btn-logo">Become a Client <i class="fas fa-arrow-right text-sm"></i></a><a href="{% url 'work' %}" class="btn-ghost-link justify-center">See our work <i class="fas fa-arrow-right text-xs"></i></a></div></div>
+<!-- Hero: dark band, copy left, client work collage right -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Our Clients</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">Brands that <span class="gradient-text">trust us.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">From schools and consultancies to cafes, distilleries and car brands, these are the businesses we grow with, in Nepal and abroad.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Become a Client <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="{% url 'work' %}" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-play text-xs"></i></span> See their work</a>
+                </div>
+                {% include 'main/ab/_more_icons.html' with exclude='clients' %}
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/home/reel-ford-poster.jpg' %}" alt="Ford automotive reel" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/work/film-sasurali-poster.jpg' %}" alt="Sasurali Restaurant film" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/work/poster-himalayan-java-brand-storytelling.jpg' %}" alt="Himalayan Java storytelling reel" loading="lazy"></div>
+            </div>
         </div>
-    </div>
-    <div class="mt-10 space-y-4" aria-hidden="true">
-        <div class="marquee-fade overflow-hidden"><div class="marquee-track" style="animation-duration:50s">{% for i in "12" %}<div class="flex items-center gap-4 pr-4">{% for c in clients %}{% if c.logo %}<span class="logo-chip"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span>{% endif %}{% endfor %}</div>{% endfor %}</div></div>
     </div>
 </section>
 
-{% include 'main/ab/_subnav.html' with active='partners' %}
-
-<!-- All clients -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Every client, one standard</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Trusted across <span class="gradient-text">every industry</span></p></div>
+<!-- Every client: logo wall -->
+<section class="bg-white py-14 lg:py-16">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">Every client, one standard</p>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink"><span class="gradient-text">{{ clients|length }} brands</span> and counting</h2>
+            </div>
+            <p class="text-ink-muted max-w-md">A selection of the brands we&rsquo;ve worked with. Hover a logo to see the name.</p>
+        </div>
         <ul class="tiles" data-aos="fade-up">
             {% for c in clients %}<li class="tile{% if c.zoom %} tile-zoom{% endif %}{% if not c.logo %} tile-word{% endif %}" title="{{ c.name }}">{% if c.logo %}<span class="tile-logo"><img src="{% static 'main/images/'|add:c.logo %}" alt="{{ c.name }} logo" loading="lazy"></span><span class="tile-name">{{ c.name }}</span>{% else %}<span class="tile-wm">{{ c.name }}</span>{% endif %}</li>{% endfor %}
         </ul>
     </div>
 </section>
 
-<!-- Industries -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-5" data-aos="fade-right"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Who we work with</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Six industries, <span class="gradient-text">one growth team</span></p><p class="text-ink-muted mb-5">Every engagement starts with understanding the business, not just the brief.</p><a href="{% url 'contact' %}" class="btn-logo">Start a project <i class="fas fa-arrow-right text-sm"></i></a></div>
-        <ul class="lg:col-span-7 list-none">
-            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-graduation-cap"></i></span><div><p class="font-semibold text-ink">Education and migration</p><p class="text-sm text-ink-muted">Consultancies, study abroad partners and schools</p></div></li>
-            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-utensils"></i></span><div><p class="font-semibold text-ink">Hospitality and food</p><p class="text-sm text-ink-muted">Cafes, restaurants, hotels and distilleries</p></div></li>
-            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-car"></i></span><div><p class="font-semibold text-ink">Automotive</p><p class="text-sm text-ink-muted">Car brands and dealerships</p></div></li>
-            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-bag-shopping"></i></span><div><p class="font-semibold text-ink">Retail and lifestyle</p><p class="text-sm text-ink-muted">Fashion, footwear and youth brands</p></div></li>
-            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-calendar-check"></i></span><div><p class="font-semibold text-ink">Events and community</p><p class="text-sm text-ink-muted">Conferences and youth platforms</p></div></li>
-            <li class="flex items-center gap-4 py-4 border-b border-ink/10" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-industry"></i></span><div><p class="font-semibold text-ink">Manufacturing and enterprise</p><p class="text-sm text-ink-muted">Fabrication, organic products and finance</p></div></li>
-        </ul>
+<!-- Industries: six photo cards -->
+<section class="bg-[#F7F3EE] py-14 lg:py-16">
+    <div class="content-container">
+        <div class="wk-head" data-aos="fade-up">
+            <div>
+                <p class="wk-kicker wk-kicker-dark">Who we work with</p>
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink">Six industries, <span class="gradient-text">one growth team</span></h2>
+            </div>
+            <p class="text-ink-muted max-w-md">Every engagement starts with understanding the business, not just the brief.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/work/poster-piec-brand-campaign.jpg' %}" alt="PIEC education campaign reel" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Education and migration</h3><p class="text-sm text-white/80">PIEC, ISP, Nexo Migration, Queensford College, Ullens School</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/industry-hospitality.jpg' %}" alt="Hospitality and food" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Hospitality and drinks</h3><p class="text-sm text-white/80">Himalayan Java, The Burleigh Caf&eacute;, Sasurali, Mount Everest Distillery</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/work/reel-whiteline-poster.jpg' %}" alt="Automotive" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Automotive</h3><p class="text-sm text-white/80">Changan Nepal, Ford</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/work/poster-threads-trends-product-reel.jpg' %}" alt="Threads N Trends product reel" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Retail and lifestyle</h3><p class="text-sm text-white/80">Threads N Trends, Newmew, Bloom Nepal, Vermi Perfume</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/industry-creators.jpg' %}" alt="Media and events" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Media and events</h3><p class="text-sm text-white/80">RONB, Kathmandu Youth Conclave</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/home/reel-cnc-poster.jpg' %}" alt="CNC Metal and Wood Craft process reel" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Industry, health and finance</h3><p class="text-sm text-white/80">CNC Metal &amp; Wood Craft, Keyansh, MediQuest, Success Home Loans</p></div></div>
+        </div>
     </div>
 </section>
 
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading='Want to join them?' text="Tell us about your business and we'll show you what a campaign could do." %}
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading='Want to join them?' text="Tell us about your business and we'll show you what a campaign could do." button='Become a Client' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20work%20with%20you.' %}
 
 {% endblock %}

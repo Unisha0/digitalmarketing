@@ -36,4 +36,6 @@ urlpatterns = [
     path('clients/', views.partners, name='partners'),
     path('partners/', RedirectView.as_view(pattern_name='partners', permanent=True)),
     path('team/', views.team, name='team'),
+    path('privacy-policy/', views.privacy, name='privacy'),
+    path('terms-and-conditions/', views.terms, name='terms'),
 ]

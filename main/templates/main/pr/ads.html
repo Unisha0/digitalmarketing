@@ -3,67 +3,78 @@
 {% block title %}Commercial Ad Production in Nepal | Trend Crafters{% endblock %}
 {% block meta_description %}TV, digital and social commercial ad production in Nepal: concept, casting, shoot and edit by a Kathmandu production team. Request a quote today.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Full-bleed image hero (a still, not a video, so it loads fast) -->
-<section class="relative overflow-hidden bg-black mt-20 min-h-[32rem] flex items-center">
-    <img src="{% static 'main/images/pr/camera-setup.jpg' %}" alt="Commercial production setup with camera and monitors" class="absolute inset-0 w-full h-full object-cover opacity-45">
-    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/10"></div>
-    <div class="relative content-container py-16">
-        <div class="max-w-2xl text-center lg:text-left" data-aos="fade-up">
-            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-clapperboard"></i> Commercial ads</p>
-            <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Commercial Ad Production in Nepal</span>Flagship campaigns need <span class="gradient-text">flagship visuals</span></h1>
-            <p class="text-white/75 text-lg mb-8">We provide end to end commercial ad production, scaling from localised digital campaigns in Nepal to large scale international broadcast advertisements. Cinematic storytelling meets high converting marketing psychology.</p>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Brief Us on Your Ad <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20a%20commercial%20ad." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a></div>
+<!-- Hero: dark band, copy left, photo collage right (same layout as the Production hub) -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Commercial Ads</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">Flagship campaigns need <span class="gradient-text">flagship visuals.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">End to end commercial ad production, from social ads in Nepal to broadcast spots. Cinematic storytelling built to actually sell.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Brief Us on Your Ad <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="#ad-films" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-play text-xs"></i></span> Watch our ads</a>
+                </div>
+                {% include 'main/pr/_more_icons.html' with exclude='ads' %}
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/home/bts-camera.jpg' %}" alt="Camera operator on a commercial shoot" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/pr/studio-lights.jpg' %}" alt="Studio lighting set for a commercial" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/pr/lens.jpg' %}" alt="Cinema lens close up" loading="lazy"></div>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/pr/_subnav.html' with active='ads' %}
+<!-- Ad samples -->
+<div id="ad-films"></div>
+{% include 'main/includes/reel_carousel.html' with heading="Ads we've produced" sub="Product, education and retail ads shot and edited by our crew." kind="ads" %}
 
-<!-- Scale ladder -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Built to scale</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From social ad to <span class="gradient-text">broadcast</span></p></div>
-        <div class="grid md:grid-cols-3 gap-5 items-end">
-            <div class="rounded-3xl bg-surface-subtle border border-ink/5 p-6 md:pb-8" data-aos="fade-up"><span class="text-xs font-bold text-pink-600">STEP 1</span><h3 class="font-display text-xl font-semibold text-ink mt-1 mb-2">Digital ads</h3><p class="text-sm text-ink-muted">Localised campaigns for Meta, TikTok and YouTube, with cut downs and vertical versions.</p></div>
-            <div class="rounded-3xl bg-brand-50 border border-brand-100 p-6 md:pb-14" data-aos="fade-up" data-aos-delay="80"><span class="text-xs font-bold text-pink-600">STEP 2</span><h3 class="font-display text-xl font-semibold text-ink mt-1 mb-2">Brand commercials</h3><p class="text-sm text-ink-muted">Higher production value films for your website, events and regional media.</p></div>
-            <div class="rounded-3xl bg-gradient-to-br from-brand-500 to-pink-600 p-6 md:pb-20 text-white" data-aos="fade-up" data-aos-delay="160"><span class="text-xs font-bold text-white/80">STEP 3</span><h3 class="font-display text-xl font-semibold mt-1 mb-2">Broadcast and international</h3><p class="text-sm text-white/85">Large scale advertisements built for TV and global audiences.</p></div>
+<!-- Built to scale: three photo cards -->
+<section class="bg-white pt-4 pb-12">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Built to scale</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From social ad to <span class="gradient-text">broadcast</span></p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/dm/facebook-phone.jpg' %}" alt="Social ad on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">01</span><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Digital ads</h3><p class="text-sm text-white/80">Campaigns for Meta, TikTok and YouTube, with vertical versions and cut downs.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/bts-shoot.jpg' %}" alt="Crew filming a brand commercial" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">02</span><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Brand commercials</h3><p class="text-sm text-white/80">Higher production films for your website, events and regional media.</p></div></div>
+            <div class="br-card-sm group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/pr/sony-lenses.jpg' %}" alt="Cinema camera for broadcast production" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/45 to-transparent"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">03</span><div class="relative text-white"><h3 class="font-display text-xl font-semibold mb-1">Broadcast and international</h3><p class="text-sm text-white/80">Large scale spots built for TV and global audiences.</p></div></div>
         </div>
     </div>
 </section>
 
-<!-- Production checklist with photo -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div class="relative rounded-3xl overflow-hidden h-64 sm:h-96" data-aos="fade-right"><img src="{% static 'main/images/pr/studio-lights.jpg' %}" alt="Studio lighting set for a commercial" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        <div data-aos="fade-left">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">End to end</h2>
-            <p class="font-display text-3xl font-semibold text-ink mb-5">Everything a commercial <span class="gradient-text">needs</span></p>
-            <ul class="grid sm:grid-cols-2 gap-3 text-sm">
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-lightbulb text-brand-500 mt-0.5"></i> Concept and script</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-pen-ruler text-brand-500 mt-0.5"></i> Storyboard</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-users text-brand-500 mt-0.5"></i> Casting and talent</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-location-dot text-brand-500 mt-0.5"></i> Locations and sets</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-video text-brand-500 mt-0.5"></i> Cinematic shoot</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-scissors text-brand-500 mt-0.5"></i> Edit, colour and sound</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-language text-brand-500 mt-0.5"></i> English and Nepali versions</li>
-                <li class="flex gap-2 rounded-xl bg-white p-3 shadow-card"><i class="fas fa-file-export text-brand-500 mt-0.5"></i> Delivery for every format</li>
-            </ul>
+<!-- How we make an ad -->
+<section class="bg-white py-12 border-t border-ink/[0.06]">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we make it</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Everything a commercial <span class="gradient-text">needs</span></p></div>
+        <div class="pb-grid">
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="pb-img"><img src="{% static 'main/images/pr/team-table.jpg' %}" alt="Writing a commercial script" loading="lazy"><span class="pb-n">01</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Concept and script</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">The idea, script and storyboard, in English and Nepali where needed.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="pb-img"><img src="{% static 'main/images/home/industry-lifestyle.jpg' %}" alt="Talent on a styled set" loading="lazy"><span class="pb-n">02</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Casting and locations</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Talent, sets and locations chosen to fit your brand.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="pb-img"><img src="{% static 'main/images/pr/camera-flare.jpg' %}" alt="Crew filming a commercial" loading="lazy"><span class="pb-n">03</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Cinematic shoot</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">A full crew with cinema cameras, lighting and direction.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="180">
+                <div class="pb-img"><img src="{% static 'main/images/pr/desk-camera.jpg' %}" alt="Editing and colour grading" loading="lazy"><span class="pb-n">04</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Edit and delivery</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Edit, colour and sound, delivered in every format you run.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Selling psychology -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <i class="fas fa-quote-left text-pink-400 text-3xl mb-5"></i>
-        <p class="font-display text-2xl sm:text-4xl font-medium text-white leading-snug mb-5">Commercials that don't just look beautiful. They actively sell.</p>
-        <p class="text-white/65 max-w-2xl mx-auto">We pair cinematic storytelling with the psychology of high converting marketing, then help you distribute and amplify the ad across the platforms where your customers spend time.</p>
-    </div>
-</section>
-
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading='Have a flagship campaign in mind?' text='Tell us about the product, audience and platforms. We will come back with a concept and budget.' %}
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading='Have a flagship campaign in mind?' text='Tell us about the product, audience and platforms. We will come back with a concept and budget.' button='Brief Us on Your Ad' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20a%20commercial%20ad.' %}
 
 {% endblock %}

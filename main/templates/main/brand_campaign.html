@@ -3,71 +3,115 @@
 {% block title %}Branding & Campaign Agency Nepal | Trend Crafters{% endblock %}
 {% block meta_description %}Brand identity, campaigns, graphic design and storytelling from a Kathmandu branding agency that builds brands with authority in Nepal and globally.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Centred light hero -->
-<section class="relative overflow-hidden bg-gradient-to-b from-pink-50 via-white to-white pt-28 sm:pt-32 pb-12">
-    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[52rem] h-[26rem] rounded-full bg-gradient-to-r from-brand-200/50 via-pink-100/60 to-brand-100/60 blur-3xl"></div>
-    <div class="relative content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-pink-700 mb-4"><i class="fas fa-fingerprint"></i> Branding &amp; campaigns</p>
-        <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-ink leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Branding Agency in Nepal</span>Your brand is your <span class="gradient-text">most valuable real estate</span></h1>
-        <p class="text-ink-muted text-lg max-w-2xl mx-auto mb-8">As a premier branding agency in Nepal, we build identities and campaigns that command authority. We bridge the gap between local market dynamics and global design standards, so your business doesn't just look good. It dominates.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="{% url 'contact' %}" class="btn-logo">Start Your Brand Project <i class="fas fa-arrow-right text-sm"></i></a>
-            <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20talk%20about%20branding." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a>
+<!-- Hero: dark band, copy left, photo collage right -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Branding &amp; Campaigns</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">Your brand is your most valuable <span class="gradient-text">real estate.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">We build identities and campaigns that command authority, bridging local market insight with global design standards, so your business doesn&rsquo;t just look good. It leads.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Start Your Brand Project <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20talk%20about%20branding." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
+                </div>
+                <div class="dmx-stats">
+                    <div><p>50+</p><span>Brands built &amp; grown</span></div>
+                    <div><p>4</p><span>Core disciplines</span></div>
+                    <div><p>1</p><span>Team, start to launch</span></div>
+                </div>
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/home/branding-team-table.jpg' %}" alt="Trend Crafters team planning a brand identity" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/br/swatches.jpg' %}" alt="Colour swatches for a brand palette" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/br/designer-imac.jpg' %}" alt="Designer working on brand visuals" loading="lazy"></div>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/br/_subnav.html' with active='hub' %}
+<!-- Intro -->
+<section class="bg-white pt-12 pb-6">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-5 lg:gap-12 items-end" data-aos="fade-up">
+            <div class="lg:col-span-5">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our Branding Services</h2>
+                <p class="font-display text-3xl md:text-[2.5rem] leading-[1.1] font-semibold text-ink">Brands built to be <span class="gradient-text">remembered</span></p>
+            </div>
+            <p class="lg:col-span-7 text-ink-muted leading-relaxed">From the first strategy session to the final campaign, we shape how your business looks, sounds and feels. Every logo, colour, word and campaign works together so people recognise you instantly and trust you faster.</p>
+        </div>
+    </div>
+</section>
 
-<!-- Four service cards, numbered, photo led -->
-<section class="py-medium bg-white">
+<!-- Services: four photo cards (as on the live site) -->
+<section class="bg-white pt-4 pb-12">
     <div class="content-container">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <a href="{% url 'br_identity' %}" class="group relative rounded-3xl overflow-hidden min-h-[20rem] flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/br/swatches.jpg' %}" alt="Colour swatches for a brand identity" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">01</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Brand Identity</h2><p class="text-sm text-white/80 mb-3">A logo is a signature. An identity is how your business is experienced and remembered.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
-            <a href="{% url 'br_campaigns' %}" class="group relative rounded-3xl overflow-hidden min-h-[20rem] flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/production.jpg' %}" alt="Photographer shooting a campaign" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">02</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Brand Campaigns</h2><p class="text-sm text-white/80 mb-3">End to end campaigns for both local cultural resonance and global scale.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
-            <a href="{% url 'br_graphic' %}" class="group relative rounded-3xl overflow-hidden min-h-[20rem] flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/br/ui-imac.jpg' %}" alt="Graphic design on a desktop monitor" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">03</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Graphic Design</h2><p class="text-sm text-white/80 mb-3">Every touchpoint feels expensive, cohesive and highly intentional.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
-            <a href="{% url 'br_story' %}" class="group relative rounded-3xl overflow-hidden min-h-[20rem] flex items-end p-6" data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/br/idea-bulb.jpg' %}" alt="Writing a scene on a film clapperboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">04</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Brand Storytelling</h2><p class="text-sm text-white/80 mb-3">A distinct voice, a clear soul and a reason for people to care.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'br_identity' %}" class="br-card group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up"><img src="{% static 'main/images/br/swatches.jpg' %}" alt="Colour swatches for a brand identity" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">01</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Brand Identity</h2><p class="text-sm text-white/80 mb-3">A logo is a signature. An identity is how your business is experienced and remembered.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'br_campaigns' %}" class="br-card group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="80"><img src="{% static 'main/images/home/production.jpg' %}" alt="Photographer shooting a campaign" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">02</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Brand Campaigns</h2><p class="text-sm text-white/80 mb-3">End to end campaigns for both local cultural resonance and global scale.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'br_graphic' %}" class="br-card group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="160"><img src="{% static 'main/images/br/ui-imac.jpg' %}" alt="Graphic design on a desktop monitor" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">03</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Graphic Design</h2><p class="text-sm text-white/80 mb-3">Every touchpoint feels expensive, cohesive and highly intentional.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
+            <a href="{% url 'br_story' %}" class="br-card group relative rounded-3xl overflow-hidden flex items-end p-6" data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/br/idea-bulb.jpg' %}" alt="Writing a scene on a film clapperboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-ink-dark/95 via-ink-dark/50 to-ink-dark/5"></div><span class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white text-ink font-bold flex items-center justify-center text-sm">04</span><div class="relative text-white"><h2 class="font-display text-xl font-semibold mb-1">Brand Storytelling</h2><p class="text-sm text-white/80 mb-3">A distinct voice, a clear soul and a reason for people to care.</p><span class="text-sm font-semibold">Explore <i class="fas fa-arrow-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span></div></a>
         </div>
     </div>
 </section>
 
-<!-- Material realism -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">Our design philosophy</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-white mb-4">Absolute <span class="gradient-text">material realism</span></p>
-            <p class="text-white/70 mb-4">We reject flat, cartoonish or overly CGI aesthetics that dilute a brand's perceived value. Instead we engineer visuals that feel tactile and sophisticated, using the weight of real world textures like polished metal, rich wood grains and raw materials.</p>
-            <p class="text-white/70 mb-6">The result is a brand that projects undeniable premium quality and commands attention in any market.</p>
-            <ul class="grid grid-cols-2 gap-3 text-sm text-white/80"><li><i class="fas fa-check text-brand-400 mr-2"></i>Cinematic lighting</li><li><i class="fas fa-check text-brand-400 mr-2"></i>Studio precision</li><li><i class="fas fa-check text-brand-400 mr-2"></i>Tactile textures</li><li><i class="fas fa-check text-brand-400 mr-2"></i>Premium finish</li></ul>
-        </div>
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72"><img src="{% static 'main/images/br/colour-chart.jpg' %}" alt="Colour swatch fan in a full spectrum" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72 mt-8"><img src="{% static 'main/images/br/typography-a.jpg' %}" alt="Bold typography on a graphic design book cover" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Reels -->
-{% include 'main/includes/reel_carousel.html' with heading="Brand films and campaigns" sub="Cinematic storytelling for brands in automotive, hospitality, education and fashion." kind="brand" %}
-
-<!-- Process -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we build brands</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From insight to <span class="gradient-text">launch</span></p></div>
-        <div class="grid md:grid-cols-4 gap-4">
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">1</span><h3 class="font-semibold text-ink mb-1">Discover</h3><p class="text-sm text-ink-muted">Audience, competitors, values and ambition.</p></div>
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">2</span><h3 class="font-semibold text-ink mb-1">Define</h3><p class="text-sm text-ink-muted">Positioning, voice and the big idea.</p></div>
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">3</span><h3 class="font-semibold text-ink mb-1">Design</h3><p class="text-sm text-ink-muted">Identity, visuals and assets crafted to feel premium.</p></div>
-            <div class="rounded-2xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="240"><span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-pink-600 text-white font-bold flex items-center justify-center mb-3">4</span><h3 class="font-semibold text-ink mb-1">Deploy</h3><p class="text-sm text-ink-muted">Campaigns and touchpoints that put the brand to work.</p></div>
+<!-- Process: four stages with a sample image each (swap in real project samples) -->
+<section class="bg-white py-12">
+    <div class="content-container">
+        <div class="mb-8" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we build brands</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">From insight <span class="gradient-text">to launch</span></p></div>
+        <div class="pb-grid">
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="pb-img"><img src="{% static 'main/images/br/team-table.jpg' %}" alt="Discover stage of a brand project" loading="lazy"><span class="pb-n">01</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Discover</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Audience, competitors, values and ambition.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="pb-img"><img src="{% static 'main/images/br/sketch-meeting.jpg' %}" alt="Define stage of a brand project" loading="lazy"><span class="pb-n">02</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Define</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Positioning, voice and the big idea.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="pb-img"><img src="{% static 'main/images/br/designer-imac.jpg' %}" alt="Design stage of a brand project" loading="lazy"><span class="pb-n">03</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Design</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Identity, visuals and assets crafted to feel premium.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="180">
+                <div class="pb-img"><img src="{% static 'main/images/br/desk-overhead.jpg' %}" alt="Deploy stage of a brand project" loading="lazy"><span class="pb-n">04</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Deploy</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Campaigns and touchpoints that put the brand to work.</p>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/dm/_seo_block.html' %}
-
-{% include 'main/dm/_cta.html' with heading='Ready to command authority?' text='Tell us about your business and we will shape an identity and campaign plan that fits.' %}
+<!-- Brand kits: sample proposals shown in full -->
+<section class="bg-white py-12 border-t border-ink/[0.06]" id="brand-kits">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-8" data-aos="fade-up">
+            <div class="lg:col-span-5">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Brand kits</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Everything your brand needs, <span class="gradient-text">in one kit</span></p>
+                <p class="text-ink-muted leading-relaxed">Every brand project ends with a complete kit your team, printers and partners can use, so your brand looks the same everywhere it appears.</p>
+            </div>
+            <div class="lg:col-span-7">
+                <ul class="kit-list"><li><i class="fas fa-shapes"></i>Logo suite</li><li><i class="fas fa-palette"></i>Colour palette</li><li><i class="fas fa-font"></i>Typography</li><li><i class="fas fa-table-cells"></i>Brand patterns</li><li><i class="fas fa-image"></i>Photo direction</li><li><i class="fas fa-book"></i>Usage guidelines</li></ul>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5">
+            <a href="{% static 'main/images/br/kit-trendcrafters.jpg' %}" target="_blank" rel="noopener" class="bk-sample group" data-aos="fade-up">
+                <div class="bk-img"><img src="{% static 'main/images/br/kit-trendcrafters.jpg' %}" alt="Sample brand kit proposal for Trend Crafters: logo, colours, typography, stationery and digital" width="2000" height="1125" loading="lazy"></div>
+                <div class="bk-meta"><div><p class="font-display text-lg font-semibold text-ink">Trend Crafters</p><p class="text-sm text-ink-muted">Sample brand kit &middot; Proposal</p></div><span class="bk-open">View full kit <i class="fas fa-arrow-up-right-from-square text-xs"></i></span></div>
+            </a>
+            <a href="{% static 'main/images/br/kit-nexo.jpg' %}" target="_blank" rel="noopener" class="bk-sample group" data-aos="fade-up" data-aos-delay="80">
+                <div class="bk-img"><img src="{% static 'main/images/br/kit-nexo.jpg' %}" alt="Sample brand kit proposal for Nexo Migration: logo, colour palette, typography, stationery and apparel" width="2000" height="1125" loading="lazy"></div>
+                <div class="bk-meta"><div><p class="font-display text-lg font-semibold text-ink">Nexo Migration</p><p class="text-sm text-ink-muted">Sample brand kit &middot; Proposal</p></div><span class="bk-open">View full kit <i class="fas fa-arrow-up-right-from-square text-xs"></i></span></div>
+            </a>
+        </div>
+        <div class="mt-10 text-center" data-aos="fade-up"><a href="{% url 'contact' %}" class="btn-logo">Get Your Brand Kit <i class="fas fa-arrow-right text-sm"></i></a></div>
+    </div>
+</section>
 
 {% endblock %}

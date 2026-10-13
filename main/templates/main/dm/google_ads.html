@@ -13,22 +13,17 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-center lg:text-left" data-aos="fade-up">
                 <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-blue-300 mb-4"><i class="fab fa-google"></i> Google Ads agency in Nepal</p>
-                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Google Ads Agency in Nepal</span>Be there the moment <span class="gradient-text">customers search</span></h1>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold text-white leading-tight mb-5">Be there the moment <span class="gradient-text">customers search</span></h1>
                 <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">People on Google already know what they want. We build and manage Google Ads campaigns in Kathmandu and across Nepal that put your business in front of them at that moment, and track every enquiry back to the ad that produced it.</p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                     <a href="{% url 'contact' %}" class="btn-logo">Get a Google Ads Plan <i class="fas fa-arrow-right text-sm"></i></a>
                     <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20with%20Google%20Ads." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Talk on WhatsApp</a>
                 </div>
-                <ul class="mt-8 grid grid-cols-2 gap-3 max-w-md mx-auto lg:mx-0 text-left text-sm text-white/80">
-                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Keyword and intent research</li>
-                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Conversion tracking</li>
-                    <li><i class="fas fa-check text-brand-400 mr-2"></i>You own the account</li>
-                    <li><i class="fas fa-check text-brand-400 mr-2"></i>Monthly plain reports</li>
-                </ul>
+                {% include 'main/dm/_more_icons.html' with exclude='gads' %}
             </div>
 
             <!-- Search results mock-up (illustration) -->
-            <div class="relative mx-auto w-full max-w-md" data-aos="fade-left" aria-hidden="true">
+            <div class="gads-mock relative mx-auto w-full max-w-lg" data-aos="fade-left" aria-hidden="true">
                 <div class="rounded-3xl bg-white p-5 shadow-2xl rotate-1">
                     <div class="flex items-center gap-2 rounded-full border border-ink/10 px-4 py-2.5 mb-4 text-sm text-ink"><i class="fas fa-magnifying-glass text-ink-faint"></i> digital marketing agency kathmandu</div>
                     <div class="rounded-2xl bg-blue-50/60 p-4 mb-3">
@@ -39,13 +34,12 @@
                     <div class="px-2 pb-1"><div class="h-2.5 w-1/2 rounded bg-ink/10 mb-2"></div><div class="h-2 w-5/6 rounded bg-ink/5 mb-1.5"></div><div class="h-2 w-2/3 rounded bg-ink/5"></div></div>
                     <p class="text-[10px] text-ink-faint mt-4">Illustration. Actual ad positions vary with bids, quality and competition.</p>
                 </div>
-                <div class="hidden sm:block absolute -left-8 bottom-6 bg-white rounded-2xl shadow-card px-3 py-2"><p class="text-[10px] text-ink-faint">Tracked</p><p class="text-sm font-semibold text-ink"><i class="fas fa-phone text-brand-500 mr-1"></i>Calls, forms, WhatsApp</p></div>
+                <div class="hidden sm:block absolute -left-8 -bottom-7 bg-white rounded-2xl shadow-card px-3 py-2"><p class="text-[10px] text-ink-faint">Tracked</p><p class="text-sm font-semibold text-ink"><i class="fas fa-phone text-brand-500 mr-1"></i>Calls, forms, WhatsApp</p></div>
             </div>
         </div>
     </div>
 </section>
 
-{% include 'main/dm/_subnav.html' with active='gads' %}
 
 <!-- Formats -->
 <section class="py-medium bg-white">
@@ -98,9 +92,7 @@
     </div>
 </section>
 
-{% include 'main/dm/_seo_block.html' %}
 
-{% include 'main/dm/_more.html' with exclude='gads' %}
-{% include 'main/dm/_cta.html' with heading='Ready to show up when customers search?' text='Share your goal and monthly budget. We will come back with a keyword, campaign and tracking plan.' %}
+{% include 'main/dm/_channels.html' %}
 
 {% endblock %}

@@ -3,74 +3,114 @@
 {% block title %}Brand Storytelling Agency in Nepal | Trend Crafters{% endblock %}
 {% block meta_description %}Give your brand a clear voice and story people remember. Brand storytelling, messaging and content from Trend Crafters, a creative agency in Kathmandu.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Light split hero with photo collage (same family as Graphic Design) -->
-<section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-pink-50 pt-28 sm:pt-32 pb-14">
-    <div class="relative content-container">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
+<!-- Hero: dark band, copy left, stills from the featured film right (same layout as the Branding hub) -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
-                <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-700 mb-4"><i class="fas fa-book-open"></i> Brand storytelling</p>
-                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Brand Storytelling Agency in Nepal</span>People don't just buy products. <span class="gradient-text">They buy the story.</span></h1>
-                <p class="text-ink-muted text-lg mb-8 max-w-xl mx-auto lg:mx-0">We engineer brand stories that give your business a distinct voice, a clear soul and a compelling reason for consumers to care, then tell them consistently in words and visuals.</p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"><a href="{% url 'contact' %}" class="btn-logo">Find Our Story <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20with%20my%20brand%20story." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp us</a></div>
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Brand Storytelling</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">People don&rsquo;t just buy products. <span class="gradient-text">They buy the story.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">We find the story behind your brand and tell it in words and film, so people remember who you are and why you matter.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Find Our Story <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="#featured-story" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fas fa-play text-xs"></i></span> Watch the film</a>
+                </div>
+                {% include 'main/br/_more_icons.html' with exclude='story' %}
             </div>
-            <div class="lg:col-span-6 grid grid-cols-6 grid-rows-2 gap-3 h-[26rem] sm:h-[30rem]" data-aos="fade-left">
-                <div class="col-span-4 row-span-2 relative rounded-3xl overflow-hidden shadow-xl"><img src="{% static 'main/images/br/idea-bulb.jpg' %}" alt="Writing a scene on a film clapperboard" class="absolute inset-0 w-full h-full object-cover"></div>
-                <div class="col-span-2 relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/br/team-table.jpg' %}" alt="Team writing notes around a table" class="absolute inset-0 w-full h-full object-cover"></div>
-                <div class="col-span-2 relative rounded-3xl overflow-hidden shadow-lg"><img src="{% static 'main/images/br/sketch-meeting.jpg' %}" alt="Mapping ideas out on a whiteboard" class="absolute inset-0 w-full h-full object-cover"></div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/br/mingma-poster.jpg' %}" alt="Mingma David Sherpa on a Himalayan summit" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/br/mingma-climb.jpg' %}" alt="Climbers on a snow ridge at high altitude" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/br/mingma-audience.jpg' %}" alt="Students in an auditorium listening to Mingma David Sherpa" loading="lazy"></div>
             </div>
         </div>
     </div>
 </section>
 
-{% include 'main/br/_subnav.html' with active='story' %}
+<!-- Featured story: the full Mingma David Sherpa film -->
+<section class="bg-white pt-12 pb-12" id="featured-story">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-5 lg:gap-12 items-end mb-8" data-aos="fade-up">
+            <div class="lg:col-span-6">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Featured story</h2>
+                <p class="font-display text-3xl md:text-[2.5rem] leading-[1.1] font-semibold text-ink">Mingma David Sherpa: <span class="gradient-text">a name written above the clouds</span></p>
+            </div>
+            <p class="lg:col-span-6 text-ink-muted leading-relaxed">A 90 second film that turns a lifetime above 8,000 metres into one story: where he comes from, what he has done and why it matters to the next generation.</p>
+        </div>
 
-<!-- Story arc: three connected steps -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The story arc</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every brand has one <span class="gradient-text">worth telling</span></p></div>
-        <div class="grid md:grid-cols-3 gap-0 md:gap-0 relative">
-            <div class="p-8 md:border-r border-dashed border-ink/15" data-aos="fade-up"><span class="font-display text-6xl font-bold text-brand-100">01</span><h3 class="font-display text-xl font-semibold text-ink -mt-3 mb-2">Where you come from</h3><p class="text-sm text-ink-muted">Your origin, values and the problem you exist to solve. The soul behind the business.</p></div>
-            <div class="p-8 md:border-r border-dashed border-ink/15" data-aos="fade-up" data-aos-delay="80"><span class="font-display text-6xl font-bold text-pink-100">02</span><h3 class="font-display text-xl font-semibold text-ink -mt-3 mb-2">What you change</h3><p class="text-sm text-ink-muted">The transformation customers experience, told through real people, proof and detail.</p></div>
-            <div class="p-8" data-aos="fade-up" data-aos-delay="160"><span class="font-display text-6xl font-bold text-brand-100">03</span><h3 class="font-display text-xl font-semibold text-ink -mt-3 mb-2">Where you are going</h3><p class="text-sm text-ink-muted">A clear vision that invites customers, partners and talent to come along.</p></div>
+        <div class="story-film" data-aos="fade-up">
+            <video id="story-film" controls playsinline preload="none" poster="{% static 'main/images/br/mingma-poster.jpg' %}" aria-label="Brand film: Mingma David Sherpa, legendary mountaineer">
+                <source src="{% static 'main/videos/story-mingma-david-sherpa.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <ol class="story-chapters" aria-label="Film chapters">
+            <li><button type="button" data-seek="0"><span>0:00</span>The legend</button></li>
+            <li><button type="button" data-seek="30"><span>0:30</span>Makalu</button></li>
+            <li><button type="button" data-seek="36"><span>0:36</span>14 &times; 8,000 m peaks</button></li>
+            <li><button type="button" data-seek="58"><span>0:58</span>In his own words</button></li>
+            <li><button type="button" data-seek="66"><span>1:06</span>The next generation</button></li>
+        </ol>
+
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mt-12">
+            <div data-aos="fade-up">
+                <h3 class="font-display text-2xl font-semibold text-ink mb-3">The man on the mountain</h3>
+                <p class="text-ink-muted leading-relaxed mb-3">Mingma David Sherpa grew up in the Makalu region of eastern Nepal and became one of the finest high altitude climbers of his generation. He has stood on the summit of all fourteen of the world&rsquo;s 8,000 metre peaks, becoming the youngest person ever to complete them, and was part of the all Nepali team that made the first winter ascent of K2 in January 2021.</p>
+                <p class="text-ink-muted leading-relaxed">Today he shares that journey with students and young Nepalis: the discipline, the risk and the belief it takes to climb where few people ever stand.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="80">
+                <h3 class="font-display text-2xl font-semibold text-ink mb-3">How we told it</h3>
+                <ul class="space-y-3">
+                    <li class="flex gap-3"><i class="fas fa-mountain text-pink-600 mt-1"></i><span class="text-ink-muted"><strong class="text-ink">Open on the legend.</strong> Cinematic title cards over his own summit footage set the scale before a word is spoken.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-route text-pink-600 mt-1"></i><span class="text-ink-muted"><strong class="text-ink">Show the climb.</strong> Ladders, ridges and frozen faces make 8,000 metres feel real, not just a number.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-microphone-lines text-pink-600 mt-1"></i><span class="text-ink-muted"><strong class="text-ink">Let him speak.</strong> A calm studio interview on a clean set puts the focus on the person behind the records.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-users text-pink-600 mt-1"></i><span class="text-ink-muted"><strong class="text-ink">End with purpose.</strong> The film closes in a packed auditorium, where his story inspires the next generation.</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Big quote -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <i class="fas fa-quote-left text-pink-400 text-3xl mb-5"></i>
-        <p class="font-display text-2xl sm:text-4xl font-medium text-white leading-snug mb-6">We shape exactly how the world perceives your value.</p>
-        <p class="text-white/65 max-w-2xl mx-auto">By combining high end visual concepts with conversion focused, persuasive copywriting, we weave narratives that build fierce local loyalty while keeping the universal appeal needed for international expansion.</p>
-    </div>
-</section>
-
-<!-- What we write and shape -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72"><img src="{% static 'main/images/br/team-table.jpg' %}" alt="Team writing notes around a table" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden h-56 sm:h-72 mt-8"><img src="{% static 'main/images/br/sketch-meeting.jpg' %}" alt="Mapping ideas out on a whiteboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        </div>
-        <div data-aos="fade-left">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What we shape</h2>
-            <p class="font-display text-3xl font-semibold text-ink mb-5">Words and visuals, <span class="gradient-text">one voice</span></p>
-            <ul class="space-y-3">
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-microphone-lines text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Brand voice and messaging</strong> that sounds like you, in English and Nepali</span></li>
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-pen-nib text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Persuasive copy</strong> for websites, ads, decks and social</span></li>
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-film text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>Story led video</strong> and photography that shows it</span></li>
-                <li class="flex gap-3 rounded-xl bg-brand-50/60 p-4"><i class="fas fa-briefcase text-brand-500 mt-1"></i><span class="text-sm text-ink"><strong>B2B narratives</strong> that make innovative services easy to grasp</span></li>
-            </ul>
+<!-- How we find your story, using the film as the example -->
+<section class="bg-white py-12 border-t border-ink/[0.06]">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The story arc</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Every brand has one <span class="gradient-text">worth telling</span></p><p class="text-ink-muted mt-3">The same three part arc behind the Mingma film works for any business.</p></div>
+        <div class="grid sm:grid-cols-3 gap-6">
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="pb-img story-arc-img"><img src="{% static 'main/images/br/mingma-ladder.jpg' %}" alt="Climbers crossing a snow slope" loading="lazy"><span class="pb-n">01</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Where you come from</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Your origin, values and the problem you exist to solve. The soul behind the business.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="80">
+                <div class="pb-img story-arc-img"><img src="{% static 'main/images/br/mingma-summit.jpg' %}" alt="Close up of a climber in goggles and oxygen mask" loading="lazy"><span class="pb-n">02</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">What you have done</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">The proof: real people, real results and the details that make them believable.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="160">
+                <div class="pb-img story-arc-img"><img src="{% static 'main/images/br/mingma-interview.jpg' %}" alt="Mingma David Sherpa interviewed in a studio" loading="lazy"><span class="pb-n">03</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Why it matters now</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">A clear purpose that invites customers, partners and talent to come along.</p>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/includes/reel_carousel.html' with heading="Stories on screen" sub="Culture, hospitality, education and fashion, told the Trend Crafters way." kind="social" %}
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading='Ready to tell your story?' text='Tell us about your brand and we will find the narrative that makes people care.' button='Tell Us Your Story' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20telling%20my%20brand%20story.' %}
 
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/br/_more.html' with exclude='story' %}
-{% include 'main/dm/_cta.html' with heading='Ready to tell your story?' text='Tell us about your brand and we will find the narrative that makes people care.' %}
+<script>
+(function () {
+    var v = document.getElementById('story-film');
+    if (!v) return;
+    document.querySelectorAll('.story-chapters [data-seek]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            v.currentTime = +b.dataset.seek;
+            v.play();
+            v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+})();
+</script>
 
 {% endblock %}

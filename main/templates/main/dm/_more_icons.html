@@ -1,0 +1,11 @@
+{# "More services" icon row for dark DM heroes. Pass exclude="social|meta|gads|tiktok|content|seo|community" #}
+<p class="mt-8 mb-2 text-[11px] font-semibold uppercase tracking-[.14em] text-white/50 text-center lg:text-left">More services</p>
+<nav class="hero-svcs hero-svcs-dark" aria-label="More digital marketing services">
+    {% if exclude != 'social' %}<a href="{% url 'dm_social_media' %}" class="hero-svc"><i class="fas fa-share-nodes"></i><span>Social Media</span></a>{% endif %}
+    {% if exclude != 'meta' %}<a href="{% url 'dm_meta_ads' %}" class="hero-svc"><i class="fab fa-facebook"></i><span>Meta Ads</span></a>{% endif %}
+    {% if exclude != 'gads' %}<a href="{% url 'dm_google_ads' %}" class="hero-svc"><i class="fab fa-google"></i><span>Google Ads</span></a>{% endif %}
+    {% if exclude != 'tiktok' %}<a href="{% url 'dm_tiktok' %}" class="hero-svc"><i class="fab fa-tiktok"></i><span>TikTok</span></a>{% endif %}
+    {% if exclude != 'content' %}<a href="{% url 'dm_content_reels' %}" class="hero-svc"><i class="fas fa-clapperboard"></i><span>Content &amp;<br>Reels</span></a>{% endif %}
+    {% if exclude != 'seo' %}<a href="{% url 'dm_seo' %}" class="hero-svc"><i class="fas fa-magnifying-glass"></i><span>SEO</span></a>{% endif %}
+    {% if exclude != 'community' %}<a href="{% url 'dm_community' %}" class="hero-svc"><i class="fas fa-comments"></i><span>Community</span></a>{% endif %}
+</nav>

@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{# Shared layout for the legal pages (Privacy Policy, Terms & Conditions): a split screen with
+   a dark panel on the left and the numbered clauses on the right. Child pages fill legal_title,
+   legal_intro and legal_items, and mark the active tab. #}
+{% block content %}
+
+<section class="lg-split">
+    <aside class="lg-side">
+        <div class="lg-side-inner" data-aos="fade-up">
+            <p class="wk-kicker">Legal</p>
+            <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-[1.05]">{% block legal_title %}{% endblock %}</h1>
+            <p class="text-white/65 leading-relaxed mt-4">{% block legal_intro %}{% endblock %}</p>
+            <nav class="lg-switch" aria-label="Legal pages">
+                <a href="{% url 'privacy' %}"{% block legal_active_privacy %}{% endblock %}><span>Privacy Policy</span><i class="fas fa-arrow-right"></i></a>
+                <a href="{% url 'terms' %}"{% block legal_active_terms %}{% endblock %}><span>Terms &amp; Conditions</span><i class="fas fa-arrow-right"></i></a>
+            </nav>
+            <div class="lg-side-foot">
+                <p class="text-white/45 text-xs mb-3">Last updated: October 2026</p>
+                <a href="mailto:trendcraftersglobal@gmail.com"><i class="fas fa-envelope"></i>trendcraftersglobal@gmail.com</a>
+                <a href="tel:+9779827877621"><i class="fas fa-phone"></i>+977 982-7877621</a>
+            </div>
+        </div>
+    </aside>
+    <div class="lg-main">
+        <ol class="lg-clauses" data-aos="fade-up" data-aos-delay="80">{% block legal_items %}{% endblock %}</ol>
+    </div>
+</section>
+
+{% endblock %}

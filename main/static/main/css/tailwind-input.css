@@ -4,11 +4,11 @@
 @source "../js/**/*.js";
 
 @theme static {
-  /* Warm-neutral surfaces (replaces flat white/gray) */
-  --color-surface: #FAF8F5;
+  /* Surfaces: clean white base with neutral greys */
+  --color-surface: #FFFFFF;
   --color-surface-raised: #FFFFFF;
-  --color-surface-subtle: #F2EEE8;
-  --color-surface-border: #E6E0D6;
+  --color-surface-subtle: #F5F5F5;
+  --color-surface-border: #E5E5E5;
 
   /* Warm ink (replaces cool Tailwind gray) */
   --color-ink: #1C1A17;

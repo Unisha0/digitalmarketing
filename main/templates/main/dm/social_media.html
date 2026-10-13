@@ -12,19 +12,13 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-center lg:text-left" data-aos="fade-up">
                 <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-share-nodes"></i> Our number one service</p>
-                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Social Media Marketing Agency in Nepal</span>Social media marketing that <span class="gradient-text">builds real communities</span></h1>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">Social media marketing that <span class="gradient-text">builds real communities</span></h1>
                 <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">Building a brand presence takes more than posting. We combine data driven strategy with compelling brand storytelling, turning passive scrollers into loyal, high value customers across Nepal and beyond.</p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                     <a href="{% url 'contact' %}" class="btn-logo">Grow My Social Media <i class="fas fa-arrow-right text-sm"></i></a>
                     <a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" class="btn-ghost-link !text-white justify-center"><span class="btn-ghost-icon"><i class="fab fa-instagram text-sm"></i></span> See our Instagram</a>
                 </div>
-                <div class="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start text-xs text-white/70">
-                    <span class="px-3 py-1 rounded-full border border-white/15"><i class="fab fa-facebook-f mr-1"></i> Facebook</span>
-                    <span class="px-3 py-1 rounded-full border border-white/15"><i class="fab fa-instagram mr-1"></i> Instagram</span>
-                    <span class="px-3 py-1 rounded-full border border-white/15"><i class="fab fa-tiktok mr-1"></i> TikTok</span>
-                    <span class="px-3 py-1 rounded-full border border-white/15"><i class="fab fa-linkedin-in mr-1"></i> LinkedIn</span>
-                    <span class="px-3 py-1 rounded-full border border-white/15"><i class="fab fa-youtube mr-1"></i> YouTube</span>
-                </div>
+                {% include 'main/dm/_more_icons.html' with exclude='social' %}
             </div>
 
             <!-- Phone mockup built in HTML -->
@@ -46,106 +40,90 @@
     </div>
 </section>
 
-{% include 'main/dm/_subnav.html' with active='social' %}
 
-<!-- Platform tabs as a 4-up grid -->
+<!-- Platforms (5) + links to the other digital marketing services -->
 <section class="py-medium bg-white">
     <div class="content-container">
         <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
             <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Where we grow you</h2>
             <p class="font-display text-3xl md:text-4xl font-semibold text-ink">The right platform for <span class="gradient-text">every audience</span></p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="rounded-3xl p-6 bg-gradient-to-br from-blue-50 to-white border border-ink/5" data-aos="fade-up"><i class="fab fa-facebook-f text-2xl text-blue-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Facebook</h3><p class="text-sm text-ink-muted">Nepal's biggest audience. Pages, groups, events and lead forms that turn local attention into enquiries.</p></div>
-            <div class="rounded-3xl p-6 bg-gradient-to-br from-pink-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="80"><i class="fab fa-instagram text-2xl text-pink-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Instagram</h3><p class="text-sm text-ink-muted">Feed, Stories and Reels with a consistent look, built to earn saves, shares and follows.</p></div>
-            <div class="rounded-3xl p-6 bg-gradient-to-br from-brand-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="160"><i class="fab fa-tiktok text-2xl text-ink mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">TikTok</h3><p class="text-sm text-ink-muted">Trend led, creator friendly short video that reaches people who don't follow you yet.</p></div>
-            <div class="rounded-3xl p-6 bg-gradient-to-br from-sky-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="240"><i class="fab fa-linkedin-in text-2xl text-sky-700 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">LinkedIn</h3><p class="text-sm text-ink-muted">B2B authority, employer brand and thought leadership for companies selling to companies.</p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-blue-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="0"><i class="fab fa-facebook-f text-2xl text-blue-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Facebook</h3><p class="text-sm text-ink-muted">Nepal's biggest audience. Pages, groups, events and lead forms that turn local attention into enquiries.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-pink-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="60"><i class="fab fa-instagram text-2xl text-pink-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">Instagram</h3><p class="text-sm text-ink-muted">Feed, Stories and Reels with a consistent look, built to earn saves, shares and follows.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-brand-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="120"><i class="fab fa-tiktok text-2xl text-ink mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">TikTok</h3><p class="text-sm text-ink-muted">Trend led, creator friendly short video that reaches people who don't follow you yet.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-sky-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="180"><i class="fab fa-linkedin-in text-2xl text-sky-700 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">LinkedIn</h3><p class="text-sm text-ink-muted">B2B authority, employer brand and thought leadership for companies selling to companies.</p></div>
+            <div class="rounded-3xl p-6 bg-gradient-to-br from-red-50 to-white border border-ink/5" data-aos="fade-up" data-aos-delay="240"><i class="fab fa-youtube text-2xl text-red-600 mb-4"></i><h3 class="font-display text-lg font-semibold text-ink mb-2">YouTube</h3><p class="text-sm text-ink-muted">Long-form videos and Shorts that build trust, rank in search and keep people watching.</p></div>
         </div>
     </div>
 </section>
 
-<!-- Photo strip -->
-<section class="bg-white py-6 sm:py-8">
+<!-- What's inside: photo + numbered list -->
+<section class="py-medium bg-white">
     <div class="content-container">
-        <div class="grid grid-cols-3 gap-3 sm:gap-5 h-40 sm:h-64" data-aos="fade-up">
-            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/dm/facebook-phone.jpg' %}" alt="Social media profile open on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/dm/social-media-letters.jpg' %}" alt="Social media apps grouped on a phone screen" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden"><img src="{% static 'main/images/dm/social-icons.jpg' %}" alt="TikTok open on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Content pillars bento -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container">
-        <div class="max-w-2xl mb-8" data-aos="fade-up">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What's inside</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">One retainer, <span class="gradient-text">the whole social engine</span></p>
-        </div>
-        <div class="grid md:grid-cols-4 gap-4 md:auto-rows-[10rem]">
-            <div class="md:col-span-2 md:row-span-2 rounded-3xl bg-ink-dark p-8 text-white flex flex-col justify-end relative overflow-hidden" data-aos="fade-up">
-                <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-pink-500/30 blur-2xl"></div>
-                <i class="fas fa-compass text-brand-400 text-3xl mb-4 relative"></i>
-                <h3 class="font-display text-2xl font-semibold mb-2 relative">Strategy and positioning</h3>
-                <p class="text-white/70 text-sm relative">Audience research, competitor review and a clear voice. We decide who you're talking to, what you stand for and which platforms earn your time.</p>
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-5 relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[30rem]" data-aos="fade-up">
+                <img src="{% static 'main/images/dm/own/hd-marketing-head.jpg' %}" alt="Trend Crafters marketing head planning a client's content" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
             </div>
-            <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-pen-nib text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink">Content calendar</h3><p class="text-xs text-ink-muted mt-1">Planned themes and posting rhythm.</p></div>
-            <div class="rounded-3xl bg-gradient-to-br from-brand-500 to-pink-600 p-6 text-white" data-aos="fade-up" data-aos-delay="120"><i class="fas fa-camera text-xl mb-2"></i><h3 class="font-semibold">Design and shoots</h3><p class="text-xs text-white/80 mt-1">On brand graphics, photos and reels.</p></div>
-            <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-paper-plane text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink">Posting and scheduling</h3><p class="text-xs text-ink-muted mt-1">Right time, every time.</p></div>
-            <div class="rounded-3xl bg-white p-6 shadow-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-bullhorn text-brand-500 text-xl mb-2"></i><h3 class="font-semibold text-ink">Paid boosts</h3><p class="text-xs text-ink-muted mt-1">We back winning posts with ad spend.</p></div>
-            <div class="md:col-span-4 rounded-3xl bg-pink-50 border border-pink-100 p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-chart-line text-pink-600 text-3xl"></i><div><h3 class="font-semibold text-ink">Monthly reporting</h3><p class="text-sm text-ink-muted">Reach, engagement, followers and enquiries in plain language, with next steps.</p></div></div>
+            <div class="lg:col-span-7">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3" data-aos="fade-up">What's inside</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-8" data-aos="fade-up">One retainer, <span class="gradient-text">the whole social engine</span></p>
+                <ul class="grid sm:grid-cols-2 gap-x-8">
+                    <li class="wi-item" data-aos="fade-up" data-aos-delay="0"><span class="wi-n">01</span><div><h3 class="font-semibold text-ink">Strategy and positioning</h3><p class="text-sm text-ink-muted leading-relaxed mt-1">Audience research, competitor review and a clear voice. We decide who you're talking to and which platforms earn your time.</p></div></li>
+                    <li class="wi-item" data-aos="fade-up" data-aos-delay="60"><span class="wi-n">02</span><div><h3 class="font-semibold text-ink">Content calendar</h3><p class="text-sm text-ink-muted leading-relaxed mt-1">Planned themes and a posting rhythm, agreed with you every month.</p></div></li>
+                    <li class="wi-item" data-aos="fade-up" data-aos-delay="0"><span class="wi-n">03</span><div><h3 class="font-semibold text-ink">Design and shoots</h3><p class="text-sm text-ink-muted leading-relaxed mt-1">On-brand graphics, photos and reels made by our in-house team.</p></div></li>
+                    <li class="wi-item" data-aos="fade-up" data-aos-delay="60"><span class="wi-n">04</span><div><h3 class="font-semibold text-ink">Posting and scheduling</h3><p class="text-sm text-ink-muted leading-relaxed mt-1">Published at the right time, every time, across every platform.</p></div></li>
+                    <li class="wi-item" data-aos="fade-up" data-aos-delay="0"><span class="wi-n">05</span><div><h3 class="font-semibold text-ink">Paid boosts</h3><p class="text-sm text-ink-muted leading-relaxed mt-1">We back your winning posts with ad spend to reach more of the right people.</p></div></li>
+                    <li class="wi-item" data-aos="fade-up" data-aos-delay="60"><span class="wi-n">06</span><div><h3 class="font-semibold text-ink">Monthly reporting</h3><p class="text-sm text-ink-muted leading-relaxed mt-1">Reach, engagement, followers and enquiries in plain language, with next steps.</p></div></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="bg-white py-6 sm:py-8"><div class="content-container max-w-6xl mx-auto"><div class="grid md:grid-cols-3 gap-4"><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/meeting-whiteboard.jpg' %}" alt="Team planning a content calendar on a whiteboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/social-folder.jpg' %}" alt="Social apps on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/phone-city.jpg' %}" alt="Person browsing Instagram in the city" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div></div></div></section>
 
-<!-- Monthly rhythm timeline -->
+<!-- Monthly rhythm: heading left, 2x2 week cards with month progress -->
 <section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center mb-8" data-aos="fade-up">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our monthly rhythm</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-ink">A month with <span class="gradient-text">Trend Crafters</span></p>
-        </div>
-        <ol class="grid md:grid-cols-4 gap-4">
-            <li class="rounded-2xl border border-ink/10 p-5" data-aos="fade-up"><span class="text-xs font-bold text-pink-600">WEEK 1</span><h3 class="font-semibold text-ink mt-1 mb-1">Plan</h3><p class="text-sm text-ink-muted">Review last month, agree themes, offers and dates.</p></li>
-            <li class="rounded-2xl border border-ink/10 p-5" data-aos="fade-up" data-aos-delay="80"><span class="text-xs font-bold text-pink-600">WEEK 2</span><h3 class="font-semibold text-ink mt-1 mb-1">Create</h3><p class="text-sm text-ink-muted">Shoot, design and edit posts, stories and reels.</p></li>
-            <li class="rounded-2xl border border-ink/10 p-5" data-aos="fade-up" data-aos-delay="160"><span class="text-xs font-bold text-pink-600">WEEK 3</span><h3 class="font-semibold text-ink mt-1 mb-1">Publish and boost</h3><p class="text-sm text-ink-muted">Post on schedule, engage, and boost what performs.</p></li>
-            <li class="rounded-2xl border border-ink/10 p-5" data-aos="fade-up" data-aos-delay="240"><span class="text-xs font-bold text-pink-600">WEEK 4</span><h3 class="font-semibold text-ink mt-1 mb-1">Report</h3><p class="text-sm text-ink-muted">Share results, learn, and sharpen next month's plan.</p></li>
-        </ol>
-    </div>
-</section>
-
-<!-- Follow our work -->
-<section class="py-medium bg-ink-dark">
     <div class="content-container">
-        <div class="text-center max-w-2xl mx-auto mb-8" data-aos="fade-up">
-            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">See it live</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-white">We practise what <span class="gradient-text">we pitch</span></p>
-            <p class="text-white/60 mt-3">Follow our own channels to see the style, pace and storytelling we bring to client accounts.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <a href="https://www.instagram.com/trendcraftersglobal/" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition text-white"><i class="fab fa-instagram text-2xl text-pink-400 mb-3"></i><p class="font-semibold">Instagram</p><p class="text-xs text-white/60">@trendcraftersglobal</p></a>
-            <a href="https://www.tiktok.com/@trendcraftersglobal" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition text-white"><i class="fab fa-tiktok text-2xl text-white mb-3"></i><p class="font-semibold">TikTok</p><p class="text-xs text-white/60">@trendcraftersglobal</p></a>
-            <a href="https://www.facebook.com/share/1BTcpCj6Y6/" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition text-white"><i class="fab fa-facebook-f text-2xl text-blue-400 mb-3"></i><p class="font-semibold">Facebook</p><p class="text-xs text-white/60">Trend Crafters, Kathmandu</p></a>
-            <a href="https://www.linkedin.com/company/trendcraftersglobal/about/" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition text-white"><i class="fab fa-linkedin-in text-2xl text-sky-400 mb-3"></i><p class="font-semibold">LinkedIn</p><p class="text-xs text-white/60">Trend Crafters Global</p></a>
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-4" data-aos="fade-up">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Our monthly rhythm</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">A month with <span class="gradient-text">Trend Crafters</span></p>
+                <p class="text-ink-muted leading-relaxed">Every month follows the same clear cycle, so you always know what&rsquo;s happening and what comes next.</p>
+            </div>
+            <div class="lg:col-span-8 grid sm:grid-cols-2 gap-4">
+                <div class="mr-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center justify-between mb-5"><span class="mr-wk">Week 1</span><span class="mr-ic"><i class="fas fa-map"></i></span></div>
+                    <h3 class="font-display text-xl font-semibold text-ink mb-1.5">Plan</h3>
+                    <p class="text-sm text-ink-muted leading-relaxed">Review last month, agree themes, offers and dates.</p>
+                    <div class="mr-bar"><span style="width:25%"></span></div>
+                </div>
+                <div class="mr-card" data-aos="fade-up" data-aos-delay="70">
+                    <div class="flex items-center justify-between mb-5"><span class="mr-wk">Week 2</span><span class="mr-ic"><i class="fas fa-camera"></i></span></div>
+                    <h3 class="font-display text-xl font-semibold text-ink mb-1.5">Create</h3>
+                    <p class="text-sm text-ink-muted leading-relaxed">Shoot, design and edit posts, stories and reels.</p>
+                    <div class="mr-bar"><span style="width:50%"></span></div>
+                </div>
+                <div class="mr-card" data-aos="fade-up" data-aos-delay="140">
+                    <div class="flex items-center justify-between mb-5"><span class="mr-wk">Week 3</span><span class="mr-ic"><i class="fas fa-paper-plane"></i></span></div>
+                    <h3 class="font-display text-xl font-semibold text-ink mb-1.5">Publish and boost</h3>
+                    <p class="text-sm text-ink-muted leading-relaxed">Post on schedule, engage, and boost what works.</p>
+                    <div class="mr-bar"><span style="width:75%"></span></div>
+                </div>
+                <div class="mr-card" data-aos="fade-up" data-aos-delay="210">
+                    <div class="flex items-center justify-between mb-5"><span class="mr-wk">Week 4</span><span class="mr-ic"><i class="fas fa-chart-line"></i></span></div>
+                    <h3 class="font-display text-xl font-semibold text-ink mb-1.5">Report</h3>
+                    <p class="text-sm text-ink-muted leading-relaxed">Share results, learn, and sharpen next month's plan.</p>
+                    <div class="mr-bar"><span style="width:100%"></span></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/includes/reel_carousel.html' with heading="Social content we've created" sub="Reels and brand stories for Nepali businesses. Tap any reel to play." kind="social" %}
+{% include 'main/includes/reel_carousel.html' with reels=home_reels heading="Work in motion" sub="Real campaigns for real Nepali brands. Scroll, tap and watch." %}
 
-<!-- Proof -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-        <div class="rounded-3xl bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 p-8" data-aos="fade-up"><p class="font-display text-5xl font-semibold gradient-text mb-2">60%+</p><p class="font-semibold text-ink mb-2">Engagement growth for Threads &amp; Trends</p><p class="text-sm text-ink-muted">"Their strategic approach helped us grow our engagement by over 60%. Truly a partner that understands brand storytelling."</p></div>
-        <div class="rounded-3xl bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 p-8" data-aos="fade-up" data-aos-delay="100"><p class="font-display text-5xl font-semibold gradient-text mb-2">45%</p><p class="font-semibold text-ink mb-2">Social engagement lift for Himalayan Java in 3 weeks</p><p class="text-sm text-ink-muted">A seasonal menu launch driven by short form video, influencer collaborations and interactive posts.</p></div>
-    </div>
-</section>
-
-{% include 'main/dm/_seo_block.html' %}
-
-{% include 'main/dm/_more.html' with exclude='social' %}
-{% include 'main/dm/_cta.html' with heading='Ready to make your social media work harder?' text='Tell us about your brand and we will map out the platforms, content and budget that fit.' %}
+{% include 'main/dm/_channels.html' %}
 
 {% endblock %}

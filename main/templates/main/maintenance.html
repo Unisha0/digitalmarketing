@@ -3,84 +3,84 @@
 {% block title %}Website Maintenance & SEO in Nepal | Trend Crafters{% endblock %}
 {% block meta_description %}Website maintenance in Nepal: updates, security, backups, speed and SEO care on any stack, so your site stays fast, safe and ranking. Plans from Trend Crafters.{% endblock %}
 {% block meta_keywords %}{{ dm.keywords|join:", " }}{% endblock %}
+{% block nav_class %} nav-on-dark{% endblock %}
 {% block content %}
 
-<!-- Dark split hero with a live site-health panel -->
-<section class="relative overflow-hidden pt-28 sm:pt-32 pb-8">
-    <div class="absolute -top-16 right-0 w-[30rem] h-[30rem] rounded-full bg-gradient-to-bl from-green-100/70 via-brand-100/50 to-transparent blur-3xl pointer-events-none"></div>
-    <div class="relative content-container">
-        <div class="grid lg:grid-cols-12 gap-8 items-end mb-8">
-            <div class="lg:col-span-7" data-aos="fade-up"><p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[.14em] uppercase text-pink-600 mb-4"><i class="fas fa-shield-alt"></i> IT solutions · Maintenance &amp; SEO</p><h1 class="font-display font-semibold text-ink leading-[1.04] text-5xl sm:text-6xl"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Website Maintenance &amp; SEO in Nepal</span>Launching is only <span class="gradient-text">the beginning.</span></h1></div>
-            <div class="lg:col-span-5" data-aos="fade-up"><p class="text-ink-muted text-lg mb-5">We keep your website secure, fast and visible to search engines, whether we built it or not, and on whatever stack it runs.</p><div class="flex flex-col sm:flex-row gap-3"><a href="{% url 'contact' %}" class="btn-logo">Talk to Us <i class="fas fa-arrow-right text-sm"></i></a><a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20website%20maintenance." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> WhatsApp</a></div></div>
-        </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" data-aos="fade-up" aria-hidden="true">
-            <div class="bento-tile bg-green-50 lg:col-span-2 lg:row-span-1"><div class="flex items-center justify-between"><span class="bento-k">Uptime</span><span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-green-700"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Live</span></div><p class="bento-n text-green-700">99.9%</p><svg viewBox="0 0 200 40" class="w-full h-10"><polyline fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="0,28 20,24 40,26 60,16 80,20 100,10 120,14 140,8 160,12 180,6 200,9"/></svg></div>
-            <div class="bento-tile bg-brand-50"><span class="bento-k">Speed score</span><p class="bento-n text-brand-600">96</p><div class="h-2 rounded-full bg-white"><div class="h-full w-[96%] rounded-full bg-gradient-to-r from-brand-400 to-brand-600"></div></div></div>
-            <div class="bento-tile bg-pink-50"><span class="bento-k">SEO health</span><p class="bento-n text-pink-600">Good</p><div class="h-2 rounded-full bg-white"><div class="h-full w-[88%] rounded-full bg-gradient-to-r from-pink-400 to-pink-600"></div></div></div>
-            <div class="bento-tile bg-blue-50"><span class="bento-k">Last backup</span><p class="bento-n text-blue-600">Today</p><div class="h-2 rounded-full bg-white"><div class="h-full w-full rounded-full bg-blue-500"></div></div></div>
-            <div class="bento-tile bg-white border border-ink/10"><span class="bento-k">Security</span><p class="bento-n text-ink">Patched</p><div class="h-2 rounded-full bg-surface-subtle"><div class="h-full w-full rounded-full bg-ink"></div></div></div>
-            <div class="bento-tile bg-gradient-to-br from-brand-500 to-pink-600 text-white col-span-2"><span class="bento-k !text-white/80">Monthly report</span><p class="bento-n">Plain language, every month</p></div>
-        </div>
-        <p class="text-[11px] text-ink-faint mt-3">Illustration of a typical monthly health report.</p>
-    </div>
-</section>
-
-{% include 'main/it/_subnav.html' with active='maint' %}
-
-<!-- What's included: two-column checklist -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-5 gap-10 items-start">
-        <div class="lg:col-span-2" data-aos="fade-right">
-            <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What's included</h2>
-            <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Care plans for <span class="gradient-text">peace of mind</span></p>
-            <p class="text-ink-muted mb-5">Most sites don't fail at launch. They fail six months later. Our plans stop the quiet problems before they cost you traffic and trust.</p>
-            <div class="relative rounded-3xl overflow-hidden h-52"><img src="{% static 'main/images/it/circuit.jpg' %}" alt="Hands on a laptop in a dark, neon lit room" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-        </div>
-        <ul class="lg:col-span-3 divide-y divide-ink/10">
-            <li class="flex gap-4 py-4" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-heart-pulse"></i></span><div><h3 class="font-semibold text-ink">Uptime and security monitoring</h3><p class="text-sm text-ink-muted">Round the clock checks so issues are caught before your customers notice.</p></div></li>
-            <li class="flex gap-4 py-4" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-cloud-arrow-up"></i></span><div><h3 class="font-semibold text-ink">Regular backups</h3><p class="text-sm text-ink-muted">Automated backups, so a bad update or attack is never a disaster.</p></div></li>
-            <li class="flex gap-4 py-4" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-gauge-high"></i></span><div><h3 class="font-semibold text-ink">Performance optimisation</h3><p class="text-sm text-ink-muted">Image, script and cache tuning to keep load times fast as content grows.</p></div></li>
-            <li class="flex gap-4 py-4" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-tags"></i></span><div><h3 class="font-semibold text-ink">SEO meta and schema</h3><p class="text-sm text-ink-muted">Titles, descriptions, structured data and sitemaps kept accurate as pages change.</p></div></li>
-            <li class="flex gap-4 py-4" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-pen-to-square"></i></span><div><h3 class="font-semibold text-ink">Content updates</h3><p class="text-sm text-ink-muted">Copy, pricing and page changes handled without you touching code.</p></div></li>
-            <li class="flex gap-4 py-4" data-aos="fade-up"><span class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-rotate"></i></span><div><h3 class="font-semibold text-ink">Dependency and platform updates</h3><p class="text-sm text-ink-muted">Frameworks, packages and plugins kept current so nothing breaks silently or becomes a security risk.</p></div></li>
-        </ul>
-    </div>
-</section>
-
-<!-- SEO optimisation: split, left aligned -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">SEO optimisation</h2>
-            <p class="font-display text-3xl font-semibold text-white mb-4">Secure the top spot <span class="gradient-text">on Google</span></p>
-            <p class="text-white/70 mb-4">For local businesses, our targeted SEO in Kathmandu drives highly qualified regional traffic. For international brands, our scalable search strategies capture high intent global queries.</p>
-            <a href="{% url 'dm_seo' %}" class="text-brand-300 font-semibold hover:text-white">See our SEO services <i class="fas fa-arrow-right text-xs ml-1"></i></a>
-        </div>
-        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-            <div class="relative rounded-3xl overflow-hidden h-44 sm:h-52"><img src="{% static 'main/images/dm/analytics-dark.jpg' %}" alt="Search analytics dashboard" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
-            <div class="relative rounded-3xl overflow-hidden h-44 sm:h-52 mt-6"><img src="{% static 'main/images/dm/analytics-laptop.jpg' %}" alt="Analytics on a laptop" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+<!-- Hero: dark band, copy left, photo collage right (same layout as the IT hub) -->
+<section class="dmx-hero">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-6 text-center lg:text-left" data-aos="fade-up">
+                <p class="inline-flex items-center gap-3 text-xs sm:text-sm font-semibold tracking-[.16em] uppercase text-[#FFC94A] mb-4"><span class="hidden lg:inline-block w-8 h-0.5 bg-[#FFC94A]"></span>Maintenance &amp; SEO</p>
+                <h1 class="font-display text-4xl sm:text-5xl xl:text-[3.6rem] font-semibold text-white leading-[1.06] mb-5">Launching is only <span class="gradient-text">the beginning.</span></h1>
+                <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">We keep your website secure, fast and visible on Google, whether we built it or not, on whatever stack it runs.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="{% url 'contact' %}" class="btn-logo">Talk to Us <i class="fas fa-arrow-right text-sm"></i></a>
+                    <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20website%20maintenance." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
+                </div>
+                {% include 'main/it/_more_icons.html' with exclude='maint' %}
+            </div>
+            <div class="lg:col-span-6 dmx-collage" data-aos="fade-left">
+                <div class="dmx-a"><img src="{% static 'main/images/it/circuit.jpg' %}" alt="Hands on a laptop in a neon lit room" fetchpriority="high"></div>
+                <div class="dmx-b"><img src="{% static 'main/images/dm/analytics-dark.jpg' %}" alt="Website health analytics" loading="lazy"></div>
+                <div class="dmx-c"><img src="{% static 'main/images/it/network.jpg' %}" alt="Network cabling" loading="lazy"></div>
+            </div>
         </div>
     </div>
 </section>
 
-{% include 'main/it/_stack.html' %}
-
-<!-- What quietly costs you traffic: horizontal strip -->
-<section class="py-medium bg-surface-subtle">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">Why it matters</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">What quietly <span class="gradient-text">costs you traffic</span></p></div>
-        <div class="flex flex-wrap gap-3" data-aos="fade-up">
-            <span class="inline-flex items-center gap-2 rounded-full bg-white shadow-card px-4 py-2 text-sm font-medium text-ink"><i class="fas fa-plug text-pink-600"></i> Broken plugins</span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white shadow-card px-4 py-2 text-sm font-medium text-ink"><i class="fas fa-tag text-pink-600"></i> Stale meta tags</span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white shadow-card px-4 py-2 text-sm font-medium text-ink"><i class="fas fa-hourglass-half text-pink-600"></i> Slow creeping load times</span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white shadow-card px-4 py-2 text-sm font-medium text-ink"><i class="fas fa-cloud-arrow-up text-pink-600"></i> Missed backups</span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white shadow-card px-4 py-2 text-sm font-medium text-ink"><i class="fas fa-user-shield text-pink-600"></i> Unpatched security holes</span>
+<!-- What's included: image left, checklist right -->
+<section class="bg-white py-14 lg:py-16">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+            <div class="flex flex-col" data-aos="fade-up">
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">What&rsquo;s included</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Care plans for <span class="gradient-text">peace of mind</span></p>
+                <p class="text-ink-muted leading-relaxed mb-6">Most sites don&rsquo;t fail at launch. They fail six months later. Our plans stop the quiet problems before they cost you traffic and trust.</p>
+                <div class="rounded-3xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-[16rem] shadow-lg"><img src="{% static 'main/images/it/hands-laptop.jpg' %}" alt="Updating a website on a laptop" loading="lazy" class="w-full h-full object-cover"></div>
+            </div>
+            <div class="flex flex-col justify-center"><ul class="si-list">
+                <li class="si-row" data-aos="fade-up"><span class="si-ic"><i class="fas fa-heart-pulse"></i></span><div><h3 class="font-semibold text-ink">Uptime and security monitoring</h3><p class="text-sm text-ink-muted mt-0.5">Round the clock checks so issues are caught before customers notice.</p></div></li>
+                <li class="si-row" data-aos="fade-up" data-aos-delay="50"><span class="si-ic"><i class="fas fa-cloud-arrow-up"></i></span><div><h3 class="font-semibold text-ink">Regular backups</h3><p class="text-sm text-ink-muted mt-0.5">A bad update or attack is never a disaster.</p></div></li>
+                <li class="si-row" data-aos="fade-up" data-aos-delay="100"><span class="si-ic"><i class="fas fa-gauge-high"></i></span><div><h3 class="font-semibold text-ink">Speed optimisation</h3><p class="text-sm text-ink-muted mt-0.5">Image, script and cache tuning as your content grows.</p></div></li>
+                <li class="si-row" data-aos="fade-up" data-aos-delay="150"><span class="si-ic"><i class="fas fa-magnifying-glass"></i></span><div><h3 class="font-semibold text-ink">SEO meta, schema and sitemaps</h3><p class="text-sm text-ink-muted mt-0.5">Kept accurate as pages change, so you keep ranking.</p></div></li>
+                <li class="si-row" data-aos="fade-up" data-aos-delay="200"><span class="si-ic"><i class="fas fa-pen-to-square"></i></span><div><h3 class="font-semibold text-ink">Content updates</h3><p class="text-sm text-ink-muted mt-0.5">Copy, pricing and page changes without touching code.</p></div></li>
+                <li class="si-row" data-aos="fade-up" data-aos-delay="250"><span class="si-ic"><i class="fas fa-rotate"></i></span><div><h3 class="font-semibold text-ink">Platform and plugin updates</h3><p class="text-sm text-ink-muted mt-0.5">Kept current so nothing breaks or becomes a security risk.</p></div></li>
+            </ul></div>
         </div>
-        <p class="text-ink-muted mt-5 text-sm">Whether we built your site or not, we can take maintenance off your plate.</p>
     </div>
 </section>
 
-{% include 'main/dm/_seo_block.html' %}
-{% include 'main/dm/_cta.html' with heading="Let's keep your site running smoothly" text='Send us your website and we will audit it and suggest the right care plan.' %}
+<!-- Monthly cycle -->
+<section class="bg-white py-12 border-t border-ink/[0.06]">
+    <div class="content-container">
+        <div class="mb-8 max-w-2xl" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How it works</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">One cycle, <span class="gradient-text">every month</span></p></div>
+        <div class="pb-grid">
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="pb-img"><img src="{% static 'main/images/dm/seo-analytics.jpg' %}" alt="Auditing a website" loading="lazy"><span class="pb-n">01</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Audit</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Speed, security and SEO checked across the whole site.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="pb-img"><img src="{% static 'main/images/it/code-dark.jpg' %}" alt="Fixing issues in code" loading="lazy"><span class="pb-n">02</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Fix</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Updates, patches and fixes applied in order of impact.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="pb-img"><img src="{% static 'main/images/it/servers.jpg' %}" alt="Monitoring servers" loading="lazy"><span class="pb-n">03</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Monitor</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Uptime and backups watched around the clock.</p>
+            </div>
+            <div class="pb-card" data-aos="fade-up" data-aos-delay="180">
+                <div class="pb-img"><img src="{% static 'main/images/dm/analytics-laptop.jpg' %}" alt="Monthly report on a laptop" loading="lazy"><span class="pb-n">04</span></div>
+                <h3 class="font-display text-xl font-semibold text-ink mt-4 mb-1">Report</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">A plain language report with what we did and what&rsquo;s next.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">{{ dm_schema|safe }}</script>
+{% include 'main/br/_cta.html' with heading="Let's keep your site running smoothly" text='Send us your website and we will audit it and suggest the right care plan.' button='Get a Free Site Audit' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20website%20maintenance.' %}
 
 {% endblock %}

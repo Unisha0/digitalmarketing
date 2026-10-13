@@ -1,0 +1,8 @@
+{# "More services" icon row for IT heroes. Pass exclude="web|app|maint" #}
+<p class="mt-8 mb-2 text-[11px] font-semibold uppercase tracking-[.14em] text-white/50 text-center lg:text-left">More services</p>
+<nav class="hero-svcs hero-svcs-dark" aria-label="More IT services">
+    {% if exclude != 'web' %}<a href="{% url 'web_development' %}" class="hero-svc"><i class="fas fa-code"></i><span>Web Development</span></a>{% endif %}
+    {% if exclude != 'app' %}<a href="{% url 'web_app_development' %}" class="hero-svc"><i class="fas fa-layer-group"></i><span>Web Apps</span></a>{% endif %}
+    {% if exclude != 'maint' %}<a href="{% url 'maintenance' %}" class="hero-svc"><i class="fas fa-shield-alt"></i><span>Maintenance &amp; SEO</span></a>{% endif %}
+    <a href="{% url 'work' %}" class="hero-svc"><i class="fas fa-play"></i><span>Our Work</span></a>
+</nav>

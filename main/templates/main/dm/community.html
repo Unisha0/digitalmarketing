@@ -12,12 +12,13 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-center lg:text-left" data-aos="fade-up">
                 <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-brand-300 mb-4"><i class="fas fa-comments"></i> Community management</p>
-                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5"><span class="block gradient-text text-sm sm:text-base font-semibold uppercase tracking-wide mb-3">Community Management in Nepal</span>A brand without a community is <span class="gradient-text">just a commodity</span></h1>
+                <h1 class="font-display text-4xl sm:text-5xl font-semibold text-white leading-tight mb-5">A brand without a community is <span class="gradient-text">just a commodity</span></h1>
                 <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto lg:mx-0">We nurture your audience across time zones, driving meaningful engagement and fierce brand advocacy. From proactive moderation to strategic outreach, we foster the two way conversations that turn first time buyers into lifelong champions.</p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                     <a href="{% url 'contact' %}" class="btn-logo">Build My Community <i class="fas fa-arrow-right text-sm"></i></a>
                     <a href="https://wa.me/9779827877621?text=Hi%20Trend%20Crafters%2C%20I%27d%20like%20help%20managing%20my%20community." target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Chat with us</a>
                 </div>
+                {% include 'main/dm/_more_icons.html' with exclude='community' %}
             </div>
             <div class="flex items-center justify-center" data-aos="fade-left" aria-hidden="true">
                 <div class="w-full max-w-lg rounded-3xl bg-surface shadow-2xl overflow-hidden">
@@ -34,40 +35,35 @@
     </div>
 </section>
 
-{% include 'main/dm/_subnav.html' with active='community' %}
 
-<!-- Community roadmap: horizontal curvy road on desktop, compact vertical road on phones/tablets -->
-<section class="py-medium bg-white" aria-labelledby="road-heading">
-    <div class="content-container max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-6" data-aos="fade-up"><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">The road to a loyal community</h2><p id="road-heading" class="font-display text-3xl md:text-4xl font-semibold text-ink">Four stops on <span class="gradient-text">every journey</span></p></div>
-
-        <!-- Horizontal (lg+) -->
-        <div class="rh hidden lg:grid" data-rh>
-            <article class="rh-card rh-up" data-rh-card style="grid-column:1;grid-row:1"><span class="road-label">Stop 1</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Fast, on-brand replies</h3><p class="text-[13px] leading-relaxed text-ink-muted">Comments, DMs and messages answered in your voice, in English or Nepali, with escalation rules so sales enquiries reach you straight away.</p></article><article class="rh-card rh-down" data-rh-card style="grid-column:2;grid-row:3"><span class="road-label">Stop 2</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Proactive moderation</h3><p class="text-[13px] leading-relaxed text-ink-muted">Spam, abuse and misinformation handled quickly, with a clear community policy so your pages stay welcoming.</p></article><article class="rh-card rh-up" data-rh-card style="grid-column:3;grid-row:1"><span class="road-label">Stop 3</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Strategic outreach</h3><p class="text-[13px] leading-relaxed text-ink-muted">We start conversations, engage with relevant accounts and collaborate with creators to widen your circle.</p></article><article class="rh-card rh-down" data-rh-card style="grid-column:4;grid-row:3"><span class="road-label">Destination</span><h3 class="font-display text-lg font-semibold text-ink mb-1">Reputation care</h3><p class="text-[13px] leading-relaxed text-ink-muted">Complaints and negative reviews answered calmly and publicly, then resolved privately, protecting your brand and winning trust.</p></article>
-            <div class="rh-track" style="grid-column:1/-1;grid-row:2">
-                <svg viewBox="0 0 1200 130" class="rh-svg" aria-hidden="true">
-                    <path class="rh-base" d="M0,65 C100,-5 200,-5 300,65 S500,135 600,65 S800,-5 900,65 S1100,135 1200,65" pathLength="1000"/>
-                    <path class="rh-fill" data-rh-fill d="M0,65 C100,-5 200,-5 300,65 S500,135 600,65 S800,-5 900,65 S1100,135 1200,65" pathLength="1000"/>
-                </svg>
-                <span class="rh-node" data-rh-node data-x="150" data-dir="up"><i class="fas fa-reply"></i></span><span class="rh-node" data-rh-node data-x="450" data-dir="down"><i class="fas fa-user-shield"></i></span><span class="rh-node" data-rh-node data-x="750" data-dir="up"><i class="fas fa-handshake-angle"></i></span><span class="rh-node" data-rh-node data-x="1050" data-dir="down"><i class="fas fa-triangle-exclamation"></i></span>
-                <span class="rh-car" data-rh-car aria-hidden="true"><i class="fas fa-location-dot"></i></span>
-                <span class="rh-flag rh-flag-start"><i class="fas fa-flag"></i> Start</span>
-                <span class="rh-flag rh-flag-end"><i class="fas fa-flag-checkered"></i> Loyal</span>
-            </div>
+<!-- Community journey: four stops -->
+<section class="py-medium bg-white">
+    <div class="content-container">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8" data-aos="fade-up">
+            <div><h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3">How we build your community</h2><p class="font-display text-3xl md:text-4xl font-semibold text-ink">Four steps to <span class="gradient-text">a loyal community</span></p></div>
+            
         </div>
-
-        <!-- Vertical (below lg) -->
-        <div class="road lg:hidden" data-road>
-            <div class="road-line" aria-hidden="true"><span class="road-fill"></span></div>
-            <span class="road-car" aria-hidden="true"><i class="fas fa-location-dot"></i></span>
-            <span class="road-start" aria-hidden="true"><i class="fas fa-flag"></i> Start</span>
-            <ol class="road-list">
-<li class="road-stop road-left" data-road-stop><span class="road-node"><i class="fas fa-reply"></i></span><div class="road-card"><span class="road-label">Stop 1</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Fast, on-brand replies</h3><p class="text-sm text-ink-muted">Comments, DMs and messages answered in your voice, in English or Nepali, with escalation rules so sales enquiries reach you straight away.</p></div></li>
-<li class="road-stop road-right" data-road-stop><span class="road-node"><i class="fas fa-user-shield"></i></span><div class="road-card"><span class="road-label">Stop 2</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Proactive moderation</h3><p class="text-sm text-ink-muted">Spam, abuse and misinformation handled quickly, with a clear community policy so your pages stay welcoming.</p></div></li>
-<li class="road-stop road-left" data-road-stop><span class="road-node"><i class="fas fa-handshake-angle"></i></span><div class="road-card"><span class="road-label">Stop 3</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Strategic outreach</h3><p class="text-sm text-ink-muted">We start conversations, engage with relevant accounts and collaborate with creators to widen your circle.</p></div></li>
-<li class="road-stop road-right" data-road-stop><span class="road-node"><i class="fas fa-triangle-exclamation"></i></span><div class="road-card"><span class="road-label">Destination</span><h3 class="font-display text-xl font-semibold text-ink mb-1">Reputation care</h3><p class="text-sm text-ink-muted">Complaints and negative reviews answered calmly and publicly, then resolved privately, protecting your brand and winning trust.</p></div></li>
-            </ol>
-            <span class="road-end" aria-hidden="true"><i class="fas fa-flag-checkered"></i> Loyal community</span>
+        <div class="fx">
+            <div class="fx-col" data-aos="fade-up" data-aos-delay="0">
+                <p class="fx-num"><i class="fas fa-reply mr-1.5"></i> Step 1</p>
+                <h3 class="font-display text-xl font-semibold text-ink mb-2">Fast, on-brand replies</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Comments, DMs and messages answered in your voice, in English or Nepali, with escalation rules so sales enquiries reach you straight away.</p>
+            </div>
+            <div class="fx-col" data-aos="fade-up" data-aos-delay="60">
+                <p class="fx-num"><i class="fas fa-shield mr-1.5"></i> Step 2</p>
+                <h3 class="font-display text-xl font-semibold text-ink mb-2">Proactive moderation</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Spam, abuse and misinformation handled quickly, with a clear community policy so your pages stay welcoming.</p>
+            </div>
+            <div class="fx-col" data-aos="fade-up" data-aos-delay="120">
+                <p class="fx-num"><i class="fas fa-users mr-1.5"></i> Step 3</p>
+                <h3 class="font-display text-xl font-semibold text-ink mb-2">Strategic outreach</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">We start conversations, engage with relevant accounts and collaborate with creators to widen your circle.</p>
+            </div>
+            <div class="fx-col" data-aos="fade-up" data-aos-delay="180">
+                <p class="fx-num"><i class="fas fa-star mr-1.5"></i> Step 4</p>
+                <h3 class="font-display text-xl font-semibold text-ink mb-2">Reputation care</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">Complaints and negative reviews answered calmly and publicly, then resolved privately, protecting your brand and winning trust.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -104,39 +100,26 @@
 })();
 </script>
 
-<!-- Loop diagram -->
-<section class="py-medium bg-ink-dark">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="text-center mb-8" data-aos="fade-up"><h2 class="text-pink-400 font-semibold text-sm tracking-wide uppercase mb-3">The loyalty loop</h2><p class="font-display text-3xl md:text-4xl font-semibold text-white">From first comment to <span class="gradient-text">lifelong champion</span></p></div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center text-white">
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up"><i class="fas fa-eye text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Notice</h3><p class="text-xs text-white/60 mt-1">A new follower or first comment</p></div>
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-message text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Engage</h3><p class="text-xs text-white/60 mt-1">A fast, human reply</p></div>
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-bag-shopping text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Convert</h3><p class="text-xs text-white/60 mt-1">Guide them to buy or book</p></div>
-            <div class="rounded-2xl bg-white/5 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="240"><i class="fas fa-heart text-brand-400 text-2xl mb-3"></i><h3 class="font-semibold">Advocate</h3><p class="text-xs text-white/60 mt-1">They share, tag and return</p></div>
+<!-- Team photo + promises -->
+<section class="bg-white pt-12 pb-16">
+    <div class="content-container">
+        <div class="grid lg:grid-cols-[auto_1fr] gap-10 lg:gap-16 items-center">
+            <div class="rounded-3xl overflow-hidden cm-full shadow-xl mx-auto relative" data-aos="fade-up"><img src="{% static 'main/images/dm/own/community-team.jpg' %}" alt="Trend Crafters receiving a Token of Appreciation at Kathmandu Youth Conclave 2026" loading="lazy" class="block w-full h-auto" width="695" height="1200"><p class="cm-cap"><i class="fas fa-award"></i> Token of Appreciation, Kathmandu Youth Conclave (KYC) 2026</p></div>
+            <div>
+                <h2 class="text-pink-600 font-semibold text-sm tracking-wide uppercase mb-3" data-aos="fade-up">Our promise</h2>
+                <p class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4" data-aos="fade-up">A real team behind <span class="gradient-text">every reply</span></p>
+                <p class="text-ink-muted leading-relaxed mb-6" data-aos="fade-up">We don&rsquo;t just manage communities online, we show up in them. Trend Crafters was recognised with a Token of Appreciation at Kathmandu Youth Conclave 2026, Nepal&rsquo;s youth leadership event.</p>
+                <div class="cp-list">
+                <div class="cp-item" data-aos="fade-up"><span class="si-ic"><i class="fas fa-clock"></i></span><div><h3 class="font-display text-xl font-semibold text-ink mb-1">Across time zones</h3><p class="text-ink-muted">Coverage that suits both Nepal and international audiences.</p></div></div>
+                <div class="cp-item" data-aos="fade-up"><span class="si-ic"><i class="fas fa-microphone-lines"></i></span><div><h3 class="font-display text-xl font-semibold text-ink mb-1">Your voice</h3><p class="text-ink-muted">A tone guide so every reply sounds like you.</p></div></div>
+                <div class="cp-item" data-aos="fade-up"><span class="si-ic"><i class="fas fa-file-lines"></i></span><div><h3 class="font-display text-xl font-semibold text-ink mb-1">Monthly insights</h3><p class="text-ink-muted">Themes, questions and feedback from your audience, reported back.</p></div></div>
+                </div>
+                <a href="{% url 'contact' %}" class="btn-logo mt-8" data-aos="fade-up">Join Our Community <i class="fas fa-arrow-right text-sm"></i></a>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-6 sm:py-8">
-    <div class="content-container max-w-5xl mx-auto">
-        <div class="relative rounded-3xl overflow-hidden h-44 sm:h-60" data-aos="fade-up"><img src="{% static 'main/images/dm/facebook-phone.jpg' %}" alt="Social media profile open on a phone" loading="lazy" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-r from-ink-dark/80 to-transparent"></div><p class="relative h-full flex items-center px-8 max-w-md font-display text-xl sm:text-2xl font-semibold text-white">Every comment is a conversation worth having.</p></div>
-    </div>
-</section>
 
-<section class="bg-white py-6 sm:py-8"><div class="content-container max-w-6xl mx-auto"><div class="grid md:grid-cols-2 gap-4"><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/pair-laptop.jpg' %}" alt="Two colleagues answering customers at a laptop" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div><div class="relative rounded-3xl overflow-hidden h-52 sm:h-64" data-aos="fade-up"><img src="{% static 'main/images/dm/highfive.jpg' %}" alt="Team celebrating happy customers" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div></div></div></section>
-
-<!-- Promises -->
-<section class="py-medium bg-white">
-    <div class="content-container max-w-5xl mx-auto grid sm:grid-cols-3 gap-5 text-center">
-        <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up"><i class="fas fa-clock text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Across time zones</h3><p class="text-sm text-ink-muted">Coverage that suits both Nepal and international audiences.</p></div>
-        <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-microphone-lines text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Your voice</h3><p class="text-sm text-ink-muted">A tone guide so every reply sounds like you.</p></div>
-        <div class="rounded-2xl border border-ink/10 p-6" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-file-lines text-brand-500 text-2xl mb-3"></i><h3 class="font-semibold text-ink mb-1">Monthly insights</h3><p class="text-sm text-ink-muted">Themes, questions and feedback from your audience, reported back.</p></div>
-    </div>
-</section>
-
-{% include 'main/dm/_seo_block.html' %}
-
-{% include 'main/dm/_more.html' with exclude='community' %}
-{% include 'main/dm/_cta.html' with heading='Turn your followers into a community' text='Tell us where your audience lives and we will handle the conversations.' %}
 
 {% endblock %}

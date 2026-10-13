@@ -1,0 +1,13 @@
+{# Full-width closing call to action for the branding and production pages. Pass heading, text, button (label) and wa (WhatsApp message, URL-encoded) #}
+<section class="br-cta">
+    <div class="content-container">
+        <div class="max-w-3xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="font-display text-3xl md:text-5xl font-semibold text-white mb-4">{{ heading }}</h2>
+            <p class="text-white/85 text-lg mb-8">{{ text }}</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="{% url 'contact' %}" class="br-cta-btn">{{ button }} <i class="fas fa-arrow-right text-sm"></i></a>
+                <a href="https://wa.me/9779827877621?text={{ wa }}" target="_blank" rel="noopener noreferrer" class="whatsapp-btn justify-center"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>

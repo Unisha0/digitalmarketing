@@ -1,0 +1,8 @@
+{# "More" icon row for the About pages' heroes. Pass exclude="about|clients|team" #}
+<p class="mt-8 mb-2 text-[11px] font-semibold uppercase tracking-[.14em] text-white/50 text-center lg:text-left">More about us</p>
+<nav class="hero-svcs hero-svcs-dark" aria-label="More about Trend Crafters">
+    {% if exclude != 'about' %}<a href="{% url 'about' %}" class="hero-svc"><i class="fas fa-circle-info"></i><span>About Us</span></a>{% endif %}
+    {% if exclude != 'clients' %}<a href="{% url 'partners' %}" class="hero-svc"><i class="fas fa-handshake"></i><span>Our Clients</span></a>{% endif %}
+    {% if exclude != 'team' %}<a href="{% url 'team' %}" class="hero-svc"><i class="fas fa-users"></i><span>Our Team</span></a>{% endif %}
+    <a href="{% url 'work' %}" class="hero-svc"><i class="fas fa-play"></i><span>Our Work</span></a>
+</nav>
