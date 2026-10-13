@@ -48,7 +48,7 @@ HOME_REELS = [
      "blurb": "Bold visuals redefining adventure and style with motion and cutting-edge design.",
      "static": "main/videos/reel-ford.mp4", "poster": "main/images/home/reel-ford-poster.jpg", "kind": "brand"},
     {"client": "Wildfire by Mount Everest Distillery", "category": "Product Film", "tag": "Spirits & Beverages",
-     "blurb": "A cinematic unboxing that shows off the bottle, the label and the brand.",
+     "blurb": "A slow pour, an orange twist and a smoked glass: a cocktail film that puts the bottle centre stage.",
      "static": "main/videos/reel-wildfire.mp4", "poster": "main/images/home/reel-wildfire-poster.jpg", "kind": "ads"},
     _pick("Threads & Trends", "Product Reel"),
     _pick("Himalayan Java", "Brand Storytelling"),
