@@ -41,9 +41,13 @@
         </div>
 
         <div class="story-film" data-aos="fade-up">
-            <video id="story-film" controls playsinline preload="none" poster="{% static 'main/images/br/mingma-poster.jpg' %}" aria-label="Brand film: Mingma David Sherpa, legendary mountaineer">
+            <video id="story-film" playsinline preload="none" poster="{% static 'main/images/br/mingma-poster.jpg' %}" aria-label="Brand film: Mingma David Sherpa, legendary mountaineer">
                 <source src="{% static 'main/videos/story-mingma-david-sherpa.mp4' %}" type="video/mp4">
             </video>
+            <button type="button" class="story-play" aria-label="Play the Mingma David Sherpa film">
+                <span class="story-play-btn"><i class="fas fa-play"></i></span>
+                <span class="story-play-label">Watch the film &middot; 1:33</span>
+            </button>
         </div>
         <ol class="story-chapters" aria-label="Film chapters">
             <li><button type="button" data-seek="0"><span>0:00</span>The legend</button></li>
@@ -101,13 +105,26 @@
 
 <script>
 (function () {
+    // Big play button in the middle of the film; native controls appear once it starts
     var v = document.getElementById('story-film');
     if (!v) return;
+    var wrap = v.parentNode, play = wrap.querySelector('.story-play'), label = play.querySelector('.story-play-label');
+    function start(at) {
+        if (typeof at === 'number') v.currentTime = at;
+        v.controls = true;
+        wrap.classList.add('is-playing');
+        var r = v.play(); if (r && r.catch) r.catch(function () {});
+    }
+    play.addEventListener('click', function () { start(); });
+    v.addEventListener('ended', function () {
+        wrap.classList.remove('is-playing');
+        v.controls = false;
+        label.textContent = 'Watch again';
+    });
     document.querySelectorAll('.story-chapters [data-seek]').forEach(function (b) {
         b.addEventListener('click', function () {
-            v.currentTime = +b.dataset.seek;
-            v.play();
-            v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            start(+b.dataset.seek);
+            wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     });
 })();
