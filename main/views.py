@@ -137,7 +137,7 @@ def contact(request):
 
 
 def about(request):
-    return _ab_page(request, 'main/about.html', 'about', extra={'members': TEAM_MEMBERS, 'clients': CLIENTS})
+    return _ab_page(request, 'main/about.html', 'about', extra={'members': PUBLIC_MEMBERS, 'clients': CLIENTS})
 
 def services(request):
     return render(request, 'main/services.html')
@@ -148,7 +148,7 @@ from .reels import WORK_REELS, WORK_FILMS
 
 def work(request):
     return render(request, 'main/work.html', {
-        'clients': CLIENTS, 'members': TEAM_MEMBERS, 'work_reels': WORK_REELS, 'films': WORK_FILMS})
+        'clients': CLIENTS, 'members': PUBLIC_MEMBERS, 'work_reels': WORK_REELS, 'films': WORK_FILMS})
 
 def brand_campaign(request):
     return _br_page(request, 'main/brand_campaign.html', 'hub')
@@ -279,7 +279,7 @@ TEAM_MEMBERS = [
     {"name": "Jenisha Chaulagain", "role": "Project Manager", "photo": "team/jenisha-chaulagain.jpg", "pos": "62% 68%", "bio": "",
      "linkedin": "https://www.linkedin.com/in/jenisha-chaulagain-7423232ba/"},
     {"name": "Devashish Shrestha", "role": "Marketing Head", "photo": "team/devashish-shrestha.jpg", "pos": "50% 70%", "bio": "",
-     "linkedin": "https://www.linkedin.com/in/devashishshresthaofficial/"},
+     "linkedin": "https://www.linkedin.com/in/devashishshresthaofficial/", "team_only": True},
     {"name": "Divyam Koirala", "role": "Social Media Manager", "photo": "team/divyam-koirala.jpg", "pos": "50% 35%", "bio": "",
      "linkedin": "https://www.linkedin.com/in/divyam-koirala-853922378/"},
     {"name": "Dipankar Tamrakar", "role": "Graphic Designer", "photo": "team/dipankar-tamrakar.jpg", "pos": "50% 75%", "bio": "", "linkedin": ""},
@@ -295,5 +295,42 @@ def terms(request):
     return render(request, 'main/terms.html')
 
 
+# Members marked "team_only" appear on /team/ but not in the About or Work page line-ups.
+PUBLIC_MEMBERS = [m for m in TEAM_MEMBERS if not m.get("team_only")]
+
+# Team page "Inside our Kathmandu studio": photo gallery (files under static/main/images/own/)
+# and BTS clips (static/main/videos/bts/<name>.mp4 with a poster at images/own/bts/<name>.jpg).
+STUDIO_GALLERY = [
+    ("studio-shoot-crew.jpg", "Crew lighting a studio shoot"),
+    ("podcast-set.jpg", "Recording a podcast set"),
+    ("ceo-cabin-saksham.jpg", "Saksham in the CEO cabin"),
+    ("kyc-stage.jpg", "On stage at KYC Youth Conclave"),
+    ("editing-room-2.jpg", "The editing room"),
+    ("camera-monitor.jpg", "Framing the shot"),
+    ("studio-set-wide.jpg", "Interview set in the studio"),
+    ("team-topdown.jpg", "Planning session"),
+    ("mediquest-shoot.jpg", "On set for MediQuest"),
+    ("bw-office-shoot.jpg", "Shooting in the office"),
+    ("studio-softbox.jpg", "Softbox and camera ready"),
+    ("food-shoot.jpg", "Food shoot"),
+    ("team-meeting-cafe.jpg", "Team meeting"),
+    ("presenter-shoot.jpg", "Presenter take"),
+    ("office-desk.jpg", "Our Tinkune office"),
+    ("gimbal-signing.jpg", "Gimbal shot for a client film"),
+    ("token-of-love.jpg", "Token of appreciation"),
+]
+BTS_VIDEOS = [
+    ("studio-set", "Studio interview set"),
+    ("mediquest-rig", "MediQuest shoot"),
+    ("podcast-set", "Podcast recording"),
+    ("studio-softbox", "Lighting a talent shoot"),
+    ("presenter", "Presenter walk-in"),
+    ("gimbal-signing", "Gimbal take"),
+    ("office-interview", "Office interview"),
+    ("lighting-setup", "Script and set-up"),
+    ("team-planning", "Planning the shoot"),
+]
+
+
 def team(request):
-    return render(request, 'main/team.html', {'members': TEAM_MEMBERS})
+    return render(request, 'main/team.html', {'members': TEAM_MEMBERS, 'gallery': STUDIO_GALLERY, 'bts_videos': BTS_VIDEOS})

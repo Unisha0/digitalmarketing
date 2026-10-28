@@ -40,7 +40,7 @@
             <p class="text-ink-muted max-w-md">Project management, marketing, social media, editing, design and development, all under one roof.</p>
         </div>
         {# Photos: set "photo" per person in views.py. Blank photos show an initial until then. #}
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="m-2col tm-crew grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {% for m in members %}
             <article class="tm-card group" data-aos="fade-up" data-aos-delay="{% widthratio forloop.counter0 1 60 %}">
                 <div class="tm-photo">
@@ -77,8 +77,36 @@
             <figure data-aos="fade-up" data-aos-delay="180"><img src="{% static 'main/images/studio/token-of-appreciation.jpg' %}" alt="Trend Crafters receiving a token of appreciation" style="object-position:50% 40%" loading="lazy"></figure>
             <figure data-aos="fade-up" data-aos-delay="240"><img src="{% static 'main/images/work/bts-2.jpg' %}" alt="Camera on a gimbal during a shoot" loading="lazy"></figure>
         </div>
+
+        <!-- Studio gallery: office, shoots and events -->
+        <div class="tm-sub" data-aos="fade-up">
+            <h3 class="font-display text-2xl md:text-3xl font-semibold text-ink">Studio <span class="gradient-text">gallery</span></h3>
+            <p class="text-ink-muted">Our office, our shoots and the moments in between.</p>
+        </div>
+        <div class="tm-gal">
+            {% for g in gallery %}<figure><img src="{% static 'main/images/own/'|add:g.0 %}" alt="{{ g.1 }}" loading="lazy"><figcaption>{{ g.1 }}</figcaption></figure>{% endfor %}
+        </div>
+
+        <!-- BTS videos: short silent clips that play when on screen -->
+        <div class="tm-sub" data-aos="fade-up">
+            <h3 class="font-display text-2xl md:text-3xl font-semibold text-ink">Behind the scenes <span class="gradient-text">on video</span></h3>
+            <p class="text-ink-muted">Clips from real client shoots. Swipe for more.</p>
+        </div>
+        <div class="tm-vids">
+            {% for v in bts_videos %}<figure class="tm-vid"><video src="{% static 'main/videos/bts/'|add:v.0|add:'.mp4' %}" poster="{% static 'main/images/own/bts/'|add:v.0|add:'.jpg' %}" muted loop playsinline preload="none" aria-label="{{ v.1 }}"></video><figcaption>{{ v.1 }}</figcaption></figure>{% endfor %}
+        </div>
     </div>
 </section>
+<script>
+(function () {
+    var vids = document.querySelectorAll('.tm-vid video');
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.play().catch(function () {}); } else { e.target.pause(); } });
+    }, { threshold: 0.5 });
+    vids.forEach(function (v) { io.observe(v); });
+})();
+</script>
 
 {% include 'main/br/_cta.html' with heading='Want to work with us?' text="Tell us about your project and we'll match you with the right people." button='Start Your Project' wa='Hi%20Trend%20Crafters%2C%20I%27d%20like%20to%20work%20with%20your%20team.' %}
 

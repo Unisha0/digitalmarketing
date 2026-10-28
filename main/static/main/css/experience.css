@@ -1477,3 +1477,60 @@ main:has(> #hero) section .text-center.max-w-2xl.mx-auto > p:last-child { max-wi
     .tile { border-radius: 1rem; padding: .6rem; }
     .tile-name { display: none; }
 }
+
+/* Team page: studio gallery (masonry) and BTS video rail */
+.tm-sub { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .35rem 1.5rem; margin: 3rem 0 1.25rem; }
+.tm-gal { columns: 2; column-gap: .75rem; }
+@media (min-width: 768px) { .tm-gal { columns: 3; column-gap: 1rem; } }
+@media (min-width: 1280px) { .tm-gal { columns: 4; } }
+.tm-gal figure { position: relative; margin: 0 0 .75rem; break-inside: avoid; border-radius: 1.1rem; overflow: hidden; background: #e9e2d9; }
+@media (min-width: 768px) { .tm-gal figure { margin-bottom: 1rem; } }
+.tm-gal img { display: block; width: 100%; height: auto !important; transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+.tm-gal figure:hover img { transform: scale(1.04); }
+.tm-gal figcaption, .tm-vid figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem .8rem .7rem; font-size: .75rem; font-weight: 600; color: #fff; background: linear-gradient(to top, rgba(0,0,0,.65), transparent); }
+.tm-gal figcaption { opacity: 0; transition: opacity .3s ease; }
+.tm-gal figure:hover figcaption { opacity: 1; }
+@media (hover: none) { .tm-gal figcaption { display: none; } }
+.tm-vids { display: flex; gap: .85rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .75rem; scrollbar-width: thin; }
+.tm-vid { position: relative; flex: 0 0 11.5rem; aspect-ratio: 9 / 16; margin: 0; border-radius: 1.2rem; overflow: hidden; background: #000; scroll-snap-align: start; }
+@media (min-width: 768px) { .tm-vid { flex-basis: 14.5rem; } }
+.tm-vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 639px) { .tm-vids { margin-inline: -1rem; padding-inline: 1rem; scroll-padding-inline: 1rem; } }
+
+/* ---- Service and team pages: phone layout ------------------------------------------------------
+   .m-rail turns a photo row into a swipe rail; .m-2col puts card lists two-up with tighter type. */
+@media (max-width: 639px) {
+    .m-rail {
+        display: flex; gap: .75rem; overflow-x: auto; scroll-snap-type: x mandatory;
+        margin-inline: -1rem; padding: .25rem 1rem .75rem; scroll-padding-inline: 1rem; scrollbar-width: none;
+    }
+    .m-rail::-webkit-scrollbar { display: none; }
+    .m-rail > * { flex: 0 0 78%; height: 15rem !important; aspect-ratio: auto !important; scroll-snap-align: start; }
+
+    .m-2col { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: .7rem !important; }
+    .m-2col > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .m-2col:not(.tm-crew) > * { padding: 1rem !important; border-radius: 1.1rem; }
+    .m-2col:not(.tm-crew) h3 { font-size: 1rem !important; line-height: 1.3; margin-bottom: .3rem !important; }
+    .m-2col:not(.tm-crew) p { font-size: .78rem !important; line-height: 1.45; }
+    .m-2col:not(.tm-crew) > * > i:first-child { font-size: 1.15rem !important; margin-bottom: .6rem !important; }
+    .m-2col .dms-ic { width: 2.2rem; height: 2.2rem; margin-bottom: .7rem; font-size: .9rem; }
+    .m-2col .dms-card p { margin-bottom: .75rem !important; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .m-2col .dms-link { font-size: .78rem; }
+    .m-2col .mr-card .mb-5 { margin-bottom: .75rem !important; }
+    .m-2col .mr-ic { transform: scale(.85); }
+
+    /* Team: two portraits per row, smaller names */
+    .tm-crew .tm-photo { border-radius: 1rem; }
+    .tm-crew h3, .tm-crew .font-display { font-size: 1rem !important; line-height: 1.25; }
+    .tm-crew p { font-size: .72rem !important; line-height: 1.45; }
+
+    /* Team gallery: one swipe row instead of a long two-column wall */
+    .tm-gal { columns: auto; display: flex; gap: .7rem; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -1rem; padding: 0 1rem .75rem; scroll-padding-inline: 1rem; scrollbar-width: none; }
+    .tm-gal::-webkit-scrollbar { display: none; }
+    .tm-gal figure { flex: 0 0 auto; height: 17rem; margin: 0; scroll-snap-align: start; }
+    .tm-gal img { height: 100% !important; width: auto; }
+
+    /* Service heroes: three reel frames must fit the screen */
+    .dm-hero .grid { grid-template-columns: minmax(0, 1fr); }
+    .dm-hero .lg\:col-span-5.flex > div { width: 31%; height: 13.5rem; }
+}
